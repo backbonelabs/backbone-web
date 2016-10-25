@@ -3,10 +3,13 @@ import express from 'express';
 import compression from 'compression';
 import exphbs from 'express-handlebars';
 import path from 'path';
+import bodyParser from 'body-parser';
 
 const debug = Debug('web');
 const app = express();
 
+// Parse form url-encoded bodies
+app.use(bodyParser.json());
 // Compress response bodies (by default, only responses 1kb or bigger will be compressed)
 app.use(compression());
 // Disable the "X-Powered-By: Express" HTTP header
