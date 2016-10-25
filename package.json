@@ -4,6 +4,7 @@
   "description": "Backbone website",
   "main": "start.js",
   "scripts": {
+    "lint": "eslint --quiet .",
     "start": "node start.js",
     "test": "npm test"
   },
