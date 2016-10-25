@@ -55,7 +55,7 @@ app.use('*', (req, res) => {
   res.redirect('https://www.kickstarter.com/projects/gobackbone/backbone-the-smart-easy-way-to-a-healthy-back'); // eslint-disable-line max-len
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 9999;
 app.listen(port, () => {
   debug(`Express server listening on port ${port}`);
 });
