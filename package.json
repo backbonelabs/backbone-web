@@ -1,0 +1,25 @@
+{
+  "name": "backbone-web",
+  "version": "0.0.1",
+  "description": "Backbone website",
+  "main": "start.js",
+  "scripts": {
+    "start": "node start.js",
+    "test": "npm test"
+  },
+  "author": "Backbone Labs, Inc. <dev@gobackbone.com>",
+  "private": true,
+  "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "6.18.0",
+    "babel-register": "6.18.0",
+    "debug": "2.2.0",
+    "express": "4.14.0",
+    "express-handlebars": "3.0.0",
+    "localenv": "0.2.2"
+  },
+  "devDependencies": {
+    "eslint": "3.8.1",
+    "eslint-config-airbnb-base": "9.0.0",
+    "eslint-plugin-import": "2.0.1"
+  }
+}
