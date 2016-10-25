@@ -13,7 +13,7 @@ const env = process.env.NODE_ENV || 'development';
 
 // Config variables for Handlebar templates
 const hbsConfig = {
-  environment: env,
+  devMode: env !== 'production',
   bootstrapUrl: env === 'production' ?
     'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' :
     '/public/css/bootstrap.min.css',
