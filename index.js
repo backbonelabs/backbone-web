@@ -4,6 +4,7 @@ import compression from 'compression';
 import exphbs from 'express-handlebars';
 import path from 'path';
 import bodyParser from 'body-parser';
+import passwordReset from './routes/passwordReset';
 
 const debug = Debug('web');
 const app = express();
@@ -42,11 +43,12 @@ app.use('/ping', (req, res) => {
   res.send('pong');
 });
 
-app.use('/password-reset', (req, res) => {
+app.get('/password-reset', (req, res) => {
   res.render('passwordReset', {
     title: 'Password Reset',
   });
 });
+app.post('/password-reset', passwordReset);
 
 // Default catch-all route handler will redirect to the Kickstarter campaign
 app.use('*', (req, res) => {
