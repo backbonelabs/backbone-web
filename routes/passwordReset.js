@@ -6,7 +6,7 @@ const debug = Debug('routes:passwordReset');
 export default (req, res) => {
   debug('Request body', req.body);
   request({
-    url: `${process.env.API_SERVER}/auth/password-reset`,
+    url: `${process.env.API_SERVER_URL}/auth/password-reset`,
     method: 'POST',
     body: req.body,
     json: true,
