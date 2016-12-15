@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-export default class App extends Component {
-  render () {
-    return (
-      <div>
-        BackBone
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    Welcome to Backbone
+  </div>
+);
+
+export default App;

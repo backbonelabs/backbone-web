@@ -5,6 +5,6 @@ import './global.scss';
 import App from './components/App';
 
 render(
-  <App/>,
-  document.getElementById('root')
+  <App />,
+  document.getElementById('root'), // eslint-disable-line
 );
