@@ -44,16 +44,16 @@ const hbsConfig = {
 };
 
 app.engine('.hbs', exphbs({
-  defaultLayout: 'main',
   extname: '.hbs',
   helpers: {
     getConfig: prop => hbsConfig[prop],
   },
 }));
 
-app.set('views', './views');
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', '.hbs');
-app.use(express.static(path.join(__dirname, '/../app/public')));
+app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/public2', express.static(path.join(__dirname, '/../app/public')));
 
 // Health check
 app.use('/ping', (req, res) => {
@@ -65,10 +65,11 @@ app.get('/password-reset', (req, res) => {
     title: 'Password Reset',
   });
 });
+
 app.post('/password-reset', passwordReset);
 
 app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/../app/public/index.html')); // eslint-disable-line max-len
+  res.sendFile(path.join(__dirname, '/../app/public/index.html'));
 });
 
 const port = process.env.PORT || 9999;
