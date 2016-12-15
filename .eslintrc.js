@@ -1,22 +1,15 @@
 module.exports = {
-  extends: 'airbnb-base',
-  env: {
-    browser: true,
-  },
+  extends: 'airbnb',
+  parser: 'babel-eslint',
   globals: {
-    $: true,
-  },
-  parserOptions: {
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true
-    }
+    fetch: true,
   },
   rules: {
-    'new-cap': 0,
-    'max-len': [2, { code: 100 }],
+    'react/jsx-filename-extension': [1, { extensions: ['.js'] }],
     'consistent-return': [0],
     'no-console': [1],
     'no-underscore-dangle': [0],
     'prefer-template': [1],
-  }
+    'max-len': [2, {"code": 100}],
+  },
 };

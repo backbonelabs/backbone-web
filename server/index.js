@@ -4,10 +4,27 @@ import compression from 'compression';
 import exphbs from 'express-handlebars';
 import path from 'path';
 import bodyParser from 'body-parser';
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
 import passwordReset from './routes/passwordReset';
+import config from '../webpack.config.dev';
 
 const debug = Debug('web');
 const app = express();
+const compiler = webpack(config);
+
+const isProduction = process.env.NODE_ENV === 'production';
+
+// Only use in dev mode
+if (!isProduction) {
+  app.use(webpackDevMiddleware(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath,
+  }));
+
+  app.use(webpackHotMiddleware(compiler));
+}
 
 // Parse form url-encoded bodies
 app.use(bodyParser.json());
@@ -36,7 +53,7 @@ app.engine('.hbs', exphbs({
 
 app.set('views', './views');
 app.set('view engine', '.hbs');
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/../app/public')));
 
 // Health check
 app.use('/ping', (req, res) => {
@@ -50,9 +67,8 @@ app.get('/password-reset', (req, res) => {
 });
 app.post('/password-reset', passwordReset);
 
-// Default catch-all route handler will redirect to the Kickstarter campaign
 app.use('*', (req, res) => {
-  res.redirect('https://www.kickstarter.com/projects/gobackbone/backbone-the-smart-easy-way-to-a-healthy-back'); // eslint-disable-line max-len
+  res.sendFile(path.join(__dirname, '/../app/public/index.html')); // eslint-disable-line max-len
 });
 
 const port = process.env.PORT || 9999;
