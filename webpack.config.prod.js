@@ -3,22 +3,22 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
-const GLOBALS = {
-  'process.env.NODE_ENV': JSON.stringify('production'),
-};
-
 module.exports = {
   devtool: 'source-map',
   entry: [
     './app/index',
   ],
   output: {
-    path: path.join(__dirname, '/app/public/build'),
+    path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.DefinePlugin(GLOBALS),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production'), // eslint-disable-line
+      },
+    }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {

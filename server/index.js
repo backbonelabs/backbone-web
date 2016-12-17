@@ -20,9 +20,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 if (!isProduction) {
   app.use(webpackDevMiddleware(compiler, {
     noInfo: true,
-    publicPath: config.output.publicPath,
   }));
-
   app.use(webpackHotMiddleware(compiler));
 }
 
@@ -53,7 +51,7 @@ app.engine('.hbs', exphbs({
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', '.hbs');
 app.use('/public', express.static(path.join(__dirname, 'public')));
-app.use('/public2', express.static(path.join(__dirname, '/../app/public')));
+app.use(express.static(path.join(__dirname, '../build')));
 
 // Health check
 app.use('/ping', (req, res) => {
@@ -69,7 +67,7 @@ app.get('/password-reset', (req, res) => {
 app.post('/password-reset', passwordReset);
 
 app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/../app/public/index.html'));
+  res.sendFile(path.join(__dirname, '../app/public/index.html'));
 });
 
 const port = process.env.PORT || 9999;
