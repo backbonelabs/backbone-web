@@ -66,8 +66,15 @@ app.get('/password-reset', (req, res) => {
 
 app.post('/password-reset', passwordReset);
 
+// Use the React App in development
+if (env === 'development') {
+  app.use('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../app/public/index.html'));
+  });
+}
+
 app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../app/public/index.html'));
+  res.redirect('https://www.kickstarter.com/projects/gobackbone/backbone-the-smart-easy-way-to-a-healthy-back'); // eslint-disable-line max-len
 });
 
 const port = process.env.PORT || 9999;
