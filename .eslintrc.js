@@ -6,8 +6,8 @@ module.exports = {
     fetch: true,
   },
   rules: {
-    'react/jsx-filename-extension': [1, { extensions: ['.js'] }],
-    'consistent-return': [0],
+    'react/jsx-filename-extension': [1, { extensions: ['.jsx'] }],
+    'consistent-return': [1],
     'no-console': [1],
     'no-underscore-dangle': [0],
     'prefer-template': [1],
