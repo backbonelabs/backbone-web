@@ -5,9 +5,12 @@ module.exports = {
   globals: {
     fetch: true,
   },
+  "env": {
+    "browser": true,
+    "node": true,
+  },
   rules: {
-    'react/jsx-filename-extension': [1, { extensions: ['.jsx'] }],
-    'consistent-return': [1],
+    'consistent-return': [0],
     'no-console': [1],
     'no-underscore-dangle': [0],
     'prefer-template': [1],
