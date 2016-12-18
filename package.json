@@ -49,6 +49,7 @@
     "normalize.css": "5.0.0",
     "postcss": "5.2.6",
     "postcss-loader": "1.2.1",
+    "react-hot-loader": "^3.0.0-beta.6",
     "rimraf": "2.5.4",
     "sass-loader": "4.1.0",
     "style-loader": "0.13.1"
