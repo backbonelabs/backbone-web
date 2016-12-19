@@ -1,6 +1,14 @@
-node_modules
-*.log
+# Osx
 .DS_Store
+
+# Node
+node_modules
+npm-debug.log
+
+# Build App
+build
+
+*.log
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

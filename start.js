@@ -5,4 +5,4 @@ const Debug = require('debug');
 
 Debug.enable(process.env.DEBUG);
 
-require('./index');
+require('./server/index');
