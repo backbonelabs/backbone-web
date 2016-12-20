@@ -1,31 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { browserHistory } from 'react-router';
 import { AppContainer } from 'react-hot-loader';
-import App from './components/App';
+import routes from './routes';
 
 import './global.scss';
 
-// Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
-injectTapEventPlugin();
-
 const rootEl = document.getElementById('root');
-const renderApp = (Component = App) => {
+const renderApp = (Component = routes) => {
   ReactDOM.render(
-    <MuiThemeProvider>
-      <AppContainer>
-        <Component />
-      </AppContainer>
-    </MuiThemeProvider>,
+    <AppContainer>
+      <Component history={browserHistory} />
+    </AppContainer>,
     rootEl,
   );
 };
 
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    const NextApp = require('./components/App').default; // eslint-disable-line
+  module.hot.accept('./routes', () => {
+    const NextApp = require('./routes').default; // eslint-disable-line
     renderApp(NextApp);
   });
 }
