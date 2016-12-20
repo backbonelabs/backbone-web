@@ -26,9 +26,8 @@ module.exports = {
       exclude: /node_modules/,
       loaders: ['babel'],
     }, {
-      test: /\.scss$/,
-      exclude: /node_modules/,
-      loaders: ['style', 'css?sourceMap', 'postcss', 'sass?sourceMap'],
+      test: /\.(css|scss)$/,
+      loader: 'style!css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass', // eslint-disable-line
     }],
   },
   postcss() {
