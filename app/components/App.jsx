@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import Navbar from './Navbar/Navbar';
 
-const App = () => (
+const App = props => (
   <div>
-    Welcome to Backbone
+    <Navbar />
+    {props.children}
   </div>
 );
+
+App.propTypes = {
+  children: PropTypes.node,
+};
 
 export default App;
