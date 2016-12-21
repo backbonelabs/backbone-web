@@ -26,6 +26,9 @@ module.exports = {
       exclude: /node_modules/,
       loaders: ['babel'],
     }, {
+      test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+      loader: 'url-loader?limit=1000',
+    }, {
       test: /\.scss$/,
       exclude: /node_modules/,
       loaders: ['style', 'css?sourceMap', 'postcss', 'sass?sourceMap'],

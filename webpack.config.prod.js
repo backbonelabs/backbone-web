@@ -38,6 +38,9 @@ module.exports = {
       exclude: /node_modules/,
       loaders: ['babel'],
     }, {
+      test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+      loader: 'url-loader?limit=1000',
+    }, {
       test: /\.(scss|css)$/,
       loader: ExtractTextPlugin.extract('style', 'css!postcss-loader!sass-loader'),
     }],
