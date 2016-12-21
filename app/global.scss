@@ -3,9 +3,13 @@
 
 // Theme
 $primaryColor: #ED1C24;
+$materialPrimaryColor: #F44336;
+$secondaryColor: #f0b94d;
+$backgroundColor: #F5F5F5;
 $textColor: #212121;
 
 body {
-    font-family: 'Roboto', sans-serif;
-    color: $textColor;
+  font-family: 'Roboto', sans-serif;
+  color: $textColor;
+  background-color: $backgroundColor;
 }
