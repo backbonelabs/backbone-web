@@ -9,7 +9,7 @@ const App = props => (
 );
 
 App.propTypes = {
-  children: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  children: PropTypes.node,
 };
 
 export default App;
