@@ -10,7 +10,7 @@ import './Form.scss';
 const materialPrimaryColor = '#F44336';
 
 const Form = props => (
-  <div className={`${'Form-container'} ${props.className}`}>
+  <form className={`${'Form-container'} ${props.className}`}>
     <Paper className="Form" zDepth={1}>
       <div className="logo-container">
         <img src={logo} role="presentation" className="Form-logo" />
@@ -65,7 +65,7 @@ const Form = props => (
         }
       </div>
     </Paper>
-  </div>
+  </form>
 );
 
 Form.propTypes = {
