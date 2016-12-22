@@ -48,3 +48,14 @@
   margin-top: 45px;
   width: 300px;
 }
+
+.forgotPassword {
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  color: $materialPrimaryColor;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
