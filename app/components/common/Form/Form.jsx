@@ -10,8 +10,8 @@ import './Form.scss';
 const materialPrimaryColor = '#F44336';
 
 const Form = props => (
-  <div className="Form-container">
-    <Paper className="Form-form" zDepth={1}>
+  <div className={`${'Form-container'} ${props.className}`}>
+    <Paper className="Form" zDepth={1}>
       <div className="logo-container">
         <img src={logo} role="presentation" className="Form-logo" />
       </div>
@@ -24,6 +24,8 @@ const Form = props => (
           floatingLabelFocusStyle={{ color: materialPrimaryColor }}
           underlineFocusStyle={{ borderColor: materialPrimaryColor }}
           floatingLabelText="Email"
+          name="email"
+          onChange={props.onChange}
         />
         <TextField
           className="Form-textfield"
@@ -31,6 +33,8 @@ const Form = props => (
           underlineFocusStyle={{ borderColor: materialPrimaryColor }}
           floatingLabelText="Password"
           type="password"
+          name="password"
+          onChange={props.onChange}
         />
         {
           props.signup ?
@@ -40,6 +44,8 @@ const Form = props => (
               underlineFocusStyle={{ borderColor: materialPrimaryColor }}
               floatingLabelText="Confirm Password"
               type="password"
+              name="confirmPassword"
+              onChange={props.onChange}
             /> : null
         }
         <RaisedButton
@@ -65,6 +71,8 @@ const Form = props => (
 Form.propTypes = {
   login: PropTypes.bool,
   signup: PropTypes.bool,
+  className: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 export default Form;
