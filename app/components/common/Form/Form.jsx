@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Link } from 'react-router';
 
 import logo from '../../../public/images/Logo.png';
 import './Form.scss';
@@ -57,11 +56,17 @@ const Form = props => (
         {
           props.login ?
             <p>Don't have an account?
-              <Link to="/signup" style={{ textDecoration: 'none' }}>
-                <span style={{ color: materialPrimaryColor }}> Sign up</span>
-              </Link>
+              <span
+                onClick={props.toggleSignup}
+                style={{ color: materialPrimaryColor, cursor: 'pointer' }}
+              > Sign up</span>
             </p>
-          : null
+          : <p>Already signed up?
+              <span
+                onClick={props.toggleSignup}
+                style={{ color: materialPrimaryColor, cursor: 'pointer' }}
+              > Log In</span>
+          </p>
         }
       </div>
     </Paper>
@@ -73,6 +78,7 @@ Form.propTypes = {
   signup: PropTypes.bool,
   className: PropTypes.string,
   onChange: PropTypes.func,
+  toggleSignup: PropTypes.func,
 };
 
 export default Form;

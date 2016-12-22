@@ -1,0 +1,26 @@
+.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.signup-enter {
+  opacity: 0.01;
+}
+
+.signup-enter.signup-enter-active {
+  opacity: 1;
+  transition: opacity 600ms ease-in;
+}
+
+.signup-leave {
+  opacity: 1;
+  visibility: hidden !important;
+  display: none !important;
+}
+
+.signup-leave.signup-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

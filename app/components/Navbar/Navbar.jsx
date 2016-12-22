@@ -13,8 +13,8 @@ const Navbar = () => (
         <Link to="/">
           <FlatButton label="Home" hoverColor="#F44336" />
         </Link>
-        <Link to="/login">
-          <FlatButton label="Login" hoverColor="#F44336" />
+        <Link to="/signup">
+          <FlatButton label="sign up" hoverColor="#F44336" />
         </Link>
       </div>
     </ToolbarGroup>
