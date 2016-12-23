@@ -16,6 +16,5 @@ module.exports = {
     'prefer-template': [1],
     'max-len': [2, {"code": 100}],
     'react/no-unescaped-entities': [0],
-    'jsx-a11y/no-static-element-interactions': [0],
   },
 };
