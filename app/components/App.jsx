@@ -3,8 +3,12 @@ import Navbar from './Navbar/Navbar';
 
 const App = props => (
   <div>
-    <Navbar />
-    {props.children}
+    <nav>
+      <Navbar />
+    </nav>
+    <main>
+      {props.children}
+    </main>
   </div>
 );
 

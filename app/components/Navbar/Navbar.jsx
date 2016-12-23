@@ -1,5 +1,5 @@
 import React from 'react';
-import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
+import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
 import { Link } from 'react-router';
 import FlatButton from 'material-ui/FlatButton';
 
@@ -7,16 +7,14 @@ import './Navbar.scss';
 
 const Navbar = () => (
   <Toolbar className="navBar">
-    <ToolbarGroup>
-      <ToolbarTitle text="Backbone Labs, Inc" />
-    </ToolbarGroup>
+    <ToolbarGroup />
     <ToolbarGroup>
       <div>
         <Link to="/">
-          <FlatButton label="Home" hoverColor={'white'} />
+          <FlatButton label="Home" hoverColor="#F44336" />
         </Link>
-        <Link to="/login">
-          <FlatButton label="Login" hoverColor={'white'} />
+        <Link to="/signup">
+          <FlatButton label="sign up" hoverColor="#F44336" />
         </Link>
       </div>
     </ToolbarGroup>
