@@ -1,61 +1,7 @@
-@import '../../../global.scss';
-
-.Form {
+.form {
   width: 400px;
   height: 550px;
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-.Form-header {
-  width: 400px;
-  height: 140px;
-  text-align: center;
-  background: linear-gradient(to top right, $secondaryColor 0%, $primaryColor 100%);
-}
-
-.logo-container {
-  width: 110px;
-  height: 110px;
-  border-radius: 100%;
-  position: absolute;
-  margin-top: 90px;
-  background-color: white;
-}
-
-.Form-logo {
-  width: 70px;
-  height: 70px;
-  margin-left: 16px;
-  margin-top: 20px;
-}
-
-.Form-textfield-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 410px;
-}
-
-.Form-textfield {
-  align-self: 'center';
-  width: 300px !important;
-}
-
-.FormBtn {
-  margin-top: 45px;
-  width: 300px;
-}
-
-.forgotPassword {
-  cursor: pointer;
-  text-align: center;
-  text-transform: uppercase;
-  color: $materialPrimaryColor;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }

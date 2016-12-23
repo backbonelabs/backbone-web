@@ -1,3 +1,5 @@
+@import '../../global.scss';
+
 .signup-container {
   display: flex;
   align-items: center;
@@ -5,22 +7,73 @@
   margin-top: 35px;
 }
 
-.signup-enter {
-  opacity: 0.01;
+.signup-header {
+  width: 400px;
+  height: 140px;
+  text-align: center;
+  background: linear-gradient(to top right, $secondaryColor 0%, $primaryColor 100%);
+
+  h2 {
+    text-align: center;
+  }
 }
 
-.signup-enter.signup-enter-active {
-  opacity: 1;
-  transition: opacity 600ms ease-in;
+.signup-logo-container {
+  width: 110px;
+  height: 110px;
+  border-radius: 100%;
+  position: absolute;
+  margin-top: 90px;
+  background-color: white;
+
+  img {
+    width: 70px;
+    height: 70px;
+    margin-left: 16px;
+    margin-top: 20px;
+  }
 }
 
-.signup-leave {
-  opacity: 1;
-  visibility: hidden !important;
-  display: none !important;
+.signup-textfield-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 410px;
 }
 
-.signup-leave.signup-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+.signup-textfield {
+  align-self: 'center';
+  width: 300px !important;
+}
+
+.signup-btn {
+  margin-top: 45px;
+  width: 300px;
+}
+
+.signup-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: $materialPrimaryColor;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.forgot-password {
+  text-decoration: none;
+  color: #212121;
+
+  p {
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    color: $materialPrimaryColor;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

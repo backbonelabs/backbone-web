@@ -15,7 +15,6 @@ class Signup extends Component {
     this.state = {
       email: '',
       password: '',
-      confirmPassword: '',
     };
 
     this.handleOnChange = this.handleOnChange.bind(this);
@@ -33,7 +32,7 @@ class Signup extends Component {
             <img src={Logo} role="presentation" />
           </div>
           <div className="signup-header">
-            <h2>Sign Up</h2>
+            <h2>Login</h2>
           </div>
           <div className="signup-textfield-container">
             <TextField
@@ -53,25 +52,21 @@ class Signup extends Component {
               name="password"
               onChange={this.handleOnChange}
             />
-            <TextField
-              className="signup-textfield"
-              floatingLabelFocusStyle={{ color: red500 }}
-              underlineFocusStyle={{ borderColor: red500 }}
-              floatingLabelText="Confirm Password"
-              type="password"
-              name="confirmPassword"
-              onChange={this.handleOnChange}
-            />
             <RaisedButton
-              label="Sign up"
+              label="Login"
               className="signup-btn"
               backgroundColor={red500}
               labelColor="#FFF"
               type="submit"
             />
-            <p>Already signed up?
-              <Link to="/login" className="signup-link"> Log In</Link>
-            </p>
+            <div>
+              <p>Don't have an account?
+                <Link to="/signup" className="signup-link"> Sign Up</Link>
+              </p>
+              <Link to="password-reset" className="forgot-password">
+                <p><small>Forgot Your Password?</small></p>
+              </Link>
+            </div>
           </div>
         </Form>
       </div>
