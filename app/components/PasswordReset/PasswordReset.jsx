@@ -39,7 +39,7 @@ class PasswordReset extends Component {
           />
           <RaisedButton
             label="Submit"
-            className="resetBtn"
+            className="reset-btn"
             backgroundColor={red500}
             labelColor="#FFF"
             type="submit"
