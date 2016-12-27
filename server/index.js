@@ -12,6 +12,7 @@ import serverConfig from './config';
 import passwordReset from './routes/passwordReset';
 import config from '../webpack.config.dev';
 import authRoutes from './routes/auth';
+import userRoutes from './routes/user';
 
 const debug = Debug('web');
 const app = express();
@@ -56,9 +57,11 @@ app.set('view engine', '.hbs');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../build')));
 
-// Protect all /auth end points unless it's in the path Array
-app.use('/auth', expressJwt({ secret: serverConfig.secretKey })
-  .unless({ path: ['/auth/login', '/auth/signup'] }));
+// Protect end points unless it's in the path Array
+app.use('/auth',
+  expressJwt({ secret: serverConfig.secretKey }).unless({ path: ['/auth/login', '/auth/signup'] }),
+);
+app.use('/user', expressJwt({ secret: serverConfig.secretKey }));
 
 // Health check
 app.use('/ping', (req, res) => {
@@ -73,6 +76,7 @@ app.get('/password-reset', (req, res) => {
 
 app.post('/password-reset', passwordReset);
 app.use('/auth/', authRoutes);
+app.use('/user/', userRoutes);
 
 // Use the React App in development
 if (env === 'development') {
