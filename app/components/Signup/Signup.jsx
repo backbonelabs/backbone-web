@@ -49,7 +49,7 @@ class Signup extends Component {
 
   onEmailChange(evt) {
     const stateChanges = {
-      validEmail: constants.emailRegex.test(evt.target.value),
+      validEmail: constants.emailRegex.test(evt.target.value.trim()),
       email: evt.target.value,
     };
 
@@ -78,9 +78,10 @@ class Signup extends Component {
   handleOnSubmit(evt) {
     evt.preventDefault();
     const { email, password, confirmPassword } = this.state;
+    const lowerCaseEmail = email.toLowerCase().trim();
 
     if (password === confirmPassword) {
-      return this.props.signup({ email, password });
+      return this.props.signup({ email: lowerCaseEmail, password });
     }
     this.setState({ confirmPasswordError: 'Password and ConfirmPassword do not match' });
   }

@@ -49,7 +49,7 @@ class Login extends Component {
 
   onEmailChange(evt) {
     const stateChanges = {
-      validEmail: constants.emailRegex.test(evt.target.value),
+      validEmail: constants.emailRegex.test(evt.target.value.trim()),
       email: evt.target.value,
     };
 
@@ -74,7 +74,8 @@ class Login extends Component {
   handleOnSubmit(evt) {
     evt.preventDefault();
     const { email, password } = this.state;
-    this.props.login({ email, password });
+    const lowerCaseEmail = email.toLowerCase().trim();
+    this.props.login({ email: lowerCaseEmail, password });
   }
 
   render() {
