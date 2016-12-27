@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';
 import { AppContainer } from 'react-hot-loader';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import ReduxThunk from 'redux-thunk';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import routes from './routes';
 import reducers from './reducers';
+import { isAuthenticated } from './actions/auth';
 
 import './global.scss';
 
@@ -18,7 +20,14 @@ injectTapEventPlugin();
 // create store for redux
 const store = createStore(
   reducers,
+  applyMiddleware(ReduxThunk),
 );
+
+// Check if there is a token and if it's valid
+const token = localStorage.getItem('jwt');
+if (token !== null) {
+  store.dispatch(isAuthenticated(token));
+}
 
 const rootEl = document.getElementById('root');
 const renderApp = (Component = routes) => {
