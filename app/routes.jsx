@@ -6,10 +6,9 @@ import Signup from './components/Signup/Signup';
 import Login from './components/Signup/Login';
 import PasswordReset from './components/PasswordReset/PasswordReset';
 import Home from './components/Home/Home';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import NotFound from './components/NotFound/NotFound';
 import RequireAuth from './components/RequireAuth';
-
-const testRoute = () => (<div><h1>hello</h1></div>);
 
 const appRoutes = (
   <Route path="/" component={App}>
@@ -17,7 +16,7 @@ const appRoutes = (
     <Route path="/signup" component={Signup} />
     <Route path="/login" component={Login} />
     <Route path="/password-reset" component={PasswordReset} />
-    <Route path="/test-route" component={RequireAuth(testRoute)} />
+    <Route path="/protected-route" component={RequireAuth(ProtectedRoute)} />
     <Route path="*" component={NotFound} />
   </Route>
 );
