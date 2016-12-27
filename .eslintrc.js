@@ -16,5 +16,6 @@ module.exports = {
     'prefer-template': [1],
     'max-len': [2, {"code": 100}],
     'react/no-unescaped-entities': [0],
+    'import/prefer-default-export': [0],
   },
 };
