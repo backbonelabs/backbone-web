@@ -1,17 +1,28 @@
-import { post, get } from 'axios';
+import { post } from 'axios';
 import { browserHistory } from 'react-router';
+import {
+  LOGIN_USER,
+  AUTHENTICATED,
+  LOGOUT,
+  IN_PROGRESS,
+  LOGIN_ERROR,
+  SIGNUP_ERROR,
+  AUTH_ERROR,
+  CLEAR_ERRORS,
+ } from '../actions/types';
 
-export const inProgress = () => ({ type: 'IN_PROGRESS' });
-export const loginUser = payload => ({ type: 'LOGIN_USER', payload });
-export const loginError = payload => ({ type: 'LOGIN_ERROR', payload });
-export const signupError = payload => ({ type: 'SIGNUP_ERROR', payload });
-export const authError = payload => ({ type: 'AUTH_ERROR', payload });
-export const clearErrors = () => ({ type: 'CLEAR_ERRORS' });
+export const inProgress = () => ({ type: IN_PROGRESS });
+export const loginUser = payload => ({ type: LOGIN_USER, payload });
+export const isAuthenticated = () => ({ type: AUTHENTICATED });
+export const loginError = payload => ({ type: LOGIN_ERROR, payload });
+export const signupError = payload => ({ type: SIGNUP_ERROR, payload });
+export const authError = payload => ({ type: AUTH_ERROR, payload });
+export const clearErrors = () => ({ type: CLEAR_ERRORS });
 
 export const logOut = () => {
   localStorage.removeItem('jwt');
   browserHistory.push('/');
-  return { type: 'LOGOUT' };
+  return { type: LOGOUT };
 };
 
 export const login = user => (dispatch) => {
@@ -49,23 +60,3 @@ export const signup = user => (dispatch) => {
       }
     });
 };
-
-export const isAuthenticated = token => (dispatch) => {
-  dispatch(inProgress());
-  return get('/auth/me', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  })
-  .then((res) => {
-    // login user
-    dispatch(loginUser(res.data.user));
-  })
-  .catch((err) => {
-    if (err.response.statusText === 'Unauthorized') {
-      dispatch(authError('Session has expired, Please Login again'));
-    }
-    return browserHistory.push('/');
-  });
-};
-
