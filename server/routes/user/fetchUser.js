@@ -10,6 +10,6 @@ export default (req, res) => {
     res.status(200).json({ user: response.data });
   })
   .catch((err) => {
-    res.status(401).json({ error: err.response.data.error });
+    res.status(err.response.status).json({ error: err.response.data.error });
   });
 };

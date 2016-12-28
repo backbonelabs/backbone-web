@@ -15,12 +15,7 @@ export default (req, res) => {
       createToken(response.data, res);
     })
     .catch((err) => {
-      // Bad Request: Password must be 8+ characters
-      if (err.response.status === 400) {
-        return res.status(400).json({ error: err.response.data.error });
-      }
-      // Unauthorized: invalid login credentials
-      res.status(401).json({ error: err.response.data.error });
+      res.status(err.response.status).json({ error: err.response.data.error });
     });
 };
 
