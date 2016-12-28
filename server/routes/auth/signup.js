@@ -6,7 +6,7 @@ export default (req, res) => {
   const password = req.body.password;
 
   if (!email || !password) {
-    return res.status(422).send({ error: 'All fields must be filled out' });
+    return res.status(400).send({ error: 'All fields must be filled out' });
   }
 
   post(`${process.env.API_SERVER_URL}/users`, req.body)
