@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions/auth';
+import { bindActionCreators } from 'redux';
+import * as authActions from '../actions/auth';
+import * as userActions from '../actions/user';
 
 export default function (ComposedComponent) {
   class Authentication extends Component {
@@ -9,15 +11,21 @@ export default function (ComposedComponent) {
     }
 
     static propTypes = {
-      isAuthenticated: PropTypes.func.isRequired,
+      auth: PropTypes.shape({
+        authenticated: PropTypes.bool,
+      }),
     }
 
     componentWillMount() {
-      const token = localStorage.getItem('jwt');
+      this.checkAuth(this.props.auth.authenticated);
+    }
 
-      if (token) {
-        this.props.isAuthenticated(token);
-      } else {
+    componentWillReceiveProps(nextProps) {
+      this.checkAuth(nextProps.auth.authenticated);
+    }
+
+    checkAuth(authenticated) {
+      if (!authenticated) {
         this.context.router.push('/');
       }
     }
@@ -29,10 +37,14 @@ export default function (ComposedComponent) {
     }
   }
 
-
   const mapStateToProps = state => ({
     auth: state.auth,
   });
 
-  return connect(mapStateToProps, actions)(Authentication);
+  const mapDispatchToProps = dispatch => ({
+    authActions: bindActionCreators(authActions, dispatch),
+    userActions: bindActionCreators(userActions, dispatch),
+  });
+
+  return connect(mapStateToProps, mapDispatchToProps)(Authentication);
 }

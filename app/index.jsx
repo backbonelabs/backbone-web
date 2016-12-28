@@ -23,10 +23,10 @@ const store = createStore(
   applyMiddleware(ReduxThunk),
 );
 
-// Check if there is a token and if it's valid
+// Check if there is a token
 const token = localStorage.getItem('jwt');
 if (token !== null) {
-  store.dispatch(isAuthenticated(token));
+  store.dispatch(isAuthenticated());
 }
 
 const rootEl = document.getElementById('root');

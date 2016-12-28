@@ -1,5 +1,17 @@
+import {
+  LOGIN_USER,
+  AUTHENTICATED,
+  LOGOUT,
+  IN_PROGRESS,
+  LOGIN_ERROR,
+  SIGNUP_ERROR,
+  AUTH_ERROR,
+  CLEAR_ERRORS,
+ } from '../actions/types';
+
 const initialState = {
   user: {},
+  authenticated: false,
   inProgress: false,
   loginError: '',
   signupError: '',
@@ -9,51 +21,55 @@ const initialState = {
 export default (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-    case 'LOGIN_USER':
+    case LOGIN_USER:
       return {
         ...state,
+        authenticated: true,
         user: payload,
         inProgress: false,
         loginError: '',
         signupError: '',
         authError: '',
       };
-    case 'LOGOUT':
+    case AUTHENTICATED:
       return {
         ...state,
+        authenticated: true,
+      };
+    case LOGOUT:
+      return {
+        ...state,
+        authenticated: false,
         user: {},
         inProgress: false,
         loginError: '',
         signupError: '',
         authError: '',
       };
-    case 'IN_PROGRESS':
+    case IN_PROGRESS:
       return {
         ...state,
         inProgress: true,
       };
-    case 'LOGIN_ERROR':
+    case LOGIN_ERROR:
       return {
         ...state,
-        user: {},
         loginError: payload,
         inProgress: false,
       };
-    case 'SIGNUP_ERROR':
+    case SIGNUP_ERROR:
       return {
         ...state,
-        user: {},
         signupError: payload,
         inProgress: false,
       };
-    case 'AUTH_ERROR':
+    case AUTH_ERROR:
       return {
         ...state,
-        user: {},
         authError: payload,
         inProgress: false,
       };
-    case 'CLEAR_ERRORS':
+    case CLEAR_ERRORS:
       return {
         ...state,
         signupError: '',

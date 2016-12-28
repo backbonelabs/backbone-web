@@ -3,14 +3,14 @@ import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
 import { Link } from 'react-router';
 import FlatButton from 'material-ui/FlatButton';
 import { connect } from 'react-redux';
-import * as actions from '../../actions/auth';
+import * as authActions from '../../actions/auth';
 
 import './Navbar.scss';
 
 const Navbar = (props) => {
   let loginBtn;
 
-  if (props.auth.user._id) {
+  if (props.auth.authenticated) {
     loginBtn = (
       <FlatButton onClick={props.logOut} label="Log Out" hoverColor="#F44336" />
     );
@@ -39,7 +39,7 @@ const Navbar = (props) => {
 
 Navbar.propTypes = {
   auth: PropTypes.shape({
-    user: PropTypes.object,
+    authenticated: PropTypes.bool,
   }),
   logOut: PropTypes.func,
 };
@@ -48,4 +48,4 @@ const mapStateToProps = state => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, actions)(Navbar);
+export default connect(mapStateToProps, authActions)(Navbar);
