@@ -5,7 +5,7 @@ import * as authActions from '../actions/auth';
 import * as userActions from '../actions/user';
 
 export default function (ComposedComponent) {
-  class Authentication extends Component {
+  class RequireAuth extends Component {
 
     static propTypes = {
       auth: PropTypes.shape({
@@ -53,5 +53,5 @@ export default function (ComposedComponent) {
     userActions: bindActionCreators(userActions, dispatch),
   });
 
-  return connect(mapStateToProps, mapDispatchToProps)(Authentication);
+  return connect(mapStateToProps, mapDispatchToProps)(RequireAuth);
 }
