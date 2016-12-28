@@ -94,7 +94,7 @@ class Login extends Component {
     }
     return (
       <div className="signup-container">
-        { auth.loginRedirectUrl ?
+        { (auth.loginRedirectUrl !== '/') ?
           <h1 className="continue-header">Please log in to continue.</h1> : null }
         <Form onSubmit={this.handleOnSubmit}>
           <div className="signup-logo-container">
