@@ -83,7 +83,7 @@ class Signup extends Component {
     if (password === confirmPassword) {
       return this.props.signup({ email: lowerCaseEmail, password });
     }
-    this.setState({ confirmPasswordError: 'Password and ConfirmPassword do not match' });
+    this.setState({ confirmPasswordError: 'Password and Confirm Password do not match' });
   }
 
   render() {
@@ -101,7 +101,7 @@ class Signup extends Component {
     let emailWarning;
     let passwordWarning;
     if (!emailPristine) {
-      emailWarning = validEmail ? null : 'Please Enter a Valid Email Address';
+      emailWarning = validEmail ? null : 'Please enter a valid email address';
     }
     if (!passwordPristine) {
       passwordWarning = validPassword ? '' : 'Password must be at least 8 characters';

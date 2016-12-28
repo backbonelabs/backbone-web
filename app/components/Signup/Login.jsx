@@ -87,7 +87,7 @@ class Login extends Component {
     let emailWarning;
     let passwordWarning;
     if (!emailPristine) {
-      emailWarning = validEmail ? null : 'Please Enter a Valid Email Address';
+      emailWarning = validEmail ? null : 'Please enter a valid email address';
     }
     if (!passwordPristine) {
       passwordWarning = validPassword ? '' : 'Password must be at least 8 characters';
@@ -142,7 +142,7 @@ class Login extends Component {
               <p>Don't have an account?
                 <Link to="/signup" className="signup-link"> Sign Up</Link>
               </p>
-              <Link to="password-reset" className="forgot-password">
+              <Link to="/password-reset" className="forgot-password">
                 <p><small>Forgot Your Password?</small></p>
               </Link>
             </div>
