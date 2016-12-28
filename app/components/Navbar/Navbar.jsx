@@ -21,7 +21,6 @@ const Navbar = (props) => {
       </Link>
     );
   }
-
   return (
     <Toolbar className="navBar">
       <ToolbarGroup />

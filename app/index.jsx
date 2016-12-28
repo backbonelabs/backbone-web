@@ -2,14 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';
 import { AppContainer } from 'react-hot-loader';
-import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import ReduxThunk from 'redux-thunk';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import routes from './routes';
-import reducers from './reducers';
 import { isAuthenticated } from './actions/auth';
+import store from './store';
 
 import './global.scss';
 
@@ -17,14 +15,8 @@ import './global.scss';
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
 
-// create store for redux
-const store = createStore(
-  reducers,
-  applyMiddleware(ReduxThunk),
-);
-
 // Check if there is a token
-const token = localStorage.getItem('jwt');
+const token = localStorage.getItem('sessionId');
 if (token !== null) {
   store.dispatch(isAuthenticated());
 }

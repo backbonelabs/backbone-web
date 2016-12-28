@@ -2,23 +2,25 @@ import {
   LOGIN_USER,
   AUTHENTICATED,
   LOGOUT,
-  IN_PROGRESS,
+  LOGIN_USER__START,
   LOGIN_ERROR,
   SIGNUP_ERROR,
   AUTH_ERROR,
   CLEAR_ERRORS,
+  LOGIN_REDIRECT,
  } from '../actions/types';
 
-const initialState = {
+const authState = {
   user: {},
   authenticated: false,
   inProgress: false,
   loginError: '',
   signupError: '',
   authError: '',
+  loginRedirectUrl: '/',
 };
 
-export default (state = initialState, action) => {
+export default (state = authState, action) => {
   const { type, payload } = action;
   switch (type) {
     case LOGIN_USER:
@@ -30,6 +32,7 @@ export default (state = initialState, action) => {
         loginError: '',
         signupError: '',
         authError: '',
+        loginRedirectUrl: '/',
       };
     case AUTHENTICATED:
       return {
@@ -45,8 +48,9 @@ export default (state = initialState, action) => {
         loginError: '',
         signupError: '',
         authError: '',
+        loginRedirectUrl: '/',
       };
-    case IN_PROGRESS:
+    case LOGIN_USER__START:
       return {
         ...state,
         inProgress: true,
@@ -75,6 +79,11 @@ export default (state = initialState, action) => {
         signupError: '',
         loginError: '',
         authError: '',
+      };
+    case LOGIN_REDIRECT:
+      return {
+        ...state,
+        loginRedirectUrl: payload,
       };
     default:
       return state;

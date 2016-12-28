@@ -14,6 +14,12 @@ export default function (ComposedComponent) {
       router: PropTypes.shape({
         push: PropTypes.func,
       }),
+      location: PropTypes.shape({
+        pathname: PropTypes.string,
+      }),
+      authActions: PropTypes.shape({
+        loginRedirect: PropTypes.func,
+      }),
     }
 
     componentWillMount() {
@@ -26,7 +32,8 @@ export default function (ComposedComponent) {
 
     checkAuth(authenticated) {
       if (!authenticated) {
-        this.props.router.push('/');
+        this.props.authActions.loginRedirect(this.props.location.pathname);
+        this.props.router.push('/login');
       }
     }
 

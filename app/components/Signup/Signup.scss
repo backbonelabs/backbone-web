@@ -5,6 +5,11 @@
   align-items: center;
   justify-content: center;
   margin-top: 35px;
+  flex-direction: column;
+}
+
+.continue-header {
+  margin-top: 0;
 }
 
 .signup-header {

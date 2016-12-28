@@ -21,6 +21,7 @@ class Login extends Component {
     auth: PropTypes.shape({
       loginError: PropTypes.string,
       inProgress: PropTypes.bool,
+      loginRedirectUrl: PropTypes.string,
     }),
   }
 
@@ -74,8 +75,9 @@ class Login extends Component {
   handleOnSubmit(evt) {
     evt.preventDefault();
     const { email, password } = this.state;
+    const { loginRedirectUrl } = this.props.auth;
     const lowerCaseEmail = email.toLowerCase().trim();
-    this.props.login({ email: lowerCaseEmail, password });
+    this.props.login({ email: lowerCaseEmail, password }, loginRedirectUrl);
   }
 
   render() {
@@ -90,9 +92,10 @@ class Login extends Component {
     if (!passwordPristine) {
       passwordWarning = validPassword ? '' : 'Password must be at least 8 characters';
     }
-
     return (
       <div className="signup-container">
+        { auth.loginRedirectUrl ?
+          <h1 className="continue-header">Please log in to continue.</h1> : null }
         <Form onSubmit={this.handleOnSubmit}>
           <div className="signup-logo-container">
             <img src={Logo} role="presentation" />
