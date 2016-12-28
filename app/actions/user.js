@@ -18,6 +18,6 @@ export const fetchUser = () => (dispatch) => {
     if (err.response.statusText === 'Unauthorized') {
       dispatch(authActions.authError('Session has expired, Please Login again'));
     }
-    return browserHistory.push('/');
+    return browserHistory.push('/login');
   });
 };
