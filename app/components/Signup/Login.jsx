@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import autobind from 'autobind-decorator';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
@@ -35,12 +36,7 @@ class Login extends Component {
       emailPristine: true,
       passwordPristine: true,
     };
-
-    this.onEmailChange = this.onEmailChange.bind(this);
-    this.onPasswordChange = this.onPasswordChange.bind(this);
-    this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
-
 
   componentWillMount() {
     // clear any error in the reducer,
@@ -48,6 +44,7 @@ class Login extends Component {
     this.props.clearErrors();
   }
 
+  @autobind
   onEmailChange(evt) {
     const stateChanges = {
       validEmail: constants.emailRegex.test(evt.target.value.trim()),
@@ -61,6 +58,7 @@ class Login extends Component {
     this.setState(stateChanges);
   }
 
+  @autobind
   onPasswordChange(evt) {
     if (this.state.passwordPristine) {
       return this.setState({
@@ -72,6 +70,7 @@ class Login extends Component {
     return this.setState({ password: evt.target.value });
   }
 
+  @autobind
   handleOnSubmit(evt) {
     evt.preventDefault();
     const { email, password } = this.state;

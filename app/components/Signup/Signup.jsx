@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import autobind from 'autobind-decorator';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
@@ -34,11 +35,6 @@ class Signup extends Component {
       emailPristine: true,
       passwordPristine: true,
     };
-
-    this.onEmailChange = this.onEmailChange.bind(this);
-    this.onPasswordChange = this.onPasswordChange.bind(this);
-    this.onConfirmPasswordChange = this.onConfirmPasswordChange.bind(this);
-    this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
 
   componentWillMount() {
@@ -47,6 +43,7 @@ class Signup extends Component {
     this.props.clearErrors();
   }
 
+  @autobind
   onEmailChange(evt) {
     const stateChanges = {
       validEmail: constants.emailRegex.test(evt.target.value.trim()),
@@ -60,6 +57,7 @@ class Signup extends Component {
     this.setState(stateChanges);
   }
 
+  @autobind
   onPasswordChange(evt) {
     if (this.state.passwordPristine) {
       return this.setState({
@@ -71,10 +69,12 @@ class Signup extends Component {
     return this.setState({ password: evt.target.value });
   }
 
+  @autobind
   onConfirmPasswordChange(evt) {
     this.setState({ confirmPassword: evt.target.value });
   }
 
+  @autobind
   handleOnSubmit(evt) {
     evt.preventDefault();
     const { email, password, confirmPassword } = this.state;
