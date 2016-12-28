@@ -12,8 +12,7 @@ export default (req, res) => {
   post(`${process.env.API_SERVER_URL}/auth/login`, req.body)
     .then((response) => {
       // create jwt token and send with user data
-      const token = createToken({ _id: response.data._id, accessToken: response.data.accessToken });
-      res.status(200).json({ user: response.data, token });
+      createToken(response.data, res);
     })
     .catch((err) => {
       // Bad Request: Password must be 8+ characters

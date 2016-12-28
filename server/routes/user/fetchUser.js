@@ -1,19 +1,9 @@
 import { get } from 'axios';
-import jwt from 'jsonwebtoken';
-import serverConfig from '../../config';
 
 export default (req, res) => {
-  const token = req.headers.authorization;
-
-  if (!token) {
-    return res.sendStatus(401);
-  }
-
-  const decoded = jwt.verify(token.replace('Bearer ', ''), serverConfig.secretKey);
-
-  get(`${process.env.API_SERVER_URL}/users/${decoded._id}`, {
+  get(`${process.env.API_SERVER_URL}/users/${req.user._id}`, {
     headers: {
-      Authorization: `Bearer ${decoded.accessToken}`,
+      Authorization: `Bearer ${req.user.accessToken}`,
     },
   })
   .then((response) => {
