@@ -6,13 +6,13 @@ import * as userActions from '../actions/user';
 
 export default function (ComposedComponent) {
   class Authentication extends Component {
-    static contextTypes = {
-      router: PropTypes.object,
-    }
 
     static propTypes = {
       auth: PropTypes.shape({
         authenticated: PropTypes.bool,
+      }),
+      router: PropTypes.shape({
+        push: PropTypes.func,
       }),
     }
 
@@ -26,13 +26,13 @@ export default function (ComposedComponent) {
 
     checkAuth(authenticated) {
       if (!authenticated) {
-        this.context.router.push('/');
+        this.props.router.push('/');
       }
     }
 
     render() {
       return (
-        <ComposedComponent {...this.props} />
+        this.props.auth.authenticated && <ComposedComponent {...this.props} />
       );
     }
   }
