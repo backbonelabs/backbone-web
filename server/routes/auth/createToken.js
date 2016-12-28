@@ -9,10 +9,11 @@ export default (user, res) => {
   }, serverConfig.secretKey, {
     expiresIn: '1h',
   }, (error, jwtToken) => {
+    const { accessToken, ...userData } = user; // eslint-disable-line
     if (error) {
       return res.status(400).json({ error });
     }
 
-    return res.status(200).json({ user, token: jwtToken });
+    return res.status(200).json({ user: userData, token: jwtToken });
   });
 };
