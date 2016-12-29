@@ -20,7 +20,7 @@ class Login extends Component {
     login: PropTypes.func,
     clearErrors: PropTypes.func,
     auth: PropTypes.shape({
-      loginError: PropTypes.string,
+      loginError: PropTypes.object,
       inProgress: PropTypes.bool,
       loginRedirectUrl: PropTypes.string,
     }),
@@ -91,6 +91,7 @@ class Login extends Component {
     if (!passwordPristine) {
       passwordWarning = validPassword ? '' : 'Password must be at least 8 characters';
     }
+    console.log(auth.loginRedirectUrl);
     return (
       <div className="signup-container">
         { (auth.loginRedirectUrl !== '/') ?
@@ -119,7 +120,7 @@ class Login extends Component {
               floatingLabelText="Password"
               type="password"
               onChange={this.onPasswordChange}
-              errorText={auth.loginError || passwordWarning}
+              errorText={auth.loginError.message || passwordWarning}
               errorStyle={{ textAlign: 'center' }}
             />
             { this.props.auth.inProgress ?

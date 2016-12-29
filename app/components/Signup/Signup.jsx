@@ -18,7 +18,7 @@ class Signup extends Component {
     signup: PropTypes.func,
     clearErrors: PropTypes.func,
     auth: PropTypes.shape({
-      signupError: PropTypes.string,
+      signupError: PropTypes.object,
       inProgress: PropTypes.bool,
     }),
   }
@@ -123,7 +123,7 @@ class Signup extends Component {
               underlineFocusStyle={{ borderColor: grey900 }}
               floatingLabelText="Email"
               onChange={this.onEmailChange}
-              errorText={auth.signupError || emailWarning}
+              errorText={auth.signupError.message || emailWarning}
               errorStyle={{ textAlign: 'center' }}
             />
             <TextField
