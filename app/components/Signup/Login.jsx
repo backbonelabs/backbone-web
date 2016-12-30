@@ -75,8 +75,7 @@ class Login extends Component {
     evt.preventDefault();
     const { email, password } = this.state;
     const { loginRedirectUrl } = this.props.auth;
-    const lowerCaseEmail = email.toLowerCase().trim();
-    this.props.login({ email: lowerCaseEmail, password }, loginRedirectUrl);
+    this.props.login({ email: email.trim(), password }, loginRedirectUrl);
   }
 
   render() {

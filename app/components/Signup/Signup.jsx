@@ -78,10 +78,8 @@ class Signup extends Component {
   handleOnSubmit(evt) {
     evt.preventDefault();
     const { email, password, confirmPassword } = this.state;
-    const lowerCaseEmail = email.toLowerCase().trim();
-
     if (password === confirmPassword) {
-      return this.props.signup({ email: lowerCaseEmail, password });
+      return this.props.signup({ email: email.trim(), password });
     }
     this.setState({ confirmPasswordError: 'Password and Confirm Password do not match' });
   }
