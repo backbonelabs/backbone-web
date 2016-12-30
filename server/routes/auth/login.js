@@ -18,7 +18,7 @@ export default (req, res) => {
       createToken(response.data, (error, token) => {
         if (error) {
           debug('Error signing JWT', req.body, error);
-          return res.status(500);
+          return res.sendStatus(500);
         }
         const { accessToken, ...userData } = response.data; // eslint-disable-line
         return res.status(200).json({ user: userData, token });
