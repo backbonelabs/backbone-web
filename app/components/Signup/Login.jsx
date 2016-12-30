@@ -91,7 +91,7 @@ class Login extends Component {
     if (!passwordPristine) {
       passwordWarning = validPassword ? '' : 'Password must be at least 8 characters';
     }
-    console.log(auth.loginRedirectUrl);
+
     return (
       <div className="signup-container">
         { (auth.loginRedirectUrl !== '/') ?

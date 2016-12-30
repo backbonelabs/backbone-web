@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import routes from './routes';
-import { isAuthenticated } from './actions/auth';
+import { fetchUser } from './actions/user';
 import store from './store';
 
 import './global.scss';
@@ -18,7 +18,7 @@ injectTapEventPlugin();
 // Check if there is a token
 const token = localStorage.getItem('sessionId');
 if (token !== null) {
-  store.dispatch(isAuthenticated());
+  store.dispatch(fetchUser());
 }
 
 const rootEl = document.getElementById('root');

@@ -17,6 +17,7 @@ export const fetchUser = () => ({
       store.dispatch(authActions.loginUser(res.data.user));
     })
     .catch((err) => {
+      localStorage.removeItem('sessionId');
       throw new Error(err.response.data.error || err.message);
     });
   },
