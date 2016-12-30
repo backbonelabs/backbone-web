@@ -1,5 +1,4 @@
 // Auth types
-export const AUTHENTICATED = 'AUTHENTICATED';
 export const LOGIN_USER = 'LOGIN_USER';
 export const LOGIN = 'LOGIN';
 export const LOGIN__START = 'LOGIN__START';

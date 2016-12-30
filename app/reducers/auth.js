@@ -1,6 +1,5 @@
 import {
   LOGIN_USER,
-  AUTHENTICATED,
   LOGOUT,
   LOGIN__START,
   LOGIN__ERROR,
@@ -35,11 +34,6 @@ export default (state = authState, action) => {
         signupError: {},
         fetchUserError: {},
         loginRedirectUrl: '/',
-      };
-    case AUTHENTICATED:
-      return {
-        ...state,
-        authenticated: true,
       };
     case LOGOUT:
       return {

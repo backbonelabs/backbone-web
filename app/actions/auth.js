@@ -2,7 +2,6 @@ import { post } from 'axios';
 import { browserHistory } from 'react-router';
 import {
   LOGIN_USER,
-  AUTHENTICATED,
   LOGOUT,
   CLEAR_ERRORS,
   LOGIN_REDIRECT,
@@ -12,7 +11,6 @@ import {
 import store from '../store';
 
 export const loginUser = payload => ({ type: LOGIN_USER, payload });
-export const isAuthenticated = () => ({ type: AUTHENTICATED });
 export const clearErrors = () => ({ type: CLEAR_ERRORS });
 export const loginRedirect = payload => ({ type: LOGIN_REDIRECT, payload });
 
