@@ -8,5 +8,6 @@ export default (user, callback) => {
     accessToken: user.accessToken,
   }, serverConfig.secretKey, {
     expiresIn: '1h',
-  }, callback.bind(this));
+  }, callback);
 };
+
