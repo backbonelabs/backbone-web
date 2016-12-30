@@ -15,13 +15,13 @@ export default (req, res) => {
   post(`${process.env.API_SERVER_URL}/users`, req.body)
     .then((response) => {
       // create jwt token and send with user data
-      createToken(response.data.user, (error, token) => {
+      const userData = { ...response.data.user, accessToken: response.data.accessToken };
+      createToken(userData, (error, token) => {
         if (error) {
           debug('Error signing JWT', req.body, error);
           return res.status(500);
         }
-        const { accessToken, ...userData } = response.data.user; // eslint-disable-line
-        return res.status(200).json({ user: userData, token });
+        return res.status(200).json({ user: response.data.user, token });
       });
     })
     .catch((err) => {
