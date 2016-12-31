@@ -2,10 +2,10 @@ import jwt from 'jsonwebtoken';
 import serverConfig from '../../config';
 
 // create jwt token
-export default (user, callback) => {
+export default (_id, accessToken, callback) => {
   jwt.sign({
-    _id: user._id,
-    accessToken: user.accessToken,
+    _id,
+    accessToken,
   }, serverConfig.secretKey, {
     expiresIn: '1h',
   }, callback);

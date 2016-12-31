@@ -15,8 +15,8 @@ export default (req, res) => {
   post(`${process.env.API_SERVER_URL}/users`, req.body)
     .then((response) => {
       // create jwt token and send with user data
-      const user = { ...response.data.user, accessToken: response.data.accessToken };
-      createToken(user, (error, token) => {
+      const { user, accessToken } = response.data;
+      createToken(user, accessToken, (error, token) => {
         if (error) {
           debug('Error signing JWT', req.body, error);
           return res.sendStatus(500);
