@@ -16,7 +16,7 @@ export default (req, res) => {
     .then((response) => {
       // create jwt token and send with user data
       const { user, accessToken } = response.data;
-      createToken(user, accessToken, (error, token) => {
+      createToken(user._id, accessToken, (error, token) => {
         if (error) {
           debug('Error signing JWT', req.body, error);
           return res.sendStatus(500);
