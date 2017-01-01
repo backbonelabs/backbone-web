@@ -84,7 +84,6 @@ export default (state = authState, action) => {
       return {
         ...state,
         inProgress: true,
-        authenticated: true,
       };
     case FETCH_USER__ERROR:
       return {
