@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react';
 import { Route, Router, IndexRoute } from 'react-router';
-import store from './store';
-import { loginRedirect } from './actions/auth';
 
 // routes
 import App from './components/App';
@@ -11,17 +9,7 @@ import PasswordReset from './components/PasswordReset/PasswordReset';
 import Home from './components/Home/Home';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import NotFound from './components/NotFound/NotFound';
-
-const requireAuth = (nextState, replace) => {
-  // If there is no token present, redirect to login
-  if (!localStorage.getItem('sessionId')) {
-    store.dispatch(loginRedirect(nextState.location.pathname));
-    replace({
-      pathname: '/login',
-      state: { nextPathname: nextState.location.pathname },
-    });
-  }
-};
+import RequireAuth from './components/RequireAuth';
 
 const appRoutes = (
   <Route path="/" component={App}>
@@ -29,7 +17,7 @@ const appRoutes = (
     <Route path="/signup" component={Signup} />
     <Route path="/login" component={Login} />
     <Route path="/password-reset" component={PasswordReset} />
-    <Route path="/protected-route" component={ProtectedRoute} onEnter={requireAuth} />
+    <Route path="/protected-route" component={RequireAuth(ProtectedRoute)} />
     <Route path="*" component={NotFound} />
   </Route>
 );
