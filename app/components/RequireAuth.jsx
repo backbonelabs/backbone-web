@@ -8,10 +8,6 @@ import * as userActions from '../actions/user';
 
 export default function (ComposedComponent) {
   class RequireAuth extends Component {
-    static contextTypes = {
-      router: PropTypes.object,
-    }
-
     static propTypes = {
       auth: PropTypes.shape({
         authenticated: PropTypes.bool,
