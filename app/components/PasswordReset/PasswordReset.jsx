@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import autobind from 'autobind-decorator';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { red500 } from 'material-ui/styles/colors';
@@ -13,10 +14,9 @@ class PasswordReset extends Component {
     this.state = {
       email: '',
     };
-
-    this.handleOnChange = this.handleOnChange.bind(this);
   }
 
+  @autobind
   handleOnChange(evt) {
     this.setState({ email: evt.target.value });
   }
