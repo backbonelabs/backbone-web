@@ -141,7 +141,7 @@ class Login extends Component {
               <p>Don't have an account?
                 <Link to="/signup" className="signup-link"> Sign Up</Link>
               </p>
-              <Link to="/password-reset" className="forgot-password">
+              <Link to="/request-reset" className="forgot-password">
                 <p>Forgot Your Password?</p>
               </Link>
             </div>
