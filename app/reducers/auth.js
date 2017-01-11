@@ -12,6 +12,7 @@ import {
   REQUEST_RESET__START,
   REQUEST_RESET__ERROR,
   REQUEST_RESET,
+  PASSWORD_RESET,
   PASSWORD_RESET__START,
   PASSWORD_RESET__ERROR,
  } from '../actions/types';
@@ -117,6 +118,11 @@ export default (state = authState, action) => {
         inProgress: false,
       };
     case REQUEST_RESET:
+      return {
+        ...state,
+        inProgress: false,
+      };
+    case PASSWORD_RESET:
       return {
         ...state,
         inProgress: false,
