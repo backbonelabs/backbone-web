@@ -54,31 +54,33 @@ class RequestReset extends Component {
               instructions on how to change your password.
             </p>
           </div>
-          <TextField
-            className="reset-input"
-            floatingLabelFocusStyle={{ color: grey900 }}
-            underlineFocusStyle={{ borderColor: grey900 }}
-            floatingLabelText="Email"
-            name="email"
-            onChange={this.handleOnChange}
-            errorText={this.props.auth.requestResetError.message}
-            errorStyle={{ textAlign: 'center' }}
-          />
-          { this.props.auth.inProgress ?
-            <CircularProgress
-              className="reset-btn"
-              color={red500}
-              size={30}
-            /> :
-            <RaisedButton
-              label="Submit"
-              className="reset-btn"
-              backgroundColor={red500}
-              labelColor="#FFF"
-              type="submit"
-              disabled={!this.state.email || !this.state.validEmail}
+          <div className="password-reset-input-container">
+            <TextField
+              className="reset-input"
+              floatingLabelFocusStyle={{ color: grey900 }}
+              underlineFocusStyle={{ borderColor: grey900 }}
+              floatingLabelText="Email"
+              name="email"
+              onChange={this.handleOnChange}
+              errorText={this.props.auth.requestResetError.message}
+              errorStyle={{ textAlign: 'center' }}
             />
-          }
+            { this.props.auth.inProgress ?
+              <CircularProgress
+                className="reset-btn"
+                color={red500}
+                size={30}
+              /> :
+              <RaisedButton
+                label="Submit"
+                className="reset-btn"
+                backgroundColor={red500}
+                labelColor="#FFF"
+                type="submit"
+                disabled={!this.state.email || !this.state.validEmail}
+              />
+            }
+          </div>
         </Form>
       </div>
     );
