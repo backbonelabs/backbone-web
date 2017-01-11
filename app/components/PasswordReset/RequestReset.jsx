@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import autobind from 'autobind-decorator';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import { red500 } from 'material-ui/styles/colors';
+import { red500, grey900 } from 'material-ui/styles/colors';
 import { connect } from 'react-redux';
 import CircularProgress from 'material-ui/CircularProgress';
 import Form from '../common/Form/Form';
@@ -56,8 +56,8 @@ class RequestReset extends Component {
           </div>
           <TextField
             className="reset-input"
-            floatingLabelFocusStyle={{ color: red500 }}
-            underlineFocusStyle={{ borderColor: red500 }}
+            floatingLabelFocusStyle={{ color: grey900 }}
+            underlineFocusStyle={{ borderColor: grey900 }}
             floatingLabelText="Email"
             name="email"
             onChange={this.handleOnChange}

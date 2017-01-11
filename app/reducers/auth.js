@@ -12,6 +12,8 @@ import {
   REQUEST_RESET__START,
   REQUEST_RESET__ERROR,
   REQUEST_RESET,
+  PASSWORD_RESET__START,
+  PASSWORD_RESET__ERROR,
  } from '../actions/types';
 
 const authState = {
@@ -22,6 +24,7 @@ const authState = {
   signupError: {},
   fetchUserError: {},
   requestResetError: {},
+  passwordResetError: {},
   loginRedirectUrl: '/',
 };
 
@@ -38,6 +41,7 @@ export default (state = authState, action) => {
         signupError: {},
         fetchUserError: {},
         requestResetError: {},
+        passwordResetError: {},
         loginRedirectUrl: '/',
       };
     case LOGOUT:
@@ -50,6 +54,7 @@ export default (state = authState, action) => {
         signupError: {},
         fetchUserError: {},
         requestResetError: {},
+        passwordResetError: {},
         loginRedirectUrl: '/',
       };
     case LOGIN__START:
@@ -80,6 +85,8 @@ export default (state = authState, action) => {
         loginError: {},
         signupError: {},
         fetchUserError: {},
+        requestResetError: {},
+        passwordResetError: {},
       };
     case LOGIN_REDIRECT:
       return {
@@ -113,6 +120,17 @@ export default (state = authState, action) => {
       return {
         ...state,
         inProgress: false,
+      };
+    case PASSWORD_RESET__START:
+      return {
+        ...state,
+        inProgress: true,
+      };
+    case PASSWORD_RESET__ERROR:
+      return {
+        ...state,
+        inProgress: false,
+        passwordResetError: payload,
       };
     default:
       return state;
