@@ -9,6 +9,9 @@ import {
   LOGIN_REDIRECT,
   FETCH_USER__START,
   FETCH_USER__ERROR,
+  REQUEST_RESET__START,
+  REQUEST_RESET__ERROR,
+  REQUEST_RESET,
  } from '../actions/types';
 
 const authState = {
@@ -18,6 +21,7 @@ const authState = {
   loginError: {},
   signupError: {},
   fetchUserError: {},
+  requestResetError: {},
   loginRedirectUrl: '/',
 };
 
@@ -33,6 +37,7 @@ export default (state = authState, action) => {
         loginError: {},
         signupError: {},
         fetchUserError: {},
+        requestResetError: {},
         loginRedirectUrl: '/',
       };
     case LOGOUT:
@@ -44,6 +49,7 @@ export default (state = authState, action) => {
         loginError: {},
         signupError: {},
         fetchUserError: {},
+        requestResetError: {},
         loginRedirectUrl: '/',
       };
     case LOGIN__START:
@@ -91,6 +97,22 @@ export default (state = authState, action) => {
         inProgress: false,
         fetchUserError: payload,
         authenticated: false,
+      };
+    case REQUEST_RESET__START:
+      return {
+        ...state,
+        inProgress: true,
+      };
+    case REQUEST_RESET__ERROR:
+      return {
+        ...state,
+        requestResetError: payload,
+        inProgress: false,
+      };
+    case REQUEST_RESET:
+      return {
+        ...state,
+        inProgress: false,
       };
     default:
       return state;

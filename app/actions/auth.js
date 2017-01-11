@@ -7,6 +7,7 @@ import {
   LOGIN_REDIRECT,
   LOGIN,
   SIGN_UP,
+  REQUEST_RESET,
  } from '../actions/types';
 import store from '../store';
 
@@ -49,6 +50,19 @@ export const signup = user => ({
         // login user and redirect home
         store.dispatch(loginUser(res.data.user));
         browserHistory.push('/');
+      })
+      .catch((err) => {
+        throw new Error(err.response.data.error || err.message);
+      });
+  },
+});
+
+export const requestReset = email => ({
+  type: REQUEST_RESET,
+  payload() {
+    return post('/auth/request-reset', email)
+      .then(() => {
+        browserHistory.push('/request-reset/sent');
       })
       .catch((err) => {
         throw new Error(err.response.data.error || err.message);
