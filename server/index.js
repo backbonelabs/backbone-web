@@ -59,7 +59,9 @@ app.use(express.static(path.join(__dirname, '../build')));
 
 // Protect end points unless it's in the path Array
 app.use('/auth',
-  expressJwt({ secret: serverConfig.secretKey }).unless({ path: ['/auth/login', '/auth/signup'] }),
+  expressJwt({ secret: serverConfig.secretKey }).unless({
+    path: ['/auth/login', '/auth/signup', '/auth/request-reset'],
+  }),
 );
 app.use('/user', expressJwt({ secret: serverConfig.secretKey }));
 
