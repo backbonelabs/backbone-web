@@ -141,12 +141,14 @@ class Login extends Component {
               <p>Don't have an account?&nbsp;
                 <Link to="/signup" className="auth-container__footer-primary-link">Sign Up</Link>
               </p>
-              <Link
-                to="/password-reset"
-                className="auth-container__footer-secondary-link secondary-text"
-              >
-                Forgot Your Password?
-              </Link>
+              <p>
+                <Link
+                  to="/password-reset"
+                  className="auth-container__footer-secondary-link secondary-text"
+                >
+                  Forgot Your Password?
+                </Link>
+              </p>
             </div>
           </div>
         </Form>

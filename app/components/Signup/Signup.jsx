@@ -164,8 +164,10 @@ class Signup extends Component {
               />
             }
             <div className="auth-container__footer">
-              Already signed up?&nbsp;
+              <p>
+                Already signed up?&nbsp;
                 <Link to="/login" className="auth-container__footer-primary-link">Log In</Link>
+              </p>
             </div>
           </div>
         </Form>
