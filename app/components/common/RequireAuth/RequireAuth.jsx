@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import CircularProgress from 'material-ui/CircularProgress';
 import { red500 } from 'material-ui/styles/colors';
 import { bindActionCreators } from 'redux';
-import * as authActions from '../actions/auth';
-import * as userActions from '../actions/user';
+import * as authActions from '../../../actions/auth';
+import * as userActions from '../../../actions/user';
+import './RequireAuth';
 
 export default function (ComposedComponent) {
   class RequireAuth extends Component {
@@ -45,7 +46,7 @@ export default function (ComposedComponent) {
     render() {
       if (this.props.auth.inProgress) {
         return (
-          <div className="requireAuth_spinner">
+          <div className="require-auth-spinner">
             <CircularProgress color={red500} size={60} thickness={7} />
           </div>
         );

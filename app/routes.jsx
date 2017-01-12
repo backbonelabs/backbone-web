@@ -9,7 +9,7 @@ import PasswordReset from './components/Auth/PasswordReset';
 import Home from './components/Home/Home';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import NotFound from './components/NotFound/NotFound';
-import RequireAuth from './components/RequireAuth';
+import RequireAuth from './components/common/RequireAuth/RequireAuth';
 
 const appRoutes = (
   <Route path="/" component={App}>
