@@ -6,7 +6,7 @@ import { red500 } from 'material-ui/styles/colors';
 import Form from '../common/Form/Form';
 import Logo from '../../public/images/Logo.png';
 
-import '../Signup/Signup.scss';
+import './auth.scss';
 
 class PasswordReset extends Component {
   constructor() {

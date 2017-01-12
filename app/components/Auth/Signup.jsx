@@ -11,7 +11,7 @@ import Form from '../common/Form/Form';
 import constants from '../../utils/constants';
 
 import * as actions from '../../actions/auth';
-import './Signup.scss';
+import './auth.scss';
 
 class Signup extends Component {
   static propTypes = {

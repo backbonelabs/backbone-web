@@ -13,7 +13,7 @@ import Logo from '../../public/images/Logo.png';
 import Form from '../common/Form/Form';
 import constants from '../../utils/constants';
 
-import './Signup.scss';
+import './auth.scss';
 
 class Login extends Component {
   static propTypes = {
