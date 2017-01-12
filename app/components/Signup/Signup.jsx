@@ -107,13 +107,13 @@ class Signup extends Component {
 
     return (
       <div className="auth-container">
-        <Form onSubmit={this.handleOnSubmit}>
+        <div className="auth-container__header">
+          <h2>Sign Up</h2>
           <div className="auth-container__logo">
             <img src={Logo} role="presentation" />
           </div>
-          <div className="auth-container__header">
-            <h2>Sign Up</h2>
-          </div>
+        </div>
+        <Form onSubmit={this.handleOnSubmit}>
           <div className="auth-container__textfield-container">
             <TextField
               className="auth-container__textfield"

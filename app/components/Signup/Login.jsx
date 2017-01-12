@@ -95,13 +95,13 @@ class Login extends Component {
       <div className="auth-container">
         { (auth.loginRedirectUrl !== '/') ?
           <h1 className="auth-container__continue-header">Please log in to continue.</h1> : null }
-        <Form onSubmit={this.handleOnSubmit}>
+        <div className="auth-container__header">
+          <h2>Login</h2>
           <div className="auth-container__logo">
             <img src={Logo} role="presentation" />
           </div>
-          <div className="auth-container__header">
-            <h2>Login</h2>
-          </div>
+        </div>
+        <Form onSubmit={this.handleOnSubmit}>
           <div className="auth-container__textfield-container">
             <TextField
               className="auth-container__textfield"
