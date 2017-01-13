@@ -3,13 +3,13 @@ import { Route, Router, IndexRoute } from 'react-router';
 
 // routes
 import App from './components/App';
-import Signup from './components/Signup/Signup';
-import Login from './components/Signup/Login';
-import PasswordReset from './components/PasswordReset/PasswordReset';
+import Signup from './components/Auth/Signup';
+import Login from './components/Auth/Login';
+import PasswordReset from './components/Auth/PasswordReset';
 import Home from './components/Home/Home';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import NotFound from './components/NotFound/NotFound';
-import RequireAuth from './components/RequireAuth';
+import RequireAuth from './components/common/RequireAuth/RequireAuth';
 
 const appRoutes = (
   <Route path="/" component={App}>
