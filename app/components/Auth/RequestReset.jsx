@@ -6,6 +6,7 @@ import { red500, grey900 } from 'material-ui/styles/colors';
 import { connect } from 'react-redux';
 import CircularProgress from 'material-ui/CircularProgress';
 import Form from '../common/Form/Form';
+import Logo from '../../public/images/Logo.png';
 import * as authActions from '../../actions/auth';
 import constants from '../../utils/constants';
 
@@ -45,18 +46,20 @@ class RequestReset extends Component {
 
   render() {
     return (
-      <div className="reset-container">
-        <Form paperStyle="reset-form" onSubmit={this.handleOnSubmit}>
-          <div className="reset-header">
-            <h1>Forgot your password?</h1>
-            <p>
-              Enter your email address below to receive
-              instructions on how to change your password.
-            </p>
+      <div className="auth-container">
+        <div className="auth-container__header">
+          <h2>Forgot your password?</h2>
+          <div className="auth-container__logo">
+            <img src={Logo} role="presentation" />
           </div>
-          <div className="password-reset-input-container">
+        </div>
+        <Form onSubmit={this.handleOnSubmit}>
+          <div className="auth-container__textfield-container">
+            <p>
+              Enter your email address below to receive instructions on how to change your password.
+            </p>
             <TextField
-              className="reset-input"
+              className="auth-container__textfield"
               floatingLabelFocusStyle={{ color: grey900 }}
               underlineFocusStyle={{ borderColor: grey900 }}
               floatingLabelText="Email"
@@ -67,13 +70,13 @@ class RequestReset extends Component {
             />
             { this.props.auth.inProgress ?
               <CircularProgress
-                className="reset-btn"
+                className="auth-container__cta"
                 color={red500}
                 size={30}
               /> :
               <RaisedButton
                 label="Submit"
-                className="reset-btn"
+                className="auth-container__cta"
                 backgroundColor={red500}
                 labelColor="#FFF"
                 type="submit"

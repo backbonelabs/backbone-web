@@ -1,0 +1,75 @@
+@import '../../global.scss';
+
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+  flex-direction: column;
+
+  &__continue-header {
+    margin-top: 10px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 120px;
+    text-align: center;
+    background: linear-gradient(to top right, $secondaryColor 0%, $primaryColor 100%);
+  }
+
+  &__logo {
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+    background-color: white;
+    position: absolute;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  &__textfield-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 45px;
+
+    p {
+      text-align: center;
+    }
+  }
+
+  &__textfield {
+    width: 300px !important;
+  }
+
+  &__cta {
+    margin-top: 45px;
+    width: 300px;
+  }
+
+  &__footer {
+    text-align: center;
+
+    &-primary-link, &-secondary-link {
+      text-decoration: none;
+      cursor: pointer;
+      color: $materialPrimaryColor;
+    }
+
+    &-secondary-link {
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}

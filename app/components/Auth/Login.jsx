@@ -13,7 +13,7 @@ import Logo from '../../public/images/Logo.png';
 import Form from '../common/Form/Form';
 import constants from '../../utils/constants';
 
-import './Signup.scss';
+import './auth.scss';
 
 class Login extends Component {
   static propTypes = {
@@ -92,19 +92,19 @@ class Login extends Component {
     }
 
     return (
-      <div className="signup-container">
+      <div className="auth-container">
         { (auth.loginRedirectUrl !== '/') ?
-          <h1 className="continue-header">Please log in to continue.</h1> : null }
-        <Form onSubmit={this.handleOnSubmit}>
-          <div className="signup-logo-container">
+          <h1 className="auth-container__continue-header">Please log in to continue.</h1> : null }
+        <div className="auth-container__header">
+          <h2>Login</h2>
+          <div className="auth-container__logo">
             <img src={Logo} role="presentation" />
           </div>
-          <div className="signup-header">
-            <h2>Login</h2>
-          </div>
-          <div className="signup-textfield-container">
+        </div>
+        <Form onSubmit={this.handleOnSubmit}>
+          <div className="auth-container__textfield-container">
             <TextField
-              className="signup-textfield"
+              className="auth-container__textfield"
               floatingLabelFocusStyle={{ color: grey900 }}
               underlineFocusStyle={{ borderColor: grey900 }}
               floatingLabelText="Email"
@@ -113,7 +113,7 @@ class Login extends Component {
               errorStyle={{ textAlign: 'center' }}
             />
             <TextField
-              className="signup-textfield"
+              className="auth-container__textfield"
               floatingLabelFocusStyle={{ color: grey900 }}
               underlineFocusStyle={{ borderColor: grey900 }}
               floatingLabelText="Password"
@@ -124,26 +124,31 @@ class Login extends Component {
             />
             { this.props.auth.inProgress ?
               <CircularProgress
-                className="signup-btn"
+                className="auth-container__cta"
                 color={red500}
                 size={30}
               /> :
               <RaisedButton
                 label="Login"
-                className="signup-btn"
+                className="auth-container__cta"
                 backgroundColor={red500}
                 labelColor="#FFF"
                 type="submit"
                 disabled={(!email || !validEmail) || (!password || !validPassword)}
               />
             }
-            <div>
-              <p>Don't have an account?
-                <Link to="/signup" className="signup-link"> Sign Up</Link>
+            <div className="auth-container__footer">
+              <p>Don't have an account?&nbsp;
+                <Link to="/signup" className="auth-container__footer-primary-link">Sign Up</Link>
               </p>
-              <Link to="/request-reset" className="forgot-password">
-                <p>Forgot Your Password?</p>
-              </Link>
+              <p>
+                <Link
+                  to="/request-reset"
+                  className="auth-container__footer-secondary-link secondary-text"
+                >
+                  Forgot Your Password?
+                </Link>
+              </p>
             </div>
           </div>
         </Form>

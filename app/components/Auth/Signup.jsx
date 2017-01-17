@@ -11,7 +11,7 @@ import Form from '../common/Form/Form';
 import constants from '../../utils/constants';
 
 import * as actions from '../../actions/auth';
-import './Signup.scss';
+import './auth.scss';
 
 class Signup extends Component {
   static propTypes = {
@@ -106,17 +106,17 @@ class Signup extends Component {
     }
 
     return (
-      <div className="signup-container">
-        <Form onSubmit={this.handleOnSubmit}>
-          <div className="signup-logo-container">
+      <div className="auth-container">
+        <div className="auth-container__header">
+          <h2>Sign Up</h2>
+          <div className="auth-container__logo">
             <img src={Logo} role="presentation" />
           </div>
-          <div className="signup-header">
-            <h2>Sign Up</h2>
-          </div>
-          <div className="signup-textfield-container">
+        </div>
+        <Form onSubmit={this.handleOnSubmit}>
+          <div className="auth-container__textfield-container">
             <TextField
-              className="signup-textfield"
+              className="auth-container__textfield"
               floatingLabelFocusStyle={{ color: grey900 }}
               underlineFocusStyle={{ borderColor: grey900 }}
               floatingLabelText="Email"
@@ -125,7 +125,7 @@ class Signup extends Component {
               errorStyle={{ textAlign: 'center' }}
             />
             <TextField
-              className="signup-textfield"
+              className="auth-container__textfield"
               floatingLabelFocusStyle={{ color: grey900 }}
               underlineFocusStyle={{ borderColor: grey900 }}
               floatingLabelText="Password"
@@ -135,7 +135,7 @@ class Signup extends Component {
               errorStyle={{ textAlign: 'center' }}
             />
             <TextField
-              className="signup-textfield"
+              className="auth-container__textfield"
               floatingLabelFocusStyle={{ color: grey900 }}
               underlineFocusStyle={{ borderColor: grey900 }}
               floatingLabelText="Confirm Password"
@@ -146,13 +146,13 @@ class Signup extends Component {
             />
             { this.props.auth.inProgress ?
               <CircularProgress
-                className="signup-btn"
+                className="auth-container__cta"
                 color={red500}
                 size={30}
               /> :
               <RaisedButton
                 label="Sign up"
-                className="signup-btn"
+                className="auth-container__cta"
                 backgroundColor={red500}
                 labelColor="#FFF"
                 type="submit"
@@ -163,9 +163,12 @@ class Signup extends Component {
                 }
               />
             }
-            <p>Already signed up?
-              <Link to="/login" className="signup-link"> Log In</Link>
-            </p>
+            <div className="auth-container__footer">
+              <p>
+                Already signed up?&nbsp;
+                <Link to="/login" className="auth-container__footer-primary-link">Log In</Link>
+              </p>
+            </div>
           </div>
         </Form>
       </div>

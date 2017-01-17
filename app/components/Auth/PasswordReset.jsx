@@ -6,8 +6,9 @@ import { red500, grey900 } from 'material-ui/styles/colors';
 import CircularProgress from 'material-ui/CircularProgress';
 import { connect } from 'react-redux';
 import Form from '../common/Form/Form';
+import Logo from '../../public/images/Logo.png';
 import * as authActions from '../../actions/auth';
-import './PasswordReset.scss';
+// import './auth.scss';
 
 class PasswordReset extends Component {
   static propTypes = {
@@ -73,15 +74,18 @@ class PasswordReset extends Component {
       }
     }
     return (
-      <div className="reset-container">
-        <Form paperStyle="reset-form" onSubmit={this.handleOnSubmit}>
-          <div className="reset-header">
-            <h1>Password Reset</h1>
-            <p>Enter your new password in the fields below.</p>
+      <div className="auth-container">
+        <div className="auth-container__header">
+          <h2>Password Reset</h2>
+          <div className="auth-container__logo">
+            <img src={Logo} role="presentation" />
           </div>
-          <div className="password-reset-input-container">
+        </div>
+        <Form onSubmit={this.handleOnSubmit}>
+          <div className="auth-container__textfield-container">
+            <p>Enter your new password in the fields below.</p>
             <TextField
-              className="password-reset-input"
+              className="auth-container__textfield"
               floatingLabelFocusStyle={{ color: grey900 }}
               underlineFocusStyle={{ borderColor: grey900 }}
               floatingLabelText="New password"
@@ -92,7 +96,7 @@ class PasswordReset extends Component {
               errorStyle={{ textAlign: 'center' }}
             />
             <TextField
-              className="password-reset-input"
+              className="auth-container__textfield"
               floatingLabelFocusStyle={{ color: grey900 }}
               underlineFocusStyle={{ borderColor: grey900 }}
               floatingLabelText="Verify password"
@@ -104,13 +108,13 @@ class PasswordReset extends Component {
             />
             { this.props.auth.inProgress ?
               <CircularProgress
-                className="reset-btn"
+                className="auth-container__cta"
                 color={red500}
                 size={30}
               /> :
               <RaisedButton
                 label="Submit"
-                className="reset-btn"
+                className="auth-container__cta"
                 backgroundColor={red500}
                 labelColor="#FFF"
                 type="submit"
