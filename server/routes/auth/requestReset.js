@@ -4,7 +4,7 @@ export default (req, res) => {
   const email = req.body.email;
 
   if (!email) {
-    return res.status(400).send({ error: 'All fields must be filled out' });
+    return res.status(400).send({ error: 'Email must be filled out' });
   }
 
   post(`${process.env.API_SERVER_URL}/auth/password-reset-token`, req.body)
