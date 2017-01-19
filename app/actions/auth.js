@@ -62,9 +62,6 @@ export const requestReset = email => ({
   type: REQUEST_RESET,
   payload() {
     return post('/auth/request-reset', email)
-      .then(() => {
-        browserHistory.push('/request-reset/sent');
-      })
       .catch((err) => {
         throw new Error(err.response.data.error || err.message);
       });
@@ -84,9 +81,6 @@ export const passwordReset = (password, verifyPassword) => ({
       verifyPassword,
     };
     return post('/auth/password-reset', data)
-      .then(() => {
-        browserHistory.push('/login');
-      })
       .catch((err) => {
         throw new Error(err.response.data.error || err.message);
       });

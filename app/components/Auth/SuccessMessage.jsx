@@ -1,13 +1,15 @@
 import React, { PropTypes } from 'react';
 import Paper from 'material-ui/Paper';
 import { Link } from 'react-router';
+import './auth.scss';
 
 const SuccessMessage = props => (
-  <Paper style={{ padding: 25 }} zDepth={2}>
-    <h2 style={{ textAlign: 'center' }}>
+  <Paper className="auth-container__success-container" zDepth={2}>
+    <h2 className="auth-container__success-header">
       {props.message}
-      {props.link ? <Link to={props.link}>Login</Link> : null}
     </h2>
+    {props.link ?
+      <Link className="auth-container__success-link" to={props.link}>Login</Link> : null}
   </Paper>
 );
 

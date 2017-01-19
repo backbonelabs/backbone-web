@@ -27,6 +27,8 @@ const authState = {
   requestResetError: {},
   passwordResetError: {},
   loginRedirectUrl: '/',
+  requestSent: false,
+  passwordResetSent: false,
 };
 
 export default (state = authState, action) => {
@@ -121,11 +123,13 @@ export default (state = authState, action) => {
       return {
         ...state,
         inProgress: false,
+        requestSent: true,
       };
     case PASSWORD_RESET:
       return {
         ...state,
         inProgress: false,
+        passwordResetSent: true,
       };
     case PASSWORD_RESET__START:
       return {

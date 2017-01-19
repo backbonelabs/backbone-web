@@ -8,13 +8,15 @@ import { connect } from 'react-redux';
 import Form from '../common/Form/Form';
 import Logo from '../../public/images/Logo.png';
 import * as authActions from '../../actions/auth';
-// import './auth.scss';
+import './auth.scss';
+import SuccessMessage from './SuccessMessage';
 
 class PasswordReset extends Component {
   static propTypes = {
     auth: PropTypes.shape({
       inProgress: PropTypes.bool,
       passwordResetError: PropTypes.object,
+      passwordResetSent: PropTypes.bool,
     }),
     passwordReset: PropTypes.func,
   }
@@ -75,55 +77,63 @@ class PasswordReset extends Component {
     }
     return (
       <div className="auth-container">
-        <div className="auth-container__header">
-          <h2>Password Reset</h2>
-          <div className="auth-container__logo">
-            <img src={Logo} role="presentation" />
+        { this.props.auth.passwordResetSent ?
+          <SuccessMessage
+            message="Your password has been reset successfully!"
+            link="/login"
+          /> :
+          <div>
+            <div className="auth-container__header">
+              <h2>Password Reset</h2>
+              <div className="auth-container__logo">
+                <img src={Logo} role="presentation" />
+              </div>
+            </div>
+            <Form onSubmit={this.handleOnSubmit}>
+              <div className="auth-container__textfield-container">
+                <p>Enter your new password in the fields below.</p>
+                <TextField
+                  className="auth-container__textfield"
+                  floatingLabelFocusStyle={{ color: grey900 }}
+                  underlineFocusStyle={{ borderColor: grey900 }}
+                  floatingLabelText="New password"
+                  name="newPassword"
+                  onChange={this.handleOnChange}
+                  type="password"
+                  errorText={passwordError}
+                  errorStyle={{ textAlign: 'center' }}
+                />
+                <TextField
+                  className="auth-container__textfield"
+                  floatingLabelFocusStyle={{ color: grey900 }}
+                  underlineFocusStyle={{ borderColor: grey900 }}
+                  floatingLabelText="Verify password"
+                  name="verifyPassword"
+                  type="password"
+                  onChange={this.handleOnChange}
+                  errorText={verifyPasswordError}
+                  errorStyle={{ textAlign: 'center' }}
+                />
+                { this.props.auth.inProgress ?
+                  <CircularProgress
+                    className="auth-container__cta"
+                    color={red500}
+                    size={30}
+                  /> :
+                  <RaisedButton
+                    label="Submit"
+                    className="auth-container__cta"
+                    backgroundColor={red500}
+                    labelColor="#FFF"
+                    type="submit"
+                    disabled={!passwordLength}
+                  />
+                }
+              </div>
+              {passwordResetError}
+            </Form>
           </div>
-        </div>
-        <Form onSubmit={this.handleOnSubmit}>
-          <div className="auth-container__textfield-container">
-            <p>Enter your new password in the fields below.</p>
-            <TextField
-              className="auth-container__textfield"
-              floatingLabelFocusStyle={{ color: grey900 }}
-              underlineFocusStyle={{ borderColor: grey900 }}
-              floatingLabelText="New password"
-              name="newPassword"
-              onChange={this.handleOnChange}
-              type="password"
-              errorText={passwordError}
-              errorStyle={{ textAlign: 'center' }}
-            />
-            <TextField
-              className="auth-container__textfield"
-              floatingLabelFocusStyle={{ color: grey900 }}
-              underlineFocusStyle={{ borderColor: grey900 }}
-              floatingLabelText="Verify password"
-              name="verifyPassword"
-              type="password"
-              onChange={this.handleOnChange}
-              errorText={verifyPasswordError}
-              errorStyle={{ textAlign: 'center' }}
-            />
-            { this.props.auth.inProgress ?
-              <CircularProgress
-                className="auth-container__cta"
-                color={red500}
-                size={30}
-              /> :
-              <RaisedButton
-                label="Submit"
-                className="auth-container__cta"
-                backgroundColor={red500}
-                labelColor="#FFF"
-                type="submit"
-                disabled={!passwordLength}
-              />
-            }
-          </div>
-          {passwordResetError}
-        </Form>
+        }
       </div>
     );
   }
