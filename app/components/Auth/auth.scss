@@ -43,6 +43,10 @@
     justify-content: center;
     flex-direction: column;
     margin-top: 45px;
+
+    p {
+      text-align: center;
+    }
   }
 
   &__textfield {

@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Backbone Labs
+    link(type="text/css" rel="stylesheet" href="/public/css/normalize.css")
+    link(type="text/css" rel="stylesheet" href="/public/css/styles.css")
+  body
+    div(class="emailList__bg-image")
+    div(class="emailList__container")
+      img(src="/public/img/Logo.png" class="emailList__img")
+      div
+        if success
+          h1= success
+        else
+          form(class="emailList__form" method='POST' action='/email-list')
+            input(class="emailList__input" type="email" name="email" placeholder="Backbone@mail.com")
+            button(class="emailList__btn" type="submit") Submit
+      div
+        if error
+          p(class="emailList__error")= error

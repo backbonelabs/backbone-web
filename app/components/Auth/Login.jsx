@@ -143,7 +143,7 @@ class Login extends Component {
               </p>
               <p>
                 <Link
-                  to="/password-reset"
+                  to="/request-reset"
                   className="auth-container__footer-secondary-link secondary-text"
                 >
                   Forgot Your Password?
