@@ -10,6 +10,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import expressJwt from 'express-jwt';
 import serverConfig from './config';
 import passwordReset from './routes/passwordReset';
+import mailingList from './routes/mailingList';
 import config from '../webpack.config.dev';
 import authRoutes from './routes/auth';
 import userRoutes from './routes/user';
@@ -30,6 +31,7 @@ if (!isProduction) {
 
 // Parse form url-encoded bodies
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 // Compress response bodies (by default, only responses 1kb or bigger will be compressed)
 app.use(compression());
 // Disable the "X-Powered-By: Express" HTTP header
@@ -74,6 +76,13 @@ app.get('/password-reset', (req, res) => {
   });
 });
 
+app.get('/mailing-list', (req, res) => {
+  res.render('mailingList', {
+    title: 'Mailing List',
+  });
+});
+
+app.post('/mailing-list', mailingList);
 app.post('/password-reset', passwordReset);
 app.use('/auth/', authRoutes);
 app.use('/user/', userRoutes);
