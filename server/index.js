@@ -7,6 +7,7 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import expressJwt from 'express-jwt';
+import emailList from './routes/emailList';
 import serverConfig from './config';
 import config from '../webpack.config.dev';
 import authRoutes from './routes/auth';
@@ -26,8 +27,14 @@ if (!isProduction) {
   app.use(webpackHotMiddleware(compiler));
 }
 
+// Pug templates
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 // Parse form url-encoded bodies
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // Compress response bodies (by default, only responses 1kb or bigger will be compressed)
 app.use(compression());
 // Disable the "X-Powered-By: Express" HTTP header
@@ -35,6 +42,7 @@ app.disable('x-powered-by');
 
 const env = process.env.NODE_ENV || 'development';
 
+app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../build')));
 
 // Protect end points unless it's in the path Array
@@ -49,6 +57,11 @@ app.use('/user', expressJwt({ secret: serverConfig.secretKey }));
 app.use('/ping', (req, res) => {
   res.send('pong');
 });
+
+app.get('/email-list', (req, res) => {
+  res.render('emailList');
+});
+app.post('/email-list', emailList);
 
 app.use('/auth/', authRoutes);
 app.use('/user/', userRoutes);
