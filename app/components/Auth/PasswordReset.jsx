@@ -68,7 +68,7 @@ class PasswordReset extends Component {
       // if it includes the string token
       if (passwordResetError.includes('token')) {
         passwordResetError = (
-          <p style={{ color: red500, width: 350, textAlign: 'center' }}>
+          <p>
             Invalid reset token. Please contact <a href="mailto:support@gobackbone.com">
             support@gobackbone.com</a> for assistance.
           </p>
@@ -130,7 +130,9 @@ class PasswordReset extends Component {
                   />
                 }
               </div>
-              {passwordResetError}
+              <div style={{ color: red500, width: 350, textAlign: 'center' }}>
+                {passwordResetError}
+              </div>
             </Form>
           </div>
         }
