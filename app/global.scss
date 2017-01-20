@@ -1,5 +1,4 @@
 @import '~normalize.css/normalize';
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 
 // Theme
 $primaryColor: #ED1C24;
@@ -8,10 +7,18 @@ $secondaryColor: #f0b94d;
 $backgroundColor: #F5F5F5;
 $textColor: #212121;
 
+html, body {
+  height: 100%;
+}
+
 body {
+  color: $textColor;
+  // background-color: $backgroundColor;
+}
+
+body, button, input {
   font-family: 'Roboto', sans-serif;
   color: $textColor;
-  background-color: $backgroundColor;
 }
 
 .secondary-text {
