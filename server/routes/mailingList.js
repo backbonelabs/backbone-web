@@ -1,11 +1,12 @@
 import Debug from 'debug';
 import config from '../config';
 
+const { mailgunDomain, mailgunKey } = config;
+
 const debug = Debug('routes:mailing-list');
 
-const domain = 'mail.gobackbone.com';
-const mailListDomain = 'postkickstarterinterest@mail.gobackbone.com';
-const mailgun = require('mailgun-js')({ apiKey: config.mailgunKey, domain });
+const mailListDomain = `postkickstarterinterest@${mailgunDomain}`;
+const mailgun = require('mailgun-js')({ apiKey: mailgunKey, domain: mailgunDomain });
 
 export default (req, res) => {
   const email = req.body.email;
