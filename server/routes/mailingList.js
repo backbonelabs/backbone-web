@@ -10,7 +10,7 @@ export default (req, res) => {
     return res.status(400).send({ error: 'Email must be filled out.' });
   }
 
-  mailgun.lists(domain).members().create(email, (err, body) => {
+  mailgun.lists(domain).members().create({ address: email }, (err, body) => {
     if (err) {
       console.log(err);
       return res.status(500).json({ error: 'An error has occurred, please try again later.' });
