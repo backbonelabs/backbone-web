@@ -33,7 +33,6 @@ class Home extends Component {
         })
         .catch((err) => {
           this.setState({ error: err.response.data.error, success: '' });
-          throw new Error(err.response.data.error || err.message);
         });
     }
   }
