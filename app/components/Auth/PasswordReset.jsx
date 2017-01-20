@@ -4,7 +4,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { red500 } from 'material-ui/styles/colors';
 import Form from '../common/Form/Form';
-import Logo from '../../public/images/logo.png';
+import Logo from '../../images/logo.png';
 
 import './auth.scss';
 

@@ -6,7 +6,7 @@ import CircularProgress from 'material-ui/CircularProgress';
 import { red500, grey900 } from 'material-ui/styles/colors';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import Logo from '../../public/images/logo.png';
+import Logo from '../../images/logo.png';
 import Form from '../common/Form/Form';
 import constants from '../../utils/constants';
 

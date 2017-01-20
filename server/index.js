@@ -31,7 +31,6 @@ if (!isProduction) {
 
 // Parse form url-encoded bodies
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 // Compress response bodies (by default, only responses 1kb or bigger will be compressed)
 app.use(compression());
 // Disable the "X-Powered-By: Express" HTTP header
@@ -81,15 +80,8 @@ app.post('/password-reset', passwordReset);
 app.use('/auth/', authRoutes);
 app.use('/user/', userRoutes);
 
-// Use the React App in development
-if (env === 'development') {
-  app.use('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../app/public/index.html'));
-  });
-}
-
 app.use('*', (req, res) => {
-  res.redirect('https://www.kickstarter.com/projects/gobackbone/backbone-the-smart-easy-way-to-a-healthy-back'); // eslint-disable-line max-len
+  res.sendFile(path.join(__dirname, '../app/index.html'));
 });
 
 const port = process.env.PORT || 9999;

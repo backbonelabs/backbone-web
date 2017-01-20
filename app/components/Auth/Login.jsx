@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../actions/auth';
 
-import Logo from '../../public/images/logo.png';
+import Logo from '../../images/logo.png';
 import Form from '../common/Form/Form';
 import constants from '../../utils/constants';
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import autobind from 'autobind-decorator';
 import { post } from 'axios';
-import logo from '../../public/images/logo.png';
+import logo from '../../images/logo.png';
 import './Home.scss';
 
 
