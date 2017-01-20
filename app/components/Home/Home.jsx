@@ -49,7 +49,7 @@ class Home extends Component {
             <h2>Enter your email and be notified when Backbone is available for purchase!</h2>
           </div>
           { success ?
-            <h1>{success}</h1>
+            <h2>{success}</h2>
             :
             <form className="home__form-container__form" onSubmit={this.handleOnSubmit}>
               <input

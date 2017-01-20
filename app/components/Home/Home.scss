@@ -24,14 +24,19 @@
   height: 100vh;
   flex-direction: column;
 
+  h2 {
+    color: #fff;
+  }
+
   &__header {
     margin-bottom: 25px;
+    color: #fff;
+    text-align: center;
 
     img {
-      width: 150px;
-      height: 150px;
+      width: 25%;
       display: block;
-      margin: 0 auto;
+      margin: 0 auto 45px auto;
     }
 
   }
