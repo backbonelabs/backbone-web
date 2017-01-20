@@ -27,6 +27,7 @@
     "file-loader": "0.9.0",
     "jsonwebtoken": "7.2.1",
     "localenv": "0.2.2",
+    "mailgun-js": "0.7.14",
     "material-ui": "0.16.5",
     "react": "15.4.1",
     "react-dom": "15.4.1",

@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
-import Navbar from './Navbar/Navbar';
+// import Navbar from './Navbar/Navbar';
 
 const App = props => (
   <div>
-    <nav>
+    {/* <nav>
       <Navbar />
-    </nav>
+    </nav> */}
     <main>
       {props.children}
     </main>

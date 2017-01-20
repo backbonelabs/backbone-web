@@ -6,7 +6,7 @@ import { red500, grey900 } from 'material-ui/styles/colors';
 import CircularProgress from 'material-ui/CircularProgress';
 import { connect } from 'react-redux';
 import Form from '../common/Form/Form';
-import Logo from '../../public/images/Logo.png';
+import Logo from '../../images/logo.png';
 import * as authActions from '../../actions/auth';
 import './auth.scss';
 import SuccessMessage from './SuccessMessage';
