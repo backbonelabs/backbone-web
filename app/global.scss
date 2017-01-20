@@ -9,14 +9,17 @@ $backgroundColor: #F5F5F5;
 $textColor: #212121;
 
 html, body {
-  width: 100%;
   height: 100%;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
   color: $textColor;
   // background-color: $backgroundColor;
+}
+
+body, button, input {
+  font-family: 'Roboto', sans-serif;
+  color: $textColor;
 }
 
 .secondary-text {

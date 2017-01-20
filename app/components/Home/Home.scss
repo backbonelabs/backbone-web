@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
 .home__bg-image {
   width: 100%;
   height: 100%;
@@ -28,7 +30,7 @@
     color: #fff;
   }
 
-  &__header {
+  &-header {
     margin-bottom: 25px;
     color: #fff;
     text-align: center;
@@ -41,12 +43,12 @@
 
   }
 
-  &__form {
+  &-form {
     width: 80%;
     text-align: center;
   }
 
-  &__input {
+  &-input {
     background: #FFF;
     display: inline-block;
     outline: 0;
@@ -63,7 +65,7 @@
     box-shadow: none;
   }
 
-  &__btn {
+  &-btn {
     letter-spacing: -0.5px;
     padding: 17px 0;
     background: #F44336;
