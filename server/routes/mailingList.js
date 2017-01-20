@@ -1,6 +1,6 @@
 import config from '../config';
 
-const domain = 'mail.gobackbone.com';
+const domain = 'postkickstarterinterest@mail.gobackbone.com';
 const mailgun = require('mailgun-js')({ apiKey: config.mailgunKey, domain });
 
 export default (req, res) => {
@@ -13,10 +13,10 @@ export default (req, res) => {
   mailgun.lists(domain).members().create(email, (err, body) => {
     if (err) {
       console.log(err);
-      return res.render('mailingList', { error: 'An error has occurred, please try again later.' });
+      return res.status(500).json({ error: 'An error has occurred, please try again later.' });
     }
     console.log(body);
-    return res.render('mailingList', { success: 'Thanks for signing up.' });
+    return res.status(200).json({ success: 'Thanks for signing up.' });
   });
 };
 

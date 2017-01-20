@@ -76,12 +76,6 @@ app.get('/password-reset', (req, res) => {
   });
 });
 
-app.get('/mailing-list', (req, res) => {
-  res.render('mailingList', {
-    title: 'Mailing List',
-  });
-});
-
 app.post('/mailing-list', mailingList);
 app.post('/password-reset', passwordReset);
 app.use('/auth/', authRoutes);
