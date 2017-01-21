@@ -35,6 +35,27 @@ app.use(compression());
 // Disable the "X-Powered-By: Express" HTTP header
 app.disable('x-powered-by');
 
+const env = process.env.NODE_ENV || 'development';
+
+// Config variables for Handlebar templates
+const hbsConfig = {
+  devMode: env !== 'production',
+  bootstrapUrl: env === 'production' ?
+    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' :
+    '/public/css/bootstrap.min.css',
+};
+
+app.engine('.hbs', exphbs({
+  extname: '.hbs',
+  helpers: {
+    getConfig: prop => hbsConfig[prop],
+  },
+}));
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', '.hbs');
+app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './public')));
 app.use(express.static(path.join(__dirname, '../build')));
 
 // Protect end points unless it's in the path Array
