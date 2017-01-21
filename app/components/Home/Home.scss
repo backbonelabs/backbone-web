@@ -57,6 +57,7 @@
     margin: 0 auto;
     max-width: 350px;
     outline: 0;
+    padding: 0;
     text-align: center;
     width: 100%;
 
@@ -71,11 +72,14 @@
     border: 1px solid #EF5350;
     border-radius: 2px;
     color: #fff;
+    cursor: pointer;
     display: block;
     font-weight: 700;
+    height: 50px;
     margin: 16px auto 0;
     max-width: 200px;
     outline: 0;
+    padding: 0;
     transition: background .3s;
     width: 100%;
 
