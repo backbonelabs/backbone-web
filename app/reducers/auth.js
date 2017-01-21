@@ -118,6 +118,7 @@ export default (state = authState, action) => {
         ...state,
         requestResetError: payload,
         inProgress: false,
+        requestSent: false,
       };
     case REQUEST_RESET:
       return {
@@ -141,6 +142,7 @@ export default (state = authState, action) => {
         ...state,
         inProgress: false,
         passwordResetError: payload,
+        passwordResetSent: false,
       };
     default:
       return state;
