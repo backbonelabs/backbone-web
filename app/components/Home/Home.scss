@@ -38,7 +38,6 @@
       display: block;
       margin: 0 auto 45px auto;
     }
-
   }
 
   &-form {
@@ -48,36 +47,43 @@
 
   &-input {
     background: #FFF;
-    display: inline-block;
-    outline: 0;
-    width: 100%;
-    max-width: 350px;
-    margin: 0;
     border: none;
-    color: #212121;
-    height: 50px;
-    font-weight: 700;
-    border-radius: 2px 0 0 2px;
-    text-align: center;
+    border-radius: 2px;
     box-shadow: none;
+    color: #212121;
+    display: block;
+    font-weight: 700;
+    height: 50px;
+    margin: 0 auto;
+    max-width: 350px;
+    outline: 0;
+    text-align: center;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      border-radius: 2px 0 0 2px;
+      display: inline-block;
+    }
   }
 
   &-btn {
-    padding: 17px 0;
     background: #F44336;
     border: 1px solid #EF5350;
-    border-left-color: transparent;
-    outline: 0;
-    border-radius: 0 2px 2px 0;
+    border-radius: 2px;
     color: #fff;
-    width: 100%;
-    display: inline-block;
-    max-width: 200px;
-    margin-left: -5px;
-    line-height: 1;
-    cursor: pointer;
+    display: block;
     font-weight: 700;
+    margin: 16px auto 0;
+    max-width: 200px;
+    outline: 0;
     transition: background .3s;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      border-radius: 0 2px 2px 0;
+      display: inline-block;
+      margin-top: 0;
+    }
 
     &:hover {
       background: #EF5350;
