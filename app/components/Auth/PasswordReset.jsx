@@ -130,7 +130,7 @@ class PasswordReset extends Component {
                   />
                 }
               </div>
-              <div style={{ color: red500, width: 350, textAlign: 'center' }}>
+              <div className="auth-container__error" style={{color: red500 }}>
                 {passwordResetError}
               </div>
             </Form>
