@@ -17,4 +17,8 @@ Form.propTypes = {
   onSubmit: PropTypes.func,
 };
 
+Form.defaultProps = {
+  paperStyle: '',
+};
+
 export default Form;
