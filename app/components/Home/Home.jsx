@@ -4,7 +4,6 @@ import { post } from 'axios';
 import logo from '../../images/logo.png';
 import './Home.scss';
 
-
 class Home extends Component {
   constructor() {
     super();
@@ -45,7 +44,7 @@ class Home extends Component {
         <div className="home__form-container">
           <div className="home__form-container-header">
             <img src={logo} alt="Man wearing a Backbone" />
-            <h2>Enter your email and be notified when Backbone is available for purchase!</h2>
+            <h2>Enter your email to be notified when Backbone is available for purchase!</h2>
           </div>
           { success ?
             <h2>{success}</h2>
