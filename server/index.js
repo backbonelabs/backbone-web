@@ -35,8 +35,6 @@ app.use(compression());
 // Disable the "X-Powered-By: Express" HTTP header
 app.disable('x-powered-by');
 
-const env = process.env.NODE_ENV || 'development';
-
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, './public')));
 app.use(express.static(path.join(__dirname, '../build')));
