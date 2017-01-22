@@ -1,25 +1,41 @@
-@import '~normalize.css/normalize';
+@import "~normalize.css/normalize";
+@import "colors";
 
-// Theme
-$primaryColor: #ED1C24;
-$materialPrimaryColor: #F44336;
-$secondaryColor: #f0b94d;
-$backgroundColor: #F5F5F5;
-$textColor: #212121;
+/*
+  ====================
+  Theme
+  ====================
+ */
+$primaryColor: $backbonePrimary;
+$materialPrimaryColor: $red500;
+$secondaryColor: $backboneSecondary;
+$materialSecondaryColor: $orange500;
 
+// Use opacity instead of grey.
+// Black or white text that is transparent remains legible and vibrant against background
+// color changes. This makes it more flexible than grey text in the same contexts.
+// See https://material.io/guidelines/style/color.html#color-color-schemes for more information.
+$textColor: rgba(0, 0, 0, 0.87);
+$secondaryTextColor: rgba(0, 0, 0, 0.54);
+$disabledTextColor: rgba(0, 0, 0, 0.38);
+
+/*
+  ====================
+  General styling
+  ====================
+ */
 html, body {
   height: 100%;
   overflow: hidden;
 }
 
-body {
+body, button, input {
   color: $textColor;
-  // background-color: $backgroundColor;
+  font-family: 'Roboto', sans-serif;
 }
 
-body, button, input {
-  font-family: 'Roboto', sans-serif;
-  color: $textColor;
+body {
+  background-color: $grey50;
 }
 
 .secondary-text {
