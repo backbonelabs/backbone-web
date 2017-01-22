@@ -7,6 +7,8 @@ import {
   LOGIN_REDIRECT,
   LOGIN,
   SIGN_UP,
+  REQUEST_RESET,
+  PASSWORD_RESET,
  } from '../actions/types';
 import store from '../store';
 
@@ -50,6 +52,35 @@ export const signup = user => ({
         store.dispatch(loginUser(res.data.user));
         browserHistory.push('/');
       })
+      .catch((err) => {
+        throw new Error(err.response.data.error || err.message);
+      });
+  },
+});
+
+export const requestReset = email => ({
+  type: REQUEST_RESET,
+  payload() {
+    return post('/auth/request-reset', email)
+      .catch((err) => {
+        throw new Error(err.response.data.error || err.message);
+      });
+  },
+});
+
+export const passwordReset = (password, verifyPassword) => ({
+  type: PASSWORD_RESET,
+  payload() {
+    const queryString = browserHistory.getCurrentLocation().search;
+    const regex = new RegExp('[\\?&]token=([^&#]*)');
+    const results = regex.exec(queryString);
+    const token = results ? decodeURIComponent(results[1].replace(/\+/g, ' ')) : undefined;
+    const data = {
+      token,
+      password,
+      verifyPassword,
+    };
+    return post('/auth/password-reset', data)
       .catch((err) => {
         throw new Error(err.response.data.error || err.message);
       });

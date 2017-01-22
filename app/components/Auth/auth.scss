@@ -7,6 +7,19 @@
   margin-top: 35px;
   flex-direction: column;
 
+  &__success-container {
+    padding: 25px;
+  }
+
+  &__success-header {
+    text-align: center;
+  }
+
+  &__success-link {
+    display: block;
+    text-align: center;
+  }
+
   &__continue-header {
     margin-top: 10px;
   }
@@ -43,10 +56,19 @@
     justify-content: center;
     flex-direction: column;
     margin-top: 45px;
+
+    p {
+      text-align: center;
+    }
   }
 
   &__textfield {
     width: 300px !important;
+  }
+
+  &__error {
+    width: 350px;
+    text-align: center;
   }
 
   &__cta {

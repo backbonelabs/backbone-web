@@ -9,6 +9,12 @@ import {
   LOGIN_REDIRECT,
   FETCH_USER__START,
   FETCH_USER__ERROR,
+  REQUEST_RESET__START,
+  REQUEST_RESET__ERROR,
+  REQUEST_RESET,
+  PASSWORD_RESET,
+  PASSWORD_RESET__START,
+  PASSWORD_RESET__ERROR,
  } from '../actions/types';
 
 const authState = {
@@ -18,7 +24,11 @@ const authState = {
   loginError: {},
   signupError: {},
   fetchUserError: {},
+  requestResetError: {},
+  passwordResetError: {},
   loginRedirectUrl: '/',
+  requestSent: false,
+  passwordResetSent: false,
 };
 
 export default (state = authState, action) => {
@@ -33,6 +43,8 @@ export default (state = authState, action) => {
         loginError: {},
         signupError: {},
         fetchUserError: {},
+        requestResetError: {},
+        passwordResetError: {},
         loginRedirectUrl: '/',
       };
     case LOGOUT:
@@ -44,6 +56,8 @@ export default (state = authState, action) => {
         loginError: {},
         signupError: {},
         fetchUserError: {},
+        requestResetError: {},
+        passwordResetError: {},
         loginRedirectUrl: '/',
       };
     case LOGIN__START:
@@ -74,6 +88,8 @@ export default (state = authState, action) => {
         loginError: {},
         signupError: {},
         fetchUserError: {},
+        requestResetError: {},
+        passwordResetError: {},
       };
     case LOGIN_REDIRECT:
       return {
@@ -91,6 +107,42 @@ export default (state = authState, action) => {
         inProgress: false,
         fetchUserError: payload,
         authenticated: false,
+      };
+    case REQUEST_RESET__START:
+      return {
+        ...state,
+        inProgress: true,
+      };
+    case REQUEST_RESET__ERROR:
+      return {
+        ...state,
+        requestResetError: payload,
+        inProgress: false,
+        requestSent: false,
+      };
+    case REQUEST_RESET:
+      return {
+        ...state,
+        inProgress: false,
+        requestSent: true,
+      };
+    case PASSWORD_RESET:
+      return {
+        ...state,
+        inProgress: false,
+        passwordResetSent: true,
+      };
+    case PASSWORD_RESET__START:
+      return {
+        ...state,
+        inProgress: true,
+      };
+    case PASSWORD_RESET__ERROR:
+      return {
+        ...state,
+        inProgress: false,
+        passwordResetError: payload,
+        passwordResetSent: false,
       };
     default:
       return state;
