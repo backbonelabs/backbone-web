@@ -15,12 +15,12 @@ import RequireAuth from './components/common/RequireAuth/RequireAuth';
 const appRoutes = (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
-    <Route path="/signup" component={Signup} />
-    <Route path="/login" component={Login} />
-    <Route path="/password-reset" component={PasswordReset} />
-    <Route path="/request-reset" component={RequestReset} />
+    <Route path="/signup" component={Signup} title="Signup" />
+    <Route path="/login" component={Login} title="Login" />
+    <Route path="/password-reset" component={PasswordReset} title="Password Reset" />
+    <Route path="/request-reset" component={RequestReset} title="Password Reset Request" />
     <Route path="/protected-route" component={RequireAuth(ProtectedRoute)} />
-    <Route path="*" component={NotFound} />
+    <Route path="*" component={NotFound} title="Not Found" />
   </Route>
 );
 
