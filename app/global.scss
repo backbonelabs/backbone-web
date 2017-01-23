@@ -3,6 +3,15 @@
 
 /*
   ====================
+  Media Queries
+  ====================
+ */
+
+$iphone5: 320px;
+$iphone6Plus: 414px; // same for iphone 7
+
+/*
+  ====================
   Theme
   ====================
  */
@@ -26,7 +35,7 @@ $disabledTextColor: rgba(0, 0, 0, 0.38);
  */
 html, body {
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body, button, input {
