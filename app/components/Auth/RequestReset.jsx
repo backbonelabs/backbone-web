@@ -62,7 +62,7 @@ class RequestReset extends Component {
                 <img src={Logo} role="presentation" />
               </div>
             </div>
-            <Form onSubmit={this.handleOnSubmit}>
+            <Form onSubmit={this.handleOnSubmit} className="auth-container__form">
               <div className="auth-container__textfield-container">
                 <p>
                   Enter your email address below to receive instructions
