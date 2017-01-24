@@ -11,6 +11,7 @@ import Home from './components/Home/Home';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import NotFound from './components/NotFound/NotFound';
 import RequireAuth from './components/common/RequireAuth/RequireAuth';
+import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 
 const appRoutes = (
   <Route path="/" component={App}>
@@ -20,6 +21,7 @@ const appRoutes = (
     <Route path="/password-reset" component={PasswordReset} title="Password Reset" />
     <Route path="/request-reset" component={RequestReset} title="Password Reset Request" />
     <Route path="/protected-route" component={RequireAuth(ProtectedRoute)} />
+    <Route path="/privacy-policy" component={PrivacyPolicy} title="Privacy Policy" />
     <Route path="*" component={NotFound} title="Not Found" />
   </Route>
 );
