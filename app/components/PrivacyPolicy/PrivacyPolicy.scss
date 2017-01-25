@@ -1,8 +1,11 @@
-.outer-container {
-  margin: 16px auto;
-  width: 90%;
-}
+.privacy-policy {
+  &__outer-container {
+    padding: 16px;
+  }
 
-.inner-container {
-  padding: 16px;
+  &__inner-container {
+    margin: 0 auto;
+    padding: 16px;
+    width: 90%;
+  }
 }
