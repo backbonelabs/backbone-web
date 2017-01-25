@@ -11,6 +11,7 @@ import {
   PASSWORD_RESET,
  } from '../actions/types';
 import store from '../store';
+import setAuthorizationToken from '../utils/setAuthorizationToken';
 
 export const loginUser = payload => ({ type: LOGIN_USER, payload });
 export const clearErrors = () => ({ type: CLEAR_ERRORS });
@@ -30,6 +31,7 @@ export const login = (user, url) => ({
         // save token in localStorage
         const token = res.data.token;
         localStorage.setItem('sessionId', token);
+        setAuthorizationToken(token);
         // login user and redirect home
         store.dispatch(loginUser(res.data.user));
         browserHistory.push(url);
@@ -47,6 +49,7 @@ export const signup = user => ({
       .then((res) => {
         // save token in localStorage
         const token = res.data.token;
+        setAuthorizationToken(token);
         localStorage.setItem('sessionId', token);
         // login user and redirect home
         store.dispatch(loginUser(res.data.user));

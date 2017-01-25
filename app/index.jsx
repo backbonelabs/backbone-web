@@ -8,6 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import routes from './routes';
 import { fetchUser } from './actions/user';
 import store from './store';
+import setAuthorizationToken from './utils/setAuthorizationToken';
 
 import './global.scss';
 
@@ -19,6 +20,7 @@ injectTapEventPlugin();
 const token = localStorage.getItem('sessionId');
 if (token !== null) {
   store.dispatch(fetchUser());
+  setAuthorizationToken(token); // if there is a token, set all headers
 }
 
 const rootEl = document.getElementById('root');
