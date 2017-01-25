@@ -8,7 +8,7 @@ import Login from './components/Auth/Login';
 import PasswordReset from './components/Auth/PasswordReset';
 import RequestReset from './components/Auth/RequestReset';
 import Home from './components/Home/Home';
-import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import Profile from './components/Profile/Profile';
 import NotFound from './components/NotFound/NotFound';
 import RequireAuth from './components/common/RequireAuth/RequireAuth';
 
@@ -19,7 +19,7 @@ const appRoutes = (
     <Route path="/login" component={Login} title="Login" />
     <Route path="/password-reset" component={PasswordReset} title="Password Reset" />
     <Route path="/request-reset" component={RequestReset} title="Password Reset Request" />
-    <Route path="/protected-route" component={RequireAuth(ProtectedRoute)} />
+    <Route path="/profile" component={RequireAuth(Profile)} />
     <Route path="*" component={NotFound} title="Not Found" />
   </Route>
 );
