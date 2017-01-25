@@ -26,6 +26,9 @@ module.exports = {
       exclude: /node_modules/,
       loaders: ['babel'],
     }, {
+      test: /\.html?$/,
+      loader: 'html',
+    }, {
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
       loader: 'url-loader',
     }, {
