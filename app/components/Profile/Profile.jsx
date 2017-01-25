@@ -14,44 +14,75 @@ import './Profile.scss';
 
 const { heightValuesIn, heightValuesCm, weightValuesLb, weightValuesKg } = constants;
 
+const heightInches = heightValuesIn.map(val => (
+  <MenuItem key={val} value={val} primaryText={`${Math.floor(val / 12)}ft ${val % 12}in`} />
+));
+
+const heightCentimeter = heightValuesCm.map(val => (
+  <MenuItem key={val} value={val} primaryText={val} />
+));
+
+const weightPounds = weightValuesLb.map(val => (
+  <MenuItem key={val} value={val} primaryText={val} />
+));
+
+const weightkilograms = weightValuesKg.map(val => (
+  <MenuItem key={val} value={val} primaryText={val} />
+));
+
 class Profile extends Component {
 
   static propTypes = {
     auth: PropTypes.shape({
       user: PropTypes.object,
     }),
+    userActions: PropTypes.shape({
+      updateUser: PropTypes.func,
+    }),
   }
+
   constructor(props) {
     super(props);
 
     const { user } = this.props.auth;
 
     this.state = {
-      nickName: user.nickname,
+      nickname: user.nickname,
       gender: user.gender,
       height: user.height,
-      heightUnit: user.heightUnitPreference,
+      heightUnitPreference: user.heightUnitPreference,
       weight: user.weight,
-      weightUnit: user.weightUnitPreference,
+      weightUnitPreference: user.weightUnitPreference,
       email: user.email,
-      date: user.birthdate ? new Date(user.birthdate) : null,
+      birthdate: user.birthdate ? new Date(user.birthdate) : null,
       disableForm: true,
+      validEmail: false,
+      emailPristine: true,
     };
   }
 
   @autobind
   onNicknameChange(evt) {
-    this.setState({ nickName: evt.target.value });
+    this.setState({ nickname: evt.target.value });
   }
 
   @autobind
   onEmailChange(evt) {
-    this.setState({ email: evt.target.value });
+    const stateChanges = {
+      validEmail: constants.emailRegex.test(evt.target.value.trim()),
+      email: evt.target.value,
+    };
+
+    if (this.state.emailPristine) {
+      stateChanges.emailPristine = false;
+    }
+
+    this.setState(stateChanges);
   }
 
   @autobind
   onDateChange(evt, date) {
-    this.setState({ date });
+    this.setState({ birthdate: date });
   }
 
   @autobind
@@ -67,14 +98,14 @@ class Profile extends Component {
   @autobind
   onHeightUnitChange(evt, idx, value) {
     const stateChanges = {
-      heightUnit: value,
+      heightUnitPreference: value,
     };
 
-    if (this.state.heightUnit === 1) { // if unit is in
+    if (this.state.heightUnitPreference === 1) { // if unit is in
       stateChanges.height = Math.round(this.state.height * 2.54);
     }
 
-    if (this.state.heightUnit === 2) { // if unit is cm
+    if (this.state.heightUnitPreference === 2) { // if unit is cm
       stateChanges.height = Math.max(1, Math.round(this.state.height / 2.54));
     }
 
@@ -89,14 +120,14 @@ class Profile extends Component {
   @autobind
   onWeightUnitChange(evt, idx, value) {
     const stateChanges = {
-      weightUnit: value,
+      weightUnitPreference: value,
     };
 
-    if (this.state.weightUnit === 1) { // if unit is LB
+    if (this.state.weightUnitPreference === 1) { // if unit is LB
       stateChanges.weight = Math.ceil(this.state.weight * 0.453592);
     }
 
-    if (this.state.weightUnit === 2) { // if unit is kg
+    if (this.state.weightUnitPreference === 2) { // if unit is kg
       stateChanges.weight = Math.round(this.state.weight / 0.453592);
     }
 
@@ -104,27 +135,89 @@ class Profile extends Component {
   }
 
   @autobind
+  onSave() {
+    const { user } = this.props.auth;
+    const {
+      nickname,
+      gender,
+      birthdate,
+      weight,
+      weightUnitPreference,
+      height,
+      heightUnitPreference,
+      email,
+      disableForm,
+      validEmail,
+    } = this.state;
+    const weightInInches = weightUnitPreference === 1 ? weight : weight / 0.453592;
+    const heightinInches = heightUnitPreference === 1 ? height : height / 2.54;
+
+    const profileData = {
+      nickname,
+      gender,
+      birthdate,
+      heightUnitPreference,
+      weightUnitPreference,
+      // Ensure weight (lb) / height (in) values will be stored as the base measurements
+      weight: weightInInches,
+      height: heightinInches,
+    };
+
+    // Check if email has changed and assign separately
+    if (email !== user.email) {
+      profileData.email = email;
+    }
+
+    if (!validEmail) {
+      return null;
+    }
+
+    // Check if state is same as user's profile
+    if (email === user.email &&
+      nickname === user.nickname &&
+      gender === user.gender &&
+      birthdate.getTime() === new Date(user.birthdate).getTime() &&
+      heightinInches === user.height &&
+      weightInInches === user.weight) {
+      if (!disableForm) {
+        return this.setState({ disableForm: true });
+      }
+      return null;
+    }
+
+    this.setState({ disableForm: !disableForm });
+    return this.props.userActions.updateUser(profileData);
+  }
+
+  @autobind
   editForm() {
-    this.setState({ disableForm: !this.state.disableForm });
+    const { user } = this.props.auth;
+
+    const stateChanges = {
+      disableForm: !this.state.disableForm,
+    };
+
+    // If user cancels edit, undo any changes
+    if (!this.state.disableForm) {
+      stateChanges.nickname = user.nickname;
+      stateChanges.gender = user.gender;
+      stateChanges.birthdate = user.birthdate ? new Date(user.birthdate) : null;
+      stateChanges.weight = user.weight;
+      stateChanges.weightUnitPreference = user.weightUnitPreference;
+      stateChanges.height = user.height;
+      stateChanges.heightUnitPreference = user.heightUnitPreference;
+      stateChanges.email = user.email;
+    }
+
+    this.setState(stateChanges);
   }
 
   render() {
-    const heightInches = heightValuesIn.map(val => (
-      <MenuItem key={val} value={val} primaryText={`${Math.floor(val / 12)}ft ${val % 12}in`} />
-    ));
-
-    const heightCentimeter = heightValuesCm.map(val => (
-      <MenuItem key={val} value={val} primaryText={val} />
-    ));
-
-    const weightPounds = weightValuesLb.map(val => (
-      <MenuItem key={val} value={val} primaryText={val} />
-    ));
-
-    const weightkilograms = weightValuesKg.map(val => (
-      <MenuItem key={val} value={val} primaryText={val} />
-    ));
-
+    const { emailPristine, validEmail } = this.state;
+    let emailWarning;
+    if (!emailPristine) {
+      emailWarning = validEmail ? null : 'Please enter a valid email address';
+    }
     return (
       <div className="profile-container">
         <div className="profile-container__content-wrapper">
@@ -141,14 +234,18 @@ class Profile extends Component {
               label="Save changes"
               backgroundColor={red500}
               labelColor="#FFF"
+              onClick={this.onSave}
             />
           </div>
-          <Form className="profile-container__form">
+          <Form
+            className="profile-container__form"
+            paperStyle="paperStyle"
+          >
             <TextField
               className="profile-container__textfield"
               floatingLabelText="Nickname"
               underlineShow={false}
-              value={this.state.nickName}
+              value={this.state.nickname}
               onChange={this.onNicknameChange}
               floatingLabelFocusStyle={{ color: grey900 }}
               disabled={this.state.disableForm}
@@ -178,13 +275,13 @@ class Profile extends Component {
                 underlineShow={false}
                 disabled={this.state.disableForm}
               >
-                {(this.state.heightUnit === 1) ? heightInches : heightCentimeter}
+                {(this.state.heightUnitPreference === 1) ? heightInches : heightCentimeter}
               </SelectField>
               <SelectField
                 className="profile-container__rightside-selectfield"
                 floatingLabelText="Unit"
                 floatingLabelFocusStyle={{ color: grey900 }}
-                value={this.state.heightUnit}
+                value={this.state.heightUnitPreference}
                 onChange={this.onHeightUnitChange}
                 underlineShow={false}
                 disabled={this.state.disableForm}
@@ -204,13 +301,13 @@ class Profile extends Component {
                 underlineShow={false}
                 disabled={this.state.disableForm}
               >
-                {(this.state.weightUnit === 'lb') ? weightPounds : weightkilograms}
+                {(this.state.weightUnitPreference === 'lb') ? weightPounds : weightkilograms}
               </SelectField>
               <SelectField
                 className="profile-container__rightside-selectfield"
                 floatingLabelText="Unit"
                 floatingLabelFocusStyle={{ color: grey900 }}
-                value={this.state.weightUnit}
+                value={this.state.weightUnitPreference}
                 onChange={this.onWeightUnitChange}
                 underlineShow={false}
                 disabled={this.state.disableForm}
@@ -227,7 +324,7 @@ class Profile extends Component {
               container="inline"
               underlineShow={false}
               mode="landscape"
-              value={this.state.date}
+              value={this.state.birthdate}
               onChange={this.onDateChange}
               disabled={this.state.disableForm}
             />
@@ -240,6 +337,7 @@ class Profile extends Component {
               value={this.state.email}
               onChange={this.onEmailChange}
               disabled={this.state.disableForm}
+              errorText={emailWarning}
             />
             <Divider />
           </Form>

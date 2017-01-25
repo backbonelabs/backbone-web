@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 50px;
+  min-height: 100vh;
 
   &__content-wrapper {
     display: flex;
@@ -27,6 +27,10 @@
 
   &__form {
     width: 800px;
+
+    .paperStyle {
+      padding-bottom: 25px;
+    }
   }
 
   &__textfield-container {
