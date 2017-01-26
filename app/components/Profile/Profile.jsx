@@ -3,7 +3,7 @@ import autobind from 'autobind-decorator';
 import TextField from 'material-ui/TextField';
 import { red500, grey900 } from 'material-ui/styles/colors';
 import RaisedButton from 'material-ui/RaisedButton';
-// import CircularProgress from 'material-ui/CircularProgress';
+import CircularProgress from 'material-ui/CircularProgress';
 import Divider from 'material-ui/Divider';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
