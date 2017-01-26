@@ -35,6 +35,7 @@ class Profile extends Component {
   static propTypes = {
     auth: PropTypes.shape({
       user: PropTypes.object,
+      inProgress: PropTypes.bool,
     }),
     userActions: PropTypes.shape({
       updateUser: PropTypes.func,
@@ -148,6 +149,7 @@ class Profile extends Component {
       email,
       disableForm,
       validEmail,
+      emailPristine,
     } = this.state;
     const weightInInches = weightUnitPreference === 1 ? weight : weight / 0.453592;
     const heightinInches = heightUnitPreference === 1 ? height : height / 2.54;
@@ -168,7 +170,8 @@ class Profile extends Component {
       profileData.email = email;
     }
 
-    if (!validEmail) {
+    // Check if email is valid
+    if (!validEmail && !emailPristine) {
       return null;
     }
 
@@ -218,6 +221,7 @@ class Profile extends Component {
     if (!emailPristine) {
       emailWarning = validEmail ? null : 'Please enter a valid email address';
     }
+    console.log('render');
     return (
       <div className="profile-container">
         <div className="profile-container__content-wrapper">
@@ -229,13 +233,20 @@ class Profile extends Component {
               labelColor="#FFF"
               onClick={this.editForm}
             />
-            <RaisedButton
-              className="profile-container__saveBtn"
-              label="Save changes"
-              backgroundColor={red500}
-              labelColor="#FFF"
-              onClick={this.onSave}
-            />
+            { this.props.auth.inProgress ?
+              <CircularProgress
+                className="profile-container__cta"
+                color={red500}
+                size={30}
+              /> :
+              <RaisedButton
+                className="profile-container__cta"
+                label="Save changes"
+                backgroundColor={red500}
+                labelColor="#FFF"
+                onClick={this.onSave}
+              />
+            }
           </div>
           <Form
             className="profile-container__form"
