@@ -24,6 +24,7 @@ const authState = {
   user: {},
   authenticated: false,
   inProgress: false,
+  fetchingUser: false,
   loginError: {},
   signupError: {},
   fetchUserError: {},
@@ -43,6 +44,7 @@ export default (state = authState, action) => {
         authenticated: true,
         user: payload,
         inProgress: false,
+        fetchingUser: false,
         loginError: {},
         signupError: {},
         fetchUserError: {},
@@ -56,6 +58,7 @@ export default (state = authState, action) => {
         authenticated: false,
         user: {},
         inProgress: false,
+        fetchingUser: false,
         loginError: {},
         signupError: {},
         fetchUserError: {},
@@ -102,12 +105,12 @@ export default (state = authState, action) => {
     case FETCH_USER__START:
       return {
         ...state,
-        inProgress: true,
+        fetchingUser: true,
       };
     case FETCH_USER__ERROR:
       return {
         ...state,
-        inProgress: false,
+        fetchingUser: false,
         fetchUserError: payload,
         authenticated: false,
       };

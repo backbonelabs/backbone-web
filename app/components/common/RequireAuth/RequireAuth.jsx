@@ -5,14 +5,14 @@ import { red500 } from 'material-ui/styles/colors';
 import { bindActionCreators } from 'redux';
 import * as authActions from '../../../actions/auth';
 import * as userActions from '../../../actions/user';
-import './RequireAuth';
+import './RequireAuth.scss';
 
 export default function (ComposedComponent) {
   class RequireAuth extends Component {
     static propTypes = {
       auth: PropTypes.shape({
         authenticated: PropTypes.bool,
-        inProgress: PropTypes.bool,
+        fetchingUser: PropTypes.bool,
       }),
       authActions: PropTypes.shape({
         loginRedirect: PropTypes.func,
@@ -26,25 +26,25 @@ export default function (ComposedComponent) {
     }
 
     componentWillMount() {
-      const { authenticated, inProgress } = this.props.auth;
-      this.checkAuth(authenticated, inProgress);
+      const { authenticated, fetchingUser } = this.props.auth;
+      this.checkAuth(authenticated, fetchingUser);
     }
 
     componentWillReceiveProps(nextProps) {
-      const { authenticated, inProgress } = nextProps.auth;
-      this.checkAuth(authenticated, inProgress);
+      const { authenticated, fetchingUser } = nextProps.auth;
+      this.checkAuth(authenticated, fetchingUser);
     }
 
-    checkAuth(authenticated, progress) {
+    checkAuth(authenticated, fetchingUser) {
       // if fetching is false (finished fetching) and authenticated is false
-      if (!authenticated && !progress) {
+      if (!authenticated && !fetchingUser) {
         this.props.authActions.loginRedirect(this.props.location.pathname);
         this.props.router.push('/login');
       }
     }
 
     render() {
-      if (this.props.auth.inProgress) {
+      if (this.props.auth.fetchingUser) {
         return (
           <div className="require-auth-spinner">
             <CircularProgress color={red500} size={60} thickness={7} />
