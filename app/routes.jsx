@@ -22,7 +22,7 @@ const appRoutes = (
     <Route path="/request-reset" component={RequestReset} title="Password Reset Request" />
     <Route path="/profile" component={RequireAuth(Profile)} />
     <Route path="/privacy-policy" component={PrivacyPolicy} title="Privacy Policy" />
-    <Route path="*" component={NotFound} title="Not Found" />
+    <Route path="*" component={NotFound} title="Page Not Found" />
   </Route>
 );
 
