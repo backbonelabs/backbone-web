@@ -21,7 +21,7 @@ const appRoutes = (
     <Route path="/password-reset" component={PasswordReset} title="Password Reset" />
     <Route path="/request-reset" component={RequestReset} title="Password Reset Request" />
     <Route path="/protected-route" component={RequireAuth(ProtectedRoute)} />
-    <Route path="/privacy-policy" component={PrivacyPolicy} title="Privacy Policy" />
+    <Route path="/legal/privacy" component={PrivacyPolicy} title="Privacy Policy" />
     <Route path="*" component={NotFound} title="Page Not Found" />
   </Route>
 );
