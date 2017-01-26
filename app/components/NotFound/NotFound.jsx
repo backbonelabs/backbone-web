@@ -8,7 +8,7 @@ const NotFound = () => (
       <div className="text-center">
         <h1>404</h1>
         <div>
-          <p>Oh oh. The page you were looking for does not exist.</p>
+          <h2>Oh oh. The page you were looking for does not exist.</h2>
           <p>
             Contact <a href="mailto:support@gobackbone.com">support@gobackbone.com</a> if
             you need assistance.
