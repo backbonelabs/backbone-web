@@ -221,7 +221,6 @@ class Profile extends Component {
     if (!emailPristine) {
       emailWarning = validEmail ? null : 'Please enter a valid email address';
     }
-    console.log('render');
     return (
       <div className="profile-container">
         <div className="profile-container__content-wrapper">
