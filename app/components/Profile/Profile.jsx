@@ -311,7 +311,7 @@ class Profile extends Component {
                 underlineShow={false}
                 disabled={this.state.disableForm}
               >
-                {(this.state.weightUnitPreference === 'lb') ? weightPounds : weightkilograms}
+                {(this.state.weightUnitPreference === 1) ? weightPounds : weightkilograms}
               </SelectField>
               <SelectField
                 className="profile-container__rightside-selectfield"
