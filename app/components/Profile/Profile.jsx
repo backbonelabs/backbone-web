@@ -50,9 +50,9 @@ class Profile extends Component {
     this.state = {
       nickname: user.nickname,
       gender: user.gender,
-      height: user.height,
+      height: (user.heightUnitPreference === 1) ? user.height : Math.ceil(user.height * 2.54),
       heightUnitPreference: user.heightUnitPreference,
-      weight: user.weight,
+      weight: (user.weightUnitPreference === 1) ? user.weight : Math.round(user.weight * 0.453592),
       weightUnitPreference: user.weightUnitPreference,
       email: user.email,
       birthdate: user.birthdate ? new Date(user.birthdate) : null,
@@ -98,19 +98,23 @@ class Profile extends Component {
 
   @autobind
   onHeightUnitChange(evt, idx, value) {
-    const stateChanges = {
-      heightUnitPreference: value,
-    };
+    // If the selection is not the current selection
+    if (value !== this.state.heightUnitPreference) {
+      const stateChanges = {
+        heightUnitPreference: value,
+      };
 
-    if (this.state.heightUnitPreference === 1) { // if unit is in
-      stateChanges.height = Math.round(this.state.height * 2.54);
+      if (this.state.heightUnitPreference === 1) { // if unit is inches
+        stateChanges.height = Math.ceil(this.state.height * 2.54);
+      }
+
+      if (this.state.heightUnitPreference === 2) { // if unit is cm
+        stateChanges.height = Math.round(this.state.height / 2.54);
+      }
+
+      return this.setState(stateChanges);
     }
-
-    if (this.state.heightUnitPreference === 2) { // if unit is cm
-      stateChanges.height = Math.max(1, Math.round(this.state.height / 2.54));
-    }
-
-    this.setState(stateChanges);
+    return null;
   }
 
   @autobind
@@ -120,19 +124,23 @@ class Profile extends Component {
 
   @autobind
   onWeightUnitChange(evt, idx, value) {
-    const stateChanges = {
-      weightUnitPreference: value,
-    };
+    // If the selection is not the current selection
+    if (value !== this.state.weightUnitPreference) {
+      const stateChanges = {
+        weightUnitPreference: value,
+      };
 
-    if (this.state.weightUnitPreference === 1) { // if unit is LB
-      stateChanges.weight = Math.ceil(this.state.weight * 0.453592);
+      if (this.state.weightUnitPreference === 1) { // if unit is LB
+        stateChanges.weight = Math.round(this.state.weight * 0.453592);
+      }
+
+      if (this.state.weightUnitPreference === 2) { // if unit is kg
+        stateChanges.weight = Math.round(this.state.weight / 0.453592);
+      }
+
+      return this.setState(stateChanges);
     }
-
-    if (this.state.weightUnitPreference === 2) { // if unit is kg
-      stateChanges.weight = Math.round(this.state.weight / 0.453592);
-    }
-
-    this.setState(stateChanges);
+    return null;
   }
 
   @autobind
@@ -151,8 +159,8 @@ class Profile extends Component {
       validEmail,
       emailPristine,
     } = this.state;
-    const weightInInches = weightUnitPreference === 1 ? weight : weight / 0.453592;
-    const heightinInches = heightUnitPreference === 1 ? height : height / 2.54;
+    const weightInInches = weightUnitPreference === 1 ? weight : Math.round(weight / 0.453592);
+    const heightinInches = heightUnitPreference === 1 ? height : Math.round(height / 2.54);
 
     const profileData = {
       nickname,
@@ -181,7 +189,9 @@ class Profile extends Component {
       gender === user.gender &&
       birthdate.getTime() === new Date(user.birthdate).getTime() &&
       heightinInches === user.height &&
-      weightInInches === user.weight) {
+      weightInInches === user.weight &&
+      weightUnitPreference === user.weightUnitPreference &&
+      heightUnitPreference === user.heightUnitPreference) {
       if (!disableForm) {
         return this.setState({ disableForm: true });
       }
@@ -205,9 +215,11 @@ class Profile extends Component {
       stateChanges.nickname = user.nickname;
       stateChanges.gender = user.gender;
       stateChanges.birthdate = user.birthdate ? new Date(user.birthdate) : null;
-      stateChanges.weight = user.weight;
+      stateChanges.weight = (user.weightUnitPreference === 1) ? user.weight :
+      Math.ceil(user.weight * 0.453592);
       stateChanges.weightUnitPreference = user.weightUnitPreference;
-      stateChanges.height = user.height;
+      stateChanges.height = (user.heightUnitPreference === 1) ? user.height :
+      Math.ceil(user.height * 2.54);
       stateChanges.heightUnitPreference = user.heightUnitPreference;
       stateChanges.email = user.email;
     }
