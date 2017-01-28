@@ -20,8 +20,9 @@ injectTapEventPlugin();
 const token = localStorage.getItem('sessionId');
 if (token !== null) {
   store.dispatch(fetchUser());
-  setAuthorizationToken(token); // if there is a token, set all headers
 }
+// set all headers
+setAuthorizationToken(token);
 
 const rootEl = document.getElementById('root');
 const renderApp = (Component = routes) => {
