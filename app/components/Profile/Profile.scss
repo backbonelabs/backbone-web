@@ -28,6 +28,14 @@
   &__form {
     width: 800px;
 
+    @media (max-width: $iphone6Plus) {
+      width: 350px;
+    }
+
+    // @media (max-width: $iphone5) {
+    //   width: 300px;
+    // }
+
     .paperStyle {
       padding-bottom: 25px;
     }
@@ -41,11 +49,17 @@
 
   &__textfield {
     width: 600px !important;
+    @media (max-width: $iphone6Plus) {
+      width: 300px !important;
+    }
   }
 
   &__selectfield {
     width: 600px !important;
     display: flex;
+    @media (max-width: $iphone6Plus) {
+      width: 300px !important;
+    }
   }
 
   &__leftside-selectfield {
