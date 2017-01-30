@@ -4,7 +4,6 @@ import TextField from 'material-ui/TextField';
 import { red500, grey900 } from 'material-ui/styles/colors';
 import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
-import Divider from 'material-ui/Divider';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import DatePicker from 'material-ui/DatePicker';
@@ -12,7 +11,14 @@ import constants from '../../utils/constants';
 import Form from '../common/Form/Form';
 import './Profile.scss';
 
-const { heightValuesIn, heightValuesCm, weightValuesLb, weightValuesKg } = constants;
+const {
+  heightValuesIn,
+  heightValuesCm,
+  weightValuesLb,
+  weightValuesKg,
+  heightConversion,
+  weightConversion,
+} = constants;
 
 const heightInches = heightValuesIn.map(val => (
   <MenuItem key={val} value={val} primaryText={`${Math.floor(val / 12)}ft ${val % 12}in`} />
@@ -50,9 +56,11 @@ class Profile extends Component {
     this.state = {
       nickname: user.nickname,
       gender: user.gender,
-      height: (user.heightUnitPreference === 1) ? user.height : Math.ceil(user.height * 2.54),
+      height: (user.heightUnitPreference === 1) ? user.height :
+      Math.round(user.height * heightConversion),
       heightUnitPreference: user.heightUnitPreference,
-      weight: (user.weightUnitPreference === 1) ? user.weight : Math.round(user.weight * 0.453592),
+      weight: (user.weightUnitPreference === 1) ? user.weight :
+      Math.round(user.weight * weightConversion),
       weightUnitPreference: user.weightUnitPreference,
       email: user.email,
       birthdate: user.birthdate ? new Date(user.birthdate) : null,
@@ -105,11 +113,11 @@ class Profile extends Component {
       };
 
       if (this.state.heightUnitPreference === 1) { // if unit is inches
-        stateChanges.height = Math.ceil(this.state.height * 2.54);
+        stateChanges.height = Math.round(this.state.height * heightConversion);
       }
 
       if (this.state.heightUnitPreference === 2) { // if unit is cm
-        stateChanges.height = Math.round(this.state.height / 2.54);
+        stateChanges.height = Math.max(1, Math.round(this.state.height / heightConversion));
       }
 
       return this.setState(stateChanges);
@@ -131,11 +139,11 @@ class Profile extends Component {
       };
 
       if (this.state.weightUnitPreference === 1) { // if unit is LB
-        stateChanges.weight = Math.round(this.state.weight * 0.453592);
+        stateChanges.weight = Math.ceil(this.state.weight * weightConversion);
       }
 
       if (this.state.weightUnitPreference === 2) { // if unit is kg
-        stateChanges.weight = Math.round(this.state.weight / 0.453592);
+        stateChanges.weight = Math.round(this.state.weight / weightConversion);
       }
 
       return this.setState(stateChanges);
@@ -159,8 +167,10 @@ class Profile extends Component {
       validEmail,
       emailPristine,
     } = this.state;
-    const weightInInches = weightUnitPreference === 1 ? weight : Math.round(weight / 0.453592);
-    const heightinInches = heightUnitPreference === 1 ? height : Math.round(height / 2.54);
+    const weightInInches = weightUnitPreference === 1 ? weight :
+    Math.round(weight / weightConversion);
+    const heightinInches = heightUnitPreference === 1 ? height :
+    Math.round(height / heightConversion);
 
     const profileData = {
       nickname,
@@ -216,10 +226,10 @@ class Profile extends Component {
       stateChanges.gender = user.gender;
       stateChanges.birthdate = user.birthdate ? new Date(user.birthdate) : null;
       stateChanges.weight = (user.weightUnitPreference === 1) ? user.weight :
-      Math.ceil(user.weight * 0.453592);
+      Math.ceil(user.weight * weightConversion);
       stateChanges.weightUnitPreference = user.weightUnitPreference;
       stateChanges.height = (user.heightUnitPreference === 1) ? user.height :
-      Math.ceil(user.height * 2.54);
+      Math.round(user.height * heightConversion);
       stateChanges.heightUnitPreference = user.heightUnitPreference;
       stateChanges.email = user.email;
     }
@@ -272,7 +282,6 @@ class Profile extends Component {
               floatingLabelFocusStyle={{ color: grey900 }}
               disabled={this.state.disableForm}
             />
-            <Divider />
             <SelectField
               className="profile-container__selectfield"
               floatingLabelText="Gender"
@@ -286,7 +295,6 @@ class Profile extends Component {
               <MenuItem value={2} primaryText="Female" />
               <MenuItem value={1} primaryText="Male" />
             </SelectField>
-            <Divider />
             <div className="profile-container__selectfield">
               <SelectField
                 className="profile-container__leftside-selectfield"
@@ -312,7 +320,6 @@ class Profile extends Component {
                 <MenuItem value={2} primaryText="cm" />
               </SelectField>
             </div>
-            <Divider />
             <div className="profile-container__selectfield">
               <SelectField
                 className="profile-container__leftside-selectfield"
@@ -338,19 +345,15 @@ class Profile extends Component {
                 <MenuItem value={2} primaryText="kg" />
               </SelectField>
             </div>
-            <Divider />
             <DatePicker
               className="profile-container__textfield"
               floatingLabelText="Birthdate"
               floatingLabelFocusStyle={{ color: grey900 }}
-              container="inline"
               underlineShow={false}
-              mode="landscape"
               value={this.state.birthdate}
               onChange={this.onDateChange}
               disabled={this.state.disableForm}
             />
-            <Divider />
             <TextField
               className="profile-container__textfield"
               floatingLabelText="Email"
@@ -361,7 +364,6 @@ class Profile extends Component {
               disabled={this.state.disableForm}
               errorText={emailWarning}
             />
-            <Divider />
           </Form>
         </div>
       </div>
