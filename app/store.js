@@ -1,9 +1,13 @@
 import ReduxThunk from 'redux-thunk';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { asyncActionMiddleware } from 'redux-async-action';
+import { responsiveStoreEnhancer } from 'redux-responsive';
 import reducers from './reducers';
 
 export default createStore(
   reducers,
-  applyMiddleware(asyncActionMiddleware, ReduxThunk),
+  compose(
+    responsiveStoreEnhancer,
+    applyMiddleware(asyncActionMiddleware, ReduxThunk),
+  ),
 );

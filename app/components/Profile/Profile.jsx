@@ -43,6 +43,9 @@ class Profile extends Component {
       user: PropTypes.object,
       inProgress: PropTypes.bool,
     }),
+    browser: PropTypes.shape({
+      orientation: PropTypes.string,
+    }),
     userActions: PropTypes.shape({
       updateUser: PropTypes.func,
     }),
@@ -352,6 +355,7 @@ class Profile extends Component {
               underlineShow={false}
               value={this.state.birthdate}
               onChange={this.onDateChange}
+              mode={(this.props.browser.orientation === 'landscape') ? 'landscape' : null}
               disabled={this.state.disableForm}
             />
             <TextField

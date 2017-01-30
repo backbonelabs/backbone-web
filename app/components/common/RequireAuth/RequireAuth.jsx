@@ -57,6 +57,7 @@ export default function (ComposedComponent) {
 
   const mapStateToProps = state => ({
     auth: state.auth,
+    browser: state.browser,
   });
 
   const mapDispatchToProps = dispatch => ({
