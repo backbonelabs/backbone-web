@@ -15,12 +15,16 @@ import {
   PASSWORD_RESET,
   PASSWORD_RESET__START,
   PASSWORD_RESET__ERROR,
+  UPDATE_USER,
+  UPDATE_USER__START,
+  UPDATE_USER__ERROR,
  } from '../actions/types';
 
 const authState = {
   user: {},
   authenticated: false,
   inProgress: false,
+  fetchingUser: false,
   loginError: {},
   signupError: {},
   fetchUserError: {},
@@ -40,6 +44,7 @@ export default (state = authState, action) => {
         authenticated: true,
         user: payload,
         inProgress: false,
+        fetchingUser: false,
         loginError: {},
         signupError: {},
         fetchUserError: {},
@@ -53,6 +58,7 @@ export default (state = authState, action) => {
         authenticated: false,
         user: {},
         inProgress: false,
+        fetchingUser: false,
         loginError: {},
         signupError: {},
         fetchUserError: {},
@@ -99,12 +105,12 @@ export default (state = authState, action) => {
     case FETCH_USER__START:
       return {
         ...state,
-        inProgress: true,
+        fetchingUser: true,
       };
     case FETCH_USER__ERROR:
       return {
         ...state,
-        inProgress: false,
+        fetchingUser: false,
         fetchUserError: payload,
         authenticated: false,
       };
@@ -143,6 +149,22 @@ export default (state = authState, action) => {
         inProgress: false,
         passwordResetError: payload,
         passwordResetSent: false,
+      };
+    case UPDATE_USER:
+      return {
+        ...state,
+        inProgress: false,
+      };
+    case UPDATE_USER__START:
+      return {
+        ...state,
+        inProgress: true,
+      };
+    case UPDATE_USER__ERROR:
+      return {
+        ...state,
+        inProgress: false,
+        fetchUserError: payload,
       };
     default:
       return state;

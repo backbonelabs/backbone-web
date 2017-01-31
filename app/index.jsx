@@ -8,6 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import routes from './routes';
 import { fetchUser } from './actions/user';
 import store from './store';
+import setAuthorizationToken from './utils/setAuthorizationToken';
 
 import './global.scss';
 
@@ -20,6 +21,8 @@ const token = localStorage.getItem('sessionId');
 if (token !== null) {
   store.dispatch(fetchUser());
 }
+// set all headers
+setAuthorizationToken(token);
 
 const rootEl = document.getElementById('root');
 const renderApp = (Component = routes) => {

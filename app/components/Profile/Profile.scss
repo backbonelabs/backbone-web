@@ -1,0 +1,140 @@
+@import '../../global.scss';
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (max-width: $iphone6Plus) {
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      flex: 2;
+      @media (max-width: $iphone6Plus) {
+        flex: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  &__cta {
+    margin-left: 10px;
+  }
+
+  &__form {
+    width: 800px;
+
+
+    @media only screen
+      and (min-device-width: $iphone6Plus)
+      and (max-device-width: $iphone6LsMax) {
+      width: 600px;
+    }
+
+    @media only screen
+      and (min-device-width: $iphone5)
+      and (max-device-width: $iphone5LsMax) {
+      width: 500px;
+    }
+
+    @media (max-width: $iphone6Plus) {
+      width: 350px;
+    }
+
+    @media (min-width: $ipad) {
+      width: 600px;
+    }
+
+    .paperStyle {
+      padding-bottom: 25px;
+    }
+  }
+
+  &__textfield-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__textfield {
+    width: 600px !important;
+
+    @media only screen
+      and (min-device-width: $iphone6Plus)
+      and (max-device-width: $iphone6LsMax) {
+      width: 550px !important;
+    }
+
+    @media only screen
+      and (min-device-width: $iphone5)
+      and (max-device-width: $iphone5LsMax) {
+      width: 450px !important;
+    }
+
+    @media (max-width: $iphone6Plus) {
+      width: 300px !important;
+    }
+
+    @media (max-width: $iphone5) {
+      width: 280px !important;
+    }
+
+    @media (min-width: $ipad) {
+      width: 500px !important;
+    }
+
+  }
+
+  &__selectfield {
+    width: 600px !important;
+    display: flex;
+
+    @media only screen
+      and (min-device-width: $iphone6Plus)
+      and (max-device-width: $iphone6LsMax) {
+      width: 550px !important;
+    }
+
+    @media only screen
+      and (min-device-width: $iphone5)
+      and (max-device-width: $iphone5LsMax) {
+      width: 450px !important;
+    }
+
+    @media (max-width: $iphone6Plus) {
+      width: 300px !important;
+    }
+
+    @media (max-width: $iphone5) {
+      width: 280px !important;
+    }
+
+    @media (min-width: $ipad) {
+      width: 500px !important;
+    }
+  }
+
+  &__leftside-selectfield {
+    flex: 3;
+  }
+
+  &__rightside-selectfield {
+    flex: 1;
+    padding-left: 10px;
+  }
+
+}
