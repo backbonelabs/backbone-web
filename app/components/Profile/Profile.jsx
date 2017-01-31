@@ -173,7 +173,7 @@ class Profile extends Component {
     const weightInInches = weightUnitPreference === 1 ? weight :
     Math.round(weight / weightConversion);
     const heightinInches = heightUnitPreference === 1 ? height :
-    Math.round(height / heightConversion);
+    Math.max(1, Math.round(height / heightConversion));
 
     const profileData = {
       nickname,
