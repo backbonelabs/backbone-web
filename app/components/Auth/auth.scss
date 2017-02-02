@@ -7,21 +7,12 @@
   flex-direction: column;
   min-height: 100vh;
 
-  &__success-container {
-    padding: 25px;
-  }
-
-  &__success-header {
-    text-align: center;
-  }
-
-  &__success-link {
-    display: block;
-    text-align: center;
-  }
-
-  &__continue-header {
-    margin-top: 10px;
+  &__panel {
+    padding: 0;
+    width: 400px;
+    @media (max-width: $iphone6Plus) {
+      width: 100%;
+    }
   }
 
   &__header {
@@ -31,15 +22,12 @@
     width: 400px;
     text-align: center;
     background: linear-gradient(to top right, $secondaryColor 0%, $primaryColor 100%);
-
     @media (max-width: $iphone6Plus) {
-      width: 350px;
+      width: 100%;
     }
-
     @media (max-width: $iphone5) {
-      width: 300px;
+      width: 100%;
     }
-
   }
 
   &__logo {
@@ -53,7 +41,6 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
-
     img {
       width: 70px;
       height: 70px;
@@ -61,65 +48,63 @@
   }
 
   &__form {
-    width: 400px;
-
-    @media (max-width: $iphone6Plus) {
-      width: 350px;
-    }
-
-    @media (max-width: $iphone5) {
-      width: 300px;
-    }
+    margin-top: 75px;
   }
 
-  &__textfield-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 45px;
-
-    p {
-      text-align: center;
-    }
-  }
-
-  &__textfield {
-    width: 300px !important;
-
-    // width less than iphone 6
-    @media (max-width: $iphone5) {
-      width: 250px !important;
-    }
-  }
-
-  &__error {
-    color: $red500;
-    width: 350px;
-    text-align: center;
-  }
-
-  &__cta {
-    margin-top: 45px;
+  &__input {
     width: 300px;
-
+    margin-right: auto;
+    margin-left: auto;
+    height: 70px;
+    input:focus {
+      border-color: $grey900;
+    }
+    input:focus~label {
+      color: $grey900;
+    }
+    small {
+      display: block;
+      text-align: center;
+      margin-top: -15px;
+      color: $primaryColor;
+    }
     @media (max-width: $iphone5) {
       width: 250px;
     }
   }
 
-  &__footer {
-    text-align: center;
-
-    &-primary-link, &-secondary-link {
-      text-decoration: none;
-      cursor: pointer;
-      color: $materialPrimaryColor;
+  &__input-error {
+    @extend .auth-container__input;
+    input:focus {
+      border-color: $primaryColor;
     }
-
-    &-secondary-link {
-      text-transform: uppercase;
-      text-align: center;
+    input:focus~label {
+      color: $primaryColor;
     }
   }
+
+  &__cta {
+    margin-top: 25px;
+    text-align: center;
+    button {
+      width: 300px;
+      color: $white;
+      @media (max-width: $iphone5) {
+        width: 250px;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 15px;
+    &-primary-link, &-secondary-link {
+      text-decoration: none !important;
+      cursor: pointer;
+      color: $red500;
+    }
+    &-secondary-link {
+      text-transform: uppercase;
+    }
+  }
+
 }

@@ -23,9 +23,7 @@ $ipad: 768px;
   ====================
  */
 $primaryColor: $backbonePrimary;
-$materialPrimaryColor: $red500;
 $secondaryColor: $backboneSecondary;
-$materialSecondaryColor: $orange500;
 
 // Use opacity instead of grey.
 // Black or white text that is transparent remains legible and vibrant against background
@@ -54,10 +52,22 @@ body {
   background-color: $grey50;
 }
 
+/* Make all H1 bold */
+.mui--text-display1, h1 {
+  font-weight: bold;
+}
+
 .secondary-text {
   font-size: 12px;
 }
 
 .text-center {
   text-align: center;
+}
+
+/* Error styles */
+.input-error {
+  input {
+    border-color: $primaryColor !important;
+  }
 }

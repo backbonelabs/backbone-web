@@ -39,6 +39,7 @@
     "localenv": "0.2.2",
     "mailgun-js": "0.7.14",
     "material-ui": "0.16.5",
+    "muicss": "0.9.9-rc2",
     "node-sass": "4.0.0",
     "normalize.css": "5.0.0",
     "postcss": "5.2.6",
