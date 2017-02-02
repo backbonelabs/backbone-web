@@ -5,6 +5,7 @@ import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 import Panel from 'muicss/lib/react/panel';
+import MDSpinner from 'react-md-spinner';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import Logo from '../../images/logo.png';
@@ -135,14 +136,17 @@ class Login extends Component {
               <small>{passwordWarning}</small>
             </div>
             <div className="auth-container__cta">
-              <Button
-                variant="raised"
-                color="danger"
-                type="submit"
-                disabled={(!email || !validEmail) || (!password || !validPassword)}
-              >
-                Login
-              </Button>
+              { this.props.auth.inProgress ?
+                <MDSpinner singleColor="#F44336" /> :
+                <Button
+                  variant="raised"
+                  color="danger"
+                  type="submit"
+                  disabled={(!email || !validEmail) || (!password || !validPassword)}
+                >
+                  Login
+                </Button>
+              }
             </div>
           </Form>
           <div className="auth-container__footer mui--text-center">
