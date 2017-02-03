@@ -10,7 +10,7 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import Logo from '../../images/logo.png';
 import constants from '../../utils/constants';
-import * as actions from '../../actions/auth';
+import * as authActions from '../../actions/auth';
 
 import './auth.scss';
 
@@ -149,7 +149,7 @@ class Login extends Component {
               }
             </div>
           </Form>
-          <div className="auth-container__footer mui--text-center">
+          <div className="auth-container__footer">
             <p>Don't have an account?&nbsp;
               <Link to="/signup" className="auth-container__footer-primary-link">Sign Up</Link>
             </p>
@@ -172,4 +172,4 @@ const mapStateToProps = state => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, actions)(Login);
+export default connect(mapStateToProps, authActions)(Login);
