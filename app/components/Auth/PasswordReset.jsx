@@ -80,7 +80,7 @@ class PasswordReset extends Component {
 
     return (
       <Container className="auth-container">
-        { true ?
+        { this.props.auth.passwordResetSent ?
           <SuccessMessage
             message="Your password has been successfully reset!"
             link="/login"
