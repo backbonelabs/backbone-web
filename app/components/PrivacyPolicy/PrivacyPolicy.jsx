@@ -1,11 +1,12 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
-import Paper from 'material-ui/Paper';
+import Container from 'muicss/lib/react/container';
+import Panel from 'muicss/lib/react/panel';
 import './PrivacyPolicy.scss';
 
 const PrivacyPolicy = () => (
-  <div className="privacy-policy__outer-container">
-    <Paper zDepth={1} className="privacy-policy__inner-container">
+  <Container className="privacy-policy__outer-container">
+    <Panel className="privacy-policy__inner-container">
       <div>
         <h1>Privacy Policy</h1>
         <p>
@@ -126,8 +127,8 @@ const PrivacyPolicy = () => (
           </a>.
         </p>
       </div>
-    </Paper>
-  </div>
+    </Panel>
+  </Container>
 );
 
 export default PrivacyPolicy;
