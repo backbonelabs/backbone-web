@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import CircularProgress from 'material-ui/CircularProgress';
-import { red500 } from 'material-ui/styles/colors';
+import MDSpinner from 'react-md-spinner';
 import { bindActionCreators } from 'redux';
 import * as authActions from '../../../actions/auth';
 import * as userActions from '../../../actions/user';
+
 import './RequireAuth.scss';
 
 export default function (ComposedComponent) {
@@ -47,7 +47,7 @@ export default function (ComposedComponent) {
       if (this.props.auth.fetchingUser) {
         return (
           <div className="require-auth-spinner">
-            <CircularProgress color={red500} size={60} thickness={7} />
+            <MDSpinner singleColor="#F44336" size={40} />
           </div>
         );
       }
