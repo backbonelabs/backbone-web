@@ -6,6 +6,9 @@
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
+  .mui--text-display1, h1 {
+    font-weight: bold;
+  }
 
   &__panel {
     padding: 0;
