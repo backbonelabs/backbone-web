@@ -83,14 +83,14 @@ class Login extends Component {
     const validPassword = password.length >= 8;
     let emailWarning;
     let passwordWarning;
-    let emailError = '';
-    let passwordError = '';
+    let emailErrorStyle = '';
+    let passwordErrorStyle = '';
     if (!emailPristine) {
       if (validEmail) {
         emailWarning = null;
       } else {
         emailWarning = 'Please enter a valid email address';
-        emailError = 'input-error';
+        emailErrorStyle = 'input-error';
       }
     }
     if (!passwordPristine) {
@@ -98,7 +98,7 @@ class Login extends Component {
         passwordWarning = null;
       } else {
         passwordWarning = 'Password must be at least 8 characters';
-        passwordError = 'input-error';
+        passwordErrorStyle = 'input-error';
       }
     }
 
@@ -116,7 +116,7 @@ class Login extends Component {
           <Form className="auth-container__form" onSubmit={this.handleOnSubmit}>
             <div className="auth-container__input">
               <Input
-                className={emailError}
+                className={emailErrorStyle}
                 label="Email"
                 floatingLabel
                 value={email}
@@ -126,7 +126,7 @@ class Login extends Component {
             </div>
             <div className="auth-container__input">
               <Input
-                className={passwordError}
+                className={passwordErrorStyle}
                 type="password"
                 label="Password"
                 floatingLabel

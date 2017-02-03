@@ -1,16 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 import autobind from 'autobind-decorator';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-import CircularProgress from 'material-ui/CircularProgress';
-import { red500, grey900 } from 'material-ui/styles/colors';
+import Form from 'muicss/lib/react/form';
+import Input from 'muicss/lib/react/input';
+import Button from 'muicss/lib/react/button';
+import Container from 'muicss/lib/react/container';
+import Panel from 'muicss/lib/react/panel';
+import MDSpinner from 'react-md-spinner';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import Logo from '../../images/logo.png';
-import Form from '../common/Form/Form';
 import constants from '../../utils/constants';
+import * as authActions from '../../actions/auth';
 
-import * as actions from '../../actions/auth';
 import './auth.scss';
 
 class Signup extends Component {
@@ -98,80 +99,93 @@ class Signup extends Component {
     const validPassword = password.length >= 8;
     let emailWarning;
     let passwordWarning;
+    let emailErrorStyle = '';
+    let passwordErrorStyle = '';
     if (!emailPristine) {
-      emailWarning = validEmail ? null : 'Please enter a valid email address';
+      if (validEmail) {
+        emailWarning = null;
+      } else {
+        emailWarning = 'Please enter a valid email address';
+        emailErrorStyle = 'input-error';
+      }
     }
     if (!passwordPristine) {
-      passwordWarning = validPassword ? '' : 'Password must be at least 8 characters';
+      if (validPassword) {
+        passwordWarning = null;
+      } else {
+        passwordWarning = 'Password must be at least 8 characters';
+        passwordErrorStyle = 'input-error';
+      }
     }
 
     return (
-      <div className="auth-container">
-        <div className="auth-container__header">
-          <h2>Sign Up</h2>
-          <div className="auth-container__logo">
-            <img src={Logo} role="presentation" />
-          </div>
-        </div>
-        <Form onSubmit={this.handleOnSubmit} className="auth-container__form">
-          <div className="auth-container__textfield-container">
-            <TextField
-              className="auth-container__textfield"
-              floatingLabelFocusStyle={{ color: grey900 }}
-              underlineFocusStyle={{ borderColor: grey900 }}
-              floatingLabelText="Email"
-              onChange={this.onEmailChange}
-              errorText={auth.signupError.message || emailWarning}
-              errorStyle={{ textAlign: 'center' }}
-            />
-            <TextField
-              className="auth-container__textfield"
-              floatingLabelFocusStyle={{ color: grey900 }}
-              underlineFocusStyle={{ borderColor: grey900 }}
-              floatingLabelText="Password"
-              type="password"
-              onChange={this.onPasswordChange}
-              errorText={passwordWarning}
-              errorStyle={{ textAlign: 'center' }}
-            />
-            <TextField
-              className="auth-container__textfield"
-              floatingLabelFocusStyle={{ color: grey900 }}
-              underlineFocusStyle={{ borderColor: grey900 }}
-              floatingLabelText="Confirm Password"
-              type="password"
-              onChange={this.onConfirmPasswordChange}
-              errorText={confirmPasswordError}
-              errorStyle={{ textAlign: 'center' }}
-            />
-            { this.props.auth.inProgress ?
-              <CircularProgress
-                className="auth-container__cta"
-                color={red500}
-                size={30}
-              /> :
-              <RaisedButton
-                label="Sign up"
-                className="auth-container__cta"
-                backgroundColor={red500}
-                labelColor="#FFF"
-                type="submit"
-                disabled={
-                  ((!email || !validEmail) ||
-                  (!password || !validPassword) ||
-                  (!confirmPassword))
-                }
-              />
-            }
-            <div className="auth-container__footer">
-              <p>
-                Already signed up?&nbsp;
-                <Link to="/login" className="auth-container__footer-primary-link">Log In</Link>
-              </p>
+      <Container className="auth-container">
+        <Panel className="auth-container__panel">
+          <div className="auth-container__header">
+            <h1>Sign Up</h1>
+            <div className="auth-container__logo">
+              <img src={Logo} role="presentation" />
             </div>
           </div>
-        </Form>
-      </div>
+          <Form className="auth-container__form" onSubmit={this.handleOnSubmit}>
+            <div className="auth-container__input">
+              <Input
+                className={emailErrorStyle}
+                label="Email"
+                floatingLabel
+                value={email}
+                onChange={this.onEmailChange}
+              />
+              <small>{auth.signupError.message || emailWarning}</small>
+            </div>
+            <div className="auth-container__input">
+              <Input
+                className={passwordErrorStyle}
+                type="password"
+                label="Confirm Password"
+                floatingLabel
+                value={password}
+                onChange={this.onPasswordChange}
+              />
+              <small>{passwordWarning}</small>
+            </div>
+            <div className="auth-container__input">
+              <Input
+                className={confirmPasswordError ? 'input-error' : ''}
+                type="password"
+                label="Password"
+                floatingLabel
+                value={confirmPassword}
+                onChange={this.onConfirmPasswordChange}
+              />
+              <small>{confirmPasswordError}</small>
+            </div>
+            <div className="auth-container__cta">
+              { auth.inProgress ?
+                <MDSpinner singleColor="#F44336" /> :
+                <Button
+                  variant="raised"
+                  color="danger"
+                  type="submit"
+                  disabled={
+                   ((!email || !validEmail) ||
+                   (!password || !validPassword) ||
+                   (!confirmPassword))
+                 }
+                >
+                  Sign up
+                </Button>
+              }
+            </div>
+          </Form>
+          <div className="auth-container__footer">
+            <p>
+              Already signed up?&nbsp;
+              <Link to="/login" className="auth-container__footer-primary-link">Log In</Link>
+            </p>
+          </div>
+        </Panel>
+      </Container>
     );
   }
 }
@@ -180,5 +194,4 @@ const mapStateToProps = state => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, actions)(Signup);
-
+export default connect(mapStateToProps, authActions)(Signup);
