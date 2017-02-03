@@ -1,16 +1,29 @@
 import React, { PropTypes } from 'react';
-import Paper from 'material-ui/Paper';
 import { Link } from 'react-router';
+import Button from 'muicss/lib/react/button';
+import Container from 'muicss/lib/react/container';
+import Panel from 'muicss/lib/react/panel';
+
 import './auth.scss';
 
 const SuccessMessage = props => (
-  <Paper className="auth-container__success-container" zDepth={2}>
-    <h2 className="auth-container__success-header">
-      {props.message}
-    </h2>
-    {props.link ?
-      <Link className="auth-container__success-link" to={props.link}>Login</Link> : null}
-  </Paper>
+  <Container>
+    <Panel className="mui--text-center">
+      <h2>
+        {props.message}
+      </h2>
+      {props.link ?
+        <Link to={props.link}>
+          <Button
+            variant="raised"
+            color="danger"
+          >
+            Login
+          </Button>
+        </Link> : null
+      }
+    </Panel>
+  </Container>
 );
 
 SuccessMessage.propTypes = {
