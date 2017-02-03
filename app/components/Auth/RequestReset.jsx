@@ -1,15 +1,18 @@
 import React, { Component, PropTypes } from 'react';
 import autobind from 'autobind-decorator';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-import { red500, grey900 } from 'material-ui/styles/colors';
+import Form from 'muicss/lib/react/form';
+import Input from 'muicss/lib/react/input';
+import Button from 'muicss/lib/react/button';
+import Container from 'muicss/lib/react/container';
+import Panel from 'muicss/lib/react/panel';
+import MDSpinner from 'react-md-spinner';
 import { connect } from 'react-redux';
-import CircularProgress from 'material-ui/CircularProgress';
-import Form from '../common/Form/Form';
 import Logo from '../../images/logo.png';
-import * as authActions from '../../actions/auth';
 import constants from '../../utils/constants';
+import * as authActions from '../../actions/auth';
 import SuccessMessage from './SuccessMessage';
+
+import './auth.scss';
 
 class RequestReset extends Component {
   static propTypes = {
@@ -48,56 +51,50 @@ class RequestReset extends Component {
 
   render() {
     return (
-      <div className="auth-container">
+      <Container className="auth-container">
         {
-        this.props.auth.requestSent ?
-          <SuccessMessage
-            message="Instructions on how to reset your password have been emailed to you."
-          />
-        :
-          <div>
-            <div className="auth-container__header">
-              <h2>Forgot your password?</h2>
-              <div className="auth-container__logo">
-                <img src={Logo} role="presentation" />
-              </div>
-            </div>
-            <Form onSubmit={this.handleOnSubmit} className="auth-container__form">
-              <div className="auth-container__textfield-container">
-                <p>
-                  Enter your email address below to receive instructions
-                  on how to change your password.
-                </p>
-                <TextField
-                  className="auth-container__textfield"
-                  floatingLabelFocusStyle={{ color: grey900 }}
-                  underlineFocusStyle={{ borderColor: grey900 }}
-                  floatingLabelText="Email"
-                  name="email"
-                  onChange={this.handleOnChange}
-                  errorText={this.props.auth.requestResetError.message}
-                  errorStyle={{ textAlign: 'center' }}
-                />
-                { this.props.auth.inProgress ?
-                  <CircularProgress
-                    className="auth-container__cta"
-                    color={red500}
-                    size={30}
-                  /> :
-                  <RaisedButton
-                    label="Submit"
-                    className="auth-container__cta"
-                    backgroundColor={red500}
-                    labelColor="#FFF"
-                    type="submit"
-                    disabled={!this.state.email || !this.state.validEmail}
-                  />
-                }
-              </div>
-            </Form>
-          </div>
-      }
-      </div>
+         this.props.auth.requestSent ?
+           <SuccessMessage
+             message="Instructions on how to reset your password have been emailed to you."
+           />
+          :
+           <Panel className="auth-container__panel">
+             <div className="auth-container__header">
+               <h1>Forgot your password?</h1>
+               <div className="auth-container__logo">
+                 <img src={Logo} role="presentation" />
+               </div>
+             </div>
+             <Form className="auth-container__form" onSubmit={this.handleOnSubmit}>
+               <h4>
+                Enter your email address below to receive instructions
+                on how to change your password.
+              </h4>
+               <div className="auth-container__input">
+                 <Input
+                   label="Email"
+                   floatingLabel
+                   value={this.state.email}
+                   onChange={this.handleOnChange}
+                 />
+               </div>
+               <div className="auth-container__cta">
+                 { this.props.auth.inProgress ?
+                   <MDSpinner singleColor="#F44336" /> :
+                   <Button
+                     variant="raised"
+                     color="danger"
+                     type="submit"
+                     disabled={!this.state.email || !this.state.validEmail}
+                   >
+                      Submit
+                    </Button>
+                  }
+               </div>
+             </Form>
+           </Panel>
+        }
+      </Container>
     );
   }
 }
