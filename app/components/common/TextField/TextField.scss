@@ -1,3 +1,11 @@
-.textField-wrapper {
+@import '../../../global.scss';
+
+.textField-container {
   height: 65px;
+  small {
+    display: block;
+    text-align: center;
+    margin-top: -15px;
+    color: $primaryColor;
+  }
 }

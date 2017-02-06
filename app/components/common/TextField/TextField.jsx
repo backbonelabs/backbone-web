@@ -55,7 +55,7 @@ class TextField extends Component {
     }
     const errorStyle = errorText ? 'input-error' : '';
     return (
-      <div className={`textField-wrapper ${errorStyle}`}>
+      <div className={`textField-container ${errorStyle}`}>
         { elementType }
         <small>{errorText}</small>
       </div>
