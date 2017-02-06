@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import autobind from 'autobind-decorator';
 import Form from 'muicss/lib/react/form';
-import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 import Panel from 'muicss/lib/react/panel';
@@ -11,6 +10,7 @@ import { connect } from 'react-redux';
 import Logo from '../../images/logo.png';
 import constants from '../../utils/constants';
 import * as authActions from '../../actions/auth';
+import TextField from '../common/TextField/TextField';
 
 import './auth.scss';
 
@@ -83,23 +83,11 @@ class Login extends Component {
     const validPassword = password.length >= 8;
     let emailWarning;
     let passwordWarning;
-    let emailErrorStyle = '';
-    let passwordErrorStyle = '';
     if (!emailPristine) {
-      if (validEmail) {
-        emailWarning = null;
-      } else {
-        emailWarning = 'Please enter a valid email address';
-        emailErrorStyle = 'input-error';
-      }
+      emailWarning = validEmail ? null : 'Please enter a valid email address';
     }
     if (!passwordPristine) {
-      if (validPassword) {
-        passwordWarning = null;
-      } else {
-        passwordWarning = 'Password must be at least 8 characters';
-        passwordErrorStyle = 'input-error';
-      }
+      passwordWarning = validPassword ? null : 'Password must be at least 8 characters';
     }
 
     return (
@@ -115,25 +103,25 @@ class Login extends Component {
           </div>
           <Form className="auth-container__form" onSubmit={this.handleOnSubmit}>
             <div className="auth-container__input">
-              <Input
-                className={emailErrorStyle}
+              <TextField
+                fieldType="input"
                 label="Email"
                 floatingLabel
                 value={email}
                 onChange={this.onEmailChange}
+                errorText={emailWarning}
               />
-              <small>{emailWarning}</small>
             </div>
             <div className="auth-container__input">
-              <Input
-                className={passwordErrorStyle}
+              <TextField
+                fieldType="input"
                 type="password"
                 label="Password"
                 floatingLabel
                 value={password}
                 onChange={this.onPasswordChange}
+                errorText={passwordWarning}
               />
-              <small>{passwordWarning}</small>
             </div>
             <div className="auth-container__cta">
               { this.props.auth.inProgress ?

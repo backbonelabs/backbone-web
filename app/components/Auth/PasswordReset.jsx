@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import autobind from 'autobind-decorator';
 import Form from 'muicss/lib/react/form';
-import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 import Panel from 'muicss/lib/react/panel';
@@ -10,6 +9,7 @@ import MDSpinner from 'react-md-spinner';
 import Logo from '../../images/logo.png';
 import * as authActions from '../../actions/auth';
 import SuccessMessage from './SuccessMessage';
+import TextField from '../common/TextField/TextField';
 
 import './auth.scss';
 
@@ -95,28 +95,28 @@ class PasswordReset extends Component {
             <Form className="auth-container__form" onSubmit={this.handleOnSubmit}>
               <h4>Enter your new password in the fields below.</h4>
               <div className="auth-container__input">
-                <Input
-                  className={passwordError ? 'input-error' : ''}
+                <TextField
+                  fieldType="input"
                   type="password"
                   label="New password"
                   floatingLabel
                   name="newPassword"
                   value={newPassword}
                   onChange={this.handleOnChange}
+                  errorText={passwordError}
                 />
-                <small>{passwordError}</small>
               </div>
               <div className="auth-container__input">
-                <Input
-                  className={verifyPasswordError ? 'input-error' : ''}
+                <TextField
+                  fieldType="input"
                   type="password"
                   label="Verify password"
                   floatingLabel
                   name="verifyPassword"
                   value={verifyPassword}
                   onChange={this.handleOnChange}
+                  errorText={verifyPasswordError}
                 />
-                <small>{verifyPasswordError}</small>
               </div>
               <div className="auth-container__cta">
                 { this.props.auth.inProgress ?
