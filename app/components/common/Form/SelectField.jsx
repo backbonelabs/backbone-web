@@ -32,7 +32,7 @@ class SelectField extends Component {
     }
 
     return (
-      <div className={`textField-container ${errorStyle}`}>
+      <div className={`field-container ${errorStyle}`}>
         <Select
           ref={ref => this.selectFieldRef = ref} // eslint-disable-line
           {...otherProps}
