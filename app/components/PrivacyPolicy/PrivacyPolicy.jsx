@@ -6,7 +6,7 @@ import './PrivacyPolicy.scss';
 
 const PrivacyPolicy = () => (
   <Container className="privacy-policy__outer-container">
-    <Panel className="privacy-policy__inner-container">
+    <Panel>
       <div>
         <h1>Privacy Policy</h1>
         <p>
