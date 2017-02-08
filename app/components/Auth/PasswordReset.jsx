@@ -9,7 +9,7 @@ import MDSpinner from 'react-md-spinner';
 import Logo from '../../images/logo.png';
 import * as authActions from '../../actions/auth';
 import SuccessMessage from './SuccessMessage';
-import TextField from '../common/TextField/TextField';
+import TextField from '../common/Form/TextField';
 
 import './auth.scss';
 
@@ -96,7 +96,6 @@ class PasswordReset extends Component {
               <h4>Enter your new password in the fields below.</h4>
               <div className="auth-container__input">
                 <TextField
-                  fieldType="input"
                   type="password"
                   label="New password"
                   floatingLabel
@@ -108,7 +107,6 @@ class PasswordReset extends Component {
               </div>
               <div className="auth-container__input">
                 <TextField
-                  fieldType="input"
                   type="password"
                   label="Verify password"
                   floatingLabel

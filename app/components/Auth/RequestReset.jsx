@@ -10,7 +10,7 @@ import Logo from '../../images/logo.png';
 import constants from '../../utils/constants';
 import * as authActions from '../../actions/auth';
 import SuccessMessage from './SuccessMessage';
-import TextField from '../common/TextField/TextField';
+import TextField from '../common/Form/TextField';
 
 import './auth.scss';
 
@@ -72,7 +72,6 @@ class RequestReset extends Component {
                   </h4>
                 <div className="auth-container__input">
                   <TextField
-                    fieldType="input"
                     label="Email"
                     floatingLabel
                     value={this.state.email}

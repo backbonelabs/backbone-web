@@ -7,7 +7,8 @@ import Panel from 'muicss/lib/react/panel';
 import Option from 'muicss/lib/react/option';
 import constants from '../../utils/constants';
 import './Profile.scss';
-import TextField from '../common/TextField/TextField';
+import TextField from '../common/Form/TextField';
+import SelectField from '../common/Form/SelectField';
 
 const {
   heightValuesIn,
@@ -270,7 +271,6 @@ class Profile extends Component {
           <Panel className="profile-container__form">
             <Form>
               <TextField
-                fieldType="input"
                 label="Nickname"
                 hint="nickname"
                 name="nickname"
@@ -279,8 +279,7 @@ class Profile extends Component {
                 disabled={disableForm}
                 errorText={nicknameError}
               />
-              <TextField
-                fieldType="select"
+              <SelectField
                 onChange={this.handleOnChange}
                 name="gender"
                 label="Gender"
@@ -289,11 +288,10 @@ class Profile extends Component {
               >
                 <Option value={'2'} label="Female" />
                 <Option value={'1'} label="Male" />
-              </TextField>
+              </SelectField>
               <div className="profile-container__selectfield">
                 <div className="profile-container__leftside-selectfield">
-                  <TextField
-                    fieldType="select"
+                  <SelectField
                     label="Height"
                     name="height"
                     value={this.state.height}
@@ -301,11 +299,10 @@ class Profile extends Component {
                     disabled={disableForm}
                   >
                     {(this.state.heightUnitPreference === '1') ? heightInches : heightCentimeter}
-                  </TextField>
+                  </SelectField>
                 </div>
                 <div className="profile-container__rightside-selectfield">
-                  <TextField
-                    fieldType="select"
+                  <SelectField
                     label="Unit"
                     value={this.state.heightUnitPreference}
                     onChange={this.onHeightUnitChange}
@@ -313,13 +310,12 @@ class Profile extends Component {
                   >
                     <Option value={'1'} label="in" />
                     <Option value={'2'} label="cm" />
-                  </TextField>
+                  </SelectField>
                 </div>
               </div>
               <div className="profile-container__selectfield">
                 <div className="profile-container__leftside-selectfield">
-                  <TextField
-                    fieldType="select"
+                  <SelectField
                     label="Weight"
                     name="weight"
                     value={this.state.weight}
@@ -327,11 +323,10 @@ class Profile extends Component {
                     disabled={disableForm}
                   >
                     {(this.state.weightUnitPreference === '1') ? weightPounds : weightkilograms}
-                  </TextField>
+                  </SelectField>
                 </div>
                 <div className="profile-container__rightside-selectfield">
-                  <TextField
-                    fieldType="select"
+                  <SelectField
                     label="Unit"
                     value={this.state.weightUnitPreference}
                     onChange={this.onWeightUnitChange}
@@ -339,11 +334,10 @@ class Profile extends Component {
                   >
                     <Option value={'1'} label="lb" />
                     <Option value={'2'} label="kg" />
-                  </TextField>
+                  </SelectField>
                 </div>
               </div>
               <TextField
-                fieldType="input"
                 label="Birthdate"
                 name="birthdate"
                 hint="MM/DD/YYYY"
@@ -353,7 +347,6 @@ class Profile extends Component {
                 errorText={dateError}
               />
               <TextField
-                fieldType="input"
                 label="Email"
                 name="email"
                 floatingLabel

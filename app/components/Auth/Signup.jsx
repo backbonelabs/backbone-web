@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import Logo from '../../images/logo.png';
 import constants from '../../utils/constants';
 import * as authActions from '../../actions/auth';
-import TextField from '../common/TextField/TextField';
+import TextField from '../common/Form/TextField';
 
 import './auth.scss';
 
@@ -118,7 +118,6 @@ class Signup extends Component {
           <Form className="auth-container__form" onSubmit={this.handleOnSubmit}>
             <div className="auth-container__input">
               <TextField
-                fieldType="input"
                 label="Email"
                 floatingLabel
                 value={email}
@@ -128,7 +127,6 @@ class Signup extends Component {
             </div>
             <div className="auth-container__input">
               <TextField
-                fieldType="input"
                 type="password"
                 label="Confirm Password"
                 floatingLabel
@@ -139,7 +137,6 @@ class Signup extends Component {
             </div>
             <div className="auth-container__input">
               <TextField
-                fieldType="input"
                 type="password"
                 label="Password"
                 floatingLabel
