@@ -179,19 +179,29 @@ class Profile extends Component {
       profileData.email = email;
     }
 
+    const formErrorState = {
+      emailError: '',
+      dateError: '',
+      nicknameError: '',
+    };
+
     // Check if email is valid
     if (!validEmail) {
-      return this.setState({ emailError: 'Please enter a valid email address' });
+      formErrorState.emailError = 'Please enter a valid email address';
     }
 
     // Check if date is valid
     if (!validDate) {
-      return this.setState({ dateError: 'Please enter a valid date (MM/DD/YYYY)' });
+      formErrorState.dateError = 'Please enter a valid date (MM/DD/YYYY)';
     }
 
     // Check if nickname is empty
     if (nickname.length === 0) {
-      return this.setState({ nicknameError: 'Please enter a nickname' });
+      formErrorState.nicknameError = 'Please enter a nickname';
+    }
+
+    if (formErrorState.emailError || formErrorState.dateError || formErrorState.nicknameError) {
+      return this.setState(formErrorState);
     }
 
     this.setState({ disableForm: !disableForm, dateError: '', emailError: '', nicknameError: '' });
