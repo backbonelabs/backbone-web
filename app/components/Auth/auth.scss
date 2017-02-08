@@ -6,7 +6,7 @@
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
-  .mui--text-display1, h1 {
+  h1 {
     font-weight: bold;
   }
 
@@ -70,12 +70,6 @@
     }
     input:focus~label {
       color: $grey900;
-    }
-    small {
-      display: block;
-      text-align: center;
-      margin-top: -15px;
-      color: $primaryColor;
     }
     @media (max-width: $iphone5) {
       width: 250px;
