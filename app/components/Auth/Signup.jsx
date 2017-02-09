@@ -128,7 +128,7 @@ class Signup extends Component {
             <div className="auth-container__input">
               <TextField
                 type="password"
-                label="Confirm Password"
+                label="Password"
                 floatingLabel
                 value={password}
                 onChange={this.onPasswordChange}
@@ -138,7 +138,7 @@ class Signup extends Component {
             <div className="auth-container__input">
               <TextField
                 type="password"
-                label="Password"
+                label="Confirm Password"
                 floatingLabel
                 value={confirmPassword}
                 onChange={this.onConfirmPasswordChange}
