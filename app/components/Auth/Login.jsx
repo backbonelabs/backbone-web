@@ -89,7 +89,6 @@ class Login extends Component {
     if (!passwordPristine) {
       passwordWarning = validPassword ? null : 'Password must be at least 8 characters';
     }
-
     return (
       <Container className="auth-container">
         { (auth.loginRedirectUrl !== '/') ?
@@ -118,7 +117,7 @@ class Login extends Component {
                 floatingLabel
                 value={password}
                 onChange={this.onPasswordChange}
-                errorText={passwordWarning}
+                errorText={auth.loginError.message || passwordWarning}
               />
             </div>
             <div className="auth-container__cta">
