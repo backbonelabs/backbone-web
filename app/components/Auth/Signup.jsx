@@ -82,7 +82,6 @@ class Signup extends Component {
     if (password === confirmPassword) {
       return this.props.signup({ email: email.trim(), password });
     }
-    console.log(this.state);
     this.setState({ confirmPasswordError: 'Password and Confirm Password do not match' });
   }
 
