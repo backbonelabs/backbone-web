@@ -8,17 +8,17 @@ import './auth.scss';
 
 const SuccessMessage = props => (
   <Container>
-    <Panel className="mui--text-center">
+    <Panel className="mui--text-center auth-container__success">
       <h2>
         {props.message}
       </h2>
       {props.link ?
-        <Link to={props.link}>
+        <Link to={`/${props.link}`}>
           <Button
             variant="raised"
             color="danger"
           >
-            Login
+            {props.link}
           </Button>
         </Link> : null
       }

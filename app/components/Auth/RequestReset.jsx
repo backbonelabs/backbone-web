@@ -56,6 +56,7 @@ class RequestReset extends Component {
           this.props.auth.requestSent ?
             <SuccessMessage
               message="Instructions on how to reset your password have been emailed to you."
+              link="login"
             />
           :
             <Panel className="auth-container__panel">
