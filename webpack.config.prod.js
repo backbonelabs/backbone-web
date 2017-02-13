@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: 'source-map',
@@ -18,9 +19,19 @@ module.exports = {
       },
     }),
     new webpack.optimize.UglifyJsPlugin({
-      minimize: true, // minimize loaders
+      comments: false,
+      sourceMap: true,
     }),
     new ExtractTextPlugin({ filename: 'styles.css', allChunks: true, disable: false }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false,
+      noInfo: true, // set to false to see a list of every file being bundled.
+      options: {
+        context: '/',
+        postcss: () => [autoprefixer],
+      },
+    }),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
