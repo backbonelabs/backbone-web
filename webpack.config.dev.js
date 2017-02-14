@@ -19,11 +19,6 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       minimize: false,
       debug: true,
-      noInfo: true, // set to false to see a list of every file being bundled.
-      options: {
-        context: '/',
-        postcss: () => [autoprefixer],
-      },
     }),
   ],
   resolve: {
@@ -34,20 +29,32 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader'],
+        loader: 'babel-loader',
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
         loader: 'url-loader',
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         exclude: /node_modules/,
-        loaders: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'sass-loader?sourceMap'],
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [autoprefixer],
+            },
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
       },
     ],
   },

@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
@@ -18,19 +19,12 @@ module.exports = {
         NODE_ENV: JSON.stringify('production'),
       },
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      comments: false,
-      sourceMap: true,
-    }),
+    new UglifyJSPlugin({ comments: false, sourceMap: true }),
     new ExtractTextPlugin({ filename: 'styles.css', allChunks: true, disable: false }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,
       noInfo: true, // set to false to see a list of every file being bundled.
-      options: {
-        context: '/',
-        postcss: () => [autoprefixer],
-      },
     }),
   ],
   resolve: {
@@ -41,7 +35,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader'],
+        loader: 'babel-loader',
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
@@ -51,7 +45,20 @@ module.exports = {
         test: /\.(scss|css)$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader!postcss-loader!sass-loader',
+          use: [
+            {
+              loader: 'css-loader',
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [autoprefixer],
+              },
+            },
+            {
+              loader: 'sass-loader',
+            },
+          ],
         }),
       },
     ],
