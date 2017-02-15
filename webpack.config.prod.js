@@ -24,7 +24,6 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,
-      noInfo: true, // set to false to see a list of every file being bundled.
     }),
   ],
   resolve: {
