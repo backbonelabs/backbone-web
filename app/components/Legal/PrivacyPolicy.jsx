@@ -1,11 +1,11 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
 import Paper from 'material-ui/Paper';
-import './PrivacyPolicy.scss';
+import './legal.scss';
 
 const PrivacyPolicy = () => (
-  <div className="privacy-policy__outer-container">
-    <Paper zDepth={1} className="privacy-policy__inner-container">
+  <div className="legal__outer-container">
+    <Paper zDepth={1} className="legal__inner-container">
       <div>
         <h1>Privacy Policy</h1>
         <p>

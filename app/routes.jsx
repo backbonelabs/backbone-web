@@ -11,7 +11,7 @@ import Home from './components/Home/Home';
 import Profile from './components/Profile/Profile';
 import NotFound from './components/NotFound/NotFound';
 import RequireAuth from './components/common/RequireAuth/RequireAuth';
-import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
+import PrivacyPolicy from './components/Legal/PrivacyPolicy';
 
 const appRoutes = (
   <Route path="/" component={App}>
