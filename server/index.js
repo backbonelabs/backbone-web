@@ -26,18 +26,6 @@ if (!isProduction) {
     noInfo: true,
   }));
   app.use(webpackHotMiddleware(compiler));
-  app.get('*', (req, res) => {
-    // This sends the index.html that the htmlWebpackPlugin creates in dev mode
-    const filename = path.join(compiler.outputPath, 'index.html');
-    compiler.outputFileSystem.readFile(filename, (err, result) => {
-      if (err) {
-        return res.json({ error: err });
-      }
-      res.set('content-type', 'text/html');
-      res.send(result);
-      res.end();
-    });
-  });
 }
 
 // Parse form url-encoded bodies
@@ -68,7 +56,19 @@ app.use('/auth/', authRoutes);
 app.use('/user/', userRoutes);
 
 app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build/index.html'));
+  if (isProduction) {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+  } else {
+    // This sends the index.html that the htmlWebpackPlugin creates in dev mode
+    const filename = path.join(compiler.outputPath, 'index.html');
+    compiler.outputFileSystem.readFile(filename, (err, result) => {
+      if (err) {
+        return res.json({ error: err });
+      }
+      res.set('content-type', 'text/html');
+      res.send(result);
+    });
+  }
 });
 
 app.listen(port, () => {
