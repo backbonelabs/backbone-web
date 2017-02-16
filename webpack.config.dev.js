@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -11,7 +12,7 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -19,6 +20,10 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       minimize: false,
       debug: true,
+    }),
+    new HtmlWebpackPlugin({
+      template: './app/index.html',
+      inject: 'body',
     }),
   ],
   resolve: {

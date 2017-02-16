@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -11,7 +12,7 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: '[name]-[hash].js',
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -20,10 +21,18 @@ module.exports = {
       },
     }),
     new UglifyJSPlugin({ comments: false, sourceMap: true }),
-    new ExtractTextPlugin({ filename: 'styles.css', allChunks: true, disable: false }),
+    new ExtractTextPlugin({
+      filename: '[name].[contenthash].css',
+      allChunks: true,
+      disable: false,
+    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,
+    }),
+    new HtmlWebpackPlugin({
+      template: './app/index.html',
+      inject: 'body',
     }),
   ],
   resolve: {
