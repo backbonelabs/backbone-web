@@ -35,7 +35,6 @@ app.use(compression());
 // Disable the "X-Powered-By: Express" HTTP header
 app.disable('x-powered-by');
 
-app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, './public')));
 app.use(express.static(path.join(__dirname, '../build')));
 
@@ -57,7 +56,19 @@ app.use('/auth/', authRoutes);
 app.use('/user/', userRoutes);
 
 app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../app/index.html'));
+  if (isProduction) {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+  } else {
+    // This sends the index.html that the htmlWebpackPlugin creates in dev mode
+    const filename = path.join(compiler.outputPath, 'index.html');
+    compiler.outputFileSystem.readFile(filename, (err, result) => {
+      if (err) {
+        return res.json({ error: err });
+      }
+      res.set('content-type', 'text/html');
+      res.send(result);
+    });
+  }
 });
 
 app.listen(port, () => {
