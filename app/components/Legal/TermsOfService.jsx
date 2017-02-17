@@ -1,11 +1,12 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
-import Paper from 'material-ui/Paper';
+import Container from 'muicss/lib/react/container';
+import Panel from 'muicss/lib/react/panel';
 import './legal.scss';
 
 const TermsOfService = () => (
-  <div className="legal__outer-container">
-    <Paper zDepth={1} className="legal__inner-container">
+  <Container className="legal__outer-container">
+    <Panel>
       <div>
         <p><strong>
           Backbone Labs, Inc.<br />
@@ -358,8 +359,8 @@ const TermsOfService = () => (
       <div>
         <p>This Agreement was last updated on: February 1, 2017</p>
       </div>
-    </Paper>
-  </div>
+    </Panel>
+  </Container>
 );
 
 export default TermsOfService;
