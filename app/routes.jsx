@@ -11,7 +11,8 @@ import Home from './components/Home/Home';
 import Profile from './components/Profile/Profile';
 import NotFound from './components/NotFound/NotFound';
 import RequireAuth from './components/common/RequireAuth/RequireAuth';
-import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
+import PrivacyPolicy from './components/Legal/PrivacyPolicy';
+import TermsOfService from './components/Legal/TermsOfService';
 
 const appRoutes = (
   <Route path="/" component={App}>
@@ -22,6 +23,7 @@ const appRoutes = (
     <Route path="/request-reset" component={RequestReset} title="Password Reset Request" />
     <Route path="/profile" component={RequireAuth(Profile)} />
     <Route path="/legal/privacy" component={PrivacyPolicy} title="Privacy Policy" />
+    <Route path="/legal/terms" component={TermsOfService} title="Terms of Service" />
     <Route path="*" component={NotFound} title="Page Not Found" />
   </Route>
 );
