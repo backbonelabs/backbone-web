@@ -19,6 +19,20 @@
   }
 }
 
+.home__logo {
+  width: 25%;
+  display: block;
+  margin: 0 auto 45px auto;
+}
+
+.home__app-badge {
+  padding: 0 5px;
+  width: 150px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
 .home__form-container {
   display: flex;
   align-items: center;
@@ -34,12 +48,6 @@
     margin-bottom: 25px;
     color: $white;
     text-align: center;
-
-    img {
-      width: 25%;
-      display: block;
-      margin: 0 auto 45px auto;
-    }
   }
 
   &-form {

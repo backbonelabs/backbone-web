@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import autobind from 'autobind-decorator';
 import { post } from 'axios';
+import appStoreBadge from '../../images/app-store-badge.svg';
+import playStoreBadge from '../../images/play-store-badge.svg';
 import logo from '../../images/logo.png';
 import './Home.scss';
 
@@ -43,7 +45,27 @@ class Home extends Component {
         <div className="home__bg-image" />
         <div className="home__form-container">
           <div className="home__form-container-header">
-            <img src={logo} alt="Man wearing a Backbone" />
+            <img className="home__logo" src={logo} alt="Man wearing a Backbone" />
+            <div>
+              <a
+                href="https://itunes.apple.com/us/app/backbone-smart-posture/id1184998773"
+              >
+                <img
+                  className="home__app-badge"
+                  alt="Download from the App Store"
+                  src={appStoreBadge}
+                />
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" // eslint-disable-line max-len
+              >
+                <img
+                  className="home__app-badge"
+                  alt="Download from Google Play"
+                  src={playStoreBadge}
+                />
+              </a>
+            </div>
             <h2>Enter your email to be notified when Backbone is available for purchase!</h2>
           </div>
           { success ?
