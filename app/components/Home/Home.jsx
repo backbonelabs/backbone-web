@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import autobind from 'autobind-decorator';
 import { post } from 'axios';
-import appStoreBadge from '../../images/app-store-badge.png';
-import playStoreBadge from '../../images/google-play-badge.png';
+import appStoreBadge from '../../images/app-store-badge.svg';
+import playStoreBadge from '../../images/play-store-badge.svg';
 import logo from '../../images/logo.png';
 import './Home.scss';
 
