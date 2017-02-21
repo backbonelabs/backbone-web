@@ -11,6 +11,7 @@ import Logo from '../../images/logo.png';
 import constants from '../../utils/constants';
 import * as authActions from '../../actions/auth';
 import TextField from '../common/Form/TextField';
+import { spinnerColor } from '../../utils/colorCodes';
 
 import './auth.scss';
 
@@ -147,7 +148,7 @@ class Signup extends Component {
             </div>
             <div className="auth-container__cta">
               { auth.inProgress ?
-                <MDSpinner singleColor="#F44336" /> :
+                <MDSpinner singleColor={spinnerColor} /> :
                 <Button
                   variant="raised"
                   color="danger"

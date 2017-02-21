@@ -11,6 +11,7 @@ import constants from '../../utils/constants';
 import * as authActions from '../../actions/auth';
 import SuccessMessage from './SuccessMessage';
 import TextField from '../common/Form/TextField';
+import { spinnerColor } from '../../utils/colorCodes';
 
 import './auth.scss';
 
@@ -81,15 +82,15 @@ class RequestReset extends Component {
                 </div>
                 <div className="auth-container__cta">
                   { this.props.auth.inProgress ?
-                    <MDSpinner singleColor="#F44336" /> :
+                    <MDSpinner singleColor={spinnerColor} /> :
                     <Button
                       variant="raised"
                       color="danger"
                       type="submit"
                       disabled={!this.state.email || !this.state.validEmail}
                     >
-                        Submit
-                      </Button>
+                      Submit
+                    </Button>
                     }
                 </div>
               </Form>
