@@ -4,7 +4,7 @@ import MDSpinner from 'react-md-spinner';
 import { bindActionCreators } from 'redux';
 import * as authActions from '../../../actions/auth';
 import * as userActions from '../../../actions/user';
-import { spinnerColor } from '../../../utils/colorCodes';
+import { red500 } from '../../../utils/colorCodes';
 
 import './RequireAuth.scss';
 
@@ -48,7 +48,7 @@ export default function (ComposedComponent) {
       if (this.props.auth.fetchingUser) {
         return (
           <div className="require-auth-spinner">
-            <MDSpinner singleColor={spinnerColor} size={40} />
+            <MDSpinner singleColor={red500} size={40} />
           </div>
         );
       }

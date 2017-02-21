@@ -10,7 +10,7 @@ import Logo from '../../images/logo.png';
 import * as authActions from '../../actions/auth';
 import SuccessMessage from './SuccessMessage';
 import TextField from '../common/Form/TextField';
-import { spinnerColor } from '../../utils/colorCodes';
+import { red500 } from '../../utils/colorCodes';
 
 import './auth.scss';
 
@@ -119,7 +119,7 @@ class PasswordReset extends Component {
               </div>
               <div className="auth-container__cta">
                 { this.props.auth.inProgress ?
-                  <MDSpinner singleColor={spinnerColor} /> :
+                  <MDSpinner singleColor={red500} /> :
                   <Button
                     variant="raised"
                     color="danger"
