@@ -1,17 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 import autobind from 'autobind-decorator';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-import CircularProgress from 'material-ui/CircularProgress';
-import { red500, grey900 } from 'material-ui/styles/colors';
+import Form from 'muicss/lib/react/form';
+import Button from 'muicss/lib/react/button';
+import Container from 'muicss/lib/react/container';
+import Panel from 'muicss/lib/react/panel';
+import MDSpinner from 'react-md-spinner';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-
-import * as actions from '../../actions/auth';
-
 import Logo from '../../images/logo.png';
-import Form from '../common/Form/Form';
 import constants from '../../utils/constants';
+import * as authActions from '../../actions/auth';
+import TextField from '../common/Form/TextField';
+import { red500 } from '../../utils/colorCodes';
 
 import './auth.scss';
 
@@ -88,71 +88,68 @@ class Login extends Component {
       emailWarning = validEmail ? null : 'Please enter a valid email address';
     }
     if (!passwordPristine) {
-      passwordWarning = validPassword ? '' : 'Password must be at least 8 characters';
+      passwordWarning = validPassword ? null : 'Password must be at least 8 characters';
     }
-
     return (
-      <div className="auth-container">
+      <Container className="auth-container">
         { (auth.loginRedirectUrl !== '/') ?
-          <h1 className="auth-container__continue-header">Please log in to continue.</h1> : null }
-        <div className="auth-container__header">
-          <h2>Login</h2>
-          <div className="auth-container__logo">
-            <img src={Logo} role="presentation" />
-          </div>
-        </div>
-        <Form onSubmit={this.handleOnSubmit} className="auth-container__form">
-          <div className="auth-container__textfield-container">
-            <TextField
-              className="auth-container__textfield"
-              floatingLabelFocusStyle={{ color: grey900 }}
-              underlineFocusStyle={{ borderColor: grey900 }}
-              floatingLabelText="Email"
-              onChange={this.onEmailChange}
-              errorText={emailWarning}
-              errorStyle={{ textAlign: 'center' }}
-            />
-            <TextField
-              className="auth-container__textfield"
-              floatingLabelFocusStyle={{ color: grey900 }}
-              underlineFocusStyle={{ borderColor: grey900 }}
-              floatingLabelText="Password"
-              type="password"
-              onChange={this.onPasswordChange}
-              errorText={auth.loginError.message || passwordWarning}
-              errorStyle={{ textAlign: 'center' }}
-            />
-            { this.props.auth.inProgress ?
-              <CircularProgress
-                className="auth-container__cta"
-                color={red500}
-                size={30}
-              /> :
-              <RaisedButton
-                label="Login"
-                className="auth-container__cta"
-                backgroundColor={red500}
-                labelColor="#FFF"
-                type="submit"
-                disabled={(!email || !validEmail) || (!password || !validPassword)}
-              />
-            }
-            <div className="auth-container__footer">
-              <p>Don't have an account?&nbsp;
-                <Link to="/signup" className="auth-container__footer-primary-link">Sign Up</Link>
-              </p>
-              <p>
-                <Link
-                  to="/request-reset"
-                  className="auth-container__footer-secondary-link secondary-text"
-                >
-                  Forgot Your Password?
-                </Link>
-              </p>
+          <h1>Please log in to continue.</h1> : null }
+        <Panel className="auth-container__panel">
+          <div className="auth-container__header">
+            <h1>Login</h1>
+            <div className="auth-container__logo">
+              <img src={Logo} role="presentation" />
             </div>
           </div>
-        </Form>
-      </div>
+          <Form className="auth-container__form" onSubmit={this.handleOnSubmit}>
+            <div className="auth-container__input">
+              <TextField
+                label="Email"
+                floatingLabel
+                value={email}
+                onChange={this.onEmailChange}
+                errorText={emailWarning}
+              />
+            </div>
+            <div className="auth-container__input">
+              <TextField
+                type="password"
+                label="Password"
+                floatingLabel
+                value={password}
+                onChange={this.onPasswordChange}
+                errorText={auth.loginError.message || passwordWarning}
+              />
+            </div>
+            <div className="auth-container__cta">
+              { this.props.auth.inProgress ?
+                <MDSpinner singleColor={red500} /> :
+                <Button
+                  variant="raised"
+                  color="danger"
+                  type="submit"
+                  disabled={(!email || !validEmail) || (!password || !validPassword)}
+                >
+                  Login
+                </Button>
+              }
+            </div>
+          </Form>
+          <div className="auth-container__footer">
+            <p>Don't have an account?&nbsp;
+              <Link to="/signup" className="auth-container__footer-primary-link">Sign Up</Link>
+            </p>
+            <p>
+              <Link
+                to="/request-reset"
+                className="auth-container__footer-secondary-link secondary-text"
+              >
+                Forgot Your Password?
+              </Link>
+            </p>
+          </div>
+        </Panel>
+      </Container>
     );
   }
 }
@@ -161,5 +158,4 @@ const mapStateToProps = state => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, actions)(Login);
-
+export default connect(mapStateToProps, authActions)(Login);

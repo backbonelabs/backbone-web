@@ -3,18 +3,12 @@ import ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import routes from './routes';
 import { fetchUser } from './actions/user';
 import store from './store';
 import setAuthorizationToken from './utils/setAuthorizationToken';
 
 import './global.scss';
-
-// Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
-injectTapEventPlugin();
 
 // Check if there is a token
 const token = localStorage.getItem('sessionId');
@@ -28,11 +22,9 @@ const rootEl = document.getElementById('root');
 const renderApp = (Component = routes) => {
   ReactDOM.render(
     <Provider store={store}>
-      <MuiThemeProvider>
-        <AppContainer>
-          <Component history={browserHistory} />
-        </AppContainer>
-      </MuiThemeProvider>
+      <AppContainer>
+        <Component history={browserHistory} />
+      </AppContainer>
     </Provider>,
     rootEl,
   );

@@ -1,15 +1,18 @@
 import React, { Component, PropTypes } from 'react';
 import autobind from 'autobind-decorator';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-import { red500, grey900 } from 'material-ui/styles/colors';
-import CircularProgress from 'material-ui/CircularProgress';
+import Form from 'muicss/lib/react/form';
+import Button from 'muicss/lib/react/button';
+import Container from 'muicss/lib/react/container';
+import Panel from 'muicss/lib/react/panel';
 import { connect } from 'react-redux';
-import Form from '../common/Form/Form';
+import MDSpinner from 'react-md-spinner';
 import Logo from '../../images/logo.png';
 import * as authActions from '../../actions/auth';
-import './auth.scss';
 import SuccessMessage from './SuccessMessage';
+import TextField from '../common/Form/TextField';
+import { red500 } from '../../utils/colorCodes';
+
+import './auth.scss';
 
 class PasswordReset extends Component {
   static propTypes = {
@@ -75,68 +78,65 @@ class PasswordReset extends Component {
         );
       }
     }
+
     return (
-      <div className="auth-container">
+      <Container className="auth-container">
         { this.props.auth.passwordResetSent ?
           <SuccessMessage
             message="Your password has been successfully reset!"
             link="/login"
           /> :
-          <div>
+          <Panel className="auth-container__panel">
             <div className="auth-container__header">
-              <h2>Password Reset</h2>
+              <h1>Password Reset</h1>
               <div className="auth-container__logo">
                 <img src={Logo} role="presentation" />
               </div>
             </div>
-            <Form onSubmit={this.handleOnSubmit} className="auth-container__form">
-              <div className="auth-container__textfield-container">
-                <p>Enter your new password in the fields below.</p>
+            <Form className="auth-container__form" onSubmit={this.handleOnSubmit}>
+              <h4>Enter your new password in the fields below.</h4>
+              <div className="auth-container__input">
                 <TextField
-                  className="auth-container__textfield"
-                  floatingLabelFocusStyle={{ color: grey900 }}
-                  underlineFocusStyle={{ borderColor: grey900 }}
-                  floatingLabelText="New password"
+                  type="password"
+                  label="New password"
+                  floatingLabel
                   name="newPassword"
+                  value={newPassword}
                   onChange={this.handleOnChange}
-                  type="password"
                   errorText={passwordError}
-                  errorStyle={{ textAlign: 'center' }}
                 />
+              </div>
+              <div className="auth-container__input">
                 <TextField
-                  className="auth-container__textfield"
-                  floatingLabelFocusStyle={{ color: grey900 }}
-                  underlineFocusStyle={{ borderColor: grey900 }}
-                  floatingLabelText="Verify password"
-                  name="verifyPassword"
                   type="password"
+                  label="Verify password"
+                  floatingLabel
+                  name="verifyPassword"
+                  value={verifyPassword}
                   onChange={this.handleOnChange}
                   errorText={verifyPasswordError}
-                  errorStyle={{ textAlign: 'center' }}
                 />
+              </div>
+              <div className="auth-container__cta">
                 { this.props.auth.inProgress ?
-                  <CircularProgress
-                    className="auth-container__cta"
-                    color={red500}
-                    size={30}
-                  /> :
-                  <RaisedButton
-                    label="Submit"
-                    className="auth-container__cta"
-                    backgroundColor={red500}
-                    labelColor="#FFF"
+                  <MDSpinner singleColor={red500} /> :
+                  <Button
+                    variant="raised"
+                    color="danger"
                     type="submit"
                     disabled={!passwordLength}
-                  />
+                  >
+                    Submit
+                  </Button>
                 }
               </div>
-              <div className="auth-container__error">
-                {passwordResetError}
-              </div>
             </Form>
-          </div>
+            <div className="auth-container__footer">
+              {passwordResetError}
+            </div>
+          </Panel>
         }
-      </div>
+      </Container>
     );
   }
 }
