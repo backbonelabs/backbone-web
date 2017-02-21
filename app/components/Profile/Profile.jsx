@@ -157,21 +157,19 @@ class Profile extends Component {
     } = this.state;
     const validEmail = constants.emailRegex.test(email);
     const validDate = constants.dateRegex.test(birthdate);
-    const weightInInches = weightUnitPreference === '1' ? weight :
-    Math.round(weight / weightConversion);
-    const heightinInches = heightUnitPreference === '1' ? height :
-    Math.max(1, Math.round(height / heightConversion));
+    const weightInInches = weightUnitPreference === '1' ? weight : (weight / weightConversion);
+    const heightinInches = heightUnitPreference === '1' ? height : (height / heightConversion);
 
     const profileData = {
       nickname,
       gender: parseInt(gender, 10),
       birthdate: new Date(birthdate),
-      heightUnitPreference: parseInt(heightUnitPreference, 10),
-      weightUnitPreference: parseInt(weightUnitPreference, 10),
+      heightUnitPreference,
+      weightUnitPreference,
       // Ensure weight (lb) / height (in) values will be stored as the base measurements
       // convert strings back to number
-      weight: parseInt(weightInInches, 10),
-      height: parseInt(heightinInches, 10),
+      weight: weightInInches,
+      height: heightinInches,
     };
 
     // Check if email has changed and assign separately
