@@ -15,12 +15,12 @@ const TermsOfService = () => (
         </strong></p>
       </div>
       <div>
-        <h2>TERMS OF USE AGREEMENT</h2>
+        <h2>TERMS OF SERVICES AGREEMENT</h2>
         <p>
           You accept these Terms of Service by agreeing to use the services offered by Backbone
           Labs, Inc., a Delaware based Corporation (“us”, “our” or “we”). These terms of service
           may change over time and you agree that the continued use of our services enter into
-          these terms of service by accepting the conditions set out herein, and any future
+          these terms of service by accepting the conditions set out herein, and for any future
           updates, you agree to accept any changes therein. These terms of services govern the
           services offered by us and your obligations to ensure proper delivery of our services.
         </p>
@@ -55,10 +55,9 @@ const TermsOfService = () => (
         <h3>2.1 Limited Granting of License in Connection with the App</h3>
         <p>
           We reserve the right to allow users to post User Generated Content. Use of User
-          Generated Content will be limited by Us pursuant to predetermined geographical
-          restrictions. Subject to your payment of all applicable fees, we grant you a
-          nonexclusive, nontransferable, revocable, limited license to use our services
-          subject to the restrictions set forth herein.
+          Generated Content will be limited by us pursuant to predetermined geographical
+          restrictions. We grant you a nonexclusive, nontransferable, revocable, limited license
+          to use our services subject to the restrictions set forth herein.
         </p>
       </div>
       <div>
@@ -157,7 +156,7 @@ const TermsOfService = () => (
         </p>
         <p>
           (j) will not use your account for any unlawful or otherwise unauthorized activities as
-          determined by Us; and
+          determined by us; and
         </p>
         <p>
           (k) will comply with all local, state, and federal laws including but not limited to
@@ -182,31 +181,31 @@ const TermsOfService = () => (
           any feedback, comments, or suggestions that you provide to us regarding the Services.
         </p>
         <p>
-        You agree that such User Generated Content is wholly original to you and you exclusively
-        own the rights to such User Generated Content, including the right to grant all of the
-        rights and licenses in these Terms without us incurring any third party obligations or
-        liability arising out of its exercise of the rights granted herein by you.
+          You agree that such User Generated Content is wholly original to you and you exclusively
+          own the rights to such User Generated Content, including the right to grant all of the
+          rights and licenses in these Terms without us incurring any third party obligations or
+          liability arising out of its exercise of the rights granted herein by you.
         </p>
         <p>
-        You hereby grant to Us a non-exclusive, worldwide, royalty-free, sublicenseable, and
-        transferable license to use, reproduce, distribute, prepare derivative works of, display,
-        perform and otherwise exploit in any manner whatsoever the User Generated Content, or any
-        portion thereof, on the Services as well as any and all media now known or hereafter
-        developed and to advertise, market and promote the same. To the extent permitted by
-        applicable laws, you hereby waive any moral rights or rights of publicity or privacy you
-        may have in such Content.
+          You hereby grant to us a non-exclusive, worldwide, royalty-free, sublicenseable, and
+          transferable license to use, reproduce, distribute, prepare derivative works of, display,
+          perform and otherwise exploit in any manner whatsoever the User Generated Content, or any
+          portion thereof, on the Services as well as any and all media now known or hereafter
+          developed and to advertise, market and promote the same. To the extent permitted by
+          applicable laws, you hereby waive any moral rights or rights of publicity or privacy you
+          may have in such Content.
         </p>
         <p>
-        We reserve the right to monitor User Generated Content in the Services, but cannot monitor
-        or prescreen all of the User Generated Content and do not attempt to do so. We have the
-        right, but not the obligation, to edit, refuse to post, or remove any User Generated
-        Content posted in the Services that are deemed objectionable or violate these Terms or
-        the spirit of these Terms, in our sole discretion and determination. If you encounter
-        something you find objectionable and in violation of these Terms, you can bring it to
-        our attention by contacting us. We do not assume any responsibility or liability for
-        User Generated Content that is generated by users of the Services. You bear the entire
-        risk of the completeness, accuracy or usefulness of your User Generated Content found
-        in the Services.
+          We reserve the right to monitor User Generated Content in the Services, but cannot monitor
+          or prescreen all of the User Generated Content and do not attempt to do so. We have the
+          right, but not the obligation, to edit, refuse to post, or remove any User Generated
+          Content posted in the Services that are deemed objectionable or violate these Terms or
+          the spirit of these Terms, in our sole discretion and determination. If you encounter
+          something you find objectionable and in violation of these Terms, you can bring it to
+          our attention by contacting us. We do not assume any responsibility or liability for
+          User Generated Content that is generated by users of the Services. You bear the entire
+          risk of the completeness, accuracy or usefulness of your User Generated Content found
+          in the Services.
         </p>
       </div>
       <div>
@@ -247,7 +246,7 @@ const TermsOfService = () => (
           fees and costs to the prevailing party where provided by applicable law. You agree that
           the decree or award rendered by the arbitrator may be entered as a final and binding
           judgment in any court having jurisdiction thereof. You agree that the arbitrator shall
-          administer and conduct any arbitration in accordance with California LAW, including the
+          administer and conduct any arbitration in accordance with California law, including the
           California Code of Civil Procedure and the California evidence code, and that the
           arbitrator shall apply substantive and procedural California law to any dispute or claim,
           without reference to rules of conflict of law. To the extent that the JAMS Rules conflict
@@ -316,41 +315,44 @@ const TermsOfService = () => (
           and/or arising from a breach of this Agreement and/or any breach of your representations
           and warranties set forth above.
         </p>
-        <h3>11.1 Entire Agreement</h3>
+      </div>
+      <div>
+        <h2>12. Miscellaneous</h2>
+        <h3>12.1 Entire Agreement</h3>
         <p>
           This Agreement constitutes the entire agreement between you and us regarding the use of
           the Application and supersedes any prior or contemporaneous understandings and agreements
           between you and us related to the subject matter hereof.
         </p>
-        <h3>11.2 Independent Contractors</h3>
+        <h3>12.2 Independent Contractors</h3>
         <p>
           Nothing in this Agreement shall be deemed to create an agency, partnership, joint
           venture, employer/employee or franchisor/franchisee relationship of any kind between
           us and any user.
         </p>
-        <h3>11.3 No Third Party Beneficiaries</h3>
+        <h3>12.3 No Third Party Beneficiaries</h3>
         <p>
           This Agreement is between you and us. There are no third-party beneficiaries to this
           Agreement.
         </p>
-        <h3>11.4 Section Titles</h3>
+        <h3>12.4 Section Titles</h3>
         <p>
           The section titles in this Agreement are for convenience only and have no legal or
           contractual effect.
         </p>
-        <h3>11.5 Non-Waiver</h3>
+        <h3>12.5 Non-Waiver</h3>
         <p>
           Our failure to exercise or enforce any right or provision of this Agreement shall not
           operate as a waiver of such right or provision.
         </p>
-        <h3>11.6 Severability</h3>
+        <h3>12.6 Severability</h3>
         <p>
           This Agreement operates to the fullest extent permissible by law. If any provision or
           part of a provision of this Agreement is unlawful, void, or unenforceable, that
           provision or part of the provision is deemed severable from this Agreement and shall
           not affect the validity and enforceability of any remaining provisions.
         </p>
-        <h3>11.7 Assignment</h3>
+        <h3>12.7 Assignment</h3>
         <p>
           You may not assign your rights under this Agreement to any third party; we may assign
           our rights under this Agreement without condition.
