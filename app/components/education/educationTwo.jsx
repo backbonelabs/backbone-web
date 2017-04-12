@@ -1,8 +1,11 @@
 import React from 'react';
+import renderHTML from 'react-render-html';
+
+import htmlFile from '../../../server/views/educationtwo.html';
 
 const EducationTwo = () => (
   <div>
-    <h1>This is the second educational content</h1>
+    {renderHTML(htmlFile)}
   </div>
 );
 
