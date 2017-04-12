@@ -7,6 +7,7 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import expressJwt from 'express-jwt';
+import exphbs from 'express-handlebars';
 import serverConfig from './config';
 import mailingList from './routes/mailingList';
 import config from '../webpack.config.dev';
@@ -22,11 +23,25 @@ const port = process.env.PORT || 9999;
 
 // Only use in dev mode
 if (!isProduction) {
-  app.use(webpackDevMiddleware(compiler, {
-    noInfo: true,
-  }));
+  app.use(
+    webpackDevMiddleware(compiler, {
+      noInfo: true,
+    }),
+  );
   app.use(webpackHotMiddleware(compiler));
 }
+
+// Set handlebars as our view engine with an html extension
+app.engine(
+  'html',
+  exphbs({
+    defaultLayout: 'mainLayout',
+    extname: '.html',
+    layoutsDir: `${__dirname}/views/layouts/`,
+  }),
+);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
 
 // Parse form url-encoded bodies
 app.use(bodyParser.json());
@@ -39,12 +54,25 @@ app.use(express.static(path.join(__dirname, './public')));
 app.use(express.static(path.join(__dirname, '../build')));
 
 // Protect end points unless it's in the path Array
-app.use('/auth',
-  expressJwt({ secret: serverConfig.secretKey }).unless({
-    path: ['/auth/login', '/auth/signup', '/auth/request-reset', '/auth/password-reset'],
+app.use(
+  '/auth',
+  expressJwt({
+    secret: serverConfig.secretKey,
+  }).unless({
+    path: [
+      '/auth/login',
+      '/auth/signup',
+      '/auth/request-reset',
+      '/auth/password-reset',
+    ],
   }),
 );
-app.use('/user', expressJwt({ secret: serverConfig.secretKey }));
+app.use(
+  '/user',
+  expressJwt({
+    secret: serverConfig.secretKey,
+  }),
+);
 
 // Health check
 app.use('/ping', (req, res) => {
@@ -55,6 +83,10 @@ app.post('/mailing-list', mailingList);
 app.use('/auth/', authRoutes);
 app.use('/user/', userRoutes);
 
+app.get('/mobile/education/:page', (req, res) => {
+  res.render(req.params.page);
+});
+
 app.use('*', (req, res) => {
   if (isProduction) {
     res.sendFile(path.join(__dirname, '../build/index.html'));
@@ -63,7 +95,9 @@ app.use('*', (req, res) => {
     const filename = path.join(compiler.outputPath, 'index.html');
     compiler.outputFileSystem.readFile(filename, (err, result) => {
       if (err) {
-        return res.json({ error: err });
+        return res.json({
+          error: err,
+        });
       }
       res.set('content-type', 'text/html');
       res.send(result);
