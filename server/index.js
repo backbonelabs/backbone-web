@@ -84,7 +84,7 @@ app.use('/auth/', authRoutes);
 app.use('/user/', userRoutes);
 
 app.get('/mobile/education/:page', (req, res) => {
-  res.render(req.params.page);
+  res.render(req.params.page, { title: req.params.page });
 });
 
 app.use('*', (req, res) => {
