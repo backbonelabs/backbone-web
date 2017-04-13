@@ -42,6 +42,14 @@ module.exports = {
         loader: 'url-loader',
       },
       {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+        ],
+      },
+      {
         test: /\.(scss|css)$/,
         exclude: /node_modules/,
         use: [

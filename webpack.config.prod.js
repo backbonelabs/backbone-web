@@ -7,9 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
-  entry: [
-    './app/index',
-  ],
+  entry: ['./app/index'],
   output: {
     path: path.join(__dirname, 'build'),
     filename: '[name]-[hash].js',
@@ -49,6 +47,14 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
         loader: 'url-loader',
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+        ],
       },
       {
         test: /\.(scss|css)$/,

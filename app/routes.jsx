@@ -13,6 +13,8 @@ import NotFound from './components/NotFound/NotFound';
 import RequireAuth from './components/common/RequireAuth/RequireAuth';
 import PrivacyPolicy from './components/Legal/PrivacyPolicy';
 import TermsOfService from './components/Legal/TermsOfService';
+import EducationOne from './components/education/educationOne';
+import EducationTwo from './components/education/educationTwo';
 
 const appRoutes = (
   <Route path="/" component={App}>
@@ -24,6 +26,8 @@ const appRoutes = (
     <Route path="/profile" component={RequireAuth(Profile)} />
     <Route path="/legal/privacy" component={PrivacyPolicy} title="Privacy Policy" />
     <Route path="/legal/terms" component={TermsOfService} title="Terms of Service" />
+    <Route path="/education/educationOne" component={EducationOne} title="Education content" />
+    <Route path="/education/educationTwo" component={EducationTwo} title="Education content" />
     <Route path="*" component={NotFound} title="Page Not Found" />
   </Route>
 );
