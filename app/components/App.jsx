@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-// import Navbar from './Navbar/Navbar';
+import Navbar from './Navbar/Navbar';
 
 const App = (props) => {
   const currentRoute = props.router.routes[props.router.routes.length - 1];
@@ -11,9 +11,7 @@ const App = (props) => {
 
   return (
     <div>
-      {/* <nav>
-        <Navbar />
-      </nav> */}
+      <Navbar />
       <main>
         {props.children}
       </main>
