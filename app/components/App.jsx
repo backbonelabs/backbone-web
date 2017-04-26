@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import Navbar from './Navbar/Navbar';
+import Footer from './Footer/Footer';
 
 const App = (props) => {
   const currentRoute = props.router.routes[props.router.routes.length - 1];
@@ -10,11 +11,12 @@ const App = (props) => {
   }
 
   return (
-    <div>
+    <div className="app">
       <Navbar />
       <main>
         {props.children}
       </main>
+      <Footer />
     </div>
   );
 };
