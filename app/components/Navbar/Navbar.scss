@@ -2,25 +2,34 @@
 .navBar {
   background-color: $grey900;
   color: $white;
-  width: 100%;
-  position: fixed;
+  .active {
+    color: $red500;
+  }
   ul {
     list-style: none;
     display: flex;
     margin-bottom: 0;
     padding: 0;
     align-items: center;
-    height: 65px;
+    height: 75px;
     width: 100%;
     li {
-      padding: 0 20px;
+      margin: 0 20px;
       cursor: pointer;
+      a {
+        text-decoration: none;
+        color: $white;
+        &:hover {
+          color: $red500;
+        }
+      }
       &:hover {
         color: $red500;
       }
     }
     li:first-child {
       width: 200px;
+      padding-right: 20px;
       border-right: 1px solid $white;
       img {
         width: 100%;
@@ -30,13 +39,17 @@
       text-align: center;
       border-radius: 100px;
       border: 1px solid $red400;
-      padding: 5px 0;
-      width: 100px;
-      background-color: $red500;
+      padding: 9px 0;
+      width: 120px;
+      background-color: transparent;
       margin-right: 15px;
       &:hover {
-        background-color: $red400;
-        color: $white;
+        background-color: $red500;
+      }
+      a {
+        &:hover {
+          color: $white;
+        }
       }
     }
   }
