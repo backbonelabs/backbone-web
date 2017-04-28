@@ -29,10 +29,11 @@ class Business extends Component {
       <div className="business__contact">
         <section className="contact home__contact">
           <Container className="mui--text-center">
-            <h2>
-              Try out Backbone for your company today. Pay if you like it,
-              free if you don’t. Let’s talk.
-            </h2>
+            <h1>
+              Try out <span>Backbone</span> for your company today.
+              <br />
+              Pay if you like it, free if you don’t. Let’s talk.
+            </h1>
             <form>
               <Row>
                 <Col md="6">
@@ -45,7 +46,7 @@ class Business extends Component {
                   />
                   <input
                     type="email"
-                    placeholder="Email address"
+                    placeholder="Email"
                     name="email"
                     value={this.state.email}
                     onChange={this.handleOnChange}
@@ -61,7 +62,7 @@ class Business extends Component {
                 <Col md="6">
                   <input
                     type="text"
-                    placeholder="Number"
+                    placeholder="Phone number"
                     name="number"
                     value={this.state.number}
                     onChange={this.handleOnChange}
@@ -83,7 +84,7 @@ class Business extends Component {
         </section>
         <section className="benefits home__benefits">
           <Container className="backbone-benefits">
-            <h2>The possible benefits of using Backbone for your business</h2>
+            <h1>The possible benefits of using Backbone for your business</h1>
             <Row>
               <Col md="4">
                 <i className="material-icons">attach_money</i>
