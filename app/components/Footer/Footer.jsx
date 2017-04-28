@@ -12,7 +12,7 @@ const Footer = () => (
         <Col md="6" xs="12" className="footer__leftside">
           <a>Privacy Policy</a>
           <a>Terms</a>
-          <a>Support</a>
+          <a href="https://support.gobackbone.com">Support</a>
         </Col>
         <Col md="6" xs="12" className="footer__rightside">
           <a href="https://www.instagram.com/backbonelabsinc/?hl=en">

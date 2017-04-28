@@ -1,4 +1,5 @@
 @import "../../colors";
+@import "../../global.scss";
 .footer {
   background-color: $red500;
   color: $white;
@@ -17,9 +18,16 @@
     a {
       vertical-align: sub;
     }
+    @media (max-width: $ipad) {
+      text-align: center;
+    }
   }
   &__rightside {
     text-align: right;
     font-size: 20px;
+    @media (max-width: $ipad) {
+      text-align: center;
+      margin-top: 10px;
+    }
   }
 }
