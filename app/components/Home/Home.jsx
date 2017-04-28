@@ -17,7 +17,7 @@ class Home extends Component {
     this.state = {
       name: '',
       email: '',
-      sentBy: 'customer',
+      sentBy: '',
       message: '',
     };
   }
@@ -140,17 +140,21 @@ class Home extends Component {
         <section className="home__videos">
           <Container fluid>
             <Row>
-              <Col md="6" className="video-container">
-                <iframe
-                  frameBorder="0"
-                  src="https://www.youtube.com/embed/GdpYCI-FAww"
-                />
+              <Col md="6">
+                <div className="video-container">
+                  <iframe
+                    frameBorder="0"
+                    src="https://www.youtube.com/embed/GdpYCI-FAww"
+                  />
+                </div>
               </Col>
-              <Col md="6" className="video-container">
-                <iframe
-                  frameBorder="0"
-                  src="https://www.youtube.com/embed/_n2rmccXI9M"
-                />
+              <Col md="6">
+                <div className="video-container">
+                  <iframe
+                    frameBorder="0"
+                    src="https://www.youtube.com/embed/_n2rmccXI9M"
+                  />
+                </div>
               </Col>
             </Row>
           </Container>
@@ -171,29 +175,33 @@ class Home extends Component {
                   />
                   <input
                     type="email"
-                    placeholder="Email address"
+                    placeholder="Email"
                     name="email"
                     value={this.state.email}
                     onChange={this.handleOnChange}
                   />
                   <input
                     type="text"
-                    placeholder="Number"
+                    placeholder="Phone number (optional)"
                     name="number"
                     value={this.state.number}
                     onChange={this.handleOnChange}
                   />
                 </Col>
                 <Col md="6">
-                  <select
-                    value={this.state.sentBy}
-                    name="sentBy"
-                    onChange={this.handleOnChange}
-                  >
-                    <option value="customer">Customer</option>
-                    <option value="investor">Investor</option>
-                    <option value="Other">Other</option>
-                  </select>
+                  <div>
+                    <select
+                      value={this.state.sentBy}
+                      name="sentBy"
+                      onChange={this.handleOnChange}
+                      required
+                    >
+                      <option value="" hidden>I am a ....</option>
+                      <option value="customer">Customer</option>
+                      <option value="investor">Investor</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
                   <textarea
                     name="message"
                     type="text"

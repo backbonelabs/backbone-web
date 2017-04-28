@@ -22,9 +22,11 @@ const port = process.env.PORT || 9999;
 
 // Only use in dev mode
 if (!isProduction) {
-  app.use(webpackDevMiddleware(compiler, {
-    noInfo: true,
-  }));
+  app.use(
+    webpackDevMiddleware(compiler, {
+      noInfo: true,
+    }),
+  );
   app.use(webpackHotMiddleware(compiler));
 }
 
@@ -39,9 +41,15 @@ app.use(express.static(path.join(__dirname, './public')));
 app.use(express.static(path.join(__dirname, '../build')));
 
 // Protect end points unless it's in the path Array
-app.use('/auth',
+app.use(
+  '/auth',
   expressJwt({ secret: serverConfig.secretKey }).unless({
-    path: ['/auth/login', '/auth/signup', '/auth/request-reset', '/auth/password-reset'],
+    path: [
+      '/auth/login',
+      '/auth/signup',
+      '/auth/request-reset',
+      '/auth/password-reset',
+    ],
   }),
 );
 app.use('/user', expressJwt({ secret: serverConfig.secretKey }));
