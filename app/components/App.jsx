@@ -62,7 +62,8 @@ class App extends Component {
           sidebar={sidebarContent}
           open={this.state.sidebarOpen}
           onSetOpen={this.onSetSidebarOpen}
-          sidebarClassName="side-nav"
+          sidebarClassName="side-nav-content"
+          rootClassName="side-nav-root"
         >
           <Navbar openSideNav={this.onSetSidebarOpen} />
           <main>

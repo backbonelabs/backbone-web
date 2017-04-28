@@ -72,8 +72,8 @@ body {
   main {
     flex: 1;
   }
-  .side-nav {
-    width: 200px;
+  .side-nav-content {
+    width: 250px;
     background-color: $grey900;
     img {
       width: 100%;
@@ -98,6 +98,12 @@ body {
           background-color: $primaryColor;
         }
       }
+    }
+  }
+  .side-nav-root {
+    position: static !important;
+    div:last-child {
+      position: static !important;
     }
   }
 }
