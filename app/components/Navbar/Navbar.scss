@@ -36,21 +36,21 @@
       }
     }
     li:last-child {
-      text-align: center;
-      border-radius: 100px;
-      border: 1px solid $red400;
-      padding: 9px 0;
-      width: 120px;
-      background-color: transparent;
-      margin-right: 15px;
-      &:hover {
-        background-color: $red500;
-      }
-      a {
+      button {
+        background-color: transparent;
+        border: 1px solid $red400;
+        border-radius: 100px;
+        text-transform: capitalize;
         &:hover {
-          color: $white;
+          background-color: $red500;
         }
       }
+    }
+    .fill {
+      flex: 1;
+    }
+    .fa-bars {
+      font-size: 24px;
     }
   }
 }
