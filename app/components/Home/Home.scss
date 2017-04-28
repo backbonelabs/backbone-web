@@ -18,7 +18,7 @@
 }
 
 .home__logo {
-  width: 25%;
+  width: 35%;
   display: block;
   margin: 0 auto 45px auto;
 }
@@ -28,6 +28,14 @@
   width: 150px;
   &:hover {
     opacity: 0.8;
+  }
+}
+
+.home__arrow {
+  font-size: 35px;
+  cursor: pointer;
+  &:hover {
+    color: $red500;
   }
 }
 
@@ -41,9 +49,16 @@
     color: $white;
   }
   &-header {
-    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
     color: $white;
     text-align: center;
+    button {
+      margin-bottom: 155px;
+    }
   }
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import autobind from 'autobind-decorator';
 import { post } from 'axios';
+import { scroller } from 'react-scroll';
 import Container from 'muicss/lib/react/container';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
@@ -9,6 +10,21 @@ import appStoreBadge from '../../images/app-store-badge.svg';
 import playStoreBadge from '../../images/play-store-badge.svg';
 import logo from '../../images/logo.png';
 import './Home.scss';
+
+const scrollToContact = () => {
+  scroller.scrollTo('home__contact', {
+    duration: 1500,
+    delay: 100,
+    smooth: true,
+  });
+};
+const scrollToProduct = () => {
+  scroller.scrollTo('home__product', {
+    duration: 1500,
+    delay: 100,
+    smooth: true,
+  });
+};
 
 class Home extends Component {
   constructor() {
@@ -69,6 +85,13 @@ class Home extends Component {
                   src={playStoreBadge}
                 />
               </a>
+            </div>
+
+            <Button color="danger " onClick={scrollToContact}>
+              Contact
+            </Button>
+            <div className="home__arrow" onClick={scrollToProduct}>
+              <i className="fa fa-chevron-down" aria-hidden="true" />
             </div>
           </div>
         </div>
@@ -137,6 +160,7 @@ class Home extends Component {
             </Row>
           </Container>
         </section>
+        <div className="test1" />
         <section className="home__videos">
           <Container fluid>
             <Row>
