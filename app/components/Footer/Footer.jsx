@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'muicss/lib/react/container';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
+import { Link } from 'react-router';
 
 import './Footer.scss';
 
@@ -10,8 +11,8 @@ const Footer = () => (
     <Container fluid>
       <Row>
         <Col md="6" xs="12" className="footer__leftside">
-          <a>Privacy Policy</a>
-          <a>Terms</a>
+          <Link to="/legal/privacy">Privacy Policy</Link>
+          <Link to="/legal/terms">Terms</Link>
           <a href="https://support.gobackbone.com">Support</a>
         </Col>
         <Col md="6" xs="12" className="footer__rightside">
