@@ -87,8 +87,8 @@ class Home extends Component {
               </a>
             </div>
 
-            <Button color="danger " onClick={scrollToContact}>
-              Contact
+            <Button color="danger" onClick={scrollToContact}>
+              Contact us
             </Button>
             <div className="home__arrow" onClick={scrollToProduct}>
               <i className="fa fa-chevron-down" aria-hidden="true" />
@@ -149,18 +149,30 @@ class Home extends Component {
           </Container>
         </section>
         <section className="home__testimonials">
-          <Container fluid>
+          <Container fluid className="mui--text-center">
+            <h1>What Customers are Saying</h1>
             <Row>
-              <Col md="6">
-                <h1>testmonials</h1>
+              <Col md="6" className="testimonials-container">
+                <div>
+                  <p>
+                    <i className="fa fa-quote-left" aria-hidden="true" />
+                    Miguel is the best engineer I know, my god this guy is freaking good. I want to be just like him when I grow up. More lube please!
+                  </p>
+                  <p>-Khoa Phan</p>
+                </div>
               </Col>
-              <Col md="6">
-                <h1>testmonials</h1>
+              <Col md="6" className="testimonials-container">
+                <div>
+                  <p>
+                    <i className="fa fa-quote-left" aria-hidden="true" />
+                    Miguel is a legend, what more can I say?
+                  </p>
+                  <p>-Kevin Huang</p>
+                </div>
               </Col>
             </Row>
           </Container>
         </section>
-        <div className="test1" />
         <section className="home__videos">
           <Container fluid>
             <Row>

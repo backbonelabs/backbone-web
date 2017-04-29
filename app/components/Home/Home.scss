@@ -1,4 +1,5 @@
 @import "../../colors";
+@import "../../global.scss";
 .home__bg-image {
   width: 100%;
   height: 100%;
@@ -119,7 +120,40 @@
 }
 
 .home__testimonials {
-  height: 400px;
+  height: 450px;
+  padding: 75px 0;
+  @media (max-width: $ipad) {
+    height: 600px;
+  }
+  p {
+    color: #57585a;
+  }
+  p:last-child {
+    font-weight: 700;
+  }
+  h1 {
+    text-transform: capitalize;
+    margin-bottom: 55px;
+  }
+  .fa-quote-left {
+    font-size: 24px;
+    padding-right: 15px;
+  }
+  .testimonials-container {
+    padding: 0 55px;
+    div {
+      height: 155px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: $white;
+      border: 1px solid $grey900;
+    }
+    @media (max-width: $ipad) {
+      padding-bottom: 25px;
+    }
+  }
 }
 
 .home__videos {
