@@ -176,7 +176,7 @@ class Home extends Component {
         <section className="home__videos">
           <Container fluid>
             <Row>
-              <Col md="6">
+              <Col md="6" sm="12">
                 <div className="video-container">
                   <iframe
                     frameBorder="0"
@@ -184,7 +184,7 @@ class Home extends Component {
                   />
                 </div>
               </Col>
-              <Col md="6">
+              <Col md="6" sm="12">
                 <div className="video-container">
                   <iframe
                     frameBorder="0"
