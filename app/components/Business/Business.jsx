@@ -26,8 +26,8 @@ class Business extends Component {
 
   render() {
     return (
-      <div className="business__contact">
-        <section className="contact home__contact">
+      <div className="business">
+        <section className="business__contact home__contact">
           <Container className="mui--text-center">
             <h1>
               Try out <span>Backbone</span> for your company today.
@@ -82,7 +82,7 @@ class Business extends Component {
             </form>
           </Container>
         </section>
-        <section className="benefits home__benefits">
+        <section className="business__benefits ">
           <Container className="backbone-benefits">
             <h1>The possible benefits of using Backbone for your business</h1>
             <Row>
