@@ -166,6 +166,7 @@
   }
   select {
     height: 48px;
+    padding: 10px;
     color: #57585a;
     appearance: none;
     background-position: right 50%;
@@ -179,5 +180,12 @@
     font-weight: 700;
     margin-top: 0;
     text-align: center;
+  }
+  .required-field {
+    border: 2px solid red !important;
+  }
+  .error-message {
+    margin: 15px 0 0 0;
+    color: red;
   }
 }

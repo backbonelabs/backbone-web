@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import autobind from 'autobind-decorator';
+import { post } from 'axios';
 import Container from 'muicss/lib/react/container';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
@@ -17,11 +18,37 @@ class Business extends Component {
       company: '',
       number: '',
       message: '',
+      formError: '',
     };
   }
 
   @autobind handleOnChange(evt) {
     this.setState({ [evt.target.name]: evt.target.value });
+  }
+
+  @autobind handleOnSubmit(evt) {
+    evt.preventDefault();
+    const { email, name, company, message, number } = this.state;
+
+    // Check that it's not an empty form
+    if (!email || !name || !company || !message || !number) {
+      return this.setState({ formError: 'Highlighted Fields Required' });
+    }
+
+    // clear form
+    this.setState({
+      name: '',
+      email: '',
+      number: '',
+      company: '',
+      message: '',
+      formError: '',
+    });
+    return post('/submit-email', {
+      businessForm: { email, name, company, message, number },
+    }).catch((err) => {
+      this.setState({ formError: err.response.data.error });
+    });
   }
 
   render() {
@@ -34,10 +61,15 @@ class Business extends Component {
               <br />
               Pay if you like it, free if you don’t. Let’s talk.
             </h1>
-            <form>
+            <form onSubmit={this.handleOnSubmit}>
               <Row>
                 <Col md="6">
                   <input
+                    className={
+                      !this.state.name && this.state.formError
+                        ? 'required-field'
+                        : null
+                    }
                     type="text"
                     placeholder="Name"
                     name="name"
@@ -45,6 +77,11 @@ class Business extends Component {
                     onChange={this.handleOnChange}
                   />
                   <input
+                    className={
+                      !this.state.email && this.state.formError
+                        ? 'required-field'
+                        : null
+                    }
                     type="email"
                     placeholder="Email"
                     name="email"
@@ -52,6 +89,11 @@ class Business extends Component {
                     onChange={this.handleOnChange}
                   />
                   <input
+                    className={
+                      !this.state.company && this.state.formError
+                        ? 'required-field'
+                        : null
+                    }
                     type="text"
                     placeholder="Company"
                     name="company"
@@ -61,6 +103,11 @@ class Business extends Component {
                 </Col>
                 <Col md="6">
                   <input
+                    className={
+                      !this.state.number && this.state.formError
+                        ? 'required-field'
+                        : null
+                    }
                     type="text"
                     placeholder="Phone number"
                     name="number"
@@ -68,6 +115,11 @@ class Business extends Component {
                     onChange={this.handleOnChange}
                   />
                   <textarea
+                    className={
+                      !this.state.message && this.state.formError
+                        ? 'required-field'
+                        : null
+                    }
                     name="message"
                     type="text"
                     placeholder="Message"
@@ -76,6 +128,11 @@ class Business extends Component {
                   />
                 </Col>
                 <Col md="12" className="mui--text-center">
+                  {this.state.formError
+                    ? <p className="error-message">
+                        Highlighted Fields Required
+                      </p>
+                    : null}
                   <Button color="danger">Send</Button>
                 </Col>
               </Row>

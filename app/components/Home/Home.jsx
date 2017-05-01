@@ -33,8 +33,10 @@ class Home extends Component {
     this.state = {
       name: '',
       email: '',
+      number: '',
       sentBy: '',
       message: '',
+      formError: '',
     };
   }
 
@@ -44,54 +46,65 @@ class Home extends Component {
 
   @autobind handleOnSubmit(evt) {
     evt.preventDefault();
-    const { email } = this.state;
+    const { email, name, sentBy, message, number } = this.state;
 
-    if (email) {
-      post('/mailing-list', { email })
-        .then((res) => {
-          this.setState({ success: res.data.success, error: '' });
-        })
-        .catch((err) => {
-          this.setState({ error: err.response.data.error, success: '' });
-        });
+    // just check that it's not an empty form
+    if (!email || !name || !sentBy || !message) {
+      return this.setState({ formError: 'Highlighted Fields Required' });
     }
+
+    // clear form
+    this.setState({
+      name: '',
+      email: '',
+      number: '',
+      sentBy: '',
+      message: '',
+      formError: '',
+    });
+    return post('/submit-email', {
+      contactForm: { email, name, sentBy, message, number },
+    }).catch((err) => {
+      this.setState({ formError: err.response.data.error });
+    });
   }
 
   render() {
     return (
       <div className="home">
-        <div className="home__bg-image" />
-        <div className="home__jumbo">
-          <div className="home__jumbo-header">
-            <img
-              className="home__logo"
-              src={logo}
-              alt="Man wearing a Backbone"
-            />
-            <div>
-              <a href="https://itunes.apple.com/us/app/backbone-smart-posture/id1184998773">
-                <img
-                  className="home__app-badge"
-                  alt="Download from the App Store"
-                  src={appStoreBadge}
-                />
-              </a>
-              {/*eslint-disable*/}
-              <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+        <div className="home__bg-image">
+          <div className="home__jumbo">
+            <div className="home__jumbo-header">
+              <img
+                className="home__logo"
+                src={logo}
+                alt="Man wearing a Backbone"
+              />
+              <div>
+                <a href="https://itunes.apple.com/us/app/backbone-smart-posture/id1184998773">
+                  <img
+                    className="home__app-badge"
+                    alt="Download from the App Store"
+                    src={appStoreBadge}
+                  />
+                </a>
                 {/*eslint-disable*/}
-                <img
-                  className="home__app-badge"
-                  alt="Download from Google Play"
-                  src={playStoreBadge}
-                />
-              </a>
-            </div>
+                <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+                  {/*eslint-disable*/}
+                  <img
+                    className="home__app-badge"
+                    alt="Download from Google Play"
+                    src={playStoreBadge}
+                  />
+                </a>
+              </div>
 
-            <Button color="danger" onClick={scrollToContact}>
-              Contact us
-            </Button>
-            <div className="home__arrow" onClick={scrollToProduct}>
-              <i className="fa fa-chevron-down" aria-hidden="true" />
+              <Button color="danger" onClick={scrollToContact}>
+                Contact us
+              </Button>
+              <div className="home__arrow" onClick={scrollToProduct}>
+                <i className="fa fa-chevron-down" aria-hidden="true" />
+              </div>
             </div>
           </div>
         </div>
@@ -199,10 +212,15 @@ class Home extends Component {
           <Container className="mui--text-center">
             <h1>Contact Us</h1>
             <p>Leave us any feedback or questions below.</p>
-            <form>
+            <form onSubmit={this.handleOnSubmit}>
               <Row>
                 <Col md="6">
                   <input
+                    className={
+                      !this.state.name && this.state.formError
+                        ? "required-field"
+                        : null
+                    }
                     type="text"
                     placeholder="Name"
                     name="name"
@@ -210,6 +228,11 @@ class Home extends Component {
                     onChange={this.handleOnChange}
                   />
                   <input
+                    className={
+                      !this.state.email && this.state.formError
+                        ? "required-field"
+                        : null
+                    }
                     type="email"
                     placeholder="Email"
                     name="email"
@@ -227,10 +250,14 @@ class Home extends Component {
                 <Col md="6">
                   <div>
                     <select
+                      className={
+                        !this.state.sentBy && this.state.formError
+                          ? "required-field"
+                          : null
+                      }
                       value={this.state.sentBy}
                       name="sentBy"
                       onChange={this.handleOnChange}
-                      required
                     >
                       <option value="" hidden>I am a ....</option>
                       <option value="customer">Customer</option>
@@ -239,6 +266,11 @@ class Home extends Component {
                     </select>
                   </div>
                   <textarea
+                    className={
+                      !this.state.message && this.state.formError
+                        ? "required-field"
+                        : null
+                    }
                     name="message"
                     type="text"
                     placeholder="Message"
@@ -247,6 +279,11 @@ class Home extends Component {
                   />
                 </Col>
                 <Col md="12" className="mui--text-center">
+                  {this.state.formError
+                    ? <p className="error-message">
+                        Highlighted Fields Required
+                      </p>
+                    : null}
                   <Button color="danger">Send</Button>
                 </Col>
               </Row>
