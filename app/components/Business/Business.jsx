@@ -16,7 +16,7 @@ class Business extends Component {
       name: '',
       email: '',
       company: '',
-      number: '',
+      phoneNum: '',
       message: '',
       formError: '',
     };
@@ -28,10 +28,10 @@ class Business extends Component {
 
   @autobind handleOnSubmit(evt) {
     evt.preventDefault();
-    const { email, name, company, message, number } = this.state;
+    const { email, name, company, message, phoneNum } = this.state;
 
     // Check that it's not an empty form
-    if (!email || !name || !company || !message || !number) {
+    if (!email || !name || !company || !message || !phoneNum) {
       return this.setState({ formError: 'Highlighted Fields Required' });
     }
 
@@ -39,13 +39,17 @@ class Business extends Component {
     this.setState({
       name: '',
       email: '',
-      number: '',
+      phoneNum: '',
       company: '',
       message: '',
       formError: '',
     });
-    return post('/submit-email', {
-      businessForm: { email, name, company, message, number },
+    return post('/mail/business', {
+      email,
+      name,
+      company,
+      message,
+      phoneNum,
     }).catch((err) => {
       this.setState({ formError: err.response.data.error });
     });
@@ -104,14 +108,14 @@ class Business extends Component {
                 <Col md="6">
                   <input
                     className={
-                      !this.state.number && this.state.formError
+                      !this.state.phoneNum && this.state.formError
                         ? 'required-field'
                         : null
                     }
                     type="text"
                     placeholder="Phone number"
-                    name="number"
-                    value={this.state.number}
+                    name="phoneNum"
+                    value={this.state.phoneNum}
                     onChange={this.handleOnChange}
                   />
                   <textarea

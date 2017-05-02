@@ -33,7 +33,7 @@ class Home extends Component {
     this.state = {
       name: '',
       email: '',
-      number: '',
+      phoneNum: '',
       sentBy: '',
       message: '',
       formError: '',
@@ -46,7 +46,7 @@ class Home extends Component {
 
   @autobind handleOnSubmit(evt) {
     evt.preventDefault();
-    const { email, name, sentBy, message, number } = this.state;
+    const { email, name, sentBy, message, phoneNum } = this.state;
 
     // just check that it's not an empty form
     if (!email || !name || !sentBy || !message) {
@@ -57,13 +57,17 @@ class Home extends Component {
     this.setState({
       name: '',
       email: '',
-      number: '',
+      phoneNum: '',
       sentBy: '',
       message: '',
       formError: '',
     });
-    return post('/submit-email', {
-      contactForm: { email, name, sentBy, message, number },
+    return post('/mail/contact', {
+      email,
+      name,
+      sentBy,
+      message,
+      phoneNum,
     }).catch((err) => {
       this.setState({ formError: err.response.data.error });
     });
@@ -242,8 +246,8 @@ class Home extends Component {
                   <input
                     type="text"
                     placeholder="Phone number (optional)"
-                    name="number"
-                    value={this.state.number}
+                    name="phoneNum"
+                    value={this.state.phoneNum}
                     onChange={this.handleOnChange}
                   />
                 </Col>
