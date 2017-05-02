@@ -8,10 +8,10 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import expressJwt from 'express-jwt';
 import serverConfig from './config';
-import mailingList from './routes/mailingList';
 import config from '../webpack.config.dev';
 import authRoutes from './routes/auth';
 import userRoutes from './routes/user';
+import mailRoutes from './routes/mail';
 
 const debug = Debug('web');
 const app = express();
@@ -49,6 +49,9 @@ app.use(
       '/auth/signup',
       '/auth/request-reset',
       '/auth/password-reset',
+      '/mail/contact',
+      '/mail/business',
+      '/mail/mailing-list',
     ],
   }),
 );
@@ -59,7 +62,7 @@ app.use('/ping', (req, res) => {
   res.send('pong');
 });
 
-app.post('/mailing-list', mailingList);
+app.use('/mail/', mailRoutes);
 app.use('/auth/', authRoutes);
 app.use('/user/', userRoutes);
 
