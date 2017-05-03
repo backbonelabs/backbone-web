@@ -26,12 +26,18 @@ class Preorder extends Component {
     const { email } = this.state;
 
     if (email) {
-      post('/mailing-list', { email })
+      post('/mail/mailing-list', { email })
         .then((res) => {
           this.setState({ success: res.data.success, error: '' });
         })
         .catch((err) => {
-          this.setState({ error: err.response.data.error, success: '' });
+          this.setState({
+            error: (err.response &&
+              err.response.data &&
+              err.response.data.error) ||
+              err.message,
+            success: '',
+          });
         });
     }
   }
@@ -56,9 +62,7 @@ class Preorder extends Component {
                   src={appStoreBadge}
                 />
               </a>
-              {/*eslint-disable*/}
-              <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
-                {/*eslint-disable*/}
+              <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone">
                 <img
                   className="preorder__app-badge"
                   alt="Download from Google Play"
