@@ -37,6 +37,7 @@ class Home extends Component {
       sentBy: '',
       message: '',
       formError: '',
+      confirmMessage: '',
     };
   }
 
@@ -50,27 +51,38 @@ class Home extends Component {
 
     // just check that it's not an empty form
     if (!email || !name || !sentBy || !message) {
-      return this.setState({ formError: 'Highlighted Fields Required' });
+      return this.setState({
+        formError: 'The highlighted fields are required',
+      });
     }
 
-    // clear form
-    this.setState({
-      name: '',
-      email: '',
-      phoneNum: '',
-      sentBy: '',
-      message: '',
-      formError: '',
-    });
     return post('/mail/contact', {
       email,
       name,
       sentBy,
       message,
       phoneNum,
-    }).catch((err) => {
-      this.setState({ formError: err.response.data.error });
-    });
+    })
+      .then(() => {
+        // clear form
+        this.setState({
+          name: '',
+          email: '',
+          phoneNum: '',
+          company: '',
+          message: '',
+          formError: '',
+          confirmMessage: "Thanks for the message. We'll get back to you shortly.",
+        });
+      })
+      .catch((err) => {
+        this.setState({
+          formError: (err.response &&
+            err.response.data &&
+            err.response.data.error) ||
+            err.message,
+        });
+      });
   }
 
   render() {
@@ -92,9 +104,7 @@ class Home extends Component {
                     src={appStoreBadge}
                   />
                 </a>
-                {/*eslint-disable*/}
-                <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
-                  {/*eslint-disable*/}
+                <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone">
                   <img
                     className="home__app-badge"
                     alt="Download from Google Play"
@@ -102,12 +112,15 @@ class Home extends Component {
                   />
                 </a>
               </div>
-
               <Button color="danger" onClick={scrollToContact}>
                 Contact us
               </Button>
-              <div className="home__arrow" onClick={scrollToProduct}>
-                <i className="fa fa-chevron-down" aria-hidden="true" />
+              <div className="home__arrow">
+                <i
+                  onClick={scrollToProduct}
+                  className="fa fa-chevron-down"
+                  aria-hidden="true"
+                />
               </div>
             </div>
           </div>
@@ -173,7 +186,8 @@ class Home extends Component {
                 <div>
                   <p>
                     <i className="fa fa-quote-left" aria-hidden="true" />
-                    Miguel is the best engineer I know, my god this guy is freaking good. I want to be just like him when I grow up. More lube please!
+                    Miguel is the best engineer I know, my god this guy is freaking good.
+                    I want to be just like him when I grow up. More lube please!
                   </p>
                   <p>-Khoa Phan</p>
                 </div>
@@ -222,7 +236,7 @@ class Home extends Component {
                   <input
                     className={
                       !this.state.name && this.state.formError
-                        ? "required-field"
+                        ? 'required-field'
                         : null
                     }
                     type="text"
@@ -234,7 +248,7 @@ class Home extends Component {
                   <input
                     className={
                       !this.state.email && this.state.formError
-                        ? "required-field"
+                        ? 'required-field'
                         : null
                     }
                     type="email"
@@ -256,7 +270,7 @@ class Home extends Component {
                     <select
                       className={
                         !this.state.sentBy && this.state.formError
-                          ? "required-field"
+                          ? 'required-field'
                           : null
                       }
                       value={this.state.sentBy}
@@ -272,7 +286,7 @@ class Home extends Component {
                   <textarea
                     className={
                       !this.state.message && this.state.formError
-                        ? "required-field"
+                        ? 'required-field'
                         : null
                     }
                     name="message"
@@ -285,8 +299,13 @@ class Home extends Component {
                 <Col md="12" className="mui--text-center">
                   {this.state.formError
                     ? <p className="error-message">
-                        Highlighted Fields Required
-                      </p>
+                      {this.state.formError}
+                    </p>
+                    : null}
+                  {this.state.confirmMessage
+                    ? <p className="error-message">
+                      {this.state.confirmMessage}
+                    </p>
                     : null}
                   <Button color="danger">Send</Button>
                 </Col>

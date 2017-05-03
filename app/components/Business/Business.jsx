@@ -19,6 +19,7 @@ class Business extends Component {
       phoneNum: '',
       message: '',
       formError: '',
+      confirmMessage: '',
     };
   }
 
@@ -32,27 +33,38 @@ class Business extends Component {
 
     // Check that it's not an empty form
     if (!email || !name || !company || !message || !phoneNum) {
-      return this.setState({ formError: 'Highlighted Fields Required' });
+      return this.setState({
+        formError: 'The highlighted fields are required',
+      });
     }
 
-    // clear form
-    this.setState({
-      name: '',
-      email: '',
-      phoneNum: '',
-      company: '',
-      message: '',
-      formError: '',
-    });
     return post('/mail/business', {
       email,
       name,
       company,
       message,
       phoneNum,
-    }).catch((err) => {
-      this.setState({ formError: err.response.data.error });
-    });
+    })
+      .then(() => {
+        // clear form and set confirm message
+        this.setState({
+          name: '',
+          email: '',
+          phoneNum: '',
+          company: '',
+          message: '',
+          formError: '',
+          confirmMessage: "Thanks for the message. We'll get back to you shortly.",
+        });
+      })
+      .catch((err) => {
+        this.setState({
+          formError: (err.response &&
+            err.response.data &&
+            err.response.data.error) ||
+            err.message,
+        });
+      });
   }
 
   render() {
@@ -134,8 +146,13 @@ class Business extends Component {
                 <Col md="12" className="mui--text-center">
                   {this.state.formError
                     ? <p className="error-message">
-                        Highlighted Fields Required
-                      </p>
+                      {this.state.formError}
+                    </p>
+                    : null}
+                  {this.state.confirmMessage
+                    ? <p className="error-message">
+                      {this.state.confirmMessage}
+                    </p>
                     : null}
                   <Button color="danger">Send</Button>
                 </Col>
