@@ -95,7 +95,12 @@ body {
         margin: 0;
         box-shadow: none !important;
         &:hover {
-          background-color: $primaryColor;
+          background-color: $red500;
+        }
+      }
+      .side-bar-active {
+        button {
+          background-color: $red500;
         }
       }
     }

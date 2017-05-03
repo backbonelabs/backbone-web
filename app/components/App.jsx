@@ -33,23 +33,35 @@ class App extends Component {
     }
     const sidebarContent = (
       <ul>
-        <li onClick={this.onSetSidebarOpen}>
-          <Link to="/"><img src={BackboneLogo} alt="Backbone logo" /></Link>
+        <li>
+          <Link to="/" onClick={this.onSetSidebarOpen}>
+            <img src={BackboneLogo} alt="Backbone logo" />
+          </Link>
         </li>
-        <li onClick={this.onSetSidebarOpen}>
-          <Link to="/business" activeClassName="active">
-            <Button onClick={this.onSetSidebarOpen} color="danger">
+        <li>
+          <Link
+            to="/business"
+            activeClassName="side-bar-active"
+            onClick={this.onSetSidebarOpen}
+          >
+            <Button color="danger">
               Business
             </Button>
           </Link>
         </li>
-        <li onClick={this.onSetSidebarOpen}>
+        <li>
           <a href="https://support.gobackbone.com">
-            <Button color="danger">Support</Button>
+            <Button color="danger" onClick={this.onSetSidebarOpen}>
+              Support
+            </Button>
           </a>
         </li>
-        <li onClick={this.onSetSidebarOpen}>
-          <Link to="/preorder">
+        <li>
+          <Link
+            to="/pre-order"
+            activeClassName="side-bar-active"
+            onClick={this.onSetSidebarOpen}
+          >
             <Button color="danger">Pre-order</Button>
           </Link>
         </li>
