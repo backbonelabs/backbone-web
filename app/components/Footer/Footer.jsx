@@ -16,7 +16,7 @@ const Footer = () => (
           <a href="https://support.gobackbone.com">Support</a>
         </Col>
         <Col md="6" xs="12" className="footer__rightside">
-          <a href="https://www.instagram.com/backbonelabsinc/?hl=en">
+          <a href="https://www.instagram.com/backbonelabsinc/">
             <i className="fa fa-instagram" />
           </a>
           <a href="https://twitter.com/backbonelabsinc">
