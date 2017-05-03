@@ -1,21 +1,12 @@
 @import "../../colors";
-
+@import "../../global.scss";
 .preorder__bg-image {
   width: 100%;
-  height: 100%;
-  background: url('../../images/background.jpg') 10% center no-repeat;
+  height: 100vh;
+  background: linear-gradient( rgba(218, 225, 227, .3), rgba(218, 225, 227, .3)), url('../../images/background.jpg') 10% center no-repeat;
   background-size: cover;
-  position: absolute;
-  z-index: -1;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(218,225,227,.3);
+  @media (max-height: 605px) {
+    min-height: 600px;
   }
 }
 
@@ -23,6 +14,9 @@
   width: 25%;
   display: block;
   margin: 0 auto 45px auto;
+  @media (max-width: $ipad) {
+    width: 35%;
+  }
 }
 
 .preorder__app-badge {
@@ -37,24 +31,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   flex-direction: column;
-
+  height: 100%;
   h2 {
     color: $white;
   }
-
   &-header {
     margin-bottom: 25px;
     color: $white;
     text-align: center;
   }
-
   &-form {
     width: 80%;
     text-align: center;
   }
-
   &-input {
     border: none;
     border-radius: 2px;
@@ -68,13 +58,11 @@
     padding: 0;
     text-align: center;
     width: 100%;
-
     @media (min-width: 768px) {
       border-radius: 2px 0 0 2px;
       display: inline-block;
     }
   }
-
   &-btn {
     background-color: $red500;
     border: 1px solid $red400;
@@ -90,18 +78,15 @@
     padding: 0;
     transition: background .3s;
     width: 100%;
-
     @media (min-width: 768px) {
       border-radius: 0 2px 2px 0;
       display: inline-block;
       margin-top: 0;
     }
-
     &:hover {
       background: $red400;
     }
   }
-
 }
 
 .preorder__error {
