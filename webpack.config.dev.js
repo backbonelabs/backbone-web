@@ -38,14 +38,7 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        exclude: [
-          /\.html$/,
-          /\.(js|jsx)$/,
-          /\.css$/,
-          /\.scss$/,
-          /\.json$/,
-          /\.svg$/,
-        ],
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
         loader: 'url-loader',
         query: {
           limit: 10000,
@@ -72,13 +65,6 @@ module.exports = {
             loader: 'sass-loader',
           },
         ],
-      },
-      {
-        test: /\.svg$/,
-        loader: 'file-loader',
-        query: {
-          name: 'static/[name].[hash:8].[ext]',
-        },
       },
     ],
   },
