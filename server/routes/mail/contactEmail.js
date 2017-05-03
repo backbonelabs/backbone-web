@@ -3,14 +3,12 @@ import config from '../../config';
 
 const { mailgunDomain, mailgunKey } = config;
 
-const debug = Debug('routes:businessEmail');
+const debug = Debug('routes:mail:contactEmail');
 
 const mailgun = require('mailgun-js')({
   apiKey: mailgunKey,
   domain: mailgunDomain,
 });
-
-const fromAddress = `Backbone <hello@${mailgunDomain}>`;
 
 export default (req, res) => {
   const { email, name, sentBy, phoneNum, message } = req.body;
@@ -18,25 +16,19 @@ export default (req, res) => {
     return res.status(400).json({ error: 'Form not complete' });
   }
 
-  const template = `
-  Name: ${name}
-  Sent by: ${sentBy}
-  Phone: ${phoneNum}
-
-  ${message}
-  `;
+  const template = `${message}\n\n${name}\n${sentBy}\n${phoneNum}`;
 
   const data = {
-    from: fromAddress,
+    from: `${name} <${email}>`,
     to: sentBy === 'investor' ? 'kp@gobackbone.com' : 'support@gobackbone.com',
-    subject: `Website inquiry - ${name} <${email}>`,
+    subject: 'Website inquiry',
     text: template,
   };
 
   return mailgun.messages().send(data, (error, body) => {
     if (error) {
       debug('Error sending email', body, error);
-      res.status(400).json('error', { error });
+      res.status(500).json({ error: 'An unexpected error has occurred.' });
     } else {
       res.status(200).json({ success: 'Email sent' });
     }
