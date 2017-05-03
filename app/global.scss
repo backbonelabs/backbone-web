@@ -105,6 +105,7 @@ body {
     position: static !important;
     div:last-child {
       position: static !important;
+      overflow-y: auto !important
     }
   }
 }
