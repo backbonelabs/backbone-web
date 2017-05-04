@@ -90,44 +90,57 @@ class Home extends Component {
       <div className="home">
         <div className="home__bg-image">
           <div className="home__jumbo">
-            <div className="home__jumbo-header">
-              <img
-                className="home__logo"
-                src={logo}
-                alt="Man wearing a Backbone"
+            <Container fluid>
+              <Row>
+                <Col md="6">
+                  <div className="home__jumbo-header">
+                    <h1 className="home__jumbo-text">
+                      Sit up, don’t sit out.{' '}
+                      <span>Backbone</span>
+                      {' '}
+                      keeps you feeling your best throughout the day
+                      so that you can focus on the important things.
+                    </h1>
+                    <div>
+                      <a href="https://itunes.apple.com/us/app/backbone-smart-posture/id1184998773">
+                        <img
+                          className="home__app-badge"
+                          alt="Download from the App Store"
+                          src={appStoreBadge}
+                        />
+                      </a>
+                      {/*eslint-disable*/}
+                      <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone">
+                        {/*eslint-disable*/}
+                        <img
+                          className="home__app-badge"
+                          alt="Download from Google Play"
+                          src={playStoreBadge}
+                        />
+                      </a>
+                    </div>
+                    <Button color="danger" onClick={scrollToContact}>
+                      Contact us
+                    </Button>
+                  </div>
+                </Col>
+                <Col md="6" />
+              </Row>
+            </Container>
+            <div className="home__fill" />
+            <div className="home__arrow">
+              <i
+                onClick={scrollToProduct}
+                className="fa fa-chevron-down"
+                aria-hidden="true"
               />
-              <div>
-                <a href="https://itunes.apple.com/us/app/backbone-smart-posture/id1184998773">
-                  <img
-                    className="home__app-badge"
-                    alt="Download from the App Store"
-                    src={appStoreBadge}
-                  />
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone">
-                  <img
-                    className="home__app-badge"
-                    alt="Download from Google Play"
-                    src={playStoreBadge}
-                  />
-                </a>
-              </div>
-              <Button color="danger" onClick={scrollToContact}>
-                Contact us
-              </Button>
-              <div className="home__arrow">
-                <i
-                  onClick={scrollToProduct}
-                  className="fa fa-chevron-down"
-                  aria-hidden="true"
-                />
-              </div>
             </div>
           </div>
         </div>
         <section className="home__product" id="home__product">
           <Container fluid>
             <Row>
+              <Col md="6" className="img-container posture-brace" />
               <Col md="6">
                 <div className="product-info">
                   <h1>
@@ -140,14 +153,12 @@ class Home extends Component {
                   </p>
                 </div>
               </Col>
-              <Col md="6" className="img-container posture-brace" />
             </Row>
           </Container>
         </section>
         <section className="home__product">
           <Container fluid>
             <Row>
-              <Col md="6" className="img-container sensor-module" />
               <Col md="6">
                 <div className="product-info">
                   <h1>Gently buzzes every time you slouch</h1>
@@ -158,12 +169,14 @@ class Home extends Component {
                   </p>
                 </div>
               </Col>
+              <Col md="6" className="img-container sensor-module" />
             </Row>
           </Container>
         </section>
         <section className="home__product">
           <Container fluid>
             <Row>
+              <Col md="6" className="img-container mobile-application" />
               <Col md="6">
                 <div className="product-info">
                   <h1>Get even more</h1>
@@ -174,7 +187,6 @@ class Home extends Component {
                   </p>
                 </div>
               </Col>
-              <Col md="6" className="img-container mobile-application" />
             </Row>
           </Container>
         </section>
@@ -236,7 +248,7 @@ class Home extends Component {
                   <input
                     className={
                       !this.state.name && this.state.formError
-                        ? 'required-field'
+                        ? "required-field"
                         : null
                     }
                     type="text"
@@ -248,7 +260,7 @@ class Home extends Component {
                   <input
                     className={
                       !this.state.email && this.state.formError
-                        ? 'required-field'
+                        ? "required-field"
                         : null
                     }
                     type="email"
@@ -270,7 +282,7 @@ class Home extends Component {
                     <select
                       className={
                         !this.state.sentBy && this.state.formError
-                          ? 'required-field'
+                          ? "required-field"
                           : null
                       }
                       value={this.state.sentBy}
@@ -286,7 +298,7 @@ class Home extends Component {
                   <textarea
                     className={
                       !this.state.message && this.state.formError
-                        ? 'required-field'
+                        ? "required-field"
                         : null
                     }
                     name="message"
@@ -299,13 +311,13 @@ class Home extends Component {
                 <Col md="12" className="mui--text-center">
                   {this.state.formError
                     ? <p className="error-message">
-                      {this.state.formError}
-                    </p>
+                        {this.state.formError}
+                      </p>
                     : null}
                   {this.state.confirmMessage
                     ? <p className="error-message">
-                      {this.state.confirmMessage}
-                    </p>
+                        {this.state.confirmMessage}
+                      </p>
                     : null}
                   <Button color="danger">Send</Button>
                 </Col>
