@@ -89,44 +89,32 @@ class Home extends Component {
       <div className="home">
         <div className="home__bg-image">
           <div className="home__jumbo">
-            <Container fluid>
-              <Row>
-                <Col md="6">
-                  <div className="home__jumbo-header">
-                    <h1 className="home__jumbo-text">
-                      Sit up, don’t sit out.{' '}
-                      <span>Backbone</span>
-                      {' '}
-                      keeps you feeling your best throughout the day
-                      so that you can focus on the important things.
-                    </h1>
-                    <div>
-                      <a href="https://itunes.apple.com/us/app/backbone-smart-posture/id1184998773">
-                        <img
-                          className="home__app-badge"
-                          alt="Download from the App Store"
-                          src={appStoreBadge}
-                        />
-                      </a>
-                      {/*eslint-disable*/}
-                      <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone">
-                        {/*eslint-disable*/}
-                        <img
-                          className="home__app-badge"
-                          alt="Download from Google Play"
-                          src={playStoreBadge}
-                        />
-                      </a>
-                    </div>
-                    <Button color="danger" onClick={scrollToContact}>
-                      Contact us
-                    </Button>
-                  </div>
-                </Col>
-                <Col md="6" />
-              </Row>
-            </Container>
-            <div className="home__fill" />
+            <div className="home__jumbo-header">
+              <h1 className="home__jumbo-text">
+                Sit up, don’t sit out
+              </h1>
+              <div>
+                <a href="https://itunes.apple.com/us/app/backbone-smart-posture/id1184998773">
+                  <img
+                    className="home__app-badge"
+                    alt="Download from the App Store"
+                    src={appStoreBadge}
+                  />
+                </a>
+                {/*eslint-disable*/}
+                <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone">
+                  {/*eslint-disable*/}
+                  <img
+                    className="home__app-badge"
+                    alt="Download from Google Play"
+                    src={playStoreBadge}
+                  />
+                </a>
+              </div>
+              <Button color="danger" onClick={scrollToContact}>
+                Contact us
+              </Button>
+            </div>
             <div className="home__arrow">
               <i
                 onClick={scrollToProduct}

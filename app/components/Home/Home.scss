@@ -17,23 +17,12 @@
 }
 
 .home__jumbo-text {
-  padding: 30px;
-  font-size: 35px;
+  font-size: 55px;
   font-weight: bold;
   color: white;
-  background-color: rgba(0, 0, 0, 0.3);
-  width: 80%;
-  text-align: left;
-  span {
-    color: $red500;
-    font-size: 40px;
-  }
+  text-transform: capitalize;
   @media (max-width: $ipad) {
-    font-size: 16px;
-    margin-top: 40px;
-    span {
-      font-size: 22px;
-    }
+    font-size: 35px;
   }
 }
 
@@ -59,21 +48,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex: 1;
     margin-bottom: 0;
     color: $white;
-    margin-left: -70px;
-    @media (max-width: $ipad) {
-      margin-left: 0;
-    }
-  }
-  .home__fill {
-    flex: 1;
   }
   .home__arrow {
     font-size: 35px;
     cursor: pointer;
     text-align: center;
     margin-bottom: 70px;
+    color: $white;
     &:hover {
       color: $red500;
     }
@@ -112,6 +96,7 @@
 
 .home__testimonials {
   padding: 75px 0;
+  background-color: $grey100;
   p {
     color: #57585a;
   }
@@ -120,7 +105,8 @@
   }
   h1 {
     text-transform: capitalize;
-    margin-bottom: 55px;
+    margin-top: 0;
+    margin-bottom: 45px;
   }
   .fa-quote-left {
     font-size: 24px;
