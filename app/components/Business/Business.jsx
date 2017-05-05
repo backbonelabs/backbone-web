@@ -63,6 +63,7 @@ class Business extends Component {
             err.response.data &&
             err.response.data.error) ||
             err.message,
+          confirmMessage: '',
         });
       });
   }

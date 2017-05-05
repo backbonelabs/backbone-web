@@ -45,58 +45,53 @@ class Preorder extends Component {
   render() {
     const { error, success } = this.state;
     return (
-      <div>
-        <div className="preorder__bg-image">
-          <div className="preorder__form-container">
-            <div className="preorder__form-container-header">
-              <img
-                className="preorder__logo"
-                src={logo}
-                alt="Man wearing a Backbone"
-              />
-              <div>
-                <a href="https://itunes.apple.com/us/app/backbone-smart-posture/id1184998773">
-                  <img
-                    className="preorder__app-badge"
-                    alt="Download from the App Store"
-                    src={appStoreBadge}
-                  />
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone">
-                  <img
-                    className="preorder__app-badge"
-                    alt="Download from Google Play"
-                    src={playStoreBadge}
-                  />
-                </a>
-              </div>
-              <h2>
-                Enter your email to be notified when Backbone is available for purchase!
-              </h2>
-            </div>
-            {success
-              ? <h2>{success}</h2>
-              : <form
-                className="preorder__form-container-form"
-                onSubmit={this.handleOnSubmit}
-              >
-                <input
-                  value={this.state.email}
-                  onChange={this.handleOnEmailChange}
-                  className="preorder__form-container-input"
-                  type="email"
-                  name="email"
-                  placeholder="Email address"
+      <div className="preorder__bg-image">
+        <div className="preorder__form-container">
+          <div className="preorder__form-container-header">
+            <img
+              className="preorder__logo"
+              src={logo}
+              alt="Man wearing a Backbone"
+            />
+            <div>
+              <a href="https://itunes.apple.com/us/app/backbone-smart-posture/id1184998773">
+                <img
+                  className="preorder__app-badge"
+                  alt="Download from the App Store"
+                  src={appStoreBadge}
                 />
-                <button
-                  className="preorder__form-container-btn"
-                  type="submit"
-                >
-                    Sign up
-                  </button>
-              </form>}
-            {error ? <p className="preorder__error">{error}</p> : null}
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone">
+                <img
+                  className="preorder__app-badge"
+                  alt="Download from Google Play"
+                  src={playStoreBadge}
+                />
+              </a>
+            </div>
+            <h2>
+              Enter your email to be notified when Backbone is available for purchase!
+            </h2>
           </div>
+          {success
+            ? <h2>{success}</h2>
+            : <form
+              className="preorder__form-container-form"
+              onSubmit={this.handleOnSubmit}
+            >
+              <input
+                value={this.state.email}
+                onChange={this.handleOnEmailChange}
+                className="preorder__form-container-input"
+                type="email"
+                name="email"
+                placeholder="Email address"
+              />
+              <button className="preorder__form-container-btn" type="submit">
+                  Sign up
+                </button>
+            </form>}
+          {error ? <p className="preorder__error">{error}</p> : null}
         </div>
       </div>
     );

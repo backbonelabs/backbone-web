@@ -68,7 +68,6 @@ class Home extends Component {
           name: '',
           email: '',
           phoneNum: '',
-          company: '',
           message: '',
           formError: '',
           confirmMessage: "Thanks for the message. We'll get back to you shortly.",
@@ -80,6 +79,7 @@ class Home extends Component {
             err.response.data &&
             err.response.data.error) ||
             err.message,
+          confirmMessage: '',
         });
       });
   }
