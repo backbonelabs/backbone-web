@@ -18,9 +18,7 @@
 
 .home__jumbo-text {
   font-size: 55px;
-  font-weight: bold;
   color: white;
-  text-transform: capitalize;
   @media (max-width: $ipad) {
     font-size: 35px;
   }
@@ -85,7 +83,7 @@
     background: url('https://cdn.gobackbone.com/assets/module-floating-angled.jpg');
   }
   .mobile-application {
-    background: url('https://cdn.gobackbone.com/assets/app-screens.gif');
+    background: url('https://cdn.gobackbone.com/assets/app-screens.jpg');
   }
   .img-container {
     height: 400px;
