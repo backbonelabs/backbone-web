@@ -8,7 +8,6 @@ import Col from 'muicss/lib/react/col';
 import Button from 'muicss/lib/react/button';
 import appStoreBadge from '../../images/app-store-badge.svg';
 import playStoreBadge from '../../images/play-store-badge.svg';
-import logo from '../../images/logo.png';
 import './Home.scss';
 
 const scrollToContact = () => {
