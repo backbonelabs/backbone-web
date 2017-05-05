@@ -108,7 +108,7 @@ body {
   /* Override the sidenav styles in order for scrolling to work*/
   .side-nav-root {
     position: static !important;
-    div:last-child {
+    &>div:last-child {
       position: static !important;
       overflow-y: auto !important
     }

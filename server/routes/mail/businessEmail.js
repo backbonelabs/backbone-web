@@ -21,7 +21,7 @@ export default (req, res) => {
   const data = {
     from: `${name} <${email}>`,
     to: 'kp@gobackbone.com',
-    subject: 'Website inquiry',
+    subject: 'Business inquiry',
     text: template,
   };
 
