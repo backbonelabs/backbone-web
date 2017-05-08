@@ -1,10 +1,10 @@
-import Router from 'express';
-import fetchUser from './fetchUser';
-import updateUser from './updateUser';
+const { Router } = require("express");
+const fetchUser = require("./fetchUser");
+const updateUser = require("./updateUser");
 
 const router = Router();
 
-router.get('/', fetchUser);
-router.post('/', updateUser);
+router.get("/", fetchUser);
+router.post("/", updateUser);
 
-export default router;
+module.exports = router;

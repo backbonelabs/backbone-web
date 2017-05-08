@@ -1,33 +1,31 @@
-import Debug from 'debug';
-import config from '../../config';
+const Debug = require("debug");
+const debug = Debug("routes:mailing-list");
 
-const { mailgunDomain, mailgunKey } = config;
+const { BL_MAILGUN_API, BL_MAILGUN_DOMAIN } = process.env;
 
-const debug = Debug('routes:mailing-list');
-
-const mailListDomain = `postkickstarterinterest@${mailgunDomain}`;
-const mailgun = require('mailgun-js')({
-  apiKey: mailgunKey,
-  domain: mailgunDomain,
+const mailListDomain = `postkickstarterinterest@${BL_MAILGUN_DOMAIN}`;
+const mailgun = require("mailgun-js")({
+  apiKey: BL_MAILGUN_API,
+  domain: BL_MAILGUN_DOMAIN
 });
 
-export default (req, res) => {
+module.exports = (req, res) => {
   const email = req.body.email;
 
   if (!email) {
-    return res.status(400).send({ error: 'Email must be filled out.' });
+    return res.status(400).send({ error: "Email must be filled out." });
   }
 
   mailgun
     .lists(mailListDomain)
     .members()
-    .create({ upsert: 'yes', address: email }, (err) => {
+    .create({ upsert: "yes", address: email }, err => {
       if (err) {
-        debug('Error adding email to list', req.body, err);
+        debug("Error adding email to list", req.body, err);
         return res
           .status(500)
-          .json({ error: 'An error has occurred, please try again later.' });
+          .json({ error: "An error has occurred, please try again later." });
       }
-      return res.status(200).json({ success: 'Thanks for signing up.' });
+      return res.status(200).json({ success: "Thanks for signing up." });
     });
 };

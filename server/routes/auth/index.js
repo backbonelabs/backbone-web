@@ -1,14 +1,14 @@
-import Router from 'express';
-import login from './login';
-import signup from './signup';
-import requestReset from './requestReset';
-import passwordReset from './passwordReset';
+const { Router } = require("express");
+const login = require("./login");
+const signup = require("./signup");
+const requestReset = require("./requestReset");
+const passwordReset = require("./passwordReset");
 
 const router = Router();
 
-router.post('/login', login);
-router.post('/signup', signup);
-router.post('/request-reset', requestReset);
-router.post('/password-reset', passwordReset);
+router.post("/login", login);
+router.post("/signup", signup);
+router.post("/request-reset", requestReset);
+router.post("/password-reset", passwordReset);
 
-export default router;
+module.exports = router;

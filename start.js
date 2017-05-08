@@ -1,8 +1,7 @@
-require('babel-register');
-require('localenv');
+require("localenv");
 
-const Debug = require('debug');
+const Debug = require("debug");
 
 Debug.enable(process.env.DEBUG);
 
-require('./server/index');
+require("./server/index");
