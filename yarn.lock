@@ -1991,7 +1991,7 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-react-app@^0.6.2:
+eslint-config-react-app@0.6.2, eslint-config-react-app@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/eslint-config-react-app/-/eslint-config-react-app-0.6.2.tgz#ee535cbaaf9e3576ea16b99afe720353d8730ec0"
 
@@ -5396,6 +5396,10 @@ sass-graph@^2.1.1:
     lodash "^4.0.0"
     scss-tokenizer "^0.2.1"
     yargs "^6.6.0"
+
+save-dev@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/save-dev/-/save-dev-2.0.0.tgz#4f8c06703d62a3f76571596237005b11d56df50e"
 
 sax@^1.2.1, sax@~1.2.1:
   version "1.2.2"
