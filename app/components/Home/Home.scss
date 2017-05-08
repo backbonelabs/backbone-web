@@ -10,6 +10,11 @@
   }
 }
 
+// section {
+//   @media (max-width: $iphone6Plus) {
+//     height: 300px;
+//   }
+// }
 .home__logo {
   width: 35%;
   display: block;
@@ -67,14 +72,23 @@
   h1 {
     text-transform: uppercase;
     font-weight: 700;
+    @media (max-width: $iphone6Plus) {
+      font-size: 22px;
+    }
   }
   p {
     font-size: 17px;
     line-height: 1.6;
     color: #57585a;
+    @media (max-width: $iphone6Plus) {
+      font-size: 15px;
+    }
   }
   .product-info {
     padding: 35px 45px;
+    @media (max-width: $iphone6Plus) {
+      padding: 10px;
+    }
   }
   .posture-brace {
     background: url('https://cdn.gobackbone.com/assets/shoulder-strap.jpg');
@@ -83,12 +97,15 @@
     background: url('https://cdn.gobackbone.com/assets/module-floating-angled.jpg');
   }
   .mobile-application {
-    background: url('https://cdn.gobackbone.com/assets/app-screens.jpg');
+    background: url('https://cdn.gobackbone.com/assets/app-screens.jpg') 10%;
   }
   .img-container {
     height: 400px;
     background-position: center center;
     background-size: cover;
+    @media (max-width: $iphone6Plus) {
+      height: 300px;
+    }
   }
 }
 
@@ -112,6 +129,9 @@
   }
   .testimonials-container {
     padding: 0 55px;
+    @media (max-width: $iphone6Plus) {
+      padding: 0 25px;
+    }
     div {
       margin-top: 25px;
       height: 155px;
