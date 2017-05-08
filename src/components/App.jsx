@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from "react";
 import Sidebar from "react-sidebar";
-import { BrowserRouter as Router } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import Button from "muicss/lib/react/button";
 import Navbar from "./Navbar/Navbar";
@@ -63,23 +62,21 @@ class App extends Component {
     );
 
     return (
-      <Router>
-        <div className="app">
-          <Sidebar
-            sidebar={sidebarContent}
-            open={this.state.sidebarOpen}
-            onSetOpen={this.onSetSidebarOpen}
-            sidebarClassName="side-nav-content"
-            rootClassName="side-nav-root"
-          >
-            <Navbar openSideNav={this.onSetSidebarOpen} />
-            <main id="main-wrapper">
-              <AppRoutes />
-            </main>
-            <Footer />
-          </Sidebar>
-        </div>
-      </Router>
+      <div className="app">
+        <Sidebar
+          sidebar={sidebarContent}
+          open={this.state.sidebarOpen}
+          onSetOpen={this.onSetSidebarOpen}
+          sidebarClassName="side-nav-content"
+          rootClassName="side-nav-root"
+        >
+          <Navbar openSideNav={this.onSetSidebarOpen} />
+          <main id="main-wrapper">
+            <AppRoutes />
+          </main>
+          <Footer />
+        </Sidebar>
+      </div>
     );
   }
 }

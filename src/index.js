@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import { ConnectedRouter } from "react-router-redux";
 import { fetchUser } from "./actions/user";
-import store from "./store";
+import { store, history } from "./store";
 import setAuthorizationToken from "./utils/setAuthorizationToken";
 import App from "./components/App.jsx";
 
@@ -19,7 +20,9 @@ setAuthorizationToken(token);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
   </Provider>,
   document.getElementById("root")
 );

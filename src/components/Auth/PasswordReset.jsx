@@ -92,7 +92,7 @@ class PasswordReset extends Component {
         {this.props.auth.passwordResetSent
           ? <SuccessMessage
               message="Your password has been successfully reset!"
-              link="/login"
+              link="login"
             />
           : <Panel className="auth-container__panel">
               <div className="auth-container__header">
