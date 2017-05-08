@@ -1,14 +1,15 @@
-import axios, { post } from 'axios';
+const axios = require("axios");
 
-export default (req, res) => {
+module.exports = (req, res) => {
   // on Post, headers must be set before request
   axios.defaults.headers.common.Authorization = `Bearer ${req.user.accessToken}`;
 
-  post(`${process.env.API_SERVER_URL}/users/${req.user._id}`, req.body.user)
-    .then((response) => {
+  axios
+    .post(`${process.env.API_SERVER_URL}/users/${req.user._id}`, req.body.user)
+    .then(response => {
       res.status(200).json({ user: response.data });
     })
-    .catch((err) => {
+    .catch(err => {
       res.status(err.response.status).json({ error: err.response.data.error });
     });
 };
