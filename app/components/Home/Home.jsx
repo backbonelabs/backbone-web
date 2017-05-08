@@ -185,19 +185,16 @@ class Home extends Component {
                 <div>
                   <p>
                     <i className="fa fa-quote-left" aria-hidden="true" />
-                    Miguel is the best engineer I know, my god this guy is freaking good.
-                    I want to be just like him when I grow up. More lube please!
+                    I’ve had no issues with it so far. I really like it, and I hope these guys stick with it, because it seems like a lot of additional useful functionality could be added to the app in the future.
                   </p>
-                  <p>-Khoa Phan</p>
                 </div>
               </Col>
               <Col md="6" className="testimonials-container">
                 <div>
                   <p>
                     <i className="fa fa-quote-left" aria-hidden="true" />
-                    Miguel is a legend, what more can I say?
+                    Got mine yesterday. After a quick update, the Backbone worked as advertised. If you truly have back issues, I highly recommend you keep your pledge.
                   </p>
-                  <p>-Kevin Huang</p>
                 </div>
               </Col>
             </Row>
