@@ -56,6 +56,6 @@ app.use("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../build/index.html"));
 });
 
-app.listen(9999, () => {
+app.listen(port, () => {
   debug(`Express server listening on port`);
 });
