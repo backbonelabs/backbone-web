@@ -20,6 +20,17 @@ const compiler = webpack(config);
 const isProduction = process.env.NODE_ENV === 'production';
 const port = process.env.PORT || 9999;
 
+if (isProduction) {
+  // Force HTTPS redirect in production
+  app.use((req, res, next) => {
+    if (!req.secure && req.get('X-Forwarded-Proto') !== 'https') {
+      res.redirect(`https://${req.get('Host')}${req.url}`);
+    } else {
+      next();
+    }
+  });
+}
+
 // Only use in dev mode
 if (!isProduction) {
   app.use(
