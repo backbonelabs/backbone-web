@@ -131,12 +131,10 @@ class Home extends Component {
               <Col md="6">
                 <div className="product-info">
                   <h1>
-                    Achieving great posture is now physically and mentally easier than ever
+                    Backbone makes achieving great posture comfortable and easy
                   </h1>
                   <p>
-                    Our ergonomic brace is crafted from a blend of technical fabrics to produce
-                    a slim, low-profile form of support for your posture that’s comfortable,
-                    breathable, and moisture-resistant.
+                    The ergonomic brace is crafted from a blend of technical fabrics to produce a slim, low-profile form of support for your posture that’s comfortable, breathable, and moisture-resistant.
                   </p>
                 </div>
               </Col>
@@ -150,9 +148,7 @@ class Home extends Component {
                 <div className="product-info">
                   <h1>Gently buzzes every time you slouch</h1>
                   <p>
-                    Our sensor module utilizes a series of high-tech components to
-                    analyze your posture and gently reminds you to sit or
-                    stand up straight by vibrating anytime you slouch.
+                    Backbone’s sensor module utilizes a series of high-tech components to analyze your posture and gently reminds you to sit or stand up straight by vibrating anytime you slouch.
                   </p>
                 </div>
               </Col>
@@ -166,11 +162,9 @@ class Home extends Component {
               <Col md="6" className="img-container mobile-application" />
               <Col md="6">
                 <div className="product-info">
-                  <h1>Get even more</h1>
+                  <h1>Backbone gives you even more</h1>
                   <p>
-                    Our mobile application allows us to wirelessly deliver an endless
-                    stream of new features and updates to your smartphone...
-                    allowing your Backbone to do even more than you ever expected.
+                    The mobile application allows us to wirelessly deliver a constant stream of new features and updates to your smartphone... giving your Backbone the ability to do even more than you ever expected.
                   </p>
                 </div>
               </Col>
