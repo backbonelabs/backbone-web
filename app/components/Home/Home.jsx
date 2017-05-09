@@ -179,7 +179,7 @@ class Home extends Component {
         </section>
         <section className="home__testimonials">
           <Container fluid className="mui--text-center">
-            <h1>What Customers are Saying</h1>
+            <h1>What Our Customers are Saying</h1>
             <Row>
               <Col md="6" className="testimonials-container">
                 <div>
