@@ -201,7 +201,7 @@ class Home extends Component {
                 <div className="video-container">
                   <iframe
                     frameBorder="0"
-                    src="https://www.youtube.com/embed/GdpYCI-FAww?showinfo=0&controls=0"
+                    src="https://www.youtube.com/embed/GdpYCI-FAww?rel=0&showinfo=0&controls=0"
                   />
                 </div>
               </Col>
@@ -209,7 +209,7 @@ class Home extends Component {
                 <div className="video-container">
                   <iframe
                     frameBorder="0"
-                    src="https://www.youtube.com/embed/e3vSfTeXXtE?showinfo=0&controls=0"
+                    src="https://www.youtube.com/embed/e3vSfTeXXtE?rel=0&showinfo=0&controls=0"
                   />
                 </div>
               </Col>
