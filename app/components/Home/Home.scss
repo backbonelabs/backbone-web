@@ -109,9 +109,13 @@
   background-color: $grey100;
   p {
     color: #57585a;
-  }
-  p:last-child {
-    font-weight: 700;
+    font-weight: 400;
+    margin-bottom: 0;
+    span {
+      display: block;
+      text-align: right;
+      font-weight: 700;
+    }
   }
   h1 {
     text-transform: capitalize;
@@ -129,13 +133,14 @@
     }
     div {
       margin-top: 25px;
-      height: 155px;
-      padding: 30px;
+      height: 175px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       background-color: $white;
       border: 1px solid $grey900;
+      text-align: justify;
     }
   }
 }

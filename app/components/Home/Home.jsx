@@ -175,19 +175,30 @@ class Home extends Component {
           <Container fluid className="mui--text-center">
             <h1>What Our Customers are Saying</h1>
             <Row>
-              <Col md="6" className="testimonials-container">
+              <Col md="12" lg="4" className="testimonials-container">
+                <div>
+                  <p>
+                    <i className="fa fa-quote-left" aria-hidden="true" />
+                    Overall I do feel better at the end of the day with the support and posture reminders. Good job Backbone team.
+                    <span>- Ryan H</span>
+                  </p>
+                </div>
+              </Col>
+              <Col md="12" lg="4" className="testimonials-container">
                 <div>
                   <p>
                     <i className="fa fa-quote-left" aria-hidden="true" />
                     I’ve had no issues with it so far. I really like it, and I hope these guys stick with it, because it seems like a lot of additional useful functionality could be added to the app in the future.
+                    <span>- BH</span>
                   </p>
                 </div>
               </Col>
-              <Col md="6" className="testimonials-container">
+              <Col md="12" lg="4" className="testimonials-container">
                 <div>
                   <p>
                     <i className="fa fa-quote-left" aria-hidden="true" />
                     Got mine yesterday. After a quick update, the Backbone worked as advertised. If you truly have back issues, I highly recommend you keep your pledge.
+                    <span>- Tom M</span>
                   </p>
                 </div>
               </Col>
