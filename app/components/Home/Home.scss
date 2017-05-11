@@ -127,19 +127,13 @@
     padding-right: 15px;
   }
   .testimonials-container {
-    padding: 0 55px;
-    @media (max-width: $iphone6Plus) {
-      padding: 0 25px;
-    }
+    height: 150px;
+    margin-bottom: 25px;
     div {
-      margin-top: 25px;
-      height: 175px;
-      padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background-color: $white;
-      border: 1px solid $grey900;
+      height: 100%;
       text-align: justify;
     }
   }

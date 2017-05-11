@@ -6,6 +6,7 @@ import Container from 'muicss/lib/react/container';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import Button from 'muicss/lib/react/button';
+import Panel from 'muicss/lib/react/panel';
 import appStoreBadge from '../../images/app-store-badge.svg';
 import playStoreBadge from '../../images/play-store-badge.svg';
 import './Home.scss';
@@ -176,31 +177,31 @@ class Home extends Component {
             <h1>What Our Customers are Saying</h1>
             <Row>
               <Col md="12" lg="4" className="testimonials-container">
-                <div>
+                <Panel>
                   <p>
                     <i className="fa fa-quote-left" aria-hidden="true" />
                     Overall I do feel better at the end of the day with the support and posture reminders. Good job Backbone team.
                     <span>- Ryan H</span>
                   </p>
-                </div>
+                </Panel>
               </Col>
               <Col md="12" lg="4" className="testimonials-container">
-                <div>
+                <Panel>
                   <p>
                     <i className="fa fa-quote-left" aria-hidden="true" />
                     I’ve had no issues with it so far. I really like it, and I hope these guys stick with it, because it seems like a lot of additional useful functionality could be added to the app in the future.
                     <span>- BH</span>
                   </p>
-                </div>
+                </Panel>
               </Col>
               <Col md="12" lg="4" className="testimonials-container">
-                <div>
+                <Panel>
                   <p>
                     <i className="fa fa-quote-left" aria-hidden="true" />
                     Got mine yesterday. After a quick update, the Backbone worked as advertised. If you truly have back issues, I highly recommend you keep your pledge.
                     <span>- Tom M</span>
                   </p>
-                </div>
+                </Panel>
               </Col>
             </Row>
           </Container>
