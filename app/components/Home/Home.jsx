@@ -173,8 +173,8 @@ class Home extends Component {
           </Container>
         </section>
         <section className="home__testimonials">
-          <Container fluid className="mui--text-center">
-            <h1>What Our Customers are Saying</h1>
+          <Container fluid>
+            <h1 className="mui--text-center">What Our Customers are Saying</h1>
             <Row>
               <Col md="12" lg="4" className="testimonials-container">
                 <Panel>
