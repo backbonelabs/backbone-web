@@ -1,28 +1,27 @@
 @import "../../colors";
-
+@import "../../global.scss";
 .home__bg-image {
   width: 100%;
-  height: 100%;
-  background: url('../../images/background.jpg') 10% center no-repeat;
+  height: 100vh;
+  background: linear-gradient( rgba(218, 225, 227, .3), rgba(218, 225, 227, .3)), url('https://cdn.gobackbone.com/assets/hero.jpg') center no-repeat;
   background-size: cover;
-  position: absolute;
-  z-index: -1;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(218,225,227,.3);
+  @media (max-height: 605px) {
+    min-height: 600px;
   }
 }
 
 .home__logo {
-  width: 25%;
+  width: 35%;
   display: block;
   margin: 0 auto 45px auto;
+}
+
+.home__jumbo-text {
+  font-size: 55px;
+  color: white;
+  @media (max-width: $ipad) {
+    font-size: 35px;
+  }
 }
 
 .home__app-badge {
@@ -33,77 +32,183 @@
   }
 }
 
-.home__form-container {
+.home__jumbo {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   flex-direction: column;
-
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   h2 {
     color: $white;
   }
-
   &-header {
-    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin-bottom: 0;
     color: $white;
-    text-align: center;
   }
-
-  &-form {
-    width: 80%;
-    text-align: center;
-  }
-
-  &-input {
-    border: none;
-    border-radius: 2px;
-    box-shadow: none;
-    display: block;
-    font-weight: 700;
-    height: 50px;
-    margin: 0 auto;
-    max-width: 350px;
-    outline: 0;
-    padding: 0;
-    text-align: center;
-    width: 100%;
-
-    @media (min-width: 768px) {
-      border-radius: 2px 0 0 2px;
-      display: inline-block;
-    }
-  }
-
-  &-btn {
-    background-color: $red500;
-    border: 1px solid $red400;
-    border-radius: 2px;
-    color: $white;
+  .home__arrow {
+    font-size: 35px;
     cursor: pointer;
-    display: block;
-    font-weight: 700;
-    height: 50px;
-    margin: 16px auto 0;
-    max-width: 200px;
-    outline: 0;
-    padding: 0;
-    transition: background .3s;
-    width: 100%;
-
-    @media (min-width: 768px) {
-      border-radius: 0 2px 2px 0;
-      display: inline-block;
-      margin-top: 0;
-    }
-
+    text-align: center;
+    margin-bottom: 70px;
+    color: $white;
     &:hover {
-      background: $red400;
+      color: $red500;
     }
   }
-
 }
 
-.home__error {
-  color: $red500;
+.home__product {
+  background-color: $white;
+  h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    @media (max-width: $iphone6Plus) {
+      font-size: 22px;
+    }
+  }
+  p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #57585a;
+    @media (max-width: $iphone6Plus) {
+      font-size: 15px;
+    }
+  }
+  .product-info {
+    padding: 35px 45px;
+    @media (max-width: $iphone6Plus) {
+      padding: 10px;
+    }
+  }
+  .posture-brace {
+    background: url('https://cdn.gobackbone.com/assets/shoulder-strap.jpg');
+  }
+  .sensor-module {
+    background: url('https://cdn.gobackbone.com/assets/module-floating-angled.jpg');
+  }
+  .mobile-application {
+    background: url('https://cdn.gobackbone.com/assets/app-screens.jpg');
+  }
+  .img-container {
+    height: 400px;
+    background-position: center center;
+    background-size: cover;
+    @media (max-width: $iphone6Plus) {
+      height: 300px;
+    }
+  }
+}
+
+.home__testimonials {
+  padding: 75px 0;
+  background-color: $grey100;
+  p {
+    color: #57585a;
+    font-weight: 400;
+    margin-bottom: 0;
+    span {
+      display: block;
+      text-align: right;
+      font-weight: 700;
+    }
+  }
+  h1 {
+    text-transform: capitalize;
+    margin-top: 0;
+    margin-bottom: 45px;
+  }
+  .fa-quote-left {
+    font-size: 24px;
+    padding-right: 15px;
+  }
+  .testimonials-container {
+    height: 150px;
+    margin-bottom: 25px;
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      text-align: justify;
+    }
+  }
+}
+
+.home__videos {
+  background-color: $white;
+  padding: 75px 0;
+  .video-container {
+    height: 400px;
+    background-color: $grey100;
+    @media (max-width: $ipad) {
+      margin-top: 15px;
+      height: 350px;
+    }
+    @media (max-width: $iphone6Plus) {
+      height: 240px;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+    }
+  }
+}
+
+.home__contact {
+  background-color: $grey100;
+  padding: 55px 0;
+  p {
+    margin-bottom: 45px;
+    text-align: center;
+  }
+  button {
+    margin-top: 20px;
+    width: 200px;
+  }
+  input,
+  select,
+  textarea {
+    border: 0;
+    outline: 0;
+    padding: 16px 16px 16px 10px;
+    border-radius: 0;
+    background-color: $white;
+    width: 90%;
+    margin-top: 16px;
+    box-shadow: 0 1px 1px rgba(black, 0.1);
+    resize: none;
+    &:focus {
+      box-shadow: 0 0px 2px rgba($red500, 1);
+    }
+  }
+  select {
+    height: 48px;
+    padding: 10px;
+    color: #57585a;
+    appearance: none;
+    background-position: right 50%;
+    background-repeat: no-repeat;
+    background-image: url('../../images/select-arrow.svg');
+  }
+  textarea {
+    height: 114px;
+  }
+  h1 {
+    font-weight: 700;
+    margin-top: 0;
+    text-align: center;
+  }
+  .required-field {
+    border: 2px solid red !important;
+  }
+  .error-message {
+    margin: 15px 0 0 0;
+    color: red;
+  }
 }

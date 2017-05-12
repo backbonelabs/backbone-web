@@ -1,50 +1,49 @@
-// import React, { PropTypes } from 'react';
-// import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
-// import { Link } from 'react-router';
-// import FlatButton from 'material-ui/FlatButton';
-// import { connect } from 'react-redux';
-// import * as authActions from '../../actions/auth';
+import React, { PropTypes } from 'react';
+import Media from 'react-media';
+import Button from 'muicss/lib/react/button';
+import { Link } from 'react-router';
 
-// import './Navbar.scss';
+import BackboneLogo from '../../images/backbone-logo-white.svg';
 
-// const Navbar = (props) => {
-//   let loginBtn;
+import './Navbar.scss';
 
-//   if (props.auth.authenticated) {
-//     loginBtn = (
-//       <FlatButton onClick={props.logOut} label="Log Out" hoverColor="#F44336" />
-//     );
-//   } else {
-//     loginBtn = (
-//       <Link to="/signup">
-//         <FlatButton label="sign up" hoverColor="#F44336" />
-//       </Link>
-//     );
-//   }
-//   return (
-//     <Toolbar className="navBar">
-//       <ToolbarGroup />
-//       <ToolbarGroup>
-//         <div>
-//           <Link to="/">
-//             <FlatButton label="Home" hoverColor="#F44336" />
-//           </Link>
-//           {loginBtn}
-//         </div>
-//       </ToolbarGroup>
-//     </Toolbar>
-//   );
-// };
+const Navbar = ({ openSideNav }) => {
+  const desktop = (
+    <ul>
+      <li>
+        <Link to="/"><img src={BackboneLogo} alt="Backbone logo" /></Link>
+      </li>
+      <li><Link to="/business" activeClassName="active">Business</Link></li>
+      <li><a href="https://support.gobackbone.com">Support</a></li>
+      <li>
+        <Link to="/pre-order">
+          <Button color="danger">Pre-order</Button>
+        </Link>
+      </li>
+    </ul>
+  );
+  const mobile = (
+    <ul>
+      <li>
+        <Link to="/"><img src={BackboneLogo} alt="Backbone logo" /></Link>
+      </li>
+      <li className="fill" />
+      {/*eslint-disable*/}
+      <li><i className="fa fa-bars" onClick={openSideNav} /></li>
+      {/*eslint-disable*/}
+    </ul>
+  );
+  return (
+    <nav className="navBar">
+      <Media query="(max-width: 768px)">
+        {matches => (matches ? mobile : desktop)}
+      </Media>
+    </nav>
+  );
+};
 
-// Navbar.propTypes = {
-//   auth: PropTypes.shape({
-//     authenticated: PropTypes.bool,
-//   }),
-//   logOut: PropTypes.func,
-// };
+Navbar.propTypes = {
+  openSideNav: PropTypes.func
+};
 
-// const mapStateToProps = state => ({
-//   auth: state.auth,
-// });
-
-// export default connect(mapStateToProps, authActions)(Navbar);
+export default Navbar;

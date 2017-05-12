@@ -1,0 +1,33 @@
+@import "../../colors";
+@import "../../global.scss";
+.footer {
+  background-color: $red500;
+  color: $white;
+  width: 100%;
+  padding: 10px 0;
+  a {
+    text-decoration: none;
+    padding: 0 15px;
+    cursor: pointer;
+    color: $white;
+    &:hover {
+      color: $grey900;
+    }
+  }
+  &__leftside {
+    a {
+      vertical-align: sub;
+    }
+    @media (max-width: $ipad) {
+      text-align: center;
+    }
+  }
+  &__rightside {
+    text-align: right;
+    font-size: 20px;
+    @media (max-width: $ipad) {
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+}

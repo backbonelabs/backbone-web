@@ -10,11 +10,9 @@
 // iphone 5
 $iphone5: 320px;
 $iphone5LsMax: 568px; // max landscape
-
 // iphone 6 plus, same for iphone 7 plus
 $iphone6Plus: 414px;
 $iphone6LsMax: 736px;
-
 $ipad: 768px;
 
 /*
@@ -22,9 +20,9 @@ $ipad: 768px;
   Theme
   ====================
  */
+
 $primaryColor: $backbonePrimary;
 $secondaryColor: $backboneSecondary;
-
 // Use opacity instead of grey.
 // Black or white text that is transparent remains legible and vibrant against background
 // color changes. This makes it more flexible than grey text in the same contexts.
@@ -38,25 +36,85 @@ $disabledTextColor: rgba(0, 0, 0, 0.38);
   General styling
   ====================
  */
-html, body {
-  height: 100%;
-  overflow-x: hidden;
+
+* {
+  box-sizing: border-box;
 }
 
-body, button, input {
+html,
+body {
+  height: 100%;
+}
+
+body,
+button,
+input,
+select {
   color: $textColor;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
   background-color: $grey50;
 }
 
-.secondary-text {
-  font-size: 12px;
+
+/* Keep footer at the bottom */
+
+#root {
+  height: 100%;
 }
 
+.app {
+  main {
+    min-height: 100vh;
+  }
+  .side-nav-content {
+    width: 250px;
+    background-color: $grey900;
+    img {
+      width: 100%;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      li:first-child {
+        background-color: $white;
+        padding: 15px 5px;
+      }
+      button {
+        width: 100%;
+        background-color: transparent;
+        color: $white;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        box-shadow: none !important;
+        &:hover {
+          background-color: $red500;
+        }
+      }
+      .side-bar-active {
+        button {
+          background-color: $red500;
+        }
+      }
+    }
+  }
+  /* Override the sidenav styles in order for scrolling to work*/
+  .side-nav-root {
+    position: static !important;
+    &>div:last-child {
+      position: static !important;
+      overflow-y: auto !important
+    }
+  }
+}
+
+
 /* Error styles */
+
 .input-error {
   input {
     border-color: $primaryColor !important;

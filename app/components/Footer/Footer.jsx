@@ -1,0 +1,34 @@
+import React from 'react';
+import Container from 'muicss/lib/react/container';
+import Row from 'muicss/lib/react/row';
+import Col from 'muicss/lib/react/col';
+import { Link } from 'react-router';
+
+import './Footer.scss';
+
+const Footer = () => (
+  <div className="footer">
+    <Container fluid>
+      <Row>
+        <Col md="6" xs="12" className="footer__leftside">
+          <Link to="/legal/privacy">Privacy Policy</Link>
+          <Link to="/legal/terms">Terms</Link>
+          <a href="https://support.gobackbone.com">Support</a>
+        </Col>
+        <Col md="6" xs="12" className="footer__rightside">
+          <a href="https://www.instagram.com/backbonelabsinc/">
+            <i className="fa fa-instagram" />
+          </a>
+          <a href="https://twitter.com/backbonelabsinc">
+            <i className="fa fa-twitter" />
+          </a>
+          <a href="https://www.facebook.com/BackboneLabsInc/">
+            <i className="fa fa-facebook" />
+          </a>
+        </Col>
+      </Row>
+    </Container>
+  </div>
+);
+
+export default Footer;
