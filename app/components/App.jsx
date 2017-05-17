@@ -57,13 +57,12 @@ class App extends Component {
           </a>
         </li>
         <li>
-          <Link
-            to="/pre-order"
-            activeClassName="side-bar-active"
+          <a
+            href="/pre-order"
             onClick={this.onSetSidebarOpen}
           >
             <Button color="danger">Pre-order</Button>
-          </Link>
+          </a>
         </li>
       </ul>
     );
