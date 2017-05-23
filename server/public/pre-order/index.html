@@ -188,7 +188,7 @@
             </ul>
             <p class="mui--text-danger"><strong><u>LIMITED TIME OFFER</u></strong>: <s style="color: black;">$99</s> <strong>$69 ($30 OFF)</strong></p>
             <div class="mui--text-center">
-              <button class="mui-btn mui-btn--large mui-btn--raised mui-btn--danger cta-button">Preorder Backbone Now</button>
+              <button class="mui-btn mui-btn--large mui-btn--raised mui-btn--danger cta-button" onclick="initiateCheckout(0)">Get Backbone Now</button>
             </div>
             <p><strong><sup>*</sup>Satisfaction Guarantee</strong>: Return the product within 30 days and we'll send you a refund, no questions asked.</p>
           </div>
@@ -344,7 +344,7 @@
           <p>We had multiple experienced medical professionals try on and examine Backbone for themselves. Here's what they had to say:</p>
           <p>[Quote Graphic: Profile pictures and quotes from chiropractors and other medical professionals we’re working with.]</p>
           <div class="mui--text-center">
-            <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger"><u><b>LIMITED OFFER</b></u>: Get $30 Off Backbone</button>
+            <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="initiateCheckout(1)"><u><b>LIMITED OFFER</b></u>: Get $30 Off Backbone</button>
           </div>
           <p>We're giving you a massive $30 discount for being one of our preorder customers. Backbone will never be priced this low again, take advantage of this huge discount, don't pay full price ($99+) later!</p>
           <p>[Graphic: “Why support us?” banner]</p>
@@ -352,7 +352,7 @@
           <p><strong>Early Customer Discount</strong> - Because you're an early supporter, we want to thank you by offering Backbone at 30% off. Backbone will never be priced this low again, take advantage of our huge discount, don't pay full price ($99) later.</p>
           <p><strong>We're In This Together</strong> - We treat all of our customers like family - because that's exactly what you are. We'll personally reply to every single one of your questions or suggestions and make sure you're always heard.</p>
           <div class="mui--text-center">
-            <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger"><u><b>LIMITED OFFER</b></u>: Get $30 Off Backbone</button>
+            <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="initiateCheckout(2)"><u><b>LIMITED OFFER</b></u>: Get $30 Off Backbone</button>
           </div>
           <p>Even now, our team is continuously spending all of our waking hours to make Backbone the best posture product that you'll ever use.</p>
           <p>Backbone is more than just an innovative technology we've built, it's our opportunity to help you and your loved ones live better, healthier lives. With your support, we can do that, and more.</p>
@@ -383,6 +383,28 @@
       </div>
     </div>
   </footer>
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '495943477278998'); // Insert your pixel ID here.
+    fbq('track', 'PageView');
+
+    // Pixel fires upon a user clicking on a call-to-action button
+    function initiateCheckout(number) {
+      fbq('track', 'InitiateCheckout', { buttonPressed: number, price: 69 });
+    }
+
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=495943477278998&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- DO NOT MODIFY -->
+  <!-- End Facebook Pixel Code -->
+
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
