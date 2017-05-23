@@ -27,12 +27,22 @@
 
     main {
       font-size: 18px;
-      width: 80%;
     }
 
-    @media (max-width: 768px) {
-      main {
-        width: 96%;
+    .subheader {
+      font-size: 18px;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 457px;
+      max-height: 400px;
+      margin-bottom: 36px;
+    }
+
+    @media (min-width: 992px) {
+      .hero-image {
+        margin: 0;
       }
     }
 
@@ -74,22 +84,22 @@
 
     .youtube {
       display: block;
-      height: 315px;
+      height: 180px;
       margin: 36px auto;
-      width: 560px;
+      width: 320px;
     }
 
-    @media (max-width: 620px) {
+    @media (min-width: 375px) {
       .youtube {
         height: 211px;
         width: 375px;
       }
     }
 
-    @media (max-width: 375px) {
+    @media (min-width: 620px) {
       .youtube {
-        height: 180px;
-        width: 320px;
+        height: 315px;
+        width: 560px;
       }
     }
 
@@ -123,20 +133,22 @@
 
     .footer__nav {
       line-height: 2;
+      text-align: center;
     }
 
     .footer__social {
       font-size: 20px;
-      text-align: right;
+      margin-top: 10px;
+      text-align: center;
     }
 
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
       .footer__nav {
-        text-align: center;
+        text-align: left;
       }
       .footer__social {
-        text-align: center;
-        margin-top: 10px;
+        text-align: right;
+        margin-top: 0;
       }
     }
   </style>
@@ -150,33 +162,42 @@
   </header>
   <main class="mui-container-fluid">
     <div class="mui-row">
-      <div class="mui-col-md-10 mui-col-md-offset-1">
-        <div class="mui-divider header-divider"></div>
-
+      <div class="mui-col-lg-8 mui-col-lg-offset-2">
         <section class="content-section">
           <center>
             <h2 class="mui--text-display1"><strong>Backbone: The World's Smartest Posture Support</strong></h2>
-            <h4 class="mui--text-subhead">Backbone supports your posture, buzzes when you slouch, reminds you to get up and stretch, and more!</h4>
+            <h4 class="subheader">Backbone supports your posture, buzzes when you slouch, reminds you to get up and stretch, and more!</h4>
           </center>
-          <div class="content-image">
-            <img class="content-image__image" src="https://cdn.gobackbone.com/assets/shoulder-strap.jpg">
-          </div>
-          <p>Experience all the amazing benefits of good posture, effortlessly. Truly feel the difference with Backbone, or your money back<sup><strong>*</strong></sup>. Your Backbone includes:</p>
-          <ul>
-            <li>Smart Posture Support</li>
-            <li>Mobile App (Android & iOS)</li>
-            <li>Training & Educational Videos</li>
-            <li>Unlimited Software Updates</li>
-          </ul>
-          <p class="mui--text-danger"><strong><u>LIMITED TIME OFFER</u></strong>: <s style="color: black;">$99</s> <strong>$69 ($30 OFF)</strong></p>
-          <div class="mui--text-center">
-            <button class="mui-btn mui-btn--large mui-btn--raised mui-btn--danger cta-button">Preorder Backbone Now</button>
-          </div>
-          <p><strong><sup>*</sup>Satisfaction Guarantee</strong>: Return the product within 30 days and we'll send you a refund, no questions asked.</p>
         </section>
+      </div>
+    </div>
 
-        <div class="mui-divider header-divider"></div>
+    <div class="mui-row">
+      <div class="mui-col-md-10 mui-col-md-offset-1">
+        <div class="mui-row">
+          <div class="mui-col-lg-6 mui--text-center">
+            <img class="hero-image" src="https://cdn.gobackbone.com/assets/preorder_hero3.png">
+          </div>
+          <div class="mui-col-lg-6">
+            <p>Experience all the amazing benefits of good posture, effortlessly. Truly feel the difference with Backbone, or your money back<sup><strong>*</strong></sup>. Your Backbone includes:</p>
+            <ul>
+              <li>Smart Posture Support</li>
+              <li>Mobile App (Android &amp; iOS)</li>
+              <li>Training &amp; Educational Videos</li>
+              <li>Unlimited Software Updates</li>
+            </ul>
+            <p class="mui--text-danger"><strong><u>LIMITED TIME OFFER</u></strong>: <s style="color: black;">$99</s> <strong>$69 ($30 OFF)</strong></p>
+            <div class="mui--text-center">
+              <button class="mui-btn mui-btn--large mui-btn--raised mui-btn--danger cta-button">Preorder Backbone Now</button>
+            </div>
+            <p><strong><sup>*</sup>Satisfaction Guarantee</strong>: Return the product within 30 days and we'll send you a refund, no questions asked.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="mui-row">
+      <div class="mui-col-lg-8 mui-col-lg-offset-2">
         <section class="content-section">
           <h2 class="mui--text-display1 content-header">Check your posture right now</h2>
           <p>Chances are, you're slouching. <strong>Why should you care?</strong> Bad posture gives you increased spinal wear and tear, feelings of depression, and a higher chance of back injury. This could be you:</p>
