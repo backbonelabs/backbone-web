@@ -193,7 +193,7 @@
             <p class="mui--text-danger"><strong><u>LIMITED TIME OFFER</u></strong>: <s style="color: black;">$119</s> <strong>$69 ($50 OFF)</strong></p>
             <div class="mui--text-center">
               <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
-                <button class="mui-btn mui-btn--large mui-btn--raised mui-btn--danger cta-button" onclick="initiateCheckout(1)">Get Backbone Now</button>
+                <button class="mui-btn mui-btn--large mui-btn--raised mui-btn--danger cta-button" onclick="clickThrough(1)">Get Backbone Now</button>
               </a>
             </div>
             <p><strong><sup>*</sup>Satisfaction Guarantee</strong>: Return the product undamaged within 30 days and we'll send you a refund, no questions asked.</p>
@@ -224,7 +224,7 @@
           </ul>
           <div class="mui--text-center">
             <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
-              <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="initiateCheckout(1)"><b><u>LIMITED!</u> Get $50 Off (40% DISCOUNT)</b></button>
+              <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(1)"><b><u>LIMITED!</u> Get $50 Off (40% DISCOUNT)</b></button>
             </a>
           </div>
           <div class="content-image">
@@ -287,7 +287,7 @@
           </div>
           <div class="mui--text-center">
             <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
-              <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="initiateCheckout(2)"><b><u>LIMITED!</u> Get $50 Off (40% DISCOUNT)</b></button>
+              <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(2)"><b><u>LIMITED!</u> Get $50 Off (40% DISCOUNT)</b></button>
             </a>
           </div>
         </section>
@@ -337,7 +337,7 @@
           </div>
           <div class="mui--text-center">
             <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
-              <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="initiateCheckout(3)"><b><u>LIMITED!</u> Get $50 Off (40% DISCOUNT)</b></button>
+              <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b><u>LIMITED!</u> Get $50 Off (40% DISCOUNT)</b></button>
             </a>
           </div>
         </section>
@@ -388,7 +388,7 @@
           <p>[Quote Graphic: Profile pictures and quotes from chiropractors and other medical professionals we’re working with.]</p>
           <div class="mui--text-center">
             <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
-              <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="initiateCheckout(4)"><b><u>LIMITED!</u> Get $50 Off (40% DISCOUNT)</b></button>
+              <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(4)"><b><u>LIMITED!</u> Get $50 Off (40% DISCOUNT)</b></button>
             </a>
           </div>
           <p>We're giving you a massive $50 discount for being one of our pre-order customers. Backbone may never be available at such a low price again, take advantage of this huge discount, don't pay full price ($119+) later!</p>
@@ -398,7 +398,7 @@
           <p><strong>We're In This Together</strong> - We treat all of our customers like family - because that's exactly what you are. We'll personally reply to every single one of your questions or suggestions and make sure you're always heard.</p>
           <div class="mui--text-center">
             <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
-              <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="initiateCheckout(5)"><b><u>LIMITED!</u> Get $50 Off (40% DISCOUNT)</b></button>
+              <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(5)"><b><u>LIMITED!</u> Get $50 Off (40% DISCOUNT)</b></button>
             </a>
           </div>
           <p>Even now, our company is continuously spending all of our waking hours to make Backbone the best posture product that you'll ever use.</p>
@@ -433,8 +433,8 @@
     fbq('track', 'PageView');
 
     // Pixel fires upon a user clicking on a call-to-action button
-    function initiateCheckout(number) {
-      fbq('track', 'InitiateCheckout', { buttonPressed: number, price: 69 });
+    function clickThrough(number) {
+      fbq('track', 'ViewContent', { buttonPressed: number, price: 69 });
     }
 
   </script>
@@ -444,15 +444,15 @@
   <!-- DO NOT MODIFY -->
   <!-- End Facebook Pixel Code -->
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-75688316-2', 'auto');
-    ga('send', 'pageview');
+  ga('create', 'UA-75688316-2', 'auto');
+  ga('send', 'pageview');
 
-  </script>
+</script>
 </body>
 </html>
