@@ -155,6 +155,60 @@
         margin-top: 0;
       }
     }
+
+    .youtube-player {
+      position: relative;
+      padding-bottom: 56.23%;
+      /* Use 75% for 4:3 videos */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+      margin: 5px;
+    }
+
+    .youtube-player iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      background: transparent;
+    }
+
+    .youtube-player img {
+      bottom: 0;
+      display: block;
+      left: 0;
+      margin: auto;
+      max-width: 100%;
+      width: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: none;
+      height: auto;
+      cursor: pointer;
+      -webkit-transition: .4s all;
+      -moz-transition: .4s all;
+      transition: .4s all;
+    }
+
+    .youtube-player img:hover {
+      -webkit-filter: brightness(75%);
+    }
+
+    .youtube-player .play {
+      height: 72px;
+      width: 72px;
+      left: 50%;
+      top: 50%;
+      margin-left: -36px;
+      margin-top: -36px;
+      position: absolute;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -212,7 +266,8 @@
             <div class="content-image__subtitle">Studies show that for every 15 degrees of forward neck tilt, as much as 10-20 lbs. of increased weight is added onto your spine, back, and neck! (Image via Dr. Erik Dalton, PhD)</div>
           </div>
           <p><strong>Still don’t care?</strong> What if you could look more attractive (taller, thinner, more confident), feel happier, and boost your self-esteem? Well, you can, with Backbone.</p>
-          <iframe class="youtube" src="https://www.youtube.com/embed/OyK0oE5rwFY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <div class="youtube-player" data-id="OyK0oE5rwFY"></div>
+
           <p><a href="http://www.health.harvard.edu/pain/4-ways-to-turn-good-posture-into-less-back-pain">Harvard Medical School</a> praises the benefits of good posture and shares this tip for preventing back pain, <i>“...one surprisingly simple strategy can go a long way: Paying attention to your posture.”</i></p>
           <p><strong>Enjoy all the health benefits of good posture with Backbone, the world's smartest posture support.</strong> Recommended by chiropractors. Patent pending.</p>
           <ul>
@@ -266,7 +321,7 @@
           <h2 class="mui--text-display1 content-header">SMART POSTURE SUPPORT</h2>
           <p>Your best posture begins with Backbone's smart posture support: it aligns and supports your shoulders and spine, allowing you to effortlessly keep your posture at its best.</p>
           <div class="content-image">
-            <img class="content-image__image" src="https://cdn.gobackbone.com/assets/michael-office.gif">
+            <!--<img class="content-image__image" src="https://cdn.gobackbone.com/assets/michael-office.gif">-->
           </div>
         </section>
 
@@ -295,7 +350,8 @@
         <section class="content-section">
           <h2 class="mui--text-display1 content-header">Strut It Or Cover It</h2>
           <p>You can wear Backbone under or over your clothes, without it being noticeable. You now have the freedom to strut it when you'd like to and cover up when you don't.</p>
-          <iframe class="youtube" src="https://www.youtube.com/embed/GdpYCI-FAww?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <div class="youtube-player" data-id="GdpYCI-FAww"></div>
+
           <div class="content-image">
             <img class="content-image__image" src="https://cdn.gobackbone.com/assets/carmen-under.jpg">
           </div>
@@ -325,9 +381,11 @@
         <section class="content-section">
           <h2 class="mui--text-display1 content-header">SMART MOBILE APP</h2>
           <p>Backbone's mobile app works together with its smart posture support to gently vibrate whenever you slouch, remind you when it's time to take a break and move around, track all your efforts, and more. Here’s a quick look at how Backbone monitors posture:</p>
-          <iframe class="youtube" src="https://www.youtube.com/embed/e4f4FUk-MOE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <div class="youtube-player" data-id="e4f4FUk-MOE"></div>
+
           <p>To help you achieve long-lasting results, Backbone's mobile app delivers high-quality training and educational videos that you can take with you wherever you go. Here's an example of what you can expect:</p>
-          <iframe class="youtube" src="https://www.youtube.com/embed/Kr8lVlbhndU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <div class="youtube-player" data-id="Kr8lVlbhndU"></div>
+
         </section>
 
         <section class="content-section">
@@ -350,7 +408,8 @@
             <li>Vibrates your smartphone</li>
             <li>Sends smartphone notifications</li>
           </ul>
-          <iframe class="youtube" src="https://www.youtube.com/embed/m4tRcDIu8Yg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <div class="youtube-player" data-id="m4tRcDIu8Yg"></div>
+
         </section>
 
         <section class="content-section">
@@ -380,19 +439,17 @@
 
         <section class="content-section">
           <h2 class="mui--text-display1 content-header">Backbone VS. What's Out There</h2>
-          <p>With Backbone, you get the best value possible, both short and long term. See how we compare against what's currently out there in terms of pricing and features (but remember, Backbone gets even better):</p>
+          <p>With Backbone, you get the best value possible, both short and long term. See how we compare against what's currently out there in terms of pricing and features (and remember, Backbone gets even better):</p>
           <div class="content-image">
             <img class="content-image__image" src="https://cdn.gobackbone.com/assets/comparison-chart.png">
           </div>
-          <p>We had multiple experienced medical professionals try on and examine Backbone for themselves. Here's what they had to say:</p>
-          <p>[Quote Graphic: Profile pictures and quotes from chiropractors and other medical professionals we’re working with.]</p>
           <div class="mui--text-center">
             <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
               <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(4)"><b><u>LIMITED!</u> Get $50 Off (40% DISCOUNT)</b></button>
             </a>
           </div>
           <p>We're giving you a massive $50 discount for being one of our pre-order customers. Backbone may never be available at such a low price again, take advantage of this huge discount, don't pay full price ($119+) later!</p>
-          <p>[Graphic: “Why support us?” banner]</p>
+          <h2 class="mui--text-display1 content-header">Why Support Us?</h2>
           <p><strong>Money-Back Guarantee</strong> - Within 30 days of receiving Backbone, you can return it undamaged for any reason, no questions asked, and we'll refund you the full cost of the product.</p>
           <p><strong>Early Customer Discount</strong> - Because you're an early supporter, we want to thank you by offering Backbone at $50 off. Backbone may never be available at such a low price again, take advantage of our huge discount, don't pay full price ($119) later.</p>
           <p><strong>We're In This Together</strong> - We treat all of our customers like family - because that's exactly what you are. We'll personally reply to every single one of your questions or suggestions and make sure you're always heard.</p>
@@ -422,6 +479,40 @@
       </div>
     </div>
   </footer>
+  <script>
+
+    /* Light YouTube Embeds by @labnol */
+    /* Web: http://labnol.org/?p=27941 */
+
+    document.addEventListener("DOMContentLoaded",
+        function() {
+            var div, n,
+                v = document.getElementsByClassName("youtube-player");
+            for (n = 0; n < v.length; n++) {
+                div = document.createElement("div");
+                div.setAttribute("data-id", v[n].dataset.id);
+                div.innerHTML = labnolThumb(v[n].dataset.id);
+                div.onclick = labnolIframe;
+                v[n].appendChild(div);
+            }
+        });
+
+    function labnolThumb(id) {
+        var thumb = '<img src="https://i.ytimg.com/vi/ID/maxresdefault.jpg">',
+            play = '<div class="play"></div>';
+        return thumb.replace("ID", id) + play;
+    }
+
+    function labnolIframe() {
+        var iframe = document.createElement("iframe");
+        var embed = "https://www.youtube.com/embed/ID?autoplay=1&rel=0&controls=0&modestbranding=1&showinfo=0";
+        iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allowfullscreen", "1");
+        this.parentNode.replaceChild(iframe, this);
+    }
+
+</script>
   <!-- Facebook Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -454,5 +545,6 @@
   ga('send', 'pageview');
 
 </script>
+
 </body>
 </html>
