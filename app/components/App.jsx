@@ -57,12 +57,12 @@ class App extends Component {
           </a>
         </li>
         <li>
-          <a
-            href="/pre-order"
+          <Link
+            to="/pre-order"
             onClick={this.onSetSidebarOpen}
           >
             <Button color="danger">Pre-order</Button>
-          </a>
+          </Link>
         </li>
       </ul>
     );

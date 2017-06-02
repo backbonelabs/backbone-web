@@ -14,12 +14,13 @@ import RequireAuth from './components/common/RequireAuth/RequireAuth';
 import PrivacyPolicy from './components/Legal/PrivacyPolicy';
 import TermsOfService from './components/Legal/TermsOfService';
 import Business from './components/Business/Business';
-// import Preorder from './components/Preorder/Preorder';
+import Preorder from './components/Preorder/Preorder';
 
 const appRoutes = (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path="/business" component={Business} title="Business" />
+    <Route path="/pre-order" component={Preorder} title="Pre-Order" />
     <Route path="/signup" component={Signup} title="Signup" />
     <Route path="/login" component={Login} title="Login" />
     <Route path="/password-reset" component={PasswordReset} title="Password Reset" />
