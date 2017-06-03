@@ -11,350 +11,164 @@ const PrivacyPolicy = () => (
         <p><strong>
           Backbone Labs, Inc.<br />
           Privacy Policy<br />
-          Effective Date: February 1, 2017
+          Effective Date: June 2, 2017
         </strong></p>
       </div>
       <div>
         <p>
-          Our Privacy Policy applies only to the collection, use and disclosure of personal
-          information that you may decide to provide to us in your use of: (i) our applications
-          for mobile platforms or devices and our web applications (collectively, our mobile and
-          web applications are referred to herein as ("Backbone Applications"), or (ii) our web
-          domains and subdomains (collectively, our "Sites"). These available options for users
-          to interact with Backbone Labs, Inc. is collectively known as our "Services". For the
-          purposes of the Privacy Policy, Backbone Labs, Inc., and all of its subsidiaries, shall
-          be defined as: "Backbone", "we", "us", or "our".
+          This Privacy Policy applies to our software services or sensor devices (“Devices”), our websites located at gobackbone.com, support.gobackbone.com, and shop.gobackbone.com (individually a “Site” and collectively “Sites”), and Backbone Labs mobile applications (the “Apps”). The Devices, Sites, and Apps are collectively referred to in this Privacy Policy as the “Service.” By proceeding to use the Service you consent that we may process the data that we collect from you in accordance with this Privacy Policy. This Privacy Policy is subject to the Backbone Labs Terms of Service.
         </p>
         <p>
-          We reserve the right to update this Privacy Policy at any time. If we modify this
-          Privacy Policy in a material way, a notice will be posted in our Services and on the
-          Sites along with the updated Privacy Policy. We will also update the "Last Updated Date"
-          in the Privacy Policy. By continuing to access or use the Services after we have posted
-          an updated Privacy Policy or have provided you with notice of a modification, you are
-          indicating that you agree to be bound by the modified Privacy Policy. If the modified
-          Privacy Policy is not acceptable to you, your only recourse is to cease using the
-          Services.
+          This policy may change over time, but if any modifications substantially change your rights, we will send an email summarizing the changes to the address associated with your Backbone Labs account and provide notice on the Site.
         </p>
         <p>
-          The following policy states the practices that may impact you as a registered user with
-          full access to our Services or a non-registered user of our Services (each a "Backbone
-          User").
+          And remember, we’re here to help. If something in this policy does not make sense or if you have any questions, please contact us at support@gobackbone.com.
         </p>
       </div>
       <div>
-        <h2>Collecting Personal Information and Non-Identifying Information</h2>
+        <h2>When We Collect Data</h2>
+        <p>ACTIVATE A DEVICE</p>
         <p>
-          In the course of using our Services, we may ask you to provide us with certain personally
-          identifiable information that can be used to contact or identify you. Personally
-          identifiable information may include, but is not limited to, your name, phone number,
-          age, email address, and certain physical characteristics ("Personal Information"). We
-          will collect, use, transfer and disclose Personal Information in accordance with our
-          Privacy Policy.
+          When activating a Device, you will be asked to download the Backbone App and enter information about yourself, such as height, weight and gender. We use this information to personalize your stats. The Device can collect data such as the number of posture training sessions you start or your weight, and transmit this data to us.
+        </p>
+        <p>CREATE A BACKBONE LABS ACCOUNT</p>
+        <p>
+          If you want to access data collected by your Device, you must create a Backbone Labs account. When you create a Backbone Labs account, we ask for some personal information, including your email address and date of birth. Your email address will be your Backbone Labs account user name, which you will use to log-into your account. We do not display your email address to other users. Instead, others will see the name or nickname you enter in your profile settings.
         </p>
         <p>
-          We also collect non-personal information, which is data in a form that does not permit
-          direct association with you or any specific individual ("Non-Identifying Information").
-          Non-Identifying Information is aggregated and used to help improve our Services (defined
-          below) by providing a better way to understand the Backbone User experience with the
-          level of interest in various portions of our Sites, specific Backbone Applications or
-          specific Third-Party Mobile Applications. We may collect, use, transfer and disclose
-          Non-Identifying Information for any purpose; details provided in this Privacy Policy
-          about what Non-Identifying Information we collect currently, and how we use, transfer
-          and disclose such Non-Identifying Information concern only how such information is
-          collected and used today.
-        </p>
-        <p>
-          Both Personal Information or Non-Identifying Information may be used alone or in the
-          aggregate with information collected from other Backbone Users. Our primary objective in
-          collecting any Personal Information or Non-Identifying Information is to provide you with
-          a superior and personally relevant user experience.
+          You can also create your Backbone Labs account using a different credential such as a Facebook account. We will ask permission to access basic information from that account, such as your name, profile picture, and friend list. You can stop sharing that information with us at any time by removing Backbone Lab’s access to that account.
         </p>
       </div>
       <div>
-        <h2>Collecting Information</h2>
+        <h2>ADD INFO TO YOUR ACCOUNT</h2>
         <p>
-          In connection with registration of Backbone Users on our Services, we collect Personal
-          Information which may include your email address, as well as information on mobile device
-          type, mobile carrier, unique mobile device identifier ("Device ID"), Internet Protocol
-          ("IP") address and geolocation, as applicable. We use your Device ID to make it possible
-          to authenticate and understand your use of our Services that you may choose to access.
+          You can customize your experience by adding other types of information to your Backbone Labs account, such as personalizing your profile with photos or participating in discussion boards. Whenever you add this type of data, we collect it and store it in your account.
+        </p>
+        <p>VISIT OUR SITES</p>
+        <p>
+          We collect industry standard data from everyone who visits our Sites—even if you don’t have a Backbone Labs account. This includes log data that automatically records information about your visit, such as your browser type, operating system, the URL of the page that referred you, the different actions you performed, and the IP address you used to access pages on the Site. We use this type of information to provide you with an experience that’s relevant to your location based on the IP address, to prevent Site misuse, and to ensure the Site is working properly. We also collect data from cookies.
+        </p>
+        <p>SYNC YOUR DEVICE</p>
+        <p>When you sync your Device through an App, data recorded on your Device about your activity is transferred from your Device to our servers. This data is stored and used to provide the Service and is associated with your account. Each time a sync occurs, we log data about the transmission. Some examples of the log data are the sync time and date, device battery level, and the IP address used when syncing.</p>
+        <p>BUY FROM OUR STORE</p>
+        <p>We do not view or store your credit card information. This is handled by our third-party payment processor. We store your shipping address so we can process your order through our fulfillment partner. If you are logged into your Backbone Labs account when you purchase something on our Site, we associate that order with your Backbone Labs account.</p>
+        <p>Certain third-party service providers, such as payment gateways and other payment transaction processors, have their own privacy policies in respect to the information we are required to provide to them for your purchase-related transactions.</p>
+        <p>We recommend that you read the privacy policies of these third-party service providers so you can understand the manner in which your personal information will be handled by these providers.</p>
+        <p>In particular, remember that certain providers may be located in or have facilities that are located in a different jurisdiction than either you or us. So if you elect to proceed with a transaction that involves the services of a third-party service provider, then your information may become subject to the laws of the jurisdiction(s) in which that service provider or its facilities are located.</p>
+        <p>CONTACT US</p>
+        <p>Whenever you contact us for help, we collect your name and email address along with additional information you provide in your request so that we can provide you with assistance and improve the Service. If you contact us when you are already logged in to your account, the web form automatically pre-fills this information, so you don’t have to type it manually. You can also contact us on public forums such as Twitter or Facebook; however, we cannot maintain the privacy of your communication to us if you contact us through these channels.</p>
+        <p>We only collect information about you when you’re interacting with our Devices & Services.</p>
+      </div>
+      <div>
+        <h2>Why We Collect Data</h2>
+        <p>
+          We use your data to provide you with the best experience possible, to help you make the most of the Service, and to improve and protect the Service. Here are some examples:
         </p>
         <p>
-          Related to this information collection, our Services may serve ads that contain links to
-          other Third-Party Mobile Applications, and we may utilize your Device ID to track clicks
-          or other ad fulfillment metrics. Our use of your Device ID does not enable us to identify
-          you personally, and we do not store this information in connection with your Backbone
-          User account information. You may also be asked explicitly to provide Personal
-          Information or Non-Identifying Information any time that you are in contact with Backbone.
+          Contact information is used to send you notifications, and to inform you about new features or products we think you would be interested in. Please see “Can I Opt-out Of Receiving Backbone Emails?” for information on how you can opt-out of future communications.
+        </p>
+        <p>Data and logs are used in research to understand and improve the Devices and the Service; to troubleshoot the Service; to detect and protect against error, fraud or other criminal activity; and to enforce the Backbone Labs Terms of Service.</p>
+        <p>De-identified data that does not identify you may be used to inform the health community about trends; for marketing and promotional use; or for sale to interested audiences. See “Sharing of De-identified Data That Does Not Identify You” to learn more.</p>
+      </div>
+      <div>
+        <h2>What Kinds of Data We Share</h2>
+        <p>DATA THAT COULD IDENTIFY YOU</p>
+        <p>
+          Personally Identifiable Information (PII) is data that includes a personal identifier like your name, email or address, or data that could reasonably be linked back to you. We will only share this data under the following circumstances:
+        </p>
+        <p>
+          With companies that are contractually engaged in providing us with services, such as order fulfillment, email management and credit card processing. These companies are obligated by contract to safeguard any PII they receive from us.
+        </p>
+        <p>
+          If we believe that disclosure is reasonably necessary to comply with a law, regulation, valid legal process (e.g., subpoenas or warrants served on us), or governmental or regulatory request, to enforce or apply the Backbone Labs Terms of Service or Terms and Conditions for Online Offers to Purchase, to protect the security or integrity of the Service, and/or to protect the rights, property, or safety of Backbone Labs, its employees, users, or others. If we are going to release your data, we will do our best to provide you with notice in advance by email, unless we are prohibited by law from doing so.
+        </p>
+        <p>
+          We may disclose or transfer your PII in connection with the sale, merger, bankruptcy, sale of assets or reorganization of our company. We will notify you if a different company will receive your PII and the promises in this Privacy Policy will apply to your data as transferred to the new entity.
+        </p>
+        <p>DATA THAT DOES NOT IDENTIFY YOU (DE-IDENTIFIED DATA)</p>
+        <p>
+          Backbone Labs may share or sell aggregated, de-identified data that does not identify you, with partners and the public in a variety of ways, such as by providing research or reports about health and fitness. When we provide this information, we perform appropriate procedures so that the data does not identify you.
+        </p>
+        <p>DATA THAT YOU DIRECT US TO SHARE</p>
+        <p>
+          You can direct us to share data with other parties. For example, you might direct us to share data with your employer as part of a wellness program. Once you direct us to share your data with a third party, that data is governed by the third-party’s privacy policy. You can revoke your consent to share with the third party at any time in your Backbone Labs account settings.
         </p>
       </div>
       <div>
-        <h2>Additional Collection of Information</h2>
+        <h2>Ways You Might Share Your Data</h2>
+        <p>BACKBONE LABS SOCIAL TOOLS</p>
         <p>
-          If you choose to participate in a Promotion, We may request that you provide us with
-          Personal Information such as your email address or mailing address in order to administer
-          your participation in the Promotion.
+          We may provide ways for you to share data with other users, such as with a leaderboard, challenges, or by posting comments to the Backbone Labs community message boards. When you interact with others in these ways, you will be displaying your data based upon the settings in your Backbone Labs account settings.
         </p>
+        <p>COMMUNITY POSTS</p>
+        <p>To post to our community message boards, you’ll be asked to create a community username that’s separate from your Backbone Labs profile name. This community username will be posted next to any comments you publish on community message boards. Other information, like a profile photo that you’ve added to your Backbone Labs account will also be visible on message boards, depending on your Backbone Labs account settings.</p>
+        <p>CONTESTS AND GIVEAWAYS</p>
+        <p>We may offer opportunities to participate in contests, giveaways and other promotions. Any data you submit in connection with these activities will be treated in accordance with this Privacy Policy, unless the rules for those offers note otherwise.</p>
+        <p>SURVEYS</p>
+        <p>We may also ask you to participate in surveys (processed by us or third parties) that help us understand your use of the Service. Any PII you provide to us (or supplied by you or us to such third-party survey providers) in connection with these surveys will only be used in relation to that survey and as stated in this policy.</p>
+      </div>
+      <div>
+        <h2>How Long We Save Your Data</h2>
+        <p>We store your PII for as long as you maintain a Backbone Labs account.</p>
+      </div>
+      <div>
+        <h2>How To Edit or Modify Data</h2>
         <p>
-          In connection with use of our Services or Third-Party Mobile Applications, in addition to
-          information on device type, mobile carrier, IP address, platform version, and geolocation,
-          as applicable, we may also collect navigation, interaction and engagement information
-          regarding Backbone Users.
+          Data that you provide to us through the Site can be modified from your Backbone Labs account preferences. If you remove data from your Backbone Labs account, it will no longer appear to you or others who use the Service. Backups of that data will remain associated with your Backbone Labs account and in our archive servers.
         </p>
       </div>
       <div>
-        <h2>Cookies & Related Technologies</h2>
+        <h2>How To Deactivate Your Backbone Labs Account</h2>
         <p>
-          We use "cookies" to study traffic patterns and understand the effectiveness of marketing
-          communications. Cookies we use can reveal, for instance, which pages are the most popular,
-          how much time Backbone Users are spending there, and how they are interacting with the
-          content on such pages.
-        </p>
-        <p>
-          You may have the option to disable cookies by changing the options in your browser to stop
-          accepting cookies or to prompt you before accepting a cookie from the pages you visit. If
-          you do not accept cookies, however, you may not be able to view or use all portions of our
-          Services due to limited functionality.
-        </p>
-        <p>
-          Some of our Services, including email messaging, use "click-through URLs" linked to other
-          content on our Services. We track this click-through data to help us determine interest in
-          topics, Services usability and other measures of Backbone User engagement.
-        </p>
-        <p>
-          We may also use "pixel tags," "web beacons," "clear GIFs" or similar means (individually
-          or collectively "Pixel Tags") in connection with our Services and to collect usage,
-          demographic and geographical location data. A Pixel Tag is an electronic image, often a
-          single pixel that is ordinarily not visible to users and may be associated with cookies
-          on a user’s hard drive. Pixel Tags allow us to count users who have visited certain pages
-          of the Sites, to deliver branded services and to help determine the effectiveness of
-          promotional or advertising campaigns.
-        </p>
-        <p>
-          When you use our Services, our servers automatically record information that your devices
-          sends ("Log Data"). This Log Data may include information such as your computer’s or
-          mobile device’s IP address, browser type, language, Internet Service Provider (ISP),
-          referring and exit pages, time spent, information searched for, time and date stamp,
-          clickstream data and other statistics. We use this information to monitor, analyze and
-          understand trends, for technical administration of Services and Third-Party Mobile
-          Applications, and to gather demographic information about our Backbone User base as a
-          whole. We may use this information for product and services improvements, and in marketing
-          and advertising services.
-        </p>
-        <p>
-          BY CLICKING ON THE "SIGN UP" BUTTON, WHERE APPLICABLE, OR OTHERWISE BY ACCESSING OR USING
-          OUR SERVICES YOU ARE CONSENTING TO THE USE OF COOKIES AND OTHER TRACKING TECHNOLOGIES
-          ON YOUR DEVICE.
+          You can deactivate your Backbone Labs account by contacting Customer Support. When you do, data that can identify you will be removed from the Service. Backup copies of this data will be removed from our server based upon an automated schedule, which means it may persist in our archive for a short period. Backbone Labs may continue to use your de-identified data after you deactivate your account.
         </p>
       </div>
       <div>
-        <h2>Disclosures Within Backbone Services</h2>
+        <h2>Our Policies For Children</h2>
         <p>
-          As a user, you may create your own profile, connect with other Backbone Users of Services,
-          send messages and transmit information through various channels. Please remember that any
-          communications you have via our Services, depending on, for example, the functionality of
-          any Backbone Application or Third-Party Mobile Application connected to our Services, may
-          reveal your screen name and the content of your communications, making this information
-          publicly available to other Backbone Users. Backbone is not responsible for the activities
-          of other Backbone Users or other third parties with whom you choose to provide your
-          Personal Information or otherwise interact.
+          Backbone Labs is not directed at persons under the age of 13. We do not knowingly collect any PII from persons under 13. If you are aware of a user under the age of 13 using Backbone, please contact us at support@backbone.com.
         </p>
       </div>
       <div>
-        <h2>With Third Parties for Industry Analysis</h2>
+        <h2>Can I Opt-out Of Receiving Backbone Labs Emails?</h2>
         <p>
-          In addition to sharing aggregated Non-Identifying Information, we may also share
-          aggregated Non-Identifying Information with advertisers and ad networks ("Advertising
-          Entities") with whom we have strategic relationships. Unless you specifically opt in to
-          share your Personal Information, the information that we share with these third parties
-          will only be used in the form of Non-Identifying Information to support user trend
-          analyses and demographic profiling. Some Advertising Entities also act as Service
-          Providers (defined below) to us, so in those cases we will share your information as
-          described below.
+          You can opt-out of receiving weekly summaries, achievement notifications, contests, giveaways, surveys and promotional emails by changing the notification preferences in your account settings or by unsubscribing via the “Unsubscribe” link in any Backbone Labs email. Opting-out of these emails will not end transmission of important service-related emails that are necessary to your use of the Service.
         </p>
       </div>
       <div>
-        <h2>With Preferred Partners</h2>
+        <h2>How Does Backbone Labs Keep Your Data Safe?</h2>
         <p>
-          We may share your username, email address and Device ID (collectively, "Specific Shared
-          Data") with certain business partners ("Preferred Partners") for those parties to assist
-          us with providing you with the aspect of the Services for which you provided such
-          Specific Shared Data to us, and to use such Specific Shared Data to improve your
-          experience with the Services.
-        </p>
-        <p>
-          We only share such information with Preferred Partners pursuant to an agreement by which
-          the Preferred Partner is under obligations not to disclose or use it for any other
-          purpose. You may contact us by any of the means provided in the "Contacting Us" section
-          below to request not to have such information provided to Preferred Partners,
-          understanding, however, that if such information is not shared with Preferred Partners
-          it may affect your ability to use or access portions of the Services.
-        </p>
-        <p>
-          Some Preferred Partners also act as Service Providers (defined below) to us, and in those
-          cases we may also share Personal Information and Non-Identifying Information as described
-          below.
+          We use a combination of technical and administrative security controls to maintain the security of your data. If you have a security-related concern, please contact Customer Support.
         </p>
       </div>
       <div>
-        <h2>With our Service Providers</h2>
+        <h2>How Does Backbone Labs Handle Data From International Visitors?</h2>
         <p>
-          Disclosure of your Personal Information and Non-Identifying Information may also occur
-          where we engage or employ service providers, vendors or other third party entities to
-          facilitate provision of our Services (each a "Service Provider") (e.g., without
-          limitation, improvement of our Services’ features, user account authentication,
-          promotion and marketing, administration, analytics, crowd-sourcing, cloud storage and
-          other related services), to provide the Services on our behalf, or to assist us in
-          analyzing how our Services are being used. Our Service Providers may have access to your
-          Personal Information only to perform these tasks on our behalf and are obligated not to
-          disclose or use it for any other purpose.
+          The Services are hosted in the United States and are subject to United States law. We may share your personal information internally with our affiliates and other recipients, as described in this Privacy Policy, and they may be located in countries other than your country. If you are accessing the Services from outside the United States, please be advised that United States law and other countries may not offer the same privacy protections as the law of your jurisdiction.
         </p>
       </div>
       <div>
-        <h2>Under Special Circumstances</h2>
+        <h2>Cookies, Pixel Tags and other data identifiers</h2>
         <p>
-          At times, we may disclose information about you to law enforcement officials or private
-          parties as we, in our sole discretion, believe necessary or appropriate to respond to
-          claims and legal process (including but not limited to subpoenas), to protect the
-          property and rights of Backbone or a third party, to protect the safety of the public
-          or any person or to prevent or stop activity we may consider to be or to pose a risk of
-          being, any illegal, unethical or legally actionable activity. Such disclosures shall
-          only happen with written request by the agency for the requested information.
+          In some instances, we may collect data through session and persistent cookies, pixel tags, web beacons, and banner ads and third party tracking and analytic tools used to collect aggregate and other non-personally identifiable information. For example, when you visit our websites, a session log will be automatically generated to help us determine how you accessed and used our site. The data gathered includes the originating Internet Protocol (IP) address (which contains no personal information), the referring website, the website pages you visited, and other related session and activity data.
         </p>
         <p>
-          Under another special set of circumstances, for example, in connection with a merger,
-          acquisition, reorganization or sale of assets, or in the event of bankruptcy, we may
-          sell, transfer or otherwise share some or all of Backbone’s assets, including your
-          Personal Information.
+          We also use information collected from cookies and other anonymous identifiers to improve your user experience and the quality of our services, as well as when you interact with services we offer to or through our partners, such as advertising or commerce services. We only use this data in aggregate form without access to any personally identifying information. The majority of web browsers accept cookies and similar files, but you can usually change the browser settings to prevent this. However, if you do so, some functionality of our site may be impaired or lost, particularly any site customization features.
         </p>
       </div>
       <div>
-        <h2>Age Restrictions</h2>
+        <h2>Contact Us</h2>
         <p>
-          Our Services require that you are the age of majority or have been legally emancipated
-          pursuant to the laws your local jurisdiction or over the age of 13 and have consent to
-          use our Services from your guardian.
-        </p>
-      </div>
-      <div>
-        <h2>Location-Based Services</h2>
-        <p>
-          For location-based Services, we may collect, use, and share precise location data,
-          including the real-time geographic location of your computer or mobile device. Unless
-          you explicitly opt-in to permit the use and sharing of your Personal Information
-          regarding your geographic location, your location data will only be collected and
-          used anonymously in a form that does not personally identify you. When you opt in to
-          Third Party Application providers’ location services, we will share your geographic
-          location with such Third Party Application providers in connection with their
-          location services. Please note that some location-based services may require your
-          Personal Information for the feature to work as intended.
-        </p>
-      </div>
-      <div>
-        <h2>Protecting Personal Information</h2>
-        <p>
-          Backbone takes your privacy very seriously and employs administrative, physical and
-          electronic measures to safeguard your information from identity theft and unauthorized
-          access. We do not and will not, at any time, request your credit card information,
-          your account ID, login password or national identification numbers in a non-secure or
-          unsolicited communication.
+          You can email us with any questions or comments at <a href="mailto:support@gobackbone.com?subject=Privacy Policy">support@gobackbone.com</a>.
         </p>
         <p>
-          We will make any legally required disclosures of any breach of the security,
-          confidentiality, or integrity of your unencrypted electronically stored "personal
-          data" (as defined in applicable state statutes on security breach notification) to you
-          via email or conspicuous posting on the Sites in the most expedient time possible and
-          without unreasonable delay, insofar as consistent with (i) the legitimate needs of law
-          enforcement or (ii) any measures necessary to determine the scope of the breach and
-          restore the reasonable integrity of the data system.
-        </p>
-      </div>
-      <div>
-        <h2>Changing or Removing Information</h2>
-        <p>
-          You may email us at support@gobackbone.com to request that we delete your Personal
-          Information from our database. We will use commercially reasonable efforts to honor
-          your request. We may retain an archived copy of your records as required by law or for
-          legitimate business purposes. Specific Shared Data cannot be retrieved from Preferred
-          Partners after its disclosure.
-        </p>
-        <p>
-          Where you share information with other users through the communication channels of our
-          Services, you generally should not expect to have any ability to modify or remove such
-          communications. Nor should you expect us to modify or delete your comments upon your
-          request.
-        </p>
-        <p>
-          If you participate in a Promotion hosted by us (where you may or may not disclose the
-          information requested), you have the option to opt out at any time from such
-          participation and the receipt of any related communications. Please follow the
-          unsubscribe instructions provided in the relevant communications.
-        </p>
-      </div>
-      <div>
-        <h2>Links to Other Websites and Services</h2>
-        <p>
-          If a Backbone User chooses to participate in offer-linked information requests or
-          "clicks on" an advertisement or another third party link, such Backbone User may be
-          directed to that third party’s website or service and/or be prompted to provide Personal
-          Information in connection with such activity. The fact that we link to a third party
-          website or service is not an endorsement or representation of our affiliation with that
-          third party, nor is it an endorsement of such third party’s privacy or information
-          security policies or practices or their compliance with laws. We do not exercise control
-          over third party websites or services. These other websites or services may place their
-          own cookies or other files on your computer or mobile devices; collect data; or solicit
-          personal information from you. Other websites and services follow different rules
-          regarding the use or disclosure of the personal information you submit to them. You have
-          the responsibility to review the privacy policies and related statements of the other
-          websites and services you use and the terms of the offers in which you participate. You
-          agree that Backbone is not responsible for, nor will it be liable to you or any third
-          party for, your interaction with such third parties or the information requests initiated
-          by such third parties or the subsequent use, treatment or dissemination of the information
-          you voluntarily choose to provide to them.
-        </p>
-      </div>
-      <div>
-        <h2>Non-US Users</h2>
-        <p>
-          Backbone subscribes to the principles behind the safe harbor framework ("Safe Harbor")
-          developed by the US Department of Commerce and the European Union and Switzerland
-          regarding the collection, use, and retention of personal information from individuals
-          who reside in the European Union and Switzerland. As detailed in this Privacy Policy,
-          we conform to the seven principles: Notice, Choice, Onward Transfer (Transfers to
-          Third Parties), Security, Data Integrity, Access and Enforcement.
-        </p>
-      </div>
-      <div>
-        <h2>California Privacy Rights</h2>
-        <p>
-          California Civil Code Section 1798.83 permits California residents to request certain
-          information regarding our disclosure of personal information to third parties for direct
-          marketing purposes. To exercise such rights, California residents may contact us at&nbsp;
-          <a href="mailto:support@gobackbone.com?subject=Privacy Policy">support@gobackbone.com</a>.
-        </p>
-        <p>
-          Within 30 days of receiving such a request, we will provide a list of the categories of
-          personal information disclosed to third parties for such third parties’ direct marketing
-          purposes during the immediately preceding calendar year, along with the names and
-          addresses of these third parties. A request may be made no more than once per calendar
-          year and we are not required to respond to requests made by means other than through the
-          email address above.
-        </p>
-      </div>
-      <div>
-        <h2>Language</h2>
-        <p>
-          The controlling language of this Privacy Policy is English; any provided translation of
-          this Privacy Policy is for purposes of convenience only and the English version shall
-          govern to the extent of any inconsistency.
-        </p>
-      </div>
-      <div>
-        <h2>Contacting Us</h2>
-        <p>
-          If you have any questions, inquiries, requests or complaints concerning our Privacy Policy
-          or information practices, please contact us at&nbsp;
-          <a href="mailto:support@gobackbone.com?subject=Privacy Policy">support@gobackbone.com</a>.
+          Privacy Officer
+          <br />
+          Backbone Labs, Inc.
+          <br />
+          951 Mariners Island Blvd FL 3, STE 300
+          <br />
+          San Mateo, California, US 94404
         </p>
       </div>
     </Panel>
