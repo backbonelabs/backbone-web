@@ -173,7 +173,7 @@ You must not transmit any worms or viruses or any code of a destructive nature.<
       </div>
       <div>
         <h2>SECTION 20 - TERMINATION</h2>
-        <p>If you violate these Terms of Service, we reserve the right to deactivate your account or terminate these Terms of Service, at our sole discretion, at any time and without notice or liability to you. Upon any such termination, we may delete information related to your account. You may cancel your account at any time by contacting Customer Support. Upon any termination, discontinuation or cancellation of the Fitbit Service or your account, the following provisions of these Terms will survive: General Conditions; Intellectual Property; Health Disclaimer; Termination; Disclaimer of Warranties; Limitation of Liability; Indemnification; and Dispute Resolution.</p>
+        <p>If you violate these Terms of Service, we reserve the right to deactivate your account or terminate these Terms of Service, at our sole discretion, at any time and without notice or liability to you. Upon any such termination, we may delete information related to your account. You may cancel your account at any time by contacting Customer Support. Upon any termination, discontinuation or cancellation of the Service or your account, the following provisions of these Terms will survive: General Conditions; Intellectual Property; Health Disclaimer; Termination; Disclaimer of Warranties; Limitation of Liability; Indemnification; and Dispute Resolution.</p>
       </div>
       <div>
         <h2>SECTION 21 - ENTIRE AGREEMENT</h2>
