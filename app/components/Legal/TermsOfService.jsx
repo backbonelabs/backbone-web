@@ -1,4 +1,4 @@
-/* eslint-disable react/no-danger */
+/* eslint-disable react/no-danger, max-len */
 import React from 'react';
 import Container from 'muicss/lib/react/container';
 import Panel from 'muicss/lib/react/panel';
@@ -16,7 +16,7 @@ const TermsOfService = () => (
       </div>
       <div>
         <h2>TERMS OF SERVICE</h2>
-        <p>OVERVIEW</p>
+        <h4>OVERVIEW</h4>
         <p>
           This website is operated by Backbone Labs. Throughout the site, the terms “we”, “us” and “our” refer to Backbone Labs. Backbone Labs offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
         </p>
@@ -185,9 +185,9 @@ You must not transmit any worms or viruses or any code of a destructive nature.<
         <h2>SECTION 22 - DISPUTE RESOLUTION</h2>
         <p>You agree that any dispute between you and us arising out of or relating to these Terms of Service, the Backbone Service, or any other Backbone Labs products or services (collectively, “Disputes”) will be governed by the arbitration procedure outlined below.</p>
         <p>Governing Law: The Terms of Service and the resolution of any Disputes shall be governed by and construed in accordance with the laws of the State of California without regard to its conflict of laws principles.</p>
-        <p>Informal Dispute Resolution: We want to address your concerns without needing a formal legal case. Before filing a claim against us, you agree to try to resolve the Dispute informally by contacting support@gobackbone.com. We'll try to resolve the Dispute informally by contacting you through email. If a Dispute is not resolved within 15 days after submission, you or we may bring a formal proceeding.</p>
+        <p>Informal Dispute Resolution: We want to address your concerns without needing a formal legal case. Before filing a claim against us, you agree to try to resolve the Dispute informally by contacting <a href="mailto:support@gobackbone.com">support@gobackbone.com</a>. We'll try to resolve the Dispute informally by contacting you through email. If a Dispute is not resolved within 15 days after submission, you or we may bring a formal proceeding.</p>
         <p>Both Parties Agree To Arbitrate: You and Backbone Labs agree to resolve any Disputes through final and binding arbitration, except as set forth under Exceptions to Agreement to Arbitrate below.</p>
-        <p>Opt-out of Agreement to Arbitrate: You can decline this agreement to arbitrate by contacting support@gobackbone.com within 30 days of first accepting these Terms of Service and stating that you (include your first and last name) decline this arbitration agreement.</p>
+        <p>Opt-out of Agreement to Arbitrate: You can decline this agreement to arbitrate by contacting <a href="mailto:support@gobackbone.com">support@gobackbone.com</a> within 30 days of first accepting these Terms of Service and stating that you (include your first and last name) decline this arbitration agreement.</p>
         <p>Arbitration Procedures: The American Arbitration Association (AAA) will administer the arbitration under its Commercial Arbitration Rules and the Supplementary Procedures for Consumer Related Disputes. The arbitration will be held in the United States county where you live or work, San Francisco, California, or any other location we agree to.</p>
         <p>Arbitration Fees: The AAA rules will govern payment of all arbitration fees. We will pay all arbitration fees for claims less than $10,000. We will not seek our attorneys' fees and costs in arbitration unless the arbitrator determines that your claim is frivolous.</p>
         <p>No Class Actions: You may only resolve Disputes with Backbone Labs on an individual basis, and may not bring a claim as a plaintiff or a class member in a class, consolidated, or representative action. Class arbitrations, class actions, private attorney general actions, and consolidation with other arbitrations aren't allowed under our agreement.</p>
@@ -200,7 +200,7 @@ You must not transmit any worms or viruses or any code of a destructive nature.<
       </div>
       <div>
         <h2>SECTION 24 - CONTACT INFORMATION</h2>
-        <p>Questions about the Terms of Service should be sent to us at support@gobackbone.com.</p>
+        <p>Questions about the Terms of Service should be sent to us at <a href="mailto:support@gobackbone.com">support@gobackbone.com</a>.</p>
       </div>
     </Panel>
   </Container>
