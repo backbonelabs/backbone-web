@@ -13,8 +13,8 @@ const Footer = () => (
         <Col md="6" xs="12" className="footer__leftside">
           <Link to="/legal/privacy">Privacy Policy</Link>
           <Link to="/legal/terms">Terms of Service</Link>
-          <Link to="https://shop.gobackbone.com/pages/terms-conditions-for-online-offers-to-purchase">Terms & Conditions</Link>
-          <Link to="https://shop.gobackbone.com/pages/returns-policy">Refund Policy</Link>
+          <a href="https://shop.gobackbone.com/pages/terms-conditions-for-online-offers-to-purchase">Terms & Conditions</a>
+          <a href="https://shop.gobackbone.com/pages/returns-policy">Return Policy</a>
           <a href="https://support.gobackbone.com">Support</a>
         </Col>
         <Col md="6" xs="12" className="footer__rightside">
