@@ -68,7 +68,7 @@ const PrivacyPolicy = () => (
           Contact information is used to send you notifications, and to inform you about new features or products we think you would be interested in. Please see “Can I Opt-out Of Receiving Backbone Emails?” for information on how you can opt-out of future communications.
         </p>
         <p>Data and logs are used in research to understand and improve the Devices and the Service; to troubleshoot the Service; to detect and protect against error, fraud or other criminal activity; and to enforce the Backbone Labs Terms of Service.</p>
-        <p>De-identified data that does not identify you may be used to inform the health community about trends; for marketing and promotional use; or for sale to interested audiences. See “Sharing of De-identified Data That Does Not Identify You” to learn more.</p>
+        <p>De-identified data that does not identify you may be used to inform the health community about trends; for marketing and promotional use; or for sale to interested audiences. See “Sharing of De-Identified Data That Does Not Identify You” to learn more.</p>
       </div>
       <div>
         <h2>What Kinds of Data We Share</h2>
@@ -112,19 +112,19 @@ const PrivacyPolicy = () => (
         <p>We store your PII for as long as you maintain a Backbone Labs account.</p>
       </div>
       <div>
-        <h2>How To Edit or Modify Data</h2>
+        <h2>How to Edit or Modify Data</h2>
         <p>
           Data that you provide to us through the Site can be modified from your Backbone Labs account preferences. If you remove data from your Backbone Labs account, it will no longer appear to you or others who use the Service. Backups of that data will remain associated with your Backbone Labs account and in our archive servers.
         </p>
       </div>
       <div>
-        <h2>How To Deactivate Your Backbone Labs Account</h2>
+        <h2>How to Deactivate Your Backbone Labs Account</h2>
         <p>
           You can deactivate your Backbone Labs account by contacting Customer Support. When you do, data that can identify you will be removed from the Service. Backup copies of this data will be removed from our server based upon an automated schedule, which means it may persist in our archive for a short period. Backbone Labs may continue to use your de-identified data after you deactivate your account.
         </p>
       </div>
       <div>
-        <h2>Our Policies For Children</h2>
+        <h2>Our Policies for Children</h2>
         <p>
           Backbone Labs is not directed at persons under the age of 13. We do not knowingly collect any PII from persons under 13. If you are aware of a user under the age of 13 using Backbone, please contact us at <a href="mailto:support@gobackbone.com">support@gobackbone.com</a>.
         </p>
@@ -142,7 +142,7 @@ const PrivacyPolicy = () => (
         </p>
       </div>
       <div>
-        <h2>How Does Backbone Labs Handle Data From International Visitors?</h2>
+        <h2>How Does Backbone Labs Handle Data from International Visitors?</h2>
         <p>
           The Services are hosted in the United States and are subject to United States law. We may share your personal information internally with our affiliates and other recipients, as described in this Privacy Policy, and they may be located in countries other than your country. If you are accessing the Services from outside the United States, please be advised that United States law and other countries may not offer the same privacy protections as the law of your jurisdiction.
         </p>
