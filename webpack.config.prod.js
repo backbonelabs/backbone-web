@@ -11,7 +11,7 @@ module.exports = {
   entry: ['./app/index'],
   output: {
     path: path.join(__dirname, 'build'),
-    filename: '[name]-[hash].js',
+    filename: '[name]-[chunkhash].js',
     publicPath: '/',
   },
   plugins: [
