@@ -16,7 +16,9 @@ const Navbar = ({ openSideNav }) => {
       <li><Link to="/business" activeClassName="active">Business</Link></li>
       <li><a href="https://support.gobackbone.com">Support</a></li>
       <li>
-        <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support"><Button color="danger">Pre-order</Button></a>
+        <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support">
+          <Button color="danger">Pre-order</Button>
+        </a>
       </li>
     </ul>
   );

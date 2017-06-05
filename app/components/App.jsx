@@ -57,12 +57,11 @@ class App extends Component {
           </a>
         </li>
         <li>
-          <Link
-            to="/pre-order"
-            onClick={this.onSetSidebarOpen}
+          <a
+            href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support"
           >
             <Button color="danger">Pre-order</Button>
-          </Link>
+          </a>
         </li>
       </ul>
     );
