@@ -238,6 +238,19 @@
       margin-top: 4rem;
       margin-bottom: 2rem;
     }
+
+    .testimonial-stage {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .testimonial {
+      display: flex;
+      flex: 1;
+      min-width: 280px;
+    }
   </style>
 </head>
 
@@ -301,9 +314,10 @@
         </div>
       </div>
 
+      <div class="mui-divider center-block"></div>
+
       <section class="content-section">
         <div class="mui-row">
-          <div class="mui-divider center-block"></div>
           <div class="mui-col-lg-10 mui-col-lg-offset-1">
               <div class="mui--text-center">
                 <h3 class="mui--text-headline content-header">Introducing Backbone, The World's Smartest Posture Wearable</h3>
@@ -354,21 +368,28 @@
         </div>
       </section>
 
+      <div class="mui-divider center-block"></div>
+
       <section class="content-section">
         <div class="mui-row">
-          <div class="mui-divider center-block"></div>
-          <div class="mui-col-lg-10 mui-col-lg-offset-1">
-            <div class="mui--text-center">
-              <h2 class="mui--text-headline content-header">Customers Love Backbone</h2>
-            </div>
-            <div class="mui-col-md-4">
-              <blockquote class="mui-panel">“I received my backbone and am VERY pleased and happy with the product... The backbrace by itself has already helped me pull my shoulders back and improve my standing posture without being in a posture session!” - <strong>Christoper M.</strong></blockquote>
-            </div>
-            <div class="mui-col-md-4">
-              <blockquote class="mui-panel">“I’ve had no issues with it so far. I really like it, and I hope these guys stick with it, because it seems like a lot of additional useful functionality could be added to the app in the future.” - <strong>Billy H.</strong></blockquote>
-            </div>
-            <div class="mui-col-md-4">
-              <blockquote class="mui-panel">“Got mine yesterday. After a quick update, the Backbone worked as advertised. If you truly have back issues, I highly recommend you keep your pledge.” - <strong>Tom M.</strong></blockquote>
+          <div class="mui-col-sm-10 mui-col-sm-offset-1">
+            <h2 class="mui--text-headline mui--text-center content-header">Customers Love Backbone</h2>
+            <div class="mui-row testimonial-stage">
+              <div class="mui-col-xs-12 mui-col-lg-4 testimonial">
+                <div class="mui-panel">
+                  “I received my backbone and am VERY pleased and happy with the product... The backbrace by itself has already helped me pull my shoulders back and improve my standing posture without being in a posture session!” - <strong>Christoper M.</strong>
+                </div>
+              </div>
+              <div class="mui-col-xs-12 mui-col-lg-4 testimonial">
+                <div class="mui-panel">
+                  “I’ve had no issues with it so far. I really like it, and I hope these guys stick with it, because it seems like a lot of additional useful functionality could be added to the app in the future.” - <strong>Billy H.</strong>
+                </div>
+              </div>
+              <div class="mui-col-xs-12 mui-col-lg-4 testimonial">
+                <div class="mui-panel">
+                  “Got mine yesterday. After a quick update, the Backbone worked as advertised. If you truly have back issues, I highly recommend you keep your pledge.” - <strong>Tom M.</strong>
+                </div>
+              </div>
             </div>
           </div>
         </div>
