@@ -41,11 +41,13 @@ class Home extends Component {
     };
   }
 
-  @autobind handleOnChange(evt) {
+  @autobind
+  handleOnChange(evt) {
     this.setState({ [evt.target.name]: evt.target.value });
   }
 
-  @autobind handleOnSubmit(evt) {
+  @autobind
+  handleOnSubmit(evt) {
     evt.preventDefault();
     const { email, name, sentBy, message, phoneNum } = this.state;
 
@@ -88,7 +90,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <div className="home__bg-image">
+        <section className="home__hero">
           <div className="home__jumbo">
             <div className="home__jumbo-header">
               <h1 className="home__jumbo-text">
@@ -102,9 +104,7 @@ class Home extends Component {
                     src={appStoreBadge}
                   />
                 </a>
-                {/*eslint-disable*/}
                 <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone">
-                  {/*eslint-disable*/}
                   <img
                     className="home__app-badge"
                     alt="Download from Google Play"
@@ -124,6 +124,35 @@ class Home extends Component {
               />
             </div>
           </div>
+        </section>
+        <div className="home__funding-status">
+          <Container>
+            <Row>
+              <Col
+                className="mui--text-title mui--text-center"
+                sm="6"
+                md="4"
+                sm-offset="1"
+                md-offset="3"
+              >
+                <div className="home__funding-status-mainline">
+                  <strong>$467,000</strong> sold in 30 days
+                </div>
+                <div className="mui--text-caption">
+                  The biggest 30-day crowdfunding campaign in history
+                </div>
+              </Col>
+              <Col sm="3" className="mui--text-center">
+                <Button>Pre-Order Now</Button>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        <div className="home__press mui--text-center">
+          <img
+            src="https://cdn.gobackbone.com/assets/seen_on.jpg"
+            alt="Press mentions of Backbone"
+          />
         </div>
         <section className="home__product" id="home__product">
           <Container fluid>
@@ -135,7 +164,9 @@ class Home extends Component {
                     Backbone makes achieving great posture comfortable and easy
                   </h1>
                   <p>
-                    The ergonomic brace is crafted from a blend of technical fabrics to produce a slim, low-profile form of support for your posture that’s comfortable, breathable, and moisture-resistant.
+                    The ergonomic brace is crafted from a blend of technical fabrics to produce
+                    a slim, low-profile form of support for your posture that’s comfortable,
+                    breathable, and moisture-resistant.
                   </p>
                 </div>
               </Col>
@@ -149,7 +180,9 @@ class Home extends Component {
                 <div className="product-info">
                   <h1>Gently buzzes every time you slouch</h1>
                   <p>
-                    Backbone’s sensor module utilizes a series of high-tech components to analyze your posture and gently reminds you to sit or stand up straight by vibrating anytime you slouch.
+                    Backbone’s sensor module utilizes a series of high-tech components to analyze
+                    your posture and gently reminds you to sit or stand up straight by vibrating
+                    anytime you slouch.
                   </p>
                 </div>
               </Col>
@@ -165,7 +198,9 @@ class Home extends Component {
                 <div className="product-info">
                   <h1>Backbone gives you even more</h1>
                   <p>
-                    The mobile application allows us to wirelessly deliver a constant stream of new features and updates to your smartphone... giving your Backbone the ability to do even more than you ever expected.
+                    The mobile application allows us to wirelessly deliver a constant stream of
+                    new features and updates to your smartphone... giving your Backbone the ability
+                    to do even more than you ever expected.
                   </p>
                 </div>
               </Col>
@@ -180,7 +215,8 @@ class Home extends Component {
                 <Panel>
                   <p>
                     <i className="fa fa-quote-left" aria-hidden="true" />
-                    Overall I do feel better at the end of the day with the support and posture reminders. Good job Backbone team.
+                    Overall I do feel better at the end of the day with the support and posture
+                    reminders. Good job Backbone team.
                     <span>- Ryan H</span>
                   </p>
                 </Panel>
@@ -189,7 +225,9 @@ class Home extends Component {
                 <Panel>
                   <p>
                     <i className="fa fa-quote-left" aria-hidden="true" />
-                    I’ve had no issues with it so far. I really like it, and I hope these guys stick with it, because it seems like a lot of additional useful functionality could be added to the app in the future.
+                    I’ve had no issues with it so far. I really like it, and I hope these guys
+                    stick with it, because it seems like a lot of additional useful functionality
+                    could be added to the app in the future.
                     <span>- BH</span>
                   </p>
                 </Panel>
@@ -198,7 +236,8 @@ class Home extends Component {
                 <Panel>
                   <p>
                     <i className="fa fa-quote-left" aria-hidden="true" />
-                    Got mine yesterday. After a quick update, the Backbone worked as advertised. If you truly have back issues, I highly recommend you keep your pledge.
+                    Got mine yesterday. After a quick update, the Backbone worked as advertised. If
+                    you truly have back issues, I highly recommend you keep your pledge.
                     <span>- Tom M</span>
                   </p>
                 </Panel>
@@ -238,7 +277,7 @@ class Home extends Component {
                   <input
                     className={
                       !this.state.name && this.state.formError
-                        ? "required-field"
+                        ? 'required-field'
                         : null
                     }
                     type="text"
@@ -250,7 +289,7 @@ class Home extends Component {
                   <input
                     className={
                       !this.state.email && this.state.formError
-                        ? "required-field"
+                        ? 'required-field'
                         : null
                     }
                     type="email"
@@ -272,7 +311,7 @@ class Home extends Component {
                     <select
                       className={
                         !this.state.sentBy && this.state.formError
-                          ? "required-field"
+                          ? 'required-field'
                           : null
                       }
                       value={this.state.sentBy}
@@ -288,7 +327,7 @@ class Home extends Component {
                   <textarea
                     className={
                       !this.state.message && this.state.formError
-                        ? "required-field"
+                        ? 'required-field'
                         : null
                     }
                     name="message"
@@ -299,16 +338,16 @@ class Home extends Component {
                   />
                 </Col>
                 <Col md="12" className="mui--text-center">
-                  {this.state.formError
-                    ? <p className="error-message">
-                        {this.state.formError}
-                      </p>
-                    : null}
-                  {this.state.confirmMessage
-                    ? <p className="error-message">
-                        {this.state.confirmMessage}
-                      </p>
-                    : null}
+                  {this.state.formError && (
+                    <p className="error-message">
+                      {this.state.formError}
+                    </p>
+                  )}
+                  {this.state.confirmMessage && (
+                    <p className="error-message">
+                      {this.state.confirmMessage}
+                    </p>
+                  )}
                   <Button color="danger">Send</Button>
                 </Col>
               </Row>
