@@ -154,6 +154,29 @@ class Home extends Component {
             alt="Press mentions of Backbone"
           />
         </div>
+        <section className="home__posture">
+          <h2 className="mui--text-display2 mui--text-center">Why is Posture Important?</h2>
+          <Container>
+            <Row>
+              <Col sm="6">
+                <div>Bad Posture:</div>
+                <ul>
+                  <li>one</li>
+                  <li>two</li>
+                  <li>three</li>
+                </ul>
+              </Col>
+              <Col sm="6">
+                <div>Good Posture:</div>
+                <ul>
+                  <li>one</li>
+                  <li>two</li>
+                  <li>three</li>
+                </ul>
+              </Col>
+            </Row>
+          </Container>
+        </section>
         <section className="home__product" id="home__product">
           <Container fluid>
             <Row>
