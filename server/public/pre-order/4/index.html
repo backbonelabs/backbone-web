@@ -31,7 +31,7 @@
   <link href="https://cdn.muicss.com/mui-0.9.9-rc2/css/mui.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #FFFFFF;
+      background-color: #d3d3d3;
       font-family: 'Open Sans';
     }
 
@@ -175,8 +175,63 @@
       cursor: pointer;
     }
 
+    .mui--z1.container {
+      margin-top: 1rem;
+      background-color: white;
+    }
+
     .mui-divider {
       width: 50%;
+    }
+
+    .mui-cards {
+      padding-left: 3rem;
+      padding-top: 0.1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .mui-cards.product-benefits {
+      padding-bottom: 5rem;
+      padding-right: 2rem;
+    }
+
+    ul.pros-cons {
+      list-style: none;
+    }
+
+
+    li.pros-cons {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    i {
+      vertical-align: middle !important;
+    }
+
+    .material-icons.md-36 {
+      font-size: 36px;
+    }
+
+    .material-icons.md-light {
+      color: rgba(255, 255, 255, 1);
+    }
+
+    i.bad-posture {
+      color: red;
+    }
+
+    i.good-posture {
+      color: #2bc617;
+    }
+
+    .mui-row.product-benefits {
+      margin-bottom: 2rem;
+    }
+
+    .mui-divider {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
     }
   </style>
 </head>
@@ -188,148 +243,152 @@
     </nav>
   </header>
   <main class="mui-container">
-    <div class="mui-row">
-      <div class="mui-col-lg-8 mui-col-lg-offset-2">
-        <section class="content-section">
-          <center>
-            <h2 class="mui--text-display1"><strong>"Perfect posture, effortlessly."</strong></h2 >
-            <h4 class="mui--text-subhead">Backbone supports your posture, buzzes when you slouch, teaches you posture strengthening exercises and stretches, and more!</h4>
-          </center>
-          <div>
-            <center><iframe width="560" height="315" src="https://www.youtube.com/embed/iTplWYkig-o?autoplay=1&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe></center>
-            <center><h2><strong>6,146</strong> customers and counting!</h2></center>
-            <img class="content-image__image" src="https://cdn.gobackbone.com/assets/seen_on.jpg">
+    <div class="mui--z1 container">
+      <div class="mui-row">
+        <div class="mui-col-lg-8 mui-col-lg-offset-2">
+          <section class="content-section">
+            <center>
+              <h2 class="mui--text-display1"><strong>"Perfect posture, effortlessly."</strong></h2 >
+              <h4 class="mui--text-subhead">Backbone supports your posture, buzzes when you slouch, teaches you posture strengthening exercises and stretches, and more!</h4>
+            </center>
+            <div>
+              <div class="youtube-player" data-id="iTplWYkig-o"></div>
+              <center><h2><strong>6,146</strong> customers and counting!</h2></center>
+              <img class="content-image__image" src="https://cdn.gobackbone.com/assets/seen_on.jpg">
+              <div class="mui--text-center">
+                <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
+                  <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone</b></button>
+                </a>
+                <br />Limited time offer. While supplies last.
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="mui-row">
+        <div class="mui-col-lg-10 mui-col-lg-offset-1">
+          <section class="content-section">
+            <div class="mui-col-md-6">
+              <div class="mui--z1">
+                <div class="mui-cards pros-cons">
+                  <h2><strong>Good Posture</strong></h2>
+                  <ul class="pros-cons good-posture">
+                    <li class="pros-cons"><i class="material-icons md-36 good-posture">check_circle</i> Makes you look taller and fitter</li>
+                    <li class="pros-cons"><i class="material-icons md-36 good-posture">check_circle</i> Reduces and prevents back pain</li>
+                    <li class="pros-cons"><i class="material-icons md-36 good-posture">check_circle</i> Increases focus and confidence</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mui-col-md-6">
+              <div class="mui--z1">
+                <div class="mui-cards pros-cons">
+                  <h2><strong>Bad Posture</strong></h2>
+                  <ul class="pros-cons bad-posture">
+                    <li class="pros-cons"><i class="material-icons md-36 bad-posture">clear</i> Causes neck and back pain</li>
+                    <li class="pros-cons"><i class="material-icons md-36 bad-posture">clear</i> Lowers energy levels</li>
+                    <li class="pros-cons"><i class="material-icons md-36 bad-posture">clear</i> Looks unattractive</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section class="content-section">
+        <div class="mui-row">
+          <div class="mui-row">
+            <center><div class="mui-divider"></div></center>
+          </div>
+          <div class="mui-col-lg-10 mui-col-lg-offset-1">
+              <div class="mui--text-center">
+                <h3 class="mui--text-headline content-header">Introducing Backbone, The World's Smartest Posture Wearable</h3>
+              </div>
+              <div class="mui-row product-benefits">
+                <div class="mui-col-md-6"><img class="content-image__image" src="https://cdn.gobackbone.com/assets/shoulder-strap.jpg"></div>
+                <div class="mui-col-md-6">
+                  <div class="mui--z1">
+                    <div class="mui-cards product-benefits">
+                      <h2><strong>SUPPORTS</strong></h2>
+                      <ul class="good-posture">
+                        <li>Aligns your shoulders and back to help you maintain good posture easily</li>
+                        <li>Fits comfortably under your clothes without being noticed</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mui-row product-benefits">
+                <div class="mui-col-md-6">
+                  <div class="mui--z1">
+                    <div class="mui-cards product-benefits">
+                      <h2><strong>SENSES</strong></h2>
+                      <ul class="good-posture">
+                        <li>Helps you build good habits by intelligently alerting you when you slouch</li>
+                        <li>Gently reminds you when you've been sitting too long</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="mui-col-md-6"><img class="content-image__image" src="https://cdn.gobackbone.com/assets/module-floating-angled.jpg"></div>
+              </div>
+              <div class="mui-row">
+                <div class="mui-col-md-6"><img class="content-image__image" src="https://cdn.gobackbone.com/assets/app-screens-final.jpg"></div>
+                <div class="mui-col-md-6">
+                  <div class="mui--z1">
+                    <div class="mui-cards product-benefits">
+                      <h2><strong>ENGAGES</strong></h2>
+                      <ul class="good-posture">
+                        <li>Guides you through interactive training programs to keep you committed</li>
+                        <li>Recommends posture-strengthening exercises and stretches to get you real results</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="mui-row">
+          <div class="mui-row">
+            <center><div class="mui-divider"></div></center>
+          </div>
+          <div class="mui-col-lg-10 mui-col-lg-offset-1">
+            <div class="mui--text-center">
+              <h2 class="mui--text-headline content-header">Customers Love Backbone</h2>
+            </div>
+            <div class="mui-col-md-4">
+              <blockquote class="mui-panel">“I received my backbone and am VERY pleased and happy with the product... The backbrace by itself has already helped me pull my shoulders back and improve my standing posture without being in a posture session!” - <strong>Christoper M.</strong></blockquote>
+            </div>
+            <div class="mui-col-md-4">
+              <blockquote class="mui-panel">“I’ve had no issues with it so far. I really like it, and I hope these guys stick with it, because it seems like a lot of additional useful functionality could be added to the app in the future.” - <strong>Billy H.</strong></blockquote>
+            </div>
+            <div class="mui-col-md-4">
+              <blockquote class="mui-panel">“Got mine yesterday. After a quick update, the Backbone worked as advertised. If you truly have back issues, I highly recommend you keep your pledge.” - <strong>Tom M.</strong></blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="content-section">
+        <div class="mui-row">
+          <div class="mui-col-lg-10 mui-col-lg-offset-1">
+            <p>
+              <strong>Ready to enjoy the health benefits of good posture?</strong> Pre-order your Backbone today for only $69 (40% off) by clicking below.
+            </p>
             <div class="mui--text-center">
               <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
                 <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone</b></button>
               </a>
               <br />Limited time offer. While supplies last.
             </div>
+            <p><strong>Your Satisfaction Guaranteed</strong>: If for any reason you're not satisfied with Backbone, send it back undamaged within 90 days and we'll give you a <strong>full refund</strong>, no questions asked.</p>
+            <p>Have questions? Send us an email at <a href="mailto:support@gobackbone.com">support@gobackbone.com</a>.</p>
           </div>
-        </section>
-      </div>
-    </div>
-    <div class="mui-row">
-      <center><div class="mui-divider"></div></center>
-    </div>
-    <div class="mui-row">
-      <div class="mui-col-lg-8 mui-col-lg-offset-2">
-        <section class="content-section">
-          <h2 class="mui--text-display1 content-header">Check your posture right now</h2>
-          <p>
-            Chances are, you're slouching. <strong>Why should you care?</strong> Having bad posture causes spinal wear and tear, feelings of depression, and a higher chance of back injury. Your back suffers when you slouch:
-          </p>
-          <div class="content-image">
-            <img class="content-image__image" src="https://cdn.gobackbone.com/assets/text-neck-1-optimized.png">
-            <div class="content-image__subtitle">
-              Having poor posture can result in your spine carrying an additional 20-60 pounds! <br />- <a href="https://www.washingtonpost.com/news/morning-mix/wp/2014/11/20/text-neck-is-becoming-an-epidemic-and-could-wreck-your-spine/">The Washington Post</a> (Image via Dr. Erik Dalton, PhD)
-            </div>
-          </div>
-          <p>
-            <strong>Still don’t care?</strong> What if you could look more attractive (taller, thinner, more confident), feel happier, and boost your self-esteem? Well, you can, by having good posture:
-          </p>
-          <div class="youtube-player" data-id="OyK0oE5rwFY"></div>
-          <p>
-            <a href="http://www.health.harvard.edu/pain/4-ways-to-turn-good-posture-into-less-back-pain">Harvard Medical School</a> and many other medical institutions praise the health benefits of good posture. And, with Backbone, you can enjoy all the health benefits with <i>much less</i> effort.
-          </p>
-        </section>
-        <div class="mui-row">
-          <center><div class="mui-divider"></div></center>
         </div>
-        <section class="content-section">
-          <h2 class="mui--text-display1 content-header">Happy Customers</h2>
-          <blockquote class="mui-panel">“I received my backbone and am VERY pleased and happy with the product. The adjustable sensitivity allows me to improve my posture without a twitch setting off the sensor. The backbrace by itself has already helped me pull my shoulders back and improve my standing posture without being in a posture session! The bottom line is I believe this company really is making the right decision though a difficult one to protect their product quality and brand name from day one.” - <strong>Christoper M.</strong></blockquote>
-          <blockquote class="mui-panel">“I’ve had no issues with it so far. I really like it, and I hope these guys stick with it, because it seems like a lot of additional useful functionality could be added to the app in the future.” - <strong>Billy H.</strong></blockquote>
-          <blockquote class="mui-panel">“Got mine yesterday. After a quick update, the Backbone worked as advertised. If you truly have back issues, I highly recommend you keep your pledge.” - <strong>Tom M.</strong></blockquote>
-          <p><strong>Your Satisfaction Guaranteed</strong>: If for any reason you're not satisfied with Backbone, send it back undamaged within 90 days and we'll give you a <strong>full refund</strong>, no questions asked.</p>
-        </section>
-        <div class="mui-row">
-          <center><div class="mui-divider"></div></center>
-        </div>
-        <section class="content-section">
-          <h2 class="mui--text-display1 content-header">Look and feel your strongest with Backbone</h2>
-          <p>
-             Backbone is the world's smartest posture support and is approved and recommended by health professionals. Here's why:
-          </p>
-          <div class="content-image">
-            <img class="content-image__image" src="https://cdn.gobackbone.com/assets/backbone.jpg">
-          </div>
-          <p>
-            Advanced technical fabrics and materials woven to form a posture support brace that's sleek enough to be worn under your clothes, and provide you with maximum comfort, breathability, and support.
-          </p>
-          <div class="content-image">
-            <img class="content-image__image" src="https://cdn.gobackbone.com/assets/backbone-three.jpg">
-          </div>
-          <p>
-            State-of-the-art six-axis motion sensors accurately monitor your posture and notify you through the use of vibration motors and smartphone notifications whenever you slouch or need to take a sitting break.
-            <div class="content-image">
-              <img class="content-image__image" src="https://cdn.gobackbone.com/assets/module-floating-angled.jpg">
-            </div>
-          </p>
-          <p>
-            Continuously updated Android/iOS smartphone app delivers premium training and educational content, visualizes your progress, alerts when you've been sitting for too long, and so much more.
-            <div class="content-image">
-              <img class="content-image__image" src="https://cdn.gobackbone.com/assets/app-screens-3.jpg">
-              <div class="content-image__subtitle">Compatible with Android and Apple devices supporting Bluetooth 4.0 and above.</div>
-            </div>
-          </p>
-          <div class="mui--text-center">
-            <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
-              <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone</b></button>
-            </a>
-            <br />Limited time offer. While supplies last.
-          </div>
-        </section>
-        <div class="mui-row">
-          <center><div class="mui-divider"></div></center>
-        </div>
-        <section class="content-section">
-          <h2 class="mui--text-display1 content-header">Take your best posture beyond sitting</h2>
-          <p>
-            Easily achieve and maintain your best posture with Backbone whether you're sitting, standing, or moving. Look and feel great wherever you go, whatever you do.
-          </p>
-          <div class="content-image">
-            <img class="content-image__image" src="https://cdn.gobackbone.com/assets/carmen-running.jpg">
-          </div>
-        </section>
-        <div class="mui-row">
-          <center><div class="mui-divider"></div></center>
-        </div>
-        <section class="content-section">
-          <h2 class="mui--text-display1 content-header">Slim and lightweight</h2>
-          <p>Backbone was designed to be worn seamlessly underneath your clothes without being seen. Or, wear it over your clothes. The choice is yours.</p>
-          <div class="content-image">
-            <img class="content-image__image" src="https://cdn.gobackbone.com/assets/carmen-under.jpg">
-          </div>
-        </section>
-        <div class="mui-row">
-          <center><div class="mui-divider"></div></center>
-        </div>
-        <section class="content-section">
-          <h2 class="mui--text-display1 content-header">More features, no additional cost</h2>
-          <p>Backbone's smart posture support and smartphone app are regularly updated with new features and content.</p>
-          <div class="youtube-player" data-id="Kr8lVlbhndU"></div>
-          <div class="content-image__subtitle"><center>Backbone's in-app exercises and stretches adhere to physical training guidelines and don't require any equipment. Stay healthy wherever you go.</center></div>
-        </section>
-        <div class="mui-row">
-          <center><div class="mui-divider"></div></center>
-        </div>
-        <section class="content-section">
-          <p>
-            <strong>Ready to enjoy the health benefits of good posture?</strong> Click the button below to pre-order your Backbone today at the limited discounted rate of $69 (40% off).
-          </p>
-          <div class="mui--text-center">
-            <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
-              <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone</b></button>
-            </a>
-            <br />Limited time offer. While supplies last.
-          </div>
-        </section>
-        <section class="content-section">
-          <p><strong>Your Satisfaction Guaranteed</strong>: If for any reason you're not satisfied with Backbone, send it back undamaged within 90 days and we'll give you a <strong>full refund</strong>, no questions asked.</p>
-          <p>Have questions? Send us an email at <a href="mailto:support@gobackbone.com">support@gobackbone.com</a>.</p>
-        </section>
-      </div>
+      </section>
     </div>
   </main>
   <footer class="footer mui-container-fluid">
