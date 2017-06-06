@@ -191,6 +191,54 @@ class Home extends Component {
             </div>
           </Container>
         </section>
+        <section className="home__features">
+          <h2 className="mui--text-display2 mui--text-center">Features</h2>
+          <Container>
+            <div className="home__features-stage">
+              &nbsp;
+            </div>
+            <Row className="home__features-stage-list">
+              <ul className="mui-list--unstyled">
+                <li className="home__features-stage-item">
+                  <Col sm="6" className="home__features-stage-item-image">Feature Image</Col>
+                  <Col sm="6">
+                    <h3>Feature Description</h3>
+                    <p>Some text goes here, and here, and here.</p>
+                  </Col>
+                </li>
+              </ul>
+            </Row>
+            <Row className="home__features-list-row-1">
+              <ol className="mui-list--inline">
+                <Col sm="4">
+                  <li className="home__features-list-item"><a>1. Feature 1</a></li>
+                </Col>
+                <Col sm="4">
+                  <li className="home__features-list-item"><a>2. Feature 2</a></li>
+                </Col>
+                <Col sm="4">
+                  <li className="home__features-list-item"><a>3. Feature 3</a></li>
+                </Col>
+              </ol>
+            </Row>
+            <Row className="home__features-list-row-2">
+              <ol className="mui-list--inline">
+                <Col sm="3">
+                  <li className="home__features-list-item"><a>4. Feature 4</a></li>
+                </Col>
+                <Col sm="3">
+                  <li className="home__features-list-item"><a>5. Feature 5</a></li>
+                </Col>
+                <Col sm="3">
+                  <li className="home__features-list-item"><a>6. Feature 6</a></li>
+                </Col>
+                <Col sm="3">
+                  <li className="home__features-list-item"><a>7. Feature 7</a></li>
+                </Col>
+              </ol>
+            </Row>
+          </Container>
+        </section>
         <section className="home__product" id="home__product">
           <Container fluid>
             <Row>
