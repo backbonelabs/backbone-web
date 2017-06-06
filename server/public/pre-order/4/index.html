@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Start Visual Website Optimizer Asynchronous Code -->
+  <script type='text/javascript'>
+  var _vwo_code=(function(){
+  var account_id=300534,
+  settings_tolerance=2000,
+  library_tolerance=2500,
+  use_existing_jquery=false,
+  /* DO NOT EDIT BELOW THIS LINE */
+  f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+  </script>
+  <!-- End Visual Website Optimizer Asynchronous Code -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Backbone: Smart Posture Wearable</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+  <link href="https://cdn.muicss.com/mui-0.9.9-rc2/css/mui.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #d3d3d3;
+      font-family: 'Open Sans';
+    }
+
+    main {
+      font-size: 16px;
+      padding-top: 5rem;
+    }
+
+    .center-block {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      margin: 1.5rem;
+    }
+
+    .content-header {
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .content-section {
+      margin: 2rem auto;
+    }
+
+    .content-image {
+      width: 100%;
+    }
+
+    .navbar {
+      background-color: #212121;
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .logo {
+      margin: 0 20px;
+      width: 200px;
+    }
+
+    .footer {
+      background-color: #F44336;
+      color: #FFF;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+
+    .footer a {
+      color: #FFF;
+      padding: 0 15px;
+    }
+
+    .footer a:hover {
+      color: #212121;
+      text-decoration: none;
+    }
+
+    .footer__nav {
+      line-height: 2;
+      text-align: center;
+    }
+
+    .footer__social {
+      font-size: 20px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (min-width: 992px) {
+      .footer__nav {
+        text-align: left;
+      }
+      .footer__social {
+        text-align: right;
+        margin-top: 0;
+      }
+    }
+
+    .youtube-player {
+      position: relative;
+      padding-bottom: 56.23%;
+      /* Use 75% for 4:3 videos */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+      margin: 2rem auto;
+    }
+
+    .youtube-player iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      background: transparent;
+    }
+
+    .youtube-player img {
+      bottom: 0;
+      display: block;
+      left: 0;
+      margin: auto;
+      max-width: 100%;
+      width: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: none;
+      height: auto;
+      cursor: pointer;
+      -webkit-transition: .4s all;
+      -moz-transition: .4s all;
+      transition: .4s all;
+    }
+
+    .youtube-player img:hover {
+      -webkit-filter: brightness(75%);
+    }
+
+    .youtube-player .play {
+      height: 72px;
+      width: 72px;
+      left: 50%;
+      top: 50%;
+      margin-left: -36px;
+      margin-top: -36px;
+      position: absolute;
+      background: url("https://cdn.gobackbone.com/assets/play-button.png") no-repeat;
+      cursor: pointer;
+    }
+
+    .mui--z1.container {
+      margin-top: 1rem;
+      background-color: white;
+    }
+
+    .mui-cards {
+      padding-left: 3rem;
+      padding-top: 0.1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .pros-cons {
+      list-style: none;
+      padding: 0;
+    }
+
+    .pros-cons > li {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    i {
+      vertical-align: middle !important;
+    }
+
+    .material-icons.md-36 {
+      font-size: 36px;
+    }
+
+    .material-icons.md-light {
+      color: rgba(255, 255, 255, 1);
+    }
+
+    .bad-posture i {
+      color: red;
+    }
+
+    .good-posture i {
+      color: #2bc617;
+    }
+
+    .product-benefits-row:before,
+    .product-benefits-row:after,
+    .testimonial-stage:before,
+    .testimonial-stage:after {
+      content: normal;
+    }
+
+    .product-benefits-row {
+      display: flex;
+      align-items: stretch;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .product-benefit-text-cell {
+      display: flex;
+    }
+
+    @media (max-width: 767px) {
+      .product-benefit-text-cell {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .product-benefit-text-inner {
+      padding: 1rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .product-benefit-title {
+      line-height: 1;
+      padding-left: 30px;
+    }
+
+    .product-benefits-list {
+      padding-left: 30px;
+    }
+
+    .product-benefit-list-item {
+      margin-bottom: 0.5rem;
+      margin-left: 20px;
+    }
+
+    .mui-divider {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      width: 50%;
+    }
+
+    .testimonial-stage {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .testimonial {
+      display: flex;
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .cta-text-scarcity {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="/"><img class="logo" src="https://cdn.gobackbone.com/assets/backbone-logo-white.svg"></a>
+      <div>
+        <span class="cta-text-scarcity">Limited Time Offer!</span>
+        <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
+          <button class="cta-button mui-btn mui-btn--small mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone Now</b></button>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main class="mui-container">
+    <div class="mui--z1 container">
+      <div class="mui-row">
+        <div class="mui-col-lg-8 mui-col-lg-offset-2">
+          <section class="content-section">
+            <div class="mui--text-center">
+              <h2 class="mui--text-display1"><strong>"Perfect posture, effortlessly."</strong></h2>
+              <h4 class="mui--text-subhead">Backbone supports your posture, buzzes when you slouch, teaches you posture strengthening exercises and stretches, and more!</h4>
+            </div>
+            <div>
+              <div class="youtube-player" data-id="iTplWYkig-o"></div>
+              <h2 class="mui--text-center"><strong>$467,833</strong> sold on Kickstarter in just 30 days!</h2>
+              <img class="content-image" src="https://cdn.gobackbone.com/assets/seen_on.jpg">
+              <div class="mui--text-center">
+                <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
+                  <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone Now</b></button>
+                </a>
+                <br>Limited time offer. While supplies last.
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="mui-row">
+        <div class="mui-col-lg-10 mui-col-lg-offset-1">
+          <section class="content-section">
+            <div class="mui-col-lg-6">
+              <div class="mui--z1">
+                <div class="mui-cards">
+                  <h2><strong>Good Posture</strong></h2>
+                  <ul class="pros-cons good-posture">
+                    <li><i class="material-icons md-36">check_circle</i> Makes you look taller and fitter</li>
+                    <li><i class="material-icons md-36">check_circle</i> Reduces and prevents back pain</li>
+                    <li><i class="material-icons md-36">check_circle</i> Increases focus and confidence</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mui-col-lg-6">
+              <div class="mui--z1">
+                <div class="mui-cards">
+                  <h2><strong>Bad Posture</strong></h2>
+                  <ul class="pros-cons bad-posture">
+                    <li><i class="material-icons md-36">clear</i> Causes neck and back pain</li>
+                    <li><i class="material-icons md-36">clear</i> Lowers energy levels</li>
+                    <li><i class="material-icons md-36">clear</i> Looks unattractive</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="mui-divider center-block"></div>
+
+      <section class="content-section">
+        <div class="mui-row">
+          <div class="mui-col-lg-10 mui-col-lg-offset-1">
+              <div class="mui--text-center">
+                <h3 class="mui--text-headline content-header">Introducing Backbone, The World's Smartest Posture Wearable</h3>
+              </div>
+              <div class="mui-row product-benefits-row">
+                <div class="mui-col-md-6">
+                  <img class="content-image" src="https://cdn.gobackbone.com/assets/shoulder-strap.jpg">
+                </div>
+                <div class="mui-col-md-6 product-benefit-text-cell">
+                  <div class="mui--z1 product-benefit-text-inner">
+                    <h2 class="product-benefit-title"><strong>SUPPORTS</strong></h2>
+                    <ul class="product-benefits-list">
+                      <li class="product-benefit-list-item">Aligns your shoulders and back to help you maintain good posture easily</li>
+                      <li class="product-benefit-list-item">Fits comfortably under your clothes without being noticed</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="mui-row product-benefits-row">
+                <div class="mui-col-md-6 product-benefit-text-cell">
+                  <div class="mui--z1 product-benefit-text-inner">
+                    <h2 class="product-benefit-title"><strong>SENSES</strong></h2>
+                    <ul class="product-benefits-list">
+                      <li class="product-benefit-list-item">Helps you build good habits by intelligently alerting you when you slouch</li>
+                      <li class="product-benefit-list-item">Gently reminds you when you've been sitting too long</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mui-col-md-6">
+                  <img class="content-image" src="https://cdn.gobackbone.com/assets/module-floating-angled.jpg">
+                </div>
+              </div>
+              <div class="mui-row product-benefits-row">
+                <div class="mui-col-md-6">
+                  <img class="content-image" src="https://cdn.gobackbone.com/assets/app-screens-final.jpg">
+                </div>
+                <div class="mui-col-md-6 product-benefit-text-cell">
+                  <div class="mui--z1 product-benefit-text-inner">
+                    <h2 class="product-benefit-title"><strong>ENGAGES</strong></h2>
+                    <ul class="product-benefits-list">
+                      <li class="product-benefit-list-item">Guides you through interactive training programs to keep you committed</li>
+                      <li class="product-benefit-list-item">Recommends posture-strengthening exercises and stretches to get you real results</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="mui-divider center-block"></div>
+
+      <section class="content-section">
+        <div class="mui-row">
+          <div class="mui-col-sm-10 mui-col-sm-offset-1">
+            <h2 class="mui--text-headline mui--text-center content-header">Customers Love Backbone</h2>
+            <div class="mui-row testimonial-stage">
+              <div class="mui-col-xs-12 mui-col-lg-4 testimonial">
+                <div class="mui-panel">
+                  “The more I use this, the more I like it... Using the backbone is like mindfulness of posture on steroids. This is so awesome, thanks!” - <strong>Tom M.</strong>
+                </div>
+              </div>
+              <div class="mui-col-xs-12 mui-col-lg-4 testimonial">
+                <div class="mui-panel">
+                  “I received my backbone and am VERY pleased and happy with the product... The backbrace by itself has already helped me pull my shoulders back and improve my standing posture without being in a posture session!” - <strong>Christoper M.</strong>
+                </div>
+              </div>
+              <div class="mui-col-xs-12 mui-col-lg-4 testimonial">
+                <div class="mui-panel">
+                  “I’ve had no issues with it so far. I really like it, and I hope these guys stick with it, because it seems like a lot of additional useful functionality could be added to the app in the future.” - <strong>Billy H.</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="content-section">
+        <div class="mui-row">
+          <div class="mui-col-sm-10 mui-col-sm-offset-1">
+            <p>
+              <strong>Ready to enjoy the health benefits of good posture?</strong> Pre-order your Backbone today for only $69 (40% off) by clicking below.
+            </p>
+            <div class="mui--text-center">
+              <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
+                <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone Now</b></button>
+              </a>
+              <br />Limited time offer. While supplies last.
+            </div>
+            <br />
+            <p><strong>Your Satisfaction Guaranteed</strong>: If for any reason you're not satisfied with Backbone, send it back undamaged within 90 days and we'll give you a <strong>full refund</strong>, no questions asked.</p>
+            <p>Have questions? Send us an email at <a href="mailto:support@gobackbone.com">support@gobackbone.com</a>.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer mui-container-fluid">
+    <div class="mui-row">
+      <nav class="mui-col-xs-12 footer__nav">
+        <a href="/legal/privacy">Privacy Policy</a>
+        <a href="/legal/terms">Terms</a>
+        <a href="https://support.gobackbone.com">Support</a>
+        <a href="https://shop.gobackbone.com/pages/terms-conditions-for-online-offers-to-purchase">Terms &amp; Conditions</a>
+        <a href="https://shop.gobackbone.com/pages/returns-policy">Return Policy</a>
+      </nav>
+    </div>
+  </footer>
+  <script>
+
+    document.addEventListener("DOMContentLoaded",
+        function() {
+            var div, n,
+                v = document.getElementsByClassName("youtube-player");
+            for (n = 0; n < v.length; n++) {
+                div = document.createElement("div");
+                div.setAttribute("data-id", v[n].dataset.id);
+                div.innerHTML = labnolThumb(v[n].dataset.id);
+                div.onclick = labnolIframe;
+                v[n].appendChild(div);
+            }
+        });
+
+    function labnolThumb(id) {
+        var thumb = '<img src="https://i.ytimg.com/vi/ID/maxresdefault.jpg">',
+            play = '<div class="play"></div>';
+        return thumb.replace("ID", id) + play;
+    }
+
+    function labnolIframe() {
+        var iframe = document.createElement("iframe");
+        var embed = "https://www.youtube.com/embed/ID?autoplay=1&rel=0&modestbranding=1&showinfo=0&controls=0";
+        iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allowfullscreen", "1");
+        this.parentNode.replaceChild(iframe, this);
+    }
+
+</script>
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '495943477278998'); // Insert your pixel ID here.
+    fbq('track', 'PageView');
+
+    // Pixel fires upon a user clicking on a call-to-action button
+    function clickThrough(number) {
+      fbq('track', 'ViewContent', { buttonPressed: number, price: 69 });
+    }
+
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=495943477278998&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- DO NOT MODIFY -->
+  <!-- End Facebook Pixel Code -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75688316-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
