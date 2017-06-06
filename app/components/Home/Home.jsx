@@ -177,6 +177,20 @@ class Home extends Component {
             </Row>
           </Container>
         </section>
+        <section className="home__product-showcase">
+          <Container>
+            <div className="mui--text-center">
+              <img
+                className="backbone-showcase"
+                src="https://cdn.gobackbone.com/assets/backbone.jpg"
+                alt="Product showcase"
+              />
+            </div>
+            <div className="mui--text-center">
+              <Button color="danger" className="">Order Now</Button>
+            </div>
+          </Container>
+        </section>
         <section className="home__product" id="home__product">
           <Container fluid>
             <Row>
