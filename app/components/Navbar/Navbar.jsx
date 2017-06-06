@@ -34,7 +34,7 @@ const Navbar = ({ openSideNav }) => {
     </ul>
   );
   return (
-    <nav className="navBar">
+    <nav className="navbar" role="navigation">
       <Media query="(max-width: 768px)">
         {matches => (matches ? mobile : desktop)}
       </Media>

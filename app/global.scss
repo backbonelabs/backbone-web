@@ -58,7 +58,6 @@ body {
   background-color: $grey50;
 }
 
-
 /* Keep footer at the bottom */
 
 #root {
@@ -69,20 +68,25 @@ body {
   main {
     min-height: 100vh;
   }
-  .side-nav-content {
+  .sidebar {
+    position: fixed !important;
     width: 250px;
     background-color: $grey900;
+
     img {
       width: 100%;
     }
+
     ul {
       list-style: none;
       padding: 0;
       text-align: center;
+
       li:first-child {
         background-color: $white;
         padding: 15px 5px;
       }
+
       button {
         width: 100%;
         background-color: transparent;
@@ -91,10 +95,12 @@ body {
         border-radius: 0;
         margin: 0;
         box-shadow: none !important;
+
         &:hover {
           background-color: $red500;
         }
       }
+
       .side-bar-active {
         button {
           background-color: $red500;
@@ -102,6 +108,11 @@ body {
       }
     }
   }
+
+  .sidebar-root, .sidebar-content {
+    overflow: inherit !important;
+  }
+
   /* Override the sidenav styles in order for scrolling to work*/
   .side-nav-root {
     position: static !important;
@@ -111,7 +122,6 @@ body {
     }
   }
 }
-
 
 /* Error styles */
 
