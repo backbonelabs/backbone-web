@@ -67,6 +67,7 @@
       height: 5rem;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       position: fixed;
       width: 100%;
       z-index: 1000;
@@ -274,6 +275,10 @@
       flex: 1;
       min-width: 280px;
     }
+
+    .cta-text-scarcity {
+      color: white;
+    }
   </style>
 </head>
 
@@ -281,6 +286,12 @@
   <header>
     <nav class="navbar">
       <a href="/"><img class="logo" src="https://cdn.gobackbone.com/assets/backbone-logo-white.svg"></a>
+      <div>
+        <span class="cta-text-scarcity">Limited Time Offer!</span>
+        <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
+          <button class="cta-button mui-btn mui-btn--small mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone Now</b></button>
+        </a>
+      </div>
     </nav>
   </header>
   <main class="mui-container">
