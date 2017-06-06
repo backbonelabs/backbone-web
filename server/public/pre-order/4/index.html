@@ -195,11 +195,6 @@
       padding-bottom: 0.5rem;
     }
 
-    .mui-cards.product-benefits {
-      padding-bottom: 5rem;
-      padding-right: 2rem;
-    }
-
     ul.pros-cons {
       list-style: none;
     }
@@ -230,8 +225,29 @@
       color: #2bc617;
     }
 
-    .mui-row.product-benefits {
+    .product-benefits-row {
+      display: flex;
+      align-items: stretch;
+      flex-wrap: wrap;
       margin-bottom: 2rem;
+    }
+
+    .product-benefit-text-cell {
+      display: flex;
+    }
+
+    @media (max-width: 767px) {
+      .product-benefit-text-cell {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .product-benefit-text-inner {
+      padding: 1rem 3rem;
+    }
+
+    .product-benefit-title {
+      line-height: 1;
     }
 
     .mui-divider {
@@ -322,45 +338,45 @@
               <div class="mui--text-center">
                 <h3 class="mui--text-headline content-header">Introducing Backbone, The World's Smartest Posture Wearable</h3>
               </div>
-              <div class="mui-row product-benefits">
-                <div class="mui-col-md-6"><img class="content-image__image" src="https://cdn.gobackbone.com/assets/shoulder-strap.jpg"></div>
+              <div class="mui-row product-benefits-row">
                 <div class="mui-col-md-6">
-                  <div class="mui--z1">
-                    <div class="mui-cards product-benefits">
-                      <h2><strong>SUPPORTS</strong></h2>
-                      <ul class="good-posture">
-                        <li>Aligns your shoulders and back to help you maintain good posture easily</li>
-                        <li>Fits comfortably under your clothes without being noticed</li>
-                      </ul>
-                    </div>
+                  <img class="content-image__image" src="https://cdn.gobackbone.com/assets/shoulder-strap.jpg">
+                </div>
+                <div class="mui-col-md-6 product-benefit-text-cell">
+                  <div class="mui--z1 product-benefit-text-inner">
+                    <h2 class="product-benefit-title"><strong>SUPPORTS</strong></h2>
+                    <ul class="good-posture">
+                      <li>Aligns your shoulders and back to help you maintain good posture easily</li>
+                      <li>Fits comfortably under your clothes without being noticed</li>
+                    </ul>
                   </div>
                 </div>
               </div>
-              <div class="mui-row product-benefits">
-                <div class="mui-col-md-6">
-                  <div class="mui--z1">
-                    <div class="mui-cards product-benefits">
-                      <h2><strong>SENSES</strong></h2>
-                      <ul class="good-posture">
-                        <li>Helps you build good habits by intelligently alerting you when you slouch</li>
-                        <li>Gently reminds you when you've been sitting too long</li>
-                      </ul>
-                    </div>
+              <div class="mui-row product-benefits-row">
+                <div class="mui-col-md-6 product-benefit-text-cell">
+                  <div class="mui--z1 product-benefit-text-inner">
+                    <h2 class="product-benefit-title"><strong>SENSES</strong></h2>
+                    <ul class="good-posture">
+                      <li>Helps you build good habits by intelligently alerting you when you slouch</li>
+                      <li>Gently reminds you when you've been sitting too long</li>
+                    </ul>
                   </div>
                 </div>
-                <div class="mui-col-md-6"><img class="content-image__image" src="https://cdn.gobackbone.com/assets/module-floating-angled.jpg"></div>
-              </div>
-              <div class="mui-row">
-                <div class="mui-col-md-6"><img class="content-image__image" src="https://cdn.gobackbone.com/assets/app-screens-final.jpg"></div>
                 <div class="mui-col-md-6">
-                  <div class="mui--z1">
-                    <div class="mui-cards product-benefits">
-                      <h2><strong>ENGAGES</strong></h2>
-                      <ul class="good-posture">
-                        <li>Guides you through interactive training programs to keep you committed</li>
-                        <li>Recommends posture-strengthening exercises and stretches to get you real results</li>
-                      </ul>
-                    </div>
+                  <img class="content-image__image" src="https://cdn.gobackbone.com/assets/module-floating-angled.jpg">
+                </div>
+              </div>
+              <div class="mui-row product-benefits-row">
+                <div class="mui-col-md-6">
+                  <img class="content-image__image" src="https://cdn.gobackbone.com/assets/app-screens-final.jpg">
+                </div>
+                <div class="mui-col-md-6 product-benefit-text-cell">
+                  <div class="mui--z1 product-benefit-text-inner">
+                    <h2 class="product-benefit-title"><strong>ENGAGES</strong></h2>
+                    <ul class="good-posture">
+                      <li>Guides you through interactive training programs to keep you committed</li>
+                      <li>Recommends posture-strengthening exercises and stretches to get you real results</li>
+                    </ul>
                   </div>
                 </div>
               </div>
