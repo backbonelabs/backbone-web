@@ -16,6 +16,9 @@ module.exports = {
     "prefer-template": [1],
     "max-len": [2, { code: 100 }],
     "react/no-unescaped-entities": [0],
-    "import/prefer-default-export": [0]
+    "import/prefer-default-export": [0],
+    "jsx-a11y/media-has-caption": [0],
+    "jsx-a11y/interactive-supports-focus": [0],
+    "react/require-default-props": [1],
   }
 };
