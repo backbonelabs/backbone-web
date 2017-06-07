@@ -7,19 +7,10 @@ import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import Button from 'muicss/lib/react/button';
 import Panel from 'muicss/lib/react/panel';
-import appStoreBadge from '../../images/app-store-badge.svg';
-import playStoreBadge from '../../images/play-store-badge.svg';
 import './Home.scss';
 
 const scrollToContact = () => {
   scroller.scrollTo('home__contact', {
-    duration: 1500,
-    delay: 100,
-    smooth: true,
-  });
-};
-const scrollToProduct = () => {
-  scroller.scrollTo('home__product', {
     duration: 1500,
     delay: 100,
     smooth: true,
@@ -178,117 +169,77 @@ class Home extends Component {
             </Row>
           </Container>
         </section>
-        <section className="home__section home__product-showcase">
-          <Container>
-            <div className="mui--text-center">
-              <img
-                className="backbone-showcase"
-                src="https://cdn.gobackbone.com/assets/backbone.jpg"
-                alt="Product showcase"
-              />
-            </div>
-            <div className="mui--text-center">
-              <Button color="danger" className="">Order Now</Button>
-            </div>
-          </Container>
-        </section>
         <section className="home__section home__features">
-          <h2 className="home__section_title mui--text-display2 mui--text-center">Features</h2>
           <Container>
-            <div className="home__features-stage">
-              &nbsp;
-            </div>
-            <Row className="home__features-stage-list">
-              <ul className="mui-list--unstyled">
-                <li className="home__features-stage-item">
-                  <Col sm="6" className="home__features-stage-item-image">Feature Image</Col>
-                  <Col sm="6">
-                    <h3>Feature Description</h3>
-                    <p>Some text goes here, and here, and here.</p>
+            <Row>
+              <Col lg="10" lg-offset="1">
+                <h2 className="home__section_title mui--text-display2 mui--text-center">
+                  Features
+                </h2>
+                <Row className="home__features_row">
+                  <Col md="7">
+                    <img
+                      src="https://cdn.gobackbone.com/assets/shoulder-strap.jpg"
+                      alt="Front shoulder view of the Backbone brace"
+                    />
                   </Col>
-                </li>
-              </ul>
-            </Row>
-            <Row className="home__features-list-row-1">
-              <ol className="mui-list--inline">
-                <Col sm="4">
-                  <li className="home__features-list-item"><a>1. Feature 1</a></li>
-                </Col>
-                <Col sm="4">
-                  <li className="home__features-list-item"><a>2. Feature 2</a></li>
-                </Col>
-                <Col sm="4">
-                  <li className="home__features-list-item"><a>3. Feature 3</a></li>
-                </Col>
-              </ol>
-            </Row>
-            <Row className="home__features-list-row-2">
-              <ol className="mui-list--inline">
-                <Col sm="3">
-                  <li className="home__features-list-item"><a>4. Feature 4</a></li>
-                </Col>
-                <Col sm="3">
-                  <li className="home__features-list-item"><a>5. Feature 5</a></li>
-                </Col>
-                <Col sm="3">
-                  <li className="home__features-list-item"><a>6. Feature 6</a></li>
-                </Col>
-                <Col sm="3">
-                  <li className="home__features-list-item"><a>7. Feature 7</a></li>
-                </Col>
-              </ol>
-            </Row>
-          </Container>
-        </section>
-        <section className="home__section home__product" id="home__product">
-          <Container fluid>
-            <Row>
-              <Col md="6" className="img-container posture-brace" />
-              <Col md="6">
-                <div className="product-info">
-                  <h1>
-                    Backbone makes achieving great posture comfortable and easy
-                  </h1>
-                  <p>
-                    The ergonomic brace is crafted from a blend of technical fabrics to produce
-                    a slim, low-profile form of support for your posture that’s comfortable,
-                    breathable, and moisture-resistant.
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-        <section className="home__section home__product">
-          <Container fluid>
-            <Row>
-              <Col md="6">
-                <div className="product-info">
-                  <h1>Gently buzzes every time you slouch</h1>
-                  <p>
-                    Backbone’s sensor module utilizes a series of high-tech components to analyze
-                    your posture and gently reminds you to sit or stand up straight by vibrating
-                    anytime you slouch.
-                  </p>
-                </div>
-              </Col>
-              <Col md="6" className="img-container sensor-module" />
-            </Row>
-          </Container>
-        </section>
-        <section className="home__section home__product">
-          <Container fluid>
-            <Row>
-              <Col md="6" className="img-container mobile-application" />
-              <Col md="6">
-                <div className="product-info">
-                  <h1>Backbone gives you even more</h1>
-                  <p>
-                    The mobile application allows us to wirelessly deliver a constant stream of
-                    new features and updates to your smartphone... giving your Backbone the ability
-                    to do even more than you ever expected.
-                  </p>
-                </div>
+                  <Col md="5" className="home__features_text-container">
+                    <Panel className="home__features_card">
+                      <h2 className="home__features_card-title"><strong>SUPPORTS</strong></h2>
+                      <ul className="home__features_card-list">
+                        <li className="home__features_card-list-item">
+                          Aligns your shoulders and back to help you maintain good posture easily
+                        </li>
+                        <li className="home__features_card-list-item">
+                          Fits comfortably under your clothes without being noticed
+                        </li>
+                      </ul>
+                    </Panel>
+                  </Col>
+                </Row>
+                <Row className="home__features_row">
+                  <Col md="5" className="home__features_text-container">
+                    <Panel className="home__features_card">
+                      <h2 className="home__features_card-title"><strong>SENSES</strong></h2>
+                      <ul className="home__features_card-list">
+                        <li className="home__features_card-list-item">
+                          Helps you build good habits by intelligently alerting you when you slouch
+                        </li>
+                        <li className="home__features_card-list-item">
+                          Gently reminds you when you've been sitting too long
+                        </li>
+                      </ul>
+                    </Panel>
+                  </Col>
+                  <Col md="7">
+                    <img
+                      src="https://cdn.gobackbone.com/assets/module-floating-angled.jpg"
+                      alt="Backbone sensor module"
+                    />
+                  </Col>
+                </Row>
+                <Row className="home__features_row">
+                  <Col md="7">
+                    <img
+                      src="https://cdn.gobackbone.com/assets/app-screens-final.jpg"
+                      alt="Backbone app screenshots"
+                    />
+                  </Col>
+                  <Col md="5" className="home__features_text-container">
+                    <Panel className="home__features_card">
+                      <h2 className="home__features_card-title"><strong>ENGAGES</strong></h2>
+                      <ul className="home__features_card-list">
+                        <li className="home__features_card-list-item">
+                          Guides you through interactive training programs to keep you committed
+                        </li>
+                        <li className="home__features_card-list-item">
+                          Recommends posture-strengthening exercises and stretches to get
+                          you real results
+                        </li>
+                      </ul>
+                    </Panel>
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </Container>

@@ -100,89 +100,44 @@
   }
 
   &__features {
-    background-color: $grey100;
-
-    &-stage-list {
-      margin-bottom: 32px;
+    & img {
+      vertical-align: middle;
+      width: 100%;
     }
 
-    &-stage-item {
+    &_row {
       display: flex;
-      align-items: center;
-      border: 1px solid black;
+      align-items: stretch;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
 
-      &-image {
-        height: 250px;
-        background-color: red;
+      &:before, &:after {
+        content: normal;
       }
     }
 
-    &-list-row-1 {
-      font-size: 20px;
-      margin: 16px 0;
+    &_text-container {
+      display: flex;
     }
 
-    &-list-row-2 {
-      font-size: 18px;
-      margin: 16px 0;
-    }
+    &_card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 0;
+      padding-left: 36px;
+      padding-right: 36px;
 
-    &-list-item {
-      a {
-        border: 1px solid $red500;
-        border-radius: 4px;
-        color: inherit;
-        cursor: pointer;
-        display: inline-block;
-        padding: 18px;
-        text-decoration: none;
-        width: 100%;
+      &-title {
+        line-height: 1;
+      }
 
-        &:hover {
-          background-color: $red500;
+      &-list {
+        padding-left: 0;
+
+        &-item {
+          margin-left: 20px;
         }
-      }
-    }
-  }
-
-  &__product {
-    background-color: $white;
-    h1 {
-      text-transform: uppercase;
-      font-weight: 700;
-      @media (max-width: $iphone6Plus) {
-        font-size: 22px;
-      }
-    }
-    p {
-      font-size: 17px;
-      line-height: 1.6;
-      color: #57585a;
-      @media (max-width: $iphone6Plus) {
-        font-size: 15px;
-      }
-    }
-    .product-info {
-      padding: 35px 45px;
-      @media (max-width: $iphone6Plus) {
-        padding: 10px;
-      }
-    }
-    .posture-brace {
-      background: url('https://cdn.gobackbone.com/assets/shoulder-strap.jpg');
-    }
-    .sensor-module {
-      background: url('https://cdn.gobackbone.com/assets/module-floating-angled.jpg');
-    }
-    .mobile-application {
-      background: url('https://cdn.gobackbone.com/assets/app-screens.jpg');
-    }
-    .img-container {
-      height: 400px;
-      background-position: center center;
-      background-size: cover;
-      @media (max-width: $iphone6Plus) {
-        height: 300px;
       }
     }
   }
