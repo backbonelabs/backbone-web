@@ -86,7 +86,7 @@ class Home extends Component {
             <source src="https://cdn.gobackbone.com/assets/backbone.mp4" />
           </video>
           <div className="home__hero_content">
-            <h1 className="responsive-text-display2">Backbone<sup>&trade;</sup></h1>
+            <h1 className="responsive-text-display2">Backbone</h1>
             <h4 className="responsive-text-display1 mui--text-center">
               The smart, lightweight, posture solution
             </h4>
