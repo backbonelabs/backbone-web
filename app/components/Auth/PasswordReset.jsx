@@ -90,7 +90,7 @@ class PasswordReset extends Component {
             <div className="auth-container__header">
               <h1>Password Reset</h1>
               <div className="auth-container__logo">
-                <img src={Logo} role="presentation" />
+                <img src={Logo} alt="Backbone logo" />
               </div>
             </div>
             <Form className="auth-container__form" onSubmit={this.handleOnSubmit}>
