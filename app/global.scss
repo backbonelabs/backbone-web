@@ -77,6 +77,10 @@ body {
   ====================
  */
 
+.primary-color {
+  color: $primaryColor;
+}
+
 .strikethrough {
   text-decoration: line-through;
 }
