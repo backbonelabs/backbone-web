@@ -151,6 +151,7 @@ body {
     position: fixed !important;
     width: 250px;
     background-color: $grey900;
+    z-index: 5 !important;
 
     img {
       width: 100%;
