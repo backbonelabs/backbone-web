@@ -33,8 +33,16 @@
     position: relative;
     overflow: hidden;
 
-    background: linear-gradient( rgba(218, 225, 227, .3), rgba(218, 225, 227, .3)), url('https://cdn.gobackbone.com/assets/hero-video-thumb.jpg') center no-repeat;
-    background-size: cover;
+    background: linear-gradient( rgba(218, 225, 227, .3), rgba(218, 225, 227, .3)), url('https://cdn.gobackbone.com/assets/hero-background.jpg') no-repeat;
+    background-position: 70% 0;
+    background-size: 300%;
+    @media (min-width: $screen-sm-min) {
+      background-size: 200%;
+    }
+    @media (min-width: $screen-lg-min) {
+      background-position: -300px;
+      background-size: cover;
+    }
 
     &_video {
       height: 100%;
