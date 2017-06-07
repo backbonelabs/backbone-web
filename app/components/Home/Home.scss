@@ -266,3 +266,23 @@
     flex-direction: column;
   }
 }
+
+.buy-btn {
+  background-color: $red500;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  display: inline-block;
+  height: 54px;
+  line-height: 54px;
+  overflow: hidden;
+  padding: 0 26px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+a.buy-btn:hover {
+  text-decoration: none;
+}

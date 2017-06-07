@@ -155,9 +155,18 @@ class Home extends Component {
                 sm-offset="3"
                 lg="3"
                 lg-offset="0"
-                className="flex-row-item--middle"
+                className="mui--text-center flex-row-item--middle"
               >
-                <Button color="danger">Pre-Order Now</Button>
+                <div>
+                  {/* eslint-disable max-len */}
+                  <a
+                    className="buy-btn"
+                    href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support"
+                  >
+                    Pre-Order Now
+                  </a>
+                  {/* eslint-enable max-len */}
+                </div>
               </Col>
             </div>
           </Container>
@@ -329,19 +338,28 @@ class Home extends Component {
             <Row>
               <Col sm="10" lg-offset="1">
                 <Row className="flex-row">
-                  <Col sm="8" className="flex-row-item--middle">
+                  <Col xs="12" sm="8" className="flex-row-item--middle">
                     <img
                       className="home__image-contain"
                       src="https://cdn.gobackbone.com/assets/floating-brace-small.png"
                       alt="Backbone brace"
                     />
                   </Col>
-                  <Col sm="4" className="mui--text-center flex-row-item--middle">
+                  <Col xs="12" sm="4" className="mui--text-center flex-row-item--middle">
                     <div className="mui--text-display2 home__buy_pricing">
                       <span className="strikethrough">$119</span>&nbsp;
                       <span>$69</span>
                     </div>
-                    <Button size="large" color="danger">Pre-Order Now</Button>
+                    <div>
+                      {/* eslint-disable max-len */}
+                      <a
+                        className="buy-btn"
+                        href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support"
+                      >
+                        Pre-Order Now
+                      </a>
+                      {/* eslint-enable max-len */}
+                    </div>
                   </Col>
                 </Row>
               </Col>
