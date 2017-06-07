@@ -122,7 +122,7 @@ class Home extends Component {
         </div>
         <div className="home__press mui--text-center">
           <img
-            className="home__press_image"
+            className="home__image-contain"
             src="https://cdn.gobackbone.com/assets/press.png"
             alt="Press mentions of Backbone"
           />
@@ -176,15 +176,16 @@ class Home extends Component {
                 <h2 className="home__section_title mui--text-display2 mui--text-center">
                   Features
                 </h2>
-                <Row className="home__features_row">
+                <Row className="flex-row">
                   <Col md="7">
                     <img
+                      className="home__image-contain"
                       src="https://cdn.gobackbone.com/assets/shoulder-strap.jpg"
                       alt="Front shoulder view of the Backbone brace"
                     />
                   </Col>
                   <Col md="5" className="home__features_text-container">
-                    <Panel className="home__features_card">
+                    <Panel className="home__features_card flex-row-item--middle">
                       <h2 className="home__features_card-title"><strong>SUPPORTS</strong></h2>
                       <ul className="home__features_card-list">
                         <li className="home__features_card-list-item">
@@ -197,9 +198,9 @@ class Home extends Component {
                     </Panel>
                   </Col>
                 </Row>
-                <Row className="home__features_row">
+                <Row className="flex-row">
                   <Col md="5" className="home__features_text-container">
-                    <Panel className="home__features_card">
+                    <Panel className="home__features_card flex-row-item--middle">
                       <h2 className="home__features_card-title"><strong>SENSES</strong></h2>
                       <ul className="home__features_card-list">
                         <li className="home__features_card-list-item">
@@ -213,20 +214,22 @@ class Home extends Component {
                   </Col>
                   <Col md="7">
                     <img
+                      className="home__image-contain"
                       src="https://cdn.gobackbone.com/assets/module-floating-angled.jpg"
                       alt="Backbone sensor module"
                     />
                   </Col>
                 </Row>
-                <Row className="home__features_row">
+                <Row className="flex-row">
                   <Col md="7">
                     <img
+                      className="home__image-contain"
                       src="https://cdn.gobackbone.com/assets/app-screens-final.jpg"
                       alt="Backbone app screenshots"
                     />
                   </Col>
                   <Col md="5" className="home__features_text-container">
-                    <Panel className="home__features_card">
+                    <Panel className="home__features_card flex-row-item--middle">
                       <h2 className="home__features_card-title"><strong>ENGAGES</strong></h2>
                       <ul className="home__features_card-list">
                         <li className="home__features_card-list-item">
@@ -279,24 +282,26 @@ class Home extends Component {
             </Row>
           </Container>
         </section>
-        <section className="home__section home__videos">
-          <Container fluid>
+        <section className="home__section home__buy">
+          <Container>
             <Row>
-              <Col md="6" sm="12">
-                <div className="video-container">
-                  <iframe
-                    frameBorder="0"
-                    src="https://www.youtube.com/embed/GdpYCI-FAww?rel=0&showinfo=0&controls=0"
-                  />
-                </div>
-              </Col>
-              <Col md="6" sm="12">
-                <div className="video-container">
-                  <iframe
-                    frameBorder="0"
-                    src="https://www.youtube.com/embed/e3vSfTeXXtE?rel=0&showinfo=0&controls=0"
-                  />
-                </div>
+              <Col sm="10" lg-offset="1">
+                <Row className="flex-row">
+                  <Col sm="8" className="flex-row-item--middle">
+                    <img
+                      className="home__image-contain"
+                      src="https://cdn.gobackbone.com/assets/floating-brace-small.png"
+                      alt="Backbone brace"
+                    />
+                  </Col>
+                  <Col sm="4" className="mui--text-center flex-row-item--middle">
+                    <div className="mui--text-display2">
+                      <span className="strikethrough">$119</span>
+                      <span>$69</span>
+                    </div>
+                    <Button size="large" color="danger">Pre-Order Now</Button>
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </Container>
