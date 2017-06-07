@@ -17,7 +17,7 @@
   &__leftside {
     text-align: center;
 
-    @media (min-width: 992px) {
+    @media (min-width: $screen-lg-min) {
       text-align: left;
     }
 
@@ -30,7 +30,7 @@
     font-size: 20px;
     margin-top: 10px;
 
-    @media (min-width: 992px) {
+    @media (min-width: $screen-lg-min) {
       text-align: right;
       margin-top: 0;
     }
