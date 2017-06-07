@@ -299,16 +299,15 @@ class Home extends Component {
         </section>
         <section className="home__section home__contact">
           <Container className="mui--text-center">
-            <h1>Contact Us</h1>
-            <p>Leave us any feedback or questions below.</p>
+            <h2 className="home__section_title mui--text-display2 mui--text-center">
+              Contact Us
+            </h2>
             <form onSubmit={this.handleOnSubmit}>
               <Row>
                 <Col md="6">
                   <input
                     className={
-                      !this.state.name && this.state.formError
-                        ? 'required-field'
-                        : null
+                      !this.state.name && this.state.formError && 'required-field'
                     }
                     type="text"
                     placeholder="Name"
@@ -318,9 +317,7 @@ class Home extends Component {
                   />
                   <input
                     className={
-                      !this.state.email && this.state.formError
-                        ? 'required-field'
-                        : null
+                      !this.state.email && this.state.formError && 'required-field'
                     }
                     type="email"
                     placeholder="Email"
@@ -340,9 +337,7 @@ class Home extends Component {
                   <div>
                     <select
                       className={
-                        !this.state.sentBy && this.state.formError
-                          ? 'required-field'
-                          : null
+                        !this.state.sentBy && this.state.formError && 'required-field'
                       }
                       value={this.state.sentBy}
                       name="sentBy"
@@ -356,9 +351,7 @@ class Home extends Component {
                   </div>
                   <textarea
                     className={
-                      !this.state.message && this.state.formError
-                        ? 'required-field'
-                        : null
+                      !this.state.message && this.state.formError && 'required-field'
                     }
                     name="message"
                     type="text"
@@ -378,7 +371,7 @@ class Home extends Component {
                       {this.state.confirmMessage}
                     </p>
                   )}
-                  <Button color="danger">Send</Button>
+                  <Button size="large" color="danger">Send</Button>
                 </Col>
               </Row>
             </form>
