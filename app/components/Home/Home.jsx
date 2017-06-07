@@ -345,7 +345,7 @@ class Home extends Component {
                   <Col xs="12" sm="8" className="flex-row-item--middle">
                     <img
                       className="home__image-contain"
-                      src="https://cdn.gobackbone.com/assets/floating-brace-small.png"
+                      src="https://cdn.gobackbone.com/assets/floating-brace-with-module.png"
                       alt="Backbone brace"
                     />
                   </Col>
