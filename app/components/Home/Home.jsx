@@ -183,7 +183,7 @@ class Home extends Component {
           </h2>
           <Container>
             <Row>
-              <Col md="6">
+              <Col md="6" lg="5" lg-offset="1">
                 <Panel className="home__posture_pro-cons">
                   <h2><strong>Good Posture</strong></h2>
                   <ul className="mui-list--unstyled home__posture_pro-cons--good">
@@ -200,7 +200,7 @@ class Home extends Component {
                   </ul>
                 </Panel>
               </Col>
-              <Col md="6">
+              <Col md="6" lg="5">
                 <Panel className="home__posture_pro-cons">
                   <h2><strong>Bad Posture</strong></h2>
                   <ul className="mui-list--unstyled home__posture_pro-cons--bad">
