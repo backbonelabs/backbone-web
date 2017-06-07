@@ -222,9 +222,14 @@ class Home extends Component {
         <section className="home__section home__features">
           <Container>
             <Row>
-              <h2 className="home__section_title responsive-text-display2 mui--text-center">
-                Introducing Backbone, the World's Smartest Posture Wearable
-              </h2>
+              <div className="home__section_title mui--text-center">
+                <h2 className="responsive-text-display2 mui--text-center">
+                  Introducing Backbone
+                </h2>
+                <h4 className="responsive-text-title mui--text-center">
+                  <i>The World's Smartest Posture Wearable</i>
+                </h4>
+              </div>
               <Col lg="10" lg-offset="1">
                 <Row className="home__features_row flex-row">
                   <Col md="7">
