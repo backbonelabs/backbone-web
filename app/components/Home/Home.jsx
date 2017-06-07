@@ -91,38 +91,19 @@ class Home extends Component {
     return (
       <div className="home">
         <section className="home__hero">
-          <div className="home__jumbo">
-            <div className="home__jumbo-header">
-              <h1 className="home__jumbo-text">
-                Sit up, don’t sit out
-              </h1>
-              <div>
-                <a href="https://itunes.apple.com/us/app/backbone-smart-posture/id1184998773">
-                  <img
-                    className="home__app-badge"
-                    alt="Download from the App Store"
-                    src={appStoreBadge}
-                  />
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=co.backbonelabs.backbone">
-                  <img
-                    className="home__app-badge"
-                    alt="Download from Google Play"
-                    src={playStoreBadge}
-                  />
-                </a>
-              </div>
-              <Button color="danger" onClick={scrollToContact}>
-                Contact us
-              </Button>
-            </div>
-            <div className="home__arrow">
-              <i
-                onClick={scrollToProduct}
-                className="fa fa-chevron-down"
-                aria-hidden="true"
-              />
-            </div>
+          <video autoPlay="autoplay" loop="loop" muted="muted" className="home__hero_video">
+            <source src="https://cdn.gobackbone.com/assets/backbone.mp4" />
+          </video>
+          <div className="home__hero_content">
+            <h1 className="mui--text-display3">Backbone<sup>&trade;</sup></h1>
+            <h4 className="mui--text-display1">The smart, lightweight, posture solution</h4>
+            <Button
+              className="home__hero_button"
+              size="large"
+              color="danger"
+            >
+              Watch the Video
+            </Button>
           </div>
         </section>
         <div className="home__funding-status">
@@ -135,7 +116,7 @@ class Home extends Component {
                 sm-offset="1"
                 md-offset="3"
               >
-                <div className="home__funding-status-mainline">
+                <div className="home__funding-status_mainline">
                   <strong>$467,000</strong> sold in 30 days
                 </div>
                 <div className="mui--text-caption">
@@ -150,34 +131,54 @@ class Home extends Component {
         </div>
         <div className="home__press mui--text-center">
           <img
-            src="https://cdn.gobackbone.com/assets/seen_on.jpg"
+            className="home__press_image"
+            src="https://cdn.gobackbone.com/assets/press.png"
             alt="Press mentions of Backbone"
           />
         </div>
-        <section className="home__posture">
-          <h2 className="mui--text-display2 mui--text-center">Why is Posture Important?</h2>
+        <section className="home__section home__posture">
+          <h2 className="home__section_title mui--text-display2 mui--text-center">
+            Why is Posture Important?
+          </h2>
           <Container>
             <Row>
-              <Col sm="6">
-                <div>Bad Posture:</div>
-                <ul>
-                  <li>one</li>
-                  <li>two</li>
-                  <li>three</li>
-                </ul>
+              <Col md="6">
+                <Panel className="home__posture_pro-cons">
+                  <h2><strong>Good Posture</strong></h2>
+                  <ul className="mui-list--unstyled home__posture_pro-cons--good">
+                    <li>
+                      <i className="material-icons">check_circle</i> Makes you look taller and
+                      fitter
+                    </li>
+                    <li>
+                      <i className="material-icons">check_circle</i> Reduces and prevents back pain
+                    </li>
+                    <li>
+                      <i className="material-icons">check_circle</i> Increases focus and confidence
+                    </li>
+                  </ul>
+                </Panel>
               </Col>
-              <Col sm="6">
-                <div>Good Posture:</div>
-                <ul>
-                  <li>one</li>
-                  <li>two</li>
-                  <li>three</li>
-                </ul>
+              <Col md="6">
+                <Panel className="home__posture_pro-cons">
+                  <h2><strong>Bad Posture</strong></h2>
+                  <ul className="mui-list--unstyled home__posture_pro-cons--bad">
+                    <li>
+                      <i className="material-icons">clear</i> Causes neck and back pain
+                    </li>
+                    <li>
+                      <i className="material-icons">clear</i> Lowers energy levels
+                    </li>
+                    <li>
+                      <i className="material-icons">clear</i> Looks unattractive
+                    </li>
+                  </ul>
+                </Panel>
               </Col>
             </Row>
           </Container>
         </section>
-        <section className="home__product-showcase">
+        <section className="home__section home__product-showcase">
           <Container>
             <div className="mui--text-center">
               <img
@@ -191,8 +192,8 @@ class Home extends Component {
             </div>
           </Container>
         </section>
-        <section className="home__features">
-          <h2 className="mui--text-display2 mui--text-center">Features</h2>
+        <section className="home__section home__features">
+          <h2 className="home__section_title mui--text-display2 mui--text-center">Features</h2>
           <Container>
             <div className="home__features-stage">
               &nbsp;
@@ -239,7 +240,7 @@ class Home extends Component {
             </Row>
           </Container>
         </section>
-        <section className="home__product" id="home__product">
+        <section className="home__section home__product" id="home__product">
           <Container fluid>
             <Row>
               <Col md="6" className="img-container posture-brace" />
@@ -258,7 +259,7 @@ class Home extends Component {
             </Row>
           </Container>
         </section>
-        <section className="home__product">
+        <section className="home__section home__product">
           <Container fluid>
             <Row>
               <Col md="6">
@@ -275,7 +276,7 @@ class Home extends Component {
             </Row>
           </Container>
         </section>
-        <section className="home__product">
+        <section className="home__section home__product">
           <Container fluid>
             <Row>
               <Col md="6" className="img-container mobile-application" />
@@ -292,7 +293,7 @@ class Home extends Component {
             </Row>
           </Container>
         </section>
-        <section className="home__testimonials">
+        <section className="home__section home__testimonials">
           <Container fluid>
             <h1 className="mui--text-center">What Our Customers are Saying</h1>
             <Row>
@@ -330,7 +331,7 @@ class Home extends Component {
             </Row>
           </Container>
         </section>
-        <section className="home__videos">
+        <section className="home__section home__videos">
           <Container fluid>
             <Row>
               <Col md="6" sm="12">
@@ -352,7 +353,7 @@ class Home extends Component {
             </Row>
           </Container>
         </section>
-        <section className="home__contact" id="home__contact">
+        <section className="home__section home__contact" id="home__contact">
           <Container className="mui--text-center">
             <h1>Contact Us</h1>
             <p>Leave us any feedback or questions below.</p>
