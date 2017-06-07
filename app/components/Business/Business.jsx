@@ -71,13 +71,16 @@ class Business extends Component {
   render() {
     return (
       <div className="business">
-        <section className="business__contact home__contact">
+        <section className="business__section business__contact home__contact">
           <Container className="mui--text-center">
-            <h1>
-              Try out <span>Backbone</span> for your company today.
-              <br />
-              Pay if you like it, free if you don’t. Let’s talk.
-            </h1>
+            <div className="business__section_title">
+              <h2 className="responsive-text-display1">
+                Try out <span className="primary-color">Backbone</span> for your company today
+              </h2>
+              <h2 className="responsive-text-title">
+                Pay if you like it, free if you don’t. Let’s talk.
+              </h2>
+            </div>
             <form onSubmit={this.handleOnSubmit}>
               <Row>
                 <Col md="6">
@@ -161,9 +164,11 @@ class Business extends Component {
             </form>
           </Container>
         </section>
-        <section className="business__benefits ">
-          <Container className="backbone-benefits">
-            <h1>The possible benefits of using Backbone for your business</h1>
+        <section className="business__section business__benefits mui--text-center">
+          <Container>
+            <h2 className="business__section_title responsive-text-display1">
+              The possible benefits of using Backbone for your business
+            </h2>
             <Row>
               <Col md="4">
                 <i className="material-icons">attach_money</i>
