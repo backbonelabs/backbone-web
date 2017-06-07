@@ -144,10 +144,7 @@ class Home extends Component {
                 lg-offset="1"
               >
                 <div className="responsive-text-display1">
-                  <strong>$467,833</strong> sold in 30 days
-                </div>
-                <div className="mui--text-caption">
-                  6,146 backers and counting!
+                  We sold <strong>$467,833</strong> on Kickstarter in just 30 days!
                 </div>
               </Col>
               <Col
