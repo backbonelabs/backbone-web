@@ -170,10 +170,10 @@ class Home extends Component {
         <section className="home__section home__features">
           <Container>
             <Row>
+              <h2 className="home__section_title mui--text-display2 mui--text-center">
+                Introducing Backbone, the World's Smartest Posture Wearable
+              </h2>
               <Col lg="10" lg-offset="1">
-                <h2 className="home__section_title mui--text-display2 mui--text-center">
-                  Features
-                </h2>
                 <Row className="home__features_row flex-row">
                   <Col md="7">
                     <img
