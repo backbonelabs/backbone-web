@@ -1,21 +1,12 @@
 import React, { Component } from 'react';
 import autobind from 'autobind-decorator';
 import { post } from 'axios';
-import { scroller } from 'react-scroll';
 import Container from 'muicss/lib/react/container';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import Button from 'muicss/lib/react/button';
 import Panel from 'muicss/lib/react/panel';
 import './Home.scss';
-
-const scrollToContact = () => {
-  scroller.scrollTo('home__contact', {
-    duration: 1500,
-    delay: 100,
-    smooth: true,
-  });
-};
 
 class Home extends Component {
   constructor() {
@@ -306,7 +297,7 @@ class Home extends Component {
             </Row>
           </Container>
         </section>
-        <section className="home__section home__contact" id="home__contact">
+        <section className="home__section home__contact">
           <Container className="mui--text-center">
             <h1>Contact Us</h1>
             <p>Leave us any feedback or questions below.</p>
