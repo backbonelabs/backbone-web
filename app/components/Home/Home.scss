@@ -143,37 +143,21 @@
   }
 
   &__testimonials {
-    padding: 75px 0;
     background-color: $grey100;
-    p {
-      color: #57585a;
-      font-weight: 400;
-      margin-bottom: 0;
-      span {
+
+    &_card {
+      margin-bottom: 16px;
+
+      &-name {
         display: block;
         text-align: right;
         font-weight: 700;
       }
     }
-    h1 {
-      text-transform: capitalize;
-      margin-top: 0;
-      margin-bottom: 45px;
-    }
+
     .fa-quote-left {
       font-size: 24px;
       padding-right: 15px;
-    }
-    .testimonials-container {
-      height: 150px;
-      margin-bottom: 25px;
-      div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
-        text-align: justify;
-      }
     }
   }
 

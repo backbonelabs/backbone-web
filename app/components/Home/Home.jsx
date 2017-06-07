@@ -245,38 +245,35 @@ class Home extends Component {
           </Container>
         </section>
         <section className="home__section home__testimonials">
-          <Container fluid>
-            <h1 className="mui--text-center">What Our Customers are Saying</h1>
+          <Container>
+            <h2 className="home__section_title mui--text-display2 mui--text-center">
+              Customers Love Backbone
+            </h2>
             <Row>
-              <Col md="12" lg="4" className="testimonials-container">
-                <Panel>
-                  <p>
-                    <i className="fa fa-quote-left" aria-hidden="true" />
-                    Overall I do feel better at the end of the day with the support and posture
-                    reminders. Good job Backbone team.
-                    <span>- Ryan H</span>
-                  </p>
+              <Col md="10" lg="8">
+                <Panel className="home__testimonials_card">
+                  <i className="fa fa-quote-left" aria-hidden="true" />
+                  The more I use this, the more I like it... Using the backbone is like
+                  mindfulness of posture on steroids. This is so awesome, thanks!
+                  <span className="home__testimonials_card-name">- Tom M.</span>
                 </Panel>
               </Col>
-              <Col md="12" lg="4" className="testimonials-container">
-                <Panel>
-                  <p>
-                    <i className="fa fa-quote-left" aria-hidden="true" />
-                    I’ve had no issues with it so far. I really like it, and I hope these guys
-                    stick with it, because it seems like a lot of additional useful functionality
-                    could be added to the app in the future.
-                    <span>- BH</span>
-                  </p>
+              <Col md="10" md-offset="2" lg="8" lg-offset="4">
+                <Panel className="home__testimonials_card">
+                  <i className="fa fa-quote-left" aria-hidden="true" />
+                  I received my backbone and am VERY pleased and happy with the product...
+                  The backbrace by itself has already helped me pull my shoulders back and
+                  improve my standing posture without being in a posture session!
+                  <span className="home__testimonials_card-name">- Christopher M.</span>
                 </Panel>
               </Col>
-              <Col md="12" lg="4" className="testimonials-container">
-                <Panel>
-                  <p>
-                    <i className="fa fa-quote-left" aria-hidden="true" />
-                    Got mine yesterday. After a quick update, the Backbone worked as advertised. If
-                    you truly have back issues, I highly recommend you keep your pledge.
-                    <span>- Tom M</span>
-                  </p>
+              <Col md="10" lg="8">
+                <Panel className="home__testimonials_card">
+                  <i className="fa fa-quote-left" aria-hidden="true" />
+                  I’ve had no issues with it so far. I really like it, and I hope these guys
+                  stick with it, because it seems like a lot of additional useful functionality
+                  could be added to the app in the future.
+                  <span className="home__testimonials_card-name">- Billy H.</span>
                 </Panel>
               </Col>
             </Row>
