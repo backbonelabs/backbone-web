@@ -140,7 +140,7 @@ class Home extends Component {
               <Col
                 className="mui--text-center flex-row-item--middle"
                 xs="12"
-                lg="6"
+                lg="7"
                 lg-offset="1"
               >
                 <div className="responsive-text-display1">
