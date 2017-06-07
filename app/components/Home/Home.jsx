@@ -337,8 +337,8 @@ class Home extends Component {
                     />
                   </Col>
                   <Col sm="4" className="mui--text-center flex-row-item--middle">
-                    <div className="mui--text-display2">
-                      <span className="strikethrough">$119</span>
+                    <div className="mui--text-display2 home__buy_pricing">
+                      <span className="strikethrough">$119</span>&nbsp;
                       <span>$69</span>
                     </div>
                     <Button size="large" color="danger">Pre-Order Now</Button>

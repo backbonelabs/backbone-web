@@ -171,6 +171,10 @@
     background-color: $grey100;
     background: -webkit-linear-gradient(legacy-direction(to bottom), $grey100 0, $grey500 100%);
     background: linear-gradient(to bottom, $grey100 0, $grey500 100%);
+
+    &_pricing {
+      font-weight: 700;
+    }
   }
 
   &__videos {
