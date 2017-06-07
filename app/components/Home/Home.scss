@@ -10,6 +10,22 @@
     }
   }
 
+  &__modal {
+    &_close {
+      float: right;
+      color: $grey900;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    iframe {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   &__hero {
     width: 100%;
     height: 80vh;

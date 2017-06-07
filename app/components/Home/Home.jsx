@@ -6,6 +6,7 @@ import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import Button from 'muicss/lib/react/button';
 import Panel from 'muicss/lib/react/panel';
+import Modal from 'react-modal';
 import './Home.scss';
 
 class Home extends Component {
@@ -20,7 +21,15 @@ class Home extends Component {
       message: '',
       formError: '',
       confirmMessage: '',
+      showModal: false,
     };
+  }
+
+  @autobind
+  toggleModal() {
+    this.setState(state => ({
+      showModal: !state.showModal,
+    }));
   }
 
   @autobind
@@ -83,11 +92,46 @@ class Home extends Component {
               className="home__hero_button"
               size="large"
               color="danger"
+              onClick={this.toggleModal}
             >
               Watch the Video
             </Button>
           </div>
         </section>
+        <Modal
+          contentLabel="Backbone video modal"
+          isOpen={this.state.showModal}
+          onRequestClose={this.toggleModal}
+          style={{
+            overlay: {
+              zIndex: 1000,
+            },
+          }}
+        >
+          <div className="home__modal">
+            <div>
+              <a
+                className="home__modal_close"
+                onClick={this.toggleModal}
+                role="button"
+              >
+                <i className="material-icons">clear</i>
+              </a>
+            </div>
+            <Row>
+              <Col xs="12">
+                {/* eslint-disable max-len */}
+                <iframe
+                  title="Backbone marketing video"
+                  src="https://www.youtube.com/embed/iTplWYkig-o?autoplay=1&amp;rel=0&amp;controls=0&amp;modestbranding=1&amp;showinfo=0"
+                  frameBorder="0"
+                  allowFullScreen
+                />
+                {/* eslint-enable max-len */}
+              </Col>
+            </Row>
+          </div>
+        </Modal>
         <div className="home__funding-status">
           <Container>
             <div className="flex-row">
