@@ -90,25 +90,32 @@ class Home extends Component {
         </section>
         <div className="home__funding-status">
           <Container>
-            <Row>
+            <div className="flex-row">
               <Col
-                className="mui--text-title mui--text-center"
-                sm="6"
-                md="4"
-                sm-offset="1"
-                md-offset="3"
+                className="mui--text-title mui--text-center flex-row-item--middle"
+                xs="12"
+                lg="6"
+                lg-offset="1"
               >
-                <div className="home__funding-status_mainline">
-                  <strong>$467,000</strong> sold in 30 days
+                <div className="mui--text-display1">
+                  <strong>$467,833</strong> sold in 30 days
                 </div>
                 <div className="mui--text-caption">
-                  The biggest 30-day crowdfunding campaign in history
+                  6,146 backers and counting!
                 </div>
               </Col>
-              <Col sm="3" className="mui--text-center">
-                <Button>Pre-Order Now</Button>
+              <Col
+                xs="8"
+                xs-offset="2"
+                sm="6"
+                sm-offset="3"
+                lg="3"
+                lg-offset="0"
+                className="flex-row-item--middle"
+              >
+                <Button color="danger">Pre-Order Now</Button>
               </Col>
-            </Row>
+            </div>
           </Container>
         </div>
         <div className="home__press mui--text-center">
@@ -167,7 +174,7 @@ class Home extends Component {
                 <h2 className="home__section_title mui--text-display2 mui--text-center">
                   Features
                 </h2>
-                <Row className="flex-row">
+                <Row className="home__features_row flex-row">
                   <Col md="7">
                     <img
                       className="home__image-contain"
@@ -189,7 +196,7 @@ class Home extends Component {
                     </Panel>
                   </Col>
                 </Row>
-                <Row className="flex-row">
+                <Row className="home__features_row flex-row">
                   <Col md="5" className="home__features_text-container">
                     <Panel className="home__features_card flex-row-item--middle">
                       <h2 className="home__features_card-title"><strong>SENSES</strong></h2>
@@ -211,7 +218,7 @@ class Home extends Component {
                     />
                   </Col>
                 </Row>
-                <Row className="flex-row">
+                <Row className="home__features_row flex-row">
                   <Col md="7">
                     <img
                       className="home__image-contain"
