@@ -10,7 +10,7 @@ const Footer = () => (
   <div className="footer">
     <Container fluid>
       <Row>
-        <Col md="6" xs="12" className="footer__leftside">
+        <Col md="12" lg="9" className="footer__leftside">
           <Link to="/legal/privacy">Privacy Policy</Link>
           <Link to="/legal/terms">Terms of Service</Link>
           <a
@@ -21,7 +21,7 @@ const Footer = () => (
           <a href="https://shop.gobackbone.com/pages/returns-policy">Return Policy</a>
           <a href="https://support.gobackbone.com">Support</a>
         </Col>
-        <Col md="6" xs="12" className="footer__rightside">
+        <Col md="12" lg="3" className="footer__rightside">
           <a href="https://www.instagram.com/backbonelabsinc/">
             <i className="fa fa-instagram" />
           </a>
