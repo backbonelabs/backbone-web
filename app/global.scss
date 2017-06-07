@@ -65,6 +65,80 @@ body {
   height: 100%;
 }
 
+
+/*
+  ====================
+  Helpers
+  ====================
+ */
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.responsive-text-display3 {
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 48px;
+
+  @media (min-width: 544px) {
+    font-size: 56px;
+    line-height: 56px;
+  }
+}
+
+.responsive-text-display2 {
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 40px;
+
+  @media (min-width: 544px) {
+    font-size: 45px;
+    line-height: 48px;
+  }
+}
+
+.responsive-text-display1 {
+  font-weight :400;
+  font-size: 24px;
+  line-height: 32px;
+
+  @media (min-width: 544px) {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+  }
+}
+
+.responsive-text-headline {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+
+  @media (min-width: 544px) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.responsive-text-title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  @media (min-width: 544px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+
+/*
+  ====================
+  App
+  ====================
+ */
+
 .app {
   main {
     min-height: 100vh;
@@ -130,14 +204,4 @@ body {
   input {
     border-color: $primaryColor !important;
   }
-}
-
-/*
-  ====================
-  Helpers
-  ====================
- */
-
-.strikethrough {
-  text-decoration: line-through;
 }

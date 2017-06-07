@@ -86,8 +86,10 @@ class Home extends Component {
             <source src="https://cdn.gobackbone.com/assets/backbone.mp4" />
           </video>
           <div className="home__hero_content">
-            <h1 className="mui--text-display3">Backbone<sup>&trade;</sup></h1>
-            <h4 className="mui--text-display1">The smart, lightweight, posture solution</h4>
+            <h1 className="responsive-text-display2">Backbone<sup>&trade;</sup></h1>
+            <h4 className="responsive-text-display1 mui--text-center">
+              The smart, lightweight, posture solution
+            </h4>
             <Button
               className="home__hero_button"
               size="large"
@@ -136,12 +138,12 @@ class Home extends Component {
           <Container>
             <div className="flex-row">
               <Col
-                className="mui--text-title mui--text-center flex-row-item--middle"
+                className="mui--text-center flex-row-item--middle"
                 xs="12"
                 lg="6"
                 lg-offset="1"
               >
-                <div className="mui--text-display1">
+                <div className="responsive-text-display1">
                   <strong>$467,833</strong> sold in 30 days
                 </div>
                 <div className="mui--text-caption">
@@ -179,7 +181,7 @@ class Home extends Component {
           />
         </div>
         <section className="home__section home__posture">
-          <h2 className="home__section_title mui--text-display2 mui--text-center">
+          <h2 className="home__section_title responsive-text-display2 mui--text-center">
             Why is Posture Important?
           </h2>
           <Container>
@@ -223,7 +225,7 @@ class Home extends Component {
         <section className="home__section home__features">
           <Container>
             <Row>
-              <h2 className="home__section_title mui--text-display2 mui--text-center">
+              <h2 className="home__section_title responsive-text-display2 mui--text-center">
                 Introducing Backbone, the World's Smartest Posture Wearable
               </h2>
               <Col lg="10" lg-offset="1">
@@ -300,7 +302,7 @@ class Home extends Component {
         </section>
         <section className="home__section home__testimonials">
           <Container>
-            <h2 className="home__section_title mui--text-display2 mui--text-center">
+            <h2 className="home__section_title responsive-text-display2 mui--text-center">
               Customers Love Backbone
             </h2>
             <Row>
@@ -346,7 +348,7 @@ class Home extends Component {
                     />
                   </Col>
                   <Col xs="12" sm="4" className="mui--text-center flex-row-item--middle">
-                    <div className="mui--text-display2 home__buy_pricing">
+                    <div className="responsive-text-display2 home__buy_pricing">
                       <span className="strikethrough">$119</span>&nbsp;
                       <span>$69</span>
                     </div>
@@ -368,7 +370,7 @@ class Home extends Component {
         </section>
         <section className="home__section home__contact">
           <Container className="mui--text-center">
-            <h2 className="home__section_title mui--text-display2 mui--text-center">
+            <h2 className="home__section_title responsive-text-display2 mui--text-center">
               Contact Us
             </h2>
             <form onSubmit={this.handleOnSubmit}>
