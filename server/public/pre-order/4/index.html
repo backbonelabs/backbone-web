@@ -66,6 +66,7 @@
 
     .content-image {
       width: 100%;
+      height: 100%;
     }
 
     .navbar {
@@ -357,6 +358,21 @@
       flex: 1;
       min-width: 280px;
     }
+
+    /* IE10 */
+      html[data-useragent*='MSIE 10.0'] .testimonial {
+        max-width: 295px;
+      }
+
+      html[data-useragent*='MSIE 10.0'] .mui-panel {
+        width: 100%;
+        margin-left: -18px;
+      }
+
+      html[data-useragent*='MSIE 10.0'] .product-benefit-text-inner  {
+        max-width: 87%;
+      }
+    /* IE10 */
   </style>
   <script type="text/javascript">
   setTimeout(function(){var a=document.createElement("script");
@@ -547,18 +563,22 @@
     </div>
   </footer>
   <script>
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+
     document.addEventListener("DOMContentLoaded",
         function() {
             var div, n,
                 v = document.getElementsByClassName("youtube-player");
             for (n = 0; n < v.length; n++) {
                 div = document.createElement("div");
-                div.setAttribute("data-id", v[n].dataset.id);
-                div.innerHTML = labnolThumb(v[n].dataset.id);
+                div.setAttribute("data-id", v[n].getAttribute('data-id'));
+                div.innerHTML = labnolThumb(v[n].getAttribute('data-id'));
                 div.onclick = labnolIframe;
                 v[n].appendChild(div);
             }
-        });
+        }
+    );
 
     function labnolThumb(id) {
         var thumb = '<img src="https://i.ytimg.com/vi/ID/maxresdefault.jpg">',
@@ -569,7 +589,7 @@
     function labnolIframe() {
         var iframe = document.createElement("iframe");
         var embed = "https://www.youtube.com/embed/ID?autoplay=1&rel=0&modestbranding=1&showinfo=0&controls=0";
-        iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+        iframe.setAttribute("src", embed.replace("ID", this.getAttribute('data-id')));
         iframe.setAttribute("frameborder", "0");
         iframe.setAttribute("allowfullscreen", "1");
         this.parentNode.replaceChild(iframe, this);
