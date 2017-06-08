@@ -37,7 +37,13 @@
 
     main {
       font-size: 16px;
-      padding-top: 5rem;
+      padding-top: 8rem;
+    }
+
+    @media (min-width: 544px) {
+      main {
+        padding-top: 5rem;
+      }
     }
 
     .center-block {
@@ -64,25 +70,60 @@
 
     .navbar {
       background-color: #212121;
-      height: 5rem;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between;;
+      padding: 4px 0;
       position: fixed;
       width: 100%;
       z-index: 1000;
     }
 
+    @media (min-width: 544px) {
+      .navbar-row {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 100%;
+      }
+    }
+
+    .navbar-left,
+    .navbar-right {
+      text-align: center;
+    }
+
+    @media (min-width: 544px) {
+      .navbar-left {
+        text-align: left;
+      }
+      .navbar-right {
+        text-align: right;
+      }
+    }
+
     .logo {
-      margin: 0 20px;
-      width: 200px;
+      margin: 0 10px;
+      width: 160px;
       height: 100%;
+    }
+
+    @media (min-width: 480px) {
+      .logo {
+        margin: 0 20px;
+        width: 200px;
+      }
+    }
+
+    .cta-text-scarcity {
+      display: none;
+    }
+
+    @media (min-width: 836px) {
+      .cta-text-scarcity {
+        display: inline;
+        color: white;
+      }
     }
 
     .footer {
@@ -307,10 +348,6 @@
       flex: 1;
       min-width: 280px;
     }
-
-    .cta-text-scarcity {
-      color: white;
-    }
   </style>
   <script type="text/javascript">
   setTimeout(function(){var a=document.createElement("script");
@@ -322,13 +359,17 @@
 
 <body>
   <header>
-    <nav class="navbar">
-      <a href="/"><img class="logo" src="https://cdn.gobackbone.com/assets/backbone-logo-white.svg"></a>
-      <div>
-        <span class="cta-text-scarcity">Limited Time Offer!</span>
-        <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
-          <button class="cta-button mui-btn mui-btn--small mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone Now</b></button>
-        </a>
+    <nav class="navbar mui-container-fluid">
+      <div class="mui-row navbar-row">
+        <div class="mui-col-sm-6 navbar-left">
+          <a href="/"><img class="logo" src="https://cdn.gobackbone.com/assets/backbone-logo-white.svg"></a>
+        </div>
+        <div class="mui-col-sm-6 navbar-right">
+          <span style="vertical-align: middle;" class="cta-text-scarcity">Limited Time Offer!</span>
+          <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
+            <button class="mui-btn mui-btn--small mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone Now</b></button>
+          </a>
+        </div>
       </div>
     </nav>
   </header>
