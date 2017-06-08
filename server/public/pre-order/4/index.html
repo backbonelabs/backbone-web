@@ -60,6 +60,7 @@
 
     .content-image {
       width: 100%;
+      height: 100%;
     }
 
     .navbar {
@@ -311,6 +312,21 @@
     .cta-text-scarcity {
       color: white;
     }
+
+    /* IE10 */
+      html[data-useragent*='MSIE 10.0'] .testimonial {
+        max-width: 295px;
+      }
+
+      html[data-useragent*='MSIE 10.0'] .mui-panel {
+        width: 100%;
+        margin-left: -18px;
+      }
+
+      html[data-useragent*='MSIE 10.0'] .product-benefit-text-inner  {
+        max-width: 87%;
+      }
+    /* IE10 */
   </style>
 </head>
 
@@ -491,6 +507,9 @@
     </div>
   </footer>
   <script>
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+
     document.addEventListener("DOMContentLoaded",
         function() {
             var div, n,
@@ -502,7 +521,8 @@
                 div.onclick = labnolIframe;
                 v[n].appendChild(div);
             }
-        });
+        }
+    );
 
     function labnolThumb(id) {
         var thumb = '<img src="https://i.ytimg.com/vi/ID/maxresdefault.jpg">',
