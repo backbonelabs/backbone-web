@@ -516,8 +516,8 @@
                 v = document.getElementsByClassName("youtube-player");
             for (n = 0; n < v.length; n++) {
                 div = document.createElement("div");
-                div.setAttribute("data-id", v[n].dataset.id);
-                div.innerHTML = labnolThumb(v[n].dataset.id);
+                div.setAttribute("data-id", v[n].getAttribute('data-id'));
+                div.innerHTML = labnolThumb(v[n].getAttribute('data-id'));
                 div.onclick = labnolIframe;
                 v[n].appendChild(div);
             }
@@ -533,7 +533,7 @@
     function labnolIframe() {
         var iframe = document.createElement("iframe");
         var embed = "https://www.youtube.com/embed/ID?autoplay=1&rel=0&modestbranding=1&showinfo=0&controls=0";
-        iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+        iframe.setAttribute("src", embed.replace("ID", this.getAttribute('data-id')));
         iframe.setAttribute("frameborder", "0");
         iframe.setAttribute("allowfullscreen", "1");
         this.parentNode.replaceChild(iframe, this);
