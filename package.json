@@ -27,6 +27,7 @@
     "babel-register": "6.18.0",
     "body-parser": "1.15.2",
     "compression": "1.6.2",
+    "core-js": "2.4.1",
     "css-loader": "0.26.1",
     "debug": "2.4.4",
     "eslint": "3.12.2",
