@@ -99,6 +99,14 @@
       }
       .navbar-right {
         text-align: right;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
       }
     }
 
@@ -119,10 +127,11 @@
       display: none;
     }
 
-    @media (min-width: 836px) {
+    @media (min-width: 680px) {
       .cta-text-scarcity {
         display: inline;
         color: white;
+        padding-right: 10px;
       }
     }
 
@@ -361,11 +370,11 @@
   <header>
     <nav class="navbar mui-container-fluid">
       <div class="mui-row navbar-row">
-        <div class="mui-col-sm-6 navbar-left">
+        <div class="mui-col-sm-4 navbar-left">
           <a href="/"><img class="logo" src="https://cdn.gobackbone.com/assets/backbone-logo-white.svg"></a>
         </div>
-        <div class="mui-col-sm-6 navbar-right">
-          <span style="vertical-align: middle;" class="cta-text-scarcity">Limited Time Offer!</span>
+        <div class="mui-col-sm-8 navbar-right">
+          <span class="cta-text-scarcity">Limited Time Offer!</span>
           <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
             <button class="mui-btn mui-btn--small mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone Now</b></button>
           </a>
