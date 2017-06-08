@@ -37,7 +37,13 @@
 
     main {
       font-size: 16px;
-      padding-top: 5rem;
+      padding-top: 8rem;
+    }
+
+    @media (min-width: 544px) {
+      main {
+        padding-top: 5rem;
+      }
     }
 
     .center-block {
@@ -64,18 +70,69 @@
 
     .navbar {
       background-color: #212121;
-      height: 5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      padding: 4px 0;
       position: fixed;
       width: 100%;
       z-index: 1000;
     }
 
+    @media (min-width: 544px) {
+      .navbar-row {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 100%;
+      }
+    }
+
+    .navbar-left,
+    .navbar-right {
+      text-align: center;
+    }
+
+    @media (min-width: 544px) {
+      .navbar-left {
+        text-align: left;
+      }
+      .navbar-right {
+        text-align: right;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+      }
+    }
+
     .logo {
-      margin: 0 20px;
-      width: 200px;
+      margin: 0 10px;
+      width: 160px;
+      height: 100%;
+    }
+
+    @media (min-width: 480px) {
+      .logo {
+        margin: 0 20px;
+        width: 200px;
+      }
+    }
+
+    .cta-text-scarcity {
+      display: none;
+    }
+
+    @media (min-width: 680px) {
+      .cta-text-scarcity {
+        display: inline;
+        color: white;
+        padding-right: 10px;
+      }
     }
 
     .footer {
@@ -220,13 +277,20 @@
     }
 
     .product-benefits-row {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
       align-items: stretch;
+      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
       margin-bottom: 2rem;
     }
 
     .product-benefit-text-cell {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
     }
 
@@ -238,9 +302,17 @@
 
     .product-benefit-text-inner {
       padding: 1rem 3rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 100%;
     }
 
     .product-benefit-title {
@@ -264,33 +336,49 @@
     }
 
     .testimonial-stage {
+      display: -ms-flexbox;
+      display: -webkit-flex;
       display: flex;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
       align-items: stretch;
+      -ms-flex-pack: distribute;
       justify-content: space-around;
+      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
     }
 
     .testimonial {
+      display: -ms-flexbox;
+      display: -webkit-flex;
       display: flex;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
       flex: 1;
       min-width: 280px;
     }
-
-    .cta-text-scarcity {
-      color: white;
-    }
   </style>
+  <script type="text/javascript">
+  setTimeout(function(){var a=document.createElement("script");
+  var b=document.getElementsByTagName("script")[0];
+  a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0065/8042.js?"+Math.floor(new Date().getTime()/3600000);
+  a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+  </script>
 </head>
 
 <body>
   <header>
-    <nav class="navbar">
-      <a href="/"><img class="logo" src="https://cdn.gobackbone.com/assets/backbone-logo-white.svg"></a>
-      <div>
-        <span class="cta-text-scarcity">Limited Time Offer!</span>
-        <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
-          <button class="cta-button mui-btn mui-btn--small mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone Now</b></button>
-        </a>
+    <nav class="navbar mui-container-fluid">
+      <div class="mui-row navbar-row">
+        <div class="mui-col-sm-4 navbar-left">
+          <a href="/"><img class="logo" src="https://cdn.gobackbone.com/assets/backbone-logo-white.svg"></a>
+        </div>
+        <div class="mui-col-sm-8 navbar-right">
+          <span class="cta-text-scarcity">Limited Time Offer!</span>
+          <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
+            <button class="mui-btn mui-btn--small mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone Now</b></button>
+          </a>
+        </div>
       </div>
     </nav>
   </header>
@@ -459,7 +547,6 @@
     </div>
   </footer>
   <script>
-
     document.addEventListener("DOMContentLoaded",
         function() {
             var div, n,
