@@ -29,6 +29,7 @@
   <meta name="theme-color" content="#ffffff">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
   <link href="https://cdn.muicss.com/mui-0.9.9-rc2/css/mui.min.css" rel="stylesheet">
+  <script src="flexibility.js"></script>
   <style>
     body {
       background-color: #d3d3d3;
@@ -65,9 +66,16 @@
     .navbar {
       background-color: #212121;
       height: 5rem;
+      -js-display: flex;
+      display: -ms-flexbox;
+      display: -webkit-flex;
       display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
-      justify-content: space-between;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;;
       position: fixed;
       width: 100%;
       z-index: 1000;
@@ -220,13 +228,22 @@
     }
 
     .product-benefits-row {
+      -js-display: flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
       align-items: stretch;
+      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
       margin-bottom: 2rem;
     }
 
     .product-benefit-text-cell {
+      -js-display: flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
     }
 
@@ -238,9 +255,18 @@
 
     .product-benefit-text-inner {
       padding: 1rem 3rem;
+      -js-display: flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 100%;
     }
 
     .product-benefit-title {
@@ -264,14 +290,26 @@
     }
 
     .testimonial-stage {
+      -js-display: flex;
+      display: -ms-flexbox;
+      display: -webkit-flex;
       display: flex;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
       align-items: stretch;
+      -ms-flex-pack: distribute;
       justify-content: space-around;
+      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
     }
 
     .testimonial {
+      -js-display: flex;
+      display: -ms-flexbox;
+      display: -webkit-flex;
       display: flex;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
       flex: 1;
       min-width: 280px;
     }
@@ -459,6 +497,7 @@
     </div>
   </footer>
   <script>
+    flexibility(document.documentElement);
 
     document.addEventListener("DOMContentLoaded",
         function() {
