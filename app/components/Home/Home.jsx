@@ -6,6 +6,7 @@ import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import Button from 'muicss/lib/react/button';
 import Panel from 'muicss/lib/react/panel';
+import Divider from 'muicss/lib/react/divider';
 import Modal from 'react-modal';
 import './Home.scss';
 
@@ -340,21 +341,36 @@ class Home extends Component {
         <section className="home__section home__buy">
           <Container>
             <Row>
-              <Col sm="10" lg-offset="1">
+              <Col lg="10" lg-offset="1">
                 <Row className="flex-row">
-                  <Col xs="12" sm="8" className="flex-row-item--middle">
+                  <Col xs="12" md="7" className="flex-row-item--middle">
                     <img
                       className="home__image-contain"
                       src="https://cdn.gobackbone.com/assets/floating-brace-with-module.png"
                       alt="Backbone brace"
                     />
                   </Col>
-                  <Col xs="12" sm="4" className="mui--text-center flex-row-item--middle">
-                    <div className="responsive-text-display2 home__buy_pricing">
-                      <span className="strikethrough">$119</span>&nbsp;
-                      <span>$69</span>
+                  <Col xs="12" md="5" className="flex-row-item--middle">
+                    <div className="responsive-text-display1 home__buy_title">
+                      Backbone &mdash; <span className="strikethrough">$119</span> <span>$69</span>
                     </div>
+                    <div className="mui--text-subhead home__buy_subtitle">
+                      90-day money back guarantee
+                    </div>
+                    <Divider className="home__buy_divider" />
                     <div>
+                      <p>You'll get:</p>
+                      <ul>
+                        <li>Smart Backbone brace</li>
+                        <li>Charging cable</li>
+                        <li>Smartphone app (Android &amp; iOS)</li>
+                        <li>Unlimited updates (new features, in-app videos, and more)</li>
+                      </ul>
+                      <p className="mui--text-caption">
+                        App compatibility: Android 4.3 and up, iOS 9.0 and up
+                      </p>
+                    </div>
+                    <div className="mui--text-center">
                       {/* eslint-disable max-len */}
                       <a
                         className="buy-btn"

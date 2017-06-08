@@ -203,8 +203,12 @@
     background: -webkit-linear-gradient(legacy-direction(to bottom), $grey100 0, $grey500 100%);
     background: linear-gradient(to bottom, $grey100 0, $grey500 100%);
 
-    &_pricing {
-      font-weight: 700;
+    &_title, &_subtitle {
+      font-weight: 700 !important;
+    }
+
+    &_divider {
+      margin: 10px 0;
     }
   }
 
