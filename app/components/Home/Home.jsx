@@ -244,8 +244,11 @@ class Home extends Component {
                   </Col>
                   <Col xs="12" md="5" className="home__features_cell">
                     <Panel className="home__features_card flex-row-item--middle">
-                      <h2 className="home__features_card-title"><strong>SUPPORTS</strong></h2>
+                      <h2 className="home__features_card-title"><strong>Supports</strong></h2>
                       <ul className="home__features_card-list">
+                        <li className="home__features_card-list-item">
+                          Helps you build good habits by intelligently reminding you not to slouch
+                        </li>
                         <li className="home__features_card-list-item">
                           Aligns your shoulders and back to help you maintain good posture easily
                         </li>
@@ -259,28 +262,22 @@ class Home extends Component {
                 <Row className="home__features_row flex-row">
                   <Col xs="12" md="5" className="home__features_cell">
                     <Panel className="home__features_card flex-row-item--middle">
-                      <h2 className="home__features_card-title"><strong>SENSES</strong></h2>
+                      <h2 className="home__features_card-title"><strong>Engages</strong></h2>
                       <ul className="home__features_card-list">
                         <li className="home__features_card-list-item">
-                          Helps you build good habits by intelligently alerting you when you slouch
+                          Guides you through interactive training programs to keep you motivated
                         </li>
                         <li className="home__features_card-list-item">
-                          Gently reminds you when you've been sitting too long
+                          Recommends posture-strengthening exercises and stretches to get
+                          you real results
+                        </li>
+                        <li className="home__features_card-list-item">
+                          Teaches you how to achieve good posture, correctly perform exercises,
+                          and more
                         </li>
                       </ul>
                     </Panel>
                   </Col>
-                  <Col xs="12" md="7" className="home__features_cell">
-                    <div className="flex-row-item--middle">
-                      <img
-                        className="home__image-contain"
-                        src="https://cdn.gobackbone.com/assets/module-floating-angled.jpg"
-                        alt="Backbone sensor module"
-                      />
-                    </div>
-                  </Col>
-                </Row>
-                <Row className="home__features_row flex-row">
                   <Col xs="12" md="7" className="home__features_cell">
                     <div className="flex-row-item--middle">
                       <img
@@ -289,20 +286,6 @@ class Home extends Component {
                         alt="Backbone app screenshots"
                       />
                     </div>
-                  </Col>
-                  <Col xs="12" md="5" className="home__features_cell">
-                    <Panel className="home__features_card flex-row-item--middle">
-                      <h2 className="home__features_card-title"><strong>ENGAGES</strong></h2>
-                      <ul className="home__features_card-list">
-                        <li className="home__features_card-list-item">
-                          Guides you through interactive training programs to keep you committed
-                        </li>
-                        <li className="home__features_card-list-item">
-                          Recommends posture-strengthening exercises and stretches to get
-                          you real results
-                        </li>
-                      </ul>
-                    </Panel>
                   </Col>
                 </Row>
               </Col>
