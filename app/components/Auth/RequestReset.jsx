@@ -85,7 +85,7 @@ class RequestReset extends Component {
                     <MDSpinner singleColor={red500} /> :
                     <Button
                       variant="raised"
-                      color="danger"
+                      color="primary"
                       type="submit"
                       disabled={!this.state.email || !this.state.validEmail}
                     >

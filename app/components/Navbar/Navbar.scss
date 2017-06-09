@@ -3,7 +3,7 @@
 
 .navbar {
   background-color: $grey900;
-  border-bottom: 4px $red500 solid;
+  border-bottom: 4px $primaryColor solid;
   color: $white;
   position: fixed;
   top: 0;
@@ -12,7 +12,7 @@
   z-index: 1000;
 
   .active {
-    color: $red500;
+    color: $primaryColor;
   }
 
   ul {
@@ -36,11 +36,11 @@
         text-decoration: none;
         color: $white;
         &:hover {
-          color: $red500;
+          color: $primaryColor;
         }
       }
       &:hover {
-        color: $red500;
+        color: $primaryColor;
       }
     }
 
@@ -60,7 +60,7 @@
         border-radius: 2px;
         text-transform: capitalize;
         &:hover {
-          background-color: $red500;
+          background-color: $primaryColor;
         }
       }
     }

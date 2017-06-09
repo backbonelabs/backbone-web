@@ -265,15 +265,19 @@ class Profile extends Component {
               className="profile-container__edit-btn"
               variant="raised"
               onClick={this.editForm}
-            >{disableForm ? 'Edit' : 'Cancel'} </Button>
+            >
+              {disableForm ? 'Edit' : 'Cancel'}
+            </Button>
             {
               disableForm ? null :
               <Button
                 className="profile-container__cta"
                 variant="raised"
-                color="danger"
+                color="primary"
                 onClick={this.onSave}
-              > Save changes </Button>
+              >
+                Save changes
+              </Button>
             }
           </div>
           <Panel className="profile-container__form">

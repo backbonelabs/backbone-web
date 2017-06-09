@@ -158,7 +158,7 @@ class Business extends Component {
                       {this.state.confirmMessage}
                     </p>
                     : null}
-                  <Button color="danger">Send</Button>
+                  <Button size="large" color="primary">Send</Button>
                 </Col>
               </Row>
             </form>

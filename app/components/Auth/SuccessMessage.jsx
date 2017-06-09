@@ -16,7 +16,7 @@ const SuccessMessage = props => (
         <Link to={`/${props.link}`}>
           <Button
             variant="raised"
-            color="danger"
+            color="primary"
           >
             {props.link}
           </Button>

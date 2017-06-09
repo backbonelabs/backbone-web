@@ -94,7 +94,7 @@ class Home extends Component {
             <Button
               className="home__hero_button"
               size="large"
-              color="danger"
+              color="primary"
               onClick={this.toggleModal}
             >
               Watch the Video
@@ -455,7 +455,7 @@ class Home extends Component {
                       {this.state.confirmMessage}
                     </p>
                   )}
-                  <Button size="large" color="danger">Send</Button>
+                  <Button size="large" color="primary">Send</Button>
                 </Col>
               </Row>
             </form>

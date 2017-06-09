@@ -37,14 +37,14 @@ class App extends Component {
             activeClassName="side-bar-active"
             onClick={this.onSetSidebarOpen}
           >
-            <Button color="danger">
+            <Button color="primary">
               Business
             </Button>
           </Link>
         </li>
         <li>
           <a href="https://support.gobackbone.com">
-            <Button color="danger" onClick={this.onSetSidebarOpen}>
+            <Button color="primary" onClick={this.onSetSidebarOpen}>
               Support
             </Button>
           </a>
@@ -53,7 +53,7 @@ class App extends Component {
           <a
             href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support"
           >
-            <Button color="danger">Pre-order</Button>
+            <Button color="primary">Pre-order</Button>
           </a>
         </li>
       </ul>

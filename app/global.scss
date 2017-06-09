@@ -1,5 +1,30 @@
 @import "~normalize.css/normalize";
 @import "colors";
+@import "~muicss/lib/sass/mui/colors";
+
+/*
+  ====================
+  COLORS
+  ====================
+ */
+$mui-primary-color: mui-color('red', '500');
+$mui-primary-color-dark: mui-color('red', '700');
+$mui-primary-color-light: mui-color('red', '100');
+
+
+/*
+  ====================
+  TYPOGRAPHY
+  ====================
+ */
+$mui-base-font-size: 16px;
+$mui-base-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial;
+$mui-base-line-height: 1.6;
+$mui-btn-font-size: $mui-base-font-size;
+
+// Import mui after setting variables above so new variable values can override defaults
+@import "~muicss/lib/sass/mui";
+
 
 /*
   ====================
@@ -18,6 +43,7 @@ $ipad: 768px;
 $screen-sm-min: 544px;
 $screen-md-min: 768px;
 $screen-lg-min: 992px;
+
 
 /*
   ====================

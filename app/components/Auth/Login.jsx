@@ -126,7 +126,7 @@ class Login extends Component {
                 <MDSpinner singleColor={red500} /> :
                 <Button
                   variant="raised"
-                  color="danger"
+                  color="primary"
                   type="submit"
                   disabled={(!email || !validEmail) || (!password || !validPassword)}
                 >

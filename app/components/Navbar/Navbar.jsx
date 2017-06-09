@@ -17,7 +17,7 @@ const Navbar = ({ toggleSideNav }) => {
       <li><a href="https://support.gobackbone.com">Support</a></li>
       <li>
         <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support">
-          <Button color="danger">Pre-order</Button>
+          <Button color="primary">Pre-order</Button>
         </a>
       </li>
     </ul>
