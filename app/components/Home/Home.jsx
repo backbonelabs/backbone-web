@@ -359,7 +359,7 @@ class Home extends Component {
                         App compatibility: Android 4.3 and up, iOS 9.0 and up
                       </p>
                     </div>
-                    <div className="mui--text-center">
+                    <div className="home__buy_cta mui--text-center">
                       {/* eslint-disable max-len */}
                       <a
                         className="buy-btn"
