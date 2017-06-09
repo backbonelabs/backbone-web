@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import autobind from 'autobind-decorator';
 import Sidebar from 'react-sidebar';
 import { Link } from 'react-router';
 import Button from 'muicss/lib/react/button';
@@ -14,12 +15,11 @@ class App extends Component {
     this.state = {
       sidebarOpen: false,
     };
-
-    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }
 
+  @autobind
   onSetSidebarOpen() {
-    this.setState({ sidebarOpen: !this.state.sidebarOpen });
+    this.setState(prevState => ({ sidebarOpen: !prevState.sidebarOpen }));
   }
 
   render() {
