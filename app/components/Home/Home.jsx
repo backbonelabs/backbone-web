@@ -172,11 +172,17 @@ class Home extends Component {
           </Container>
         </div>
         <div className="home__press mui--text-center">
-          <img
-            className="home__image-contain"
-            src="https://cdn.gobackbone.com/assets/press.png"
-            alt="Press mentions of Backbone"
-          />
+          <Container>
+            <Row>
+              <Col xs="12" md="10" md-offset="1" lg="8" lg-offset="2">
+                <img
+                  className="home__image-contain"
+                  src="https://cdn.gobackbone.com/assets/press.png"
+                  alt="Press mentions of Backbone"
+                />
+              </Col>
+            </Row>
+          </Container>
         </div>
         <section className="home__section home__posture">
           <h2 className="home__section_title responsive-text-display2 mui--text-center">
