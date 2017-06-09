@@ -7,7 +7,7 @@ import BackboneLogo from '../../images/backbone-logo-white.svg';
 
 import './Navbar.scss';
 
-const Navbar = ({ openSideNav }) => {
+const Navbar = ({ toggleSideNav }) => {
   const desktop = (
     <ul>
       <li>
@@ -25,11 +25,11 @@ const Navbar = ({ openSideNav }) => {
   const mobile = (
     <ul>
       <li>
-        <Link to="/"><img src={BackboneLogo} alt="Backbone logo" /></Link>
+        <Link to="/" onClick={toggleSideNav}><img src={BackboneLogo} alt="Backbone logo" /></Link>
       </li>
       <li className="fill" />
       {/*eslint-disable*/}
-      <li><i className="fa fa-bars" onClick={openSideNav} /></li>
+      <li><i className="fa fa-bars" onClick={toggleSideNav} /></li>
       {/*eslint-disable*/}
     </ul>
   );
@@ -43,7 +43,7 @@ const Navbar = ({ openSideNav }) => {
 };
 
 Navbar.propTypes = {
-  openSideNav: PropTypes.func
+  toggleSideNav: PropTypes.func
 };
 
 export default Navbar;

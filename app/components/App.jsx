@@ -6,8 +6,6 @@ import Button from 'muicss/lib/react/button';
 import Navbar from './Navbar/Navbar';
 import Footer from './Footer/Footer';
 
-import BackboneLogo from '../images/backbone-logo.svg';
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -33,11 +31,6 @@ class App extends Component {
     }
     const sidebarContent = (
       <ul>
-        <li>
-          <Link to="/" onClick={this.onSetSidebarOpen}>
-            <img src={BackboneLogo} alt="Backbone logo" />
-          </Link>
-        </li>
         <li>
           <Link
             to="/business"
@@ -76,7 +69,7 @@ class App extends Component {
           contentClassName="sidebar-content"
           rootClassName="sidebar-root"
         >
-          <Navbar openSideNav={this.onSetSidebarOpen} />
+          <Navbar toggleSideNav={this.onSetSidebarOpen} />
           <main>
             {this.props.children}
           </main>

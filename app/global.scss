@@ -158,18 +158,11 @@ body {
     background-color: $grey900;
     z-index: 5 !important;
 
-    img {
-      width: 100%;
-    }
-
     ul {
       list-style: none;
       padding: 0;
+      padding-top: 60px;
       text-align: center;
-
-      li:first-child {
-        background-color: $white;
-      }
 
       button {
         width: 100%;
