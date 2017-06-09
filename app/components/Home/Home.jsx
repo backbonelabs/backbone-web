@@ -233,14 +233,16 @@ class Home extends Component {
               </div>
               <Col lg="10" lg-offset="1">
                 <Row className="home__features_row flex-row">
-                  <Col md="7">
-                    <img
-                      className="home__image-contain"
-                      src="https://cdn.gobackbone.com/assets/shoulder-strap.jpg"
-                      alt="Front shoulder view of the Backbone brace"
-                    />
+                  <Col xs="12" md="7" className="home__features_cell">
+                    <div className="flex-row-item--middle">
+                      <img
+                        className="home__image-contain"
+                        src="https://cdn.gobackbone.com/assets/shoulder-strap.jpg"
+                        alt="Front shoulder view of the Backbone brace"
+                      />
+                    </div>
                   </Col>
-                  <Col md="5" className="home__features_text-container">
+                  <Col xs="12" md="5" className="home__features_cell">
                     <Panel className="home__features_card flex-row-item--middle">
                       <h2 className="home__features_card-title"><strong>SUPPORTS</strong></h2>
                       <ul className="home__features_card-list">
@@ -255,7 +257,7 @@ class Home extends Component {
                   </Col>
                 </Row>
                 <Row className="home__features_row flex-row">
-                  <Col md="5" className="home__features_text-container">
+                  <Col xs="12" md="5" className="home__features_cell">
                     <Panel className="home__features_card flex-row-item--middle">
                       <h2 className="home__features_card-title"><strong>SENSES</strong></h2>
                       <ul className="home__features_card-list">
@@ -268,23 +270,27 @@ class Home extends Component {
                       </ul>
                     </Panel>
                   </Col>
-                  <Col md="7">
-                    <img
-                      className="home__image-contain"
-                      src="https://cdn.gobackbone.com/assets/module-floating-angled.jpg"
-                      alt="Backbone sensor module"
-                    />
+                  <Col xs="12" md="7" className="home__features_cell">
+                    <div className="flex-row-item--middle">
+                      <img
+                        className="home__image-contain"
+                        src="https://cdn.gobackbone.com/assets/module-floating-angled.jpg"
+                        alt="Backbone sensor module"
+                      />
+                    </div>
                   </Col>
                 </Row>
                 <Row className="home__features_row flex-row">
-                  <Col md="7">
-                    <img
-                      className="home__image-contain"
-                      src="https://cdn.gobackbone.com/assets/app-screens-final.jpg"
-                      alt="Backbone app screenshots"
-                    />
+                  <Col xs="12" md="7" className="home__features_cell">
+                    <div className="flex-row-item--middle">
+                      <img
+                        className="home__image-contain"
+                        src="https://cdn.gobackbone.com/assets/app-screens-final.jpg"
+                        alt="Backbone app screenshots"
+                      />
+                    </div>
                   </Col>
-                  <Col md="5" className="home__features_text-container">
+                  <Col xs="12" md="5" className="home__features_cell">
                     <Panel className="home__features_card flex-row-item--middle">
                       <h2 className="home__features_card-title"><strong>ENGAGES</strong></h2>
                       <ul className="home__features_card-list">

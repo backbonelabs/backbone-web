@@ -155,7 +155,7 @@
       margin-bottom: 16px;
     }
 
-    &_text-container {
+    &_cell {
       display: flex;
     }
 
@@ -299,6 +299,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    max-width: 100%;
   }
 }
 
