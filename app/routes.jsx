@@ -16,6 +16,12 @@ import TermsOfService from './components/Legal/TermsOfService';
 import Business from './components/Business/Business';
 // import Preorder from './components/Preorder/Preorder';
 
+const scrollToTop = () => {
+  if (window) {
+    window.scrollTo(0, 0);
+  }
+};
+
 const appRoutes = (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
@@ -32,7 +38,7 @@ const appRoutes = (
 );
 
 const Routes = props => (
-  <Router routes={appRoutes} history={props.history} />
+  <Router routes={appRoutes} history={props.history} onUpdate={scrollToTop} />
 );
 
 Routes.propTypes = {
