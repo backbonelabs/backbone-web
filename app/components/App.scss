@@ -1,0 +1,54 @@
+@import "../colors";
+@import "../global";
+
+.app {
+  main {
+    min-height: 100vh;
+  }
+  .sidebar {
+    position: fixed !important;
+    width: 250px;
+    background-color: $grey900;
+    z-index: 5 !important;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      padding-top: 60px;
+      text-align: center;
+
+      button {
+        width: 100%;
+        background-color: transparent;
+        color: $white;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        box-shadow: none !important;
+
+        &:hover {
+          background-color: $red500;
+        }
+      }
+
+      .side-bar-active {
+        button {
+          background-color: $red500;
+        }
+      }
+    }
+  }
+
+  .sidebar-root, .sidebar-content {
+    overflow: inherit !important;
+  }
+
+  /* Override the sidenav styles in order for scrolling to work*/
+  .side-nav-root {
+    position: static !important;
+    &>div:last-child {
+      position: static !important;
+      overflow-y: auto !important
+    }
+  }
+}

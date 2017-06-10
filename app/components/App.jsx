@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 import Button from 'muicss/lib/react/button';
 import Navbar from './Navbar/Navbar';
 import Footer from './Footer/Footer';
+import './App.scss';
 
 class App extends Component {
   constructor(props) {
