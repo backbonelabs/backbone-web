@@ -1,0 +1,26 @@
+/*
+  ====================
+  Media Queries
+  ====================
+ */
+
+// iphone 5
+$iphone5: 320px;
+$iphone5LsMax: 568px; // max landscape
+// iphone 6 plus, same for iphone 7 plus
+$iphone6Plus: 414px;
+$iphone6LsMax: 736px;
+$ipad: 768px;
+
+$screen-sm-min: 544px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+
+
+// Use opacity instead of grey.
+// Black or white text that is transparent remains legible and vibrant against background
+// color changes. This makes it more flexible than grey text in the same contexts.
+// See https://material.io/guidelines/style/color.html#color-color-schemes for more information.
+$textColor: rgba(0, 0, 0, 0.87);
+$secondaryTextColor: rgba(0, 0, 0, 0.54);
+$disabledTextColor: rgba(0, 0, 0, 0.38);
