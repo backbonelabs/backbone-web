@@ -1,5 +1,12 @@
+@import "../../global";
+
 .legal {
   &__outer-container {
     padding: 16px;
+    padding-top: 60px !important;
+
+    @media (min-width: $screen-sm-min) {
+      padding-top: 100px !important;
+    }
   }
 }
