@@ -174,61 +174,6 @@
       }
     }
 
-    .youtube-player {
-      position: relative;
-      padding-bottom: 56.23%;
-      /* Use 75% for 4:3 videos */
-      height: 0;
-      overflow: hidden;
-      max-width: 100%;
-      background: #000;
-      margin: 2rem auto;
-    }
-
-    .youtube-player iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 100;
-      background: transparent;
-    }
-
-    .youtube-player img {
-      bottom: 0;
-      display: block;
-      left: 0;
-      margin: auto;
-      max-width: 100%;
-      width: 100%;
-      position: absolute;
-      right: 0;
-      top: 0;
-      border: none;
-      height: auto;
-      cursor: pointer;
-      -webkit-transition: .4s all;
-      -moz-transition: .4s all;
-      transition: .4s all;
-    }
-
-    .youtube-player img:hover {
-      -webkit-filter: brightness(75%);
-    }
-
-    .youtube-player .play {
-      height: 72px;
-      width: 72px;
-      left: 50%;
-      top: 50%;
-      margin-left: -36px;
-      margin-top: -36px;
-      position: absolute;
-      background: url("https://cdn.gobackbone.com/assets/play-button.png") no-repeat;
-      cursor: pointer;
-    }
-
     .mui--z1.container {
       margin-top: 1rem;
       background-color: white;
@@ -374,12 +319,6 @@
       }
     /* IE10 */
   </style>
-  <script type="text/javascript">
-  setTimeout(function(){var a=document.createElement("script");
-  var b=document.getElementsByTagName("script")[0];
-  a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0065/8042.js?"+Math.floor(new Date().getTime()/3600000);
-  a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-  </script>
 </head>
 
 <body>
@@ -392,7 +331,7 @@
         <div class="mui-col-sm-8 navbar-right">
           <span class="cta-text-scarcity">Limited Time Offer!</span>
           <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
-            <button class="mui-btn mui-btn--small mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone Now</b></button>
+            <button class="mui-btn mui-btn--small mui-btn--raised mui-btn--danger"><b>Get 40% OFF Backbone Now</b></button>
           </a>
         </div>
       </div>
@@ -408,12 +347,14 @@
               <h4 class="mui--text-subhead">Backbone supports your posture, buzzes when you slouch, teaches you posture strengthening exercises and stretches, and more!</h4>
             </div>
             <div>
-              <div class="youtube-player" data-id="iTplWYkig-o"></div>
+              <center>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iTplWYkig-o?modestbranding=1&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+              </center>
               <h2 class="mui--text-center">We've sold <strong>$467,833</strong> on Kickstarter in just 30 days!</h2>
               <img class="content-image" src="https://cdn.gobackbone.com/assets/seen_on.jpg">
               <div class="mui--text-center">
                 <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
-                  <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone Now</b></button>
+                  <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger"><b>Get 40% OFF Backbone Now</b></button>
                 </a>
                 <br>Limited time offer. While supplies last.
               </div>
@@ -539,7 +480,7 @@
             </p>
             <div class="mui--text-center">
               <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank">
-                <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone Now</b></button>
+                <button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger"><b>Get 40% OFF Backbone Now</b></button>
               </a>
               <br />Limited time offer. While supplies last.
             </div>
@@ -562,7 +503,7 @@
       </nav>
     </div>
   </footer>
-  <script>
+  <!--<script>
     var doc = document.documentElement;
     doc.setAttribute('data-useragent', navigator.userAgent);
 
@@ -595,9 +536,9 @@
         this.parentNode.replaceChild(iframe, this);
     }
 
-</script>
+</script>-->
 <!-- Polyfill is needed to support Facebook Pixel -->
-<script src="/js/polyfill.min.js"></script>
+<!--<script src="/js/polyfill.min.js"></script>-->
   <!-- Facebook Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -607,12 +548,6 @@
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '495943477278998'); // Insert your pixel ID here.
     fbq('track', 'PageView');
-
-    // Pixel fires upon a user clicking on a call-to-action button
-    function clickThrough(number) {
-      fbq('track', 'ViewContent', { buttonPressed: number, price: 69 });
-    }
-
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=495943477278998&ev=PageView&noscript=1"
