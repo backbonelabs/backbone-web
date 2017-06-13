@@ -47,6 +47,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './app/index.html',
+      filename: 'appindex.html',
       inject: 'body',
       minify: {
         removeComments: true,

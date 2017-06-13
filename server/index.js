@@ -50,10 +50,13 @@ app.use(compression());
 // Disable the "X-Powered-By: Express" HTTP header
 app.disable('x-powered-by');
 
-// Temporarily redirect requests to Shopify
-// MAKE SURE TO UNCOMMENT THE STATIC FILES WHEN THIS REDIRECT IS DISABLED
+app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, '../build')));
+
+// Temporarily redirect requests for non-static resources to Shopify
+// WHEN THIS REDIRECT IS REMOVED LATER, MAKE SURE TO UPDATE THE WEBPACK CONFIGS
+// TO REMOVE THE filename OPTION FROM HtmlWebpackPlugin
 app.use((req, res) => {
-  // Temporarily redirect requests to Shopify store
   const baseUrl = 'https://shop.gobackbone.com';
   const reqPath = trimEnd(url.parse(req.url).pathname, '/').toLowerCase();
   if (reqPath === '/legal/terms') {
@@ -64,10 +67,6 @@ app.use((req, res) => {
     res.redirect(baseUrl);
   }
 });
-
-// !!!!! UNCOMMENT THE STATIC FILES AFTER DISABLING THE SHOPIFY REDIRECT !!!!!
-// app.use(express.static(path.join(__dirname, './public')));
-// app.use(express.static(path.join(__dirname, '../build')));
 
 // Protect end points unless it's in the path Array
 app.use(
