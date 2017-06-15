@@ -122,18 +122,6 @@ html {
   background-color: #fff;
 }
 
-.page-width {
-  *zoom: 1;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.page-width::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
 .main-content {
   display: block;
   padding-top: 24px;
@@ -455,14 +443,23 @@ svg:not(:root) {
 }
 
 .page-width {
+  margin: 0 auto;
+  max-width: 1200px;
   padding-left: 22px;
   padding-right: 22px;
+  *zoom: 1;
+}
+
+.page-width::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 @media only screen and (min-width: 750px) {
   .page-width {
-    padding-left: 55px;
-    padding-right: 55px;
+    padding-left: 80px;
+    padding-right: 80px;
   }
 }
 
