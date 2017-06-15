@@ -413,10 +413,6 @@ svg:not(:root) {
 }
 
 .hero {
-  background-image: url('https://cdn.gobackbone.com/assets/carmen-notification-ring-xray.jpg');
-  background-position: 45% 0%;
-  background-size: 230%;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -425,41 +421,11 @@ svg:not(:root) {
   width: 100%;
   overflow: hidden;
 
-  @media only screen and (min-width: 321px) {
-    background-position: 45% 0%;
-    background-size: 210%;
-  }
-
-  @media only screen and (min-width: 376px) {
-    background-position: 45% 10%;
-  }
-
-  @media only screen and (min-width: 420px) {
-    background-position: 45% 15%;
-  }
-
-  @media only screen and (min-width: 440px) {
-    background-position: 45% 20%;
-  }
-
-  @media only screen and (min-width: 460px) {
-    background-position: 45% 25%;
-  }
-
-  @media only screen and (min-width: 480px) {
-    background-position: 45% 30%;
-  }
-
-  @media only screen and (min-width: 520px) {
-    background-position: 45% 35%;
-  }
-
   @media only screen and (min-width: $screen-md-min) {
     height: 475px;
   }
 
   &__video {
-    display: none;
     width: 150.15vh;
     min-width: 100%;
     min-height: 66.6vw;
@@ -467,10 +433,6 @@ svg:not(:root) {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -40%);
-
-    @media only screen and (min-width: $screen-sm-min) {
-      display: inline-block;
-    }
   }
 
   &__overlay::before {
