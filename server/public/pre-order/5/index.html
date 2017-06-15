@@ -571,26 +571,34 @@
     }
 
     .hero {
-        position: relative;
-        height: 475px;
-        display: table;
-        width: 100%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 50%
+      position: relative;
+      height: 475px;
+      display: table;
+      width: 100%;
+      overflow: hidden;
     }
 
     .hero--medium {
-        height: 357px
+      height: 357px
     }
 
     @media only screen and (min-width: 750px) {
-        .hero--medium {
-            height: 475px
-        }
+      .hero--medium {
+        height: 475px
+      }
     }
 
-    .hero__overlay::before {
+    .hero__video {
+      width: 150.15vh;
+      min-width: 100%;
+      min-height: 66.6vw;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -40%);
+    }
+
+   /* .hero__overlay::before {
         content: '';
         position: absolute;
         top: 0;
@@ -600,7 +608,7 @@
         background-color: #000;
         opacity: 0.25;
         z-index: 1
-    }
+    }*/
 
     .hero__inner {
         position: relative;
@@ -768,7 +776,11 @@
 		<main class="main-content" id="MainContent" role="main">
 			<!-- BEGIN content_for_index -->
 			<div class="shopify-section index-section index-section--flush">
-				<div class="hero hero--medium hero__overlay" style="background-image: url('https://cdn.gobackbone.com/assets/5/hero_2048x.png?v=1497136391'); background-position: center center;">
+				<div class="hero hero--medium hero__overlay">
+          <video class="hero__video" autoplay="autoplay" loop="loop" muted="muted">
+            <source src="https://cdn.gobackbone.com/assets/carmen-notification-ring.webm">
+            <source src="https://cdn.gobackbone.com/assets/carmen-notification-ring.mp4">
+          </video>
 					<div class="hero__inner">
 						<div class="page-width text-center">
 							<h2 class="h1 mega-title">Ready To Stop Slouching?</h2>
