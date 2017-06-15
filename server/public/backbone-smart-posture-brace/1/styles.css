@@ -268,11 +268,105 @@ li {
   margin-bottom: 8px;
 }
 
+.mega-subtitle {
+  //max-width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 474px) {
+  .mega-subtitle {
+    max-width: 95%;
+  }
+}
+
+@media only screen and (min-width: 494px) {
+  .mega-subtitle {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (min-width: 520px) {
+  .mega-subtitle {
+    max-width: 85%;
+  }
+}
+
+@media only screen and (min-width: 546px) {
+  .mega-subtitle {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (min-width: 574px) {
+  .mega-subtitle {
+    max-width: 75%;
+  }
+}
+
+@media only screen and (min-width: 610px) {
+  .mega-subtitle {
+    max-width: 70%;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .mega-subtitle {
+    max-width: 65%;
+  }
+}
+
+@media only screen and (min-width: 698px) {
+  .mega-subtitle {
+    max-width: 60%;
+  }
+}
+
 @media only screen and (min-width: 750px) {
   .mega-subtitle {
     font-size: 1.22222em;
-    margin: 0 auto;
+    max-width: 80%;
+  }
+}
+
+@media only screen and (min-width: 796px) {
+  .mega-subtitle {
     max-width: 75%;
+  }
+}
+
+@media only screen and (min-width: 840px) {
+  .mega-subtitle {
+    max-width: 70%;
+  }
+}
+
+@media only screen and (min-width: 892px) {
+  .mega-subtitle {
+    max-width: 65%;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .mega-subtitle {
+    max-width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  .mega-subtitle {
+    max-width: 55%;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .mega-subtitle {
+    max-width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .mega-subtitle {
+    max-width: 45%;
   }
 }
 
