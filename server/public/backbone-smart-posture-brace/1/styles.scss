@@ -247,120 +247,6 @@ li {
   list-style: none;
 }
 
-.mega-title,
-.mega-subtitle {
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-.mega-title {
-  margin-bottom: 8px;
-}
-
-.mega-subtitle {
-  margin: 0 auto;
-}
-
-@media only screen and (min-width: 430px) {
-  .mega-subtitle {
-    max-width: 95%;
-  }
-}
-
-@media only screen and (min-width: 450px) {
-  .mega-subtitle {
-    max-width: 90%;
-  }
-}
-
-@media only screen and (min-width: 475px) {
-  .mega-subtitle {
-    max-width: 85%;
-  }
-}
-
-@media only screen and (min-width: 501px) {
-  .mega-subtitle {
-    max-width: 80%;
-  }
-}
-
-@media only screen and (min-width: 534px) {
-  .mega-subtitle {
-    max-width: 75%;
-  }
-}
-
-@media only screen and (min-width: 570px) {
-  .mega-subtitle {
-    max-width: 70%;
-  }
-}
-
-@media only screen and (min-width: 608px) {
-  .mega-subtitle {
-    max-width: 65%;
-  }
-}
-
-@media only screen and (min-width: 650px) {
-  .mega-subtitle {
-    max-width: 60%;
-  }
-}
-
-@media only screen and (min-width: 700px) {
-  .mega-subtitle {
-    max-width: 55%;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .mega-subtitle {
-    font-size: 1.22222em;
-    max-width: 65%;
-  }
-}
-
-@media only screen and (min-width: 838px) {
-  .mega-subtitle {
-    max-width: 60%;
-  }
-}
-
-@media only screen and (min-width: 910px) {
-  .mega-subtitle {
-    max-width: 55%;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .mega-subtitle {
-    max-width: 50%;
-  }
-}
-
-@media only screen and (min-width: 1090px) {
-  .mega-subtitle {
-    max-width: 45%;
-  }
-}
-
-@media only screen and (min-width: 1210px) {
-  .mega-subtitle {
-    max-width: 40%;
-  }
-}
-
-@media only screen and (min-width: 1300px) {
-  .mega-subtitle {
-    max-width: 100%;
-  }
-}
-
-.mega-subtitle p {
-  color: inherit;
-}
-
 .icon {
   display: inline-block;
   width: 20px;
@@ -662,6 +548,120 @@ svg:not(:root) {
   color: #fff;
   flex: 1;
   z-index: 2;
+}
+
+.mega-title,
+.mega-subtitle {
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.mega-title {
+  margin-bottom: 8px;
+}
+
+.mega-subtitle {
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 430px) {
+  .mega-subtitle {
+    max-width: 95%;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .mega-subtitle {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (min-width: 475px) {
+  .mega-subtitle {
+    max-width: 85%;
+  }
+}
+
+@media only screen and (min-width: 501px) {
+  .mega-subtitle {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (min-width: 534px) {
+  .mega-subtitle {
+    max-width: 75%;
+  }
+}
+
+@media only screen and (min-width: 570px) {
+  .mega-subtitle {
+    max-width: 70%;
+  }
+}
+
+@media only screen and (min-width: 608px) {
+  .mega-subtitle {
+    max-width: 65%;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .mega-subtitle {
+    max-width: 60%;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .mega-subtitle {
+    max-width: 55%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mega-subtitle {
+    font-size: 1.22222em;
+    max-width: 65%;
+  }
+}
+
+@media only screen and (min-width: 838px) {
+  .mega-subtitle {
+    max-width: 60%;
+  }
+}
+
+@media only screen and (min-width: 910px) {
+  .mega-subtitle {
+    max-width: 55%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .mega-subtitle {
+    max-width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1090px) {
+  .mega-subtitle {
+    max-width: 45%;
+  }
+}
+
+@media only screen and (min-width: 1210px) {
+  .mega-subtitle {
+    max-width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .mega-subtitle {
+    max-width: 100%;
+  }
+}
+
+.mega-subtitle p {
+  color: inherit;
 }
 
 .hero__btn {
