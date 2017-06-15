@@ -6,8 +6,9 @@ node_modules
 npm-debug.log
 .env.local
 
-# Build App
+# Build files
 build
+server/public/backbone-smart-posture-brace/**/*.css*
 
 *.log
 

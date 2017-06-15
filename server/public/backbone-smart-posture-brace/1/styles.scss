@@ -381,12 +381,7 @@ ul {
 }
 
 .btn {
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
   user-select: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   display: inline-block;
   width: auto;
@@ -478,8 +473,6 @@ svg:not(:root) {
 
 @media only screen and (min-width: 768px) {
   .page-container {
-    -ms-transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 }
@@ -760,19 +753,9 @@ svg:not(:root) {
 }
 
 .custom-content {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -ms-flex-align: stretch;
-  -webkit-align-items: stretch;
-  -moz-align-items: stretch;
-  -ms-align-items: stretch;
-  -o-align-items: stretch;
   align-items: stretch;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: auto;
   margin-bottom: -22px;
@@ -787,9 +770,6 @@ svg:not(:root) {
 }
 
 .custom__item {
-  -webkit-flex: 0 0 auto;
-  -moz-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   margin-bottom: 22px;
   padding-left: 22px;
@@ -815,8 +795,6 @@ svg:not(:root) {
 }
 
 .align--center {
-  -ms-flex-item-align: center;
-  -webkit-align-self: center;
   align-self: center;
   text-align: center;
 }
