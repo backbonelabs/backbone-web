@@ -257,104 +257,103 @@ li {
 }
 
 .mega-subtitle {
-  //max-width: 100%;
   margin: 0 auto;
 }
 
-@media only screen and (min-width: 474px) {
+@media only screen and (min-width: 430px) {
   .mega-subtitle {
     max-width: 95%;
   }
 }
 
-@media only screen and (min-width: 494px) {
+@media only screen and (min-width: 450px) {
   .mega-subtitle {
     max-width: 90%;
   }
 }
 
-@media only screen and (min-width: 520px) {
+@media only screen and (min-width: 475px) {
   .mega-subtitle {
     max-width: 85%;
   }
 }
 
-@media only screen and (min-width: 546px) {
+@media only screen and (min-width: 501px) {
   .mega-subtitle {
     max-width: 80%;
   }
 }
 
-@media only screen and (min-width: 574px) {
+@media only screen and (min-width: 534px) {
   .mega-subtitle {
     max-width: 75%;
   }
 }
 
-@media only screen and (min-width: 610px) {
+@media only screen and (min-width: 570px) {
   .mega-subtitle {
     max-width: 70%;
   }
 }
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 608px) {
   .mega-subtitle {
     max-width: 65%;
   }
 }
 
-@media only screen and (min-width: 698px) {
+@media only screen and (min-width: 650px) {
   .mega-subtitle {
     max-width: 60%;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .mega-subtitle {
+    max-width: 55%;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .mega-subtitle {
     font-size: 1.22222em;
-    max-width: 80%;
-  }
-}
-
-@media only screen and (min-width: 796px) {
-  .mega-subtitle {
-    max-width: 75%;
-  }
-}
-
-@media only screen and (min-width: 840px) {
-  .mega-subtitle {
-    max-width: 70%;
-  }
-}
-
-@media only screen and (min-width: 892px) {
-  .mega-subtitle {
     max-width: 65%;
   }
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 838px) {
   .mega-subtitle {
     max-width: 60%;
   }
 }
 
-@media only screen and (min-width: 1020px) {
+@media only screen and (min-width: 910px) {
   .mega-subtitle {
     max-width: 55%;
   }
 }
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 992px) {
   .mega-subtitle {
     max-width: 50%;
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1090px) {
   .mega-subtitle {
     max-width: 45%;
+  }
+}
+
+@media only screen and (min-width: 1210px) {
+  .mega-subtitle {
+    max-width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .mega-subtitle {
+    max-width: 100%;
   }
 }
 
@@ -570,9 +569,11 @@ svg:not(:root) {
   background-position: 45% 0%;
   background-size: 230%;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  height: 475px;
-  display: table;
+  height: 357px;
   width: 100%;
   overflow: hidden;
 }
@@ -620,12 +621,8 @@ svg:not(:root) {
   }
 }
 
-.hero--medium {
-  height: 357px;
-}
-
 @media only screen and (min-width: 768px) {
-  .hero--medium {
+  .hero {
     height: 475px;
   }
 }
@@ -661,10 +658,9 @@ svg:not(:root) {
 
 .hero__inner {
   position: relative;
-  display: table-cell;
-  vertical-align: middle;
   padding: 40px 0;
   color: #fff;
+  flex: 1;
   z-index: 2;
 }
 
