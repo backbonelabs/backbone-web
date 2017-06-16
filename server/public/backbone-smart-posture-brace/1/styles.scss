@@ -1,6 +1,7 @@
 $screen-sm-min: 544px;
 $screen-md-min: 768px;
 $screen-lg-min: 992px;
+$screen-xl-min: 1200px;
 
 .custom__item--1497378033246 .custom__image,
 .custom__item--1497378153739-1 .custom__image {
@@ -421,18 +422,89 @@ svg:not(:root) {
   width: 100%;
   overflow: hidden;
 
-  @media only screen and (min-width: $screen-md-min) {
+  @media only screen and (min-width: $screen-sm-min) {
     height: 475px;
   }
 
   &__video {
-    width: 150.15vh;
-    min-width: 100%;
-    min-height: 66.6vw;
     position: absolute;
+    width: 250%;
+    top: -10%;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -40%);
+    transform: translateX(-50%);
+    transform-origin: 50% 50%;
+
+    @media only screen and (min-width: 375px) {
+      top: -20%;
+    }
+
+    @media only screen and (min-width: 400px) {
+      top: -35%;
+    }
+
+    @media only screen and (min-width: 450px) {
+      left: 50%;
+      top: 0;
+      width: initial;
+      transform: translate(-50%, -34%) scale(0.55);
+    }
+
+    @media only screen and (min-width: $screen-sm-min) {
+      transform: translate(-49%, -30%) scale(0.55);
+    }
+
+    @media only screen and (min-width: $screen-md-min) {
+      transform: translate(-49%, -29%) scale(0.6);
+    }
+
+    @media only screen and (min-width: 1174px) {
+      transform: translate(-49%, -29%) scale(0.65);
+    }
+
+    @media only screen and (min-width: 1280px) {
+      transform: translate(-49%, -29%) scale(0.7);
+    }
+
+    @media only screen and (min-width: 1370px) {
+      transform: translate(-49%, -30%) scale(0.75);
+    }
+
+    @media only screen and (min-width: 1470px) {
+      transform: translate(-49%, -30%) scale(0.8);
+    }
+
+    @media only screen and (min-width: 1570px) {
+      transform: translate(-49%, -30%) scale(0.85);
+    }
+
+    @media only screen and (min-width: 1670px) {
+      transform: translate(-49%, -31%) scale(1);
+    }
+
+    @media only screen and (min-width: 1900px) {
+      transform: none;
+      left: 0;
+      top: -90%;
+      width: 150vh;
+      height: 66vw;
+      min-width: 100%;
+      min-height: 100%;
+    }
+
+    @media only screen and (min-width: 2048px) {
+      left: 0;
+      top: -100%;
+    }
+
+    @media only screen and (min-width: 2150px) {
+      left: 0;
+      top: -120%;
+    }
+
+    @media only screen and (min-width: 2340px) {
+      left: 0;
+      top: -140%;
+    }
   }
 
   &__overlay::before {
