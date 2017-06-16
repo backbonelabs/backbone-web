@@ -726,7 +726,7 @@ svg:not(:root) {
   text-align: center;
 }
 
-.pros-cons-container {
+.pros-cons {
   @media (min-width: $screen-sm-min) {
     padding-left: 24px;
     padding-right: 24px;
@@ -735,10 +735,41 @@ svg:not(:root) {
     padding-left: 40px;
     padding-right: 40px;
   }
+
+  &__list li {
+    margin-bottom: 19.44444px;
+    padding-left: 24px;
+    text-indent: -24px;
+  }
 }
 
-.pros-cons li {
-  margin-bottom: 19.44444px;
+.pros > h2 {
+  color: #2bc617;
+}
+.cons > h2 {
+  color: red;
+}
+
+.pros li {
+  padding-left: 24px;
+  text-indent: -24px;
+
+  &:before {
+    content: '\2714';
+    color: #2bc617;
+    padding-right: 8px;
+  }
+}
+
+.cons li {
+  padding-left: 22px;
+  text-indent: -21px;
+
+  &:before {
+    content: '\2718';
+    color: red;
+    padding-right: 8px;
+  }
 }
 
 .content-video {
