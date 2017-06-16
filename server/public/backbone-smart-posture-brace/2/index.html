@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Google Tag Manager -->
+
+	<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	 })(window,document,'script','dataLayer','GTM-MGTPLQM');
+	</script><!-- End Google Tag Manager -->
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>Backbone: Smart Posture Wearable</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+	<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+	<link href="/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png">
+	<link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png">
+	<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+	<link href="/manifest.json" rel="manifest">
+	<link href="/safari-pinned-tab.svg" rel="mask-icon">
+	<meta content="#ffffff" name="theme-color">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+	<link href="https://cdn.muicss.com/mui-0.9.16/css/mui.min.css" rel="stylesheet">
+	<style>
+	   body {
+	     background-color: #FFFFFF;
+	     font-family: 'Open Sans';
+	   }
+
+	   main {
+	     font-size: 16px;
+	   }
+
+	   .subheader {
+	     font-size: 18px;
+	   }
+
+	   .cta-button {
+	     margin: 1.5rem;
+	   }
+
+	   .content-header {
+	     margin-bottom: 30px;
+	     font-weight: 700;
+	   }
+
+	   .content-section {
+	     margin: 2rem auto;
+	   }
+
+	   .content-image {
+	     margin: 36px auto;
+	     text-align: center;
+	     width: 90%;
+	   }
+
+	   .content-image__image {
+	     width: 100%;
+	   }
+
+	   .content-image__subtitle {
+	     font-style: italic;
+	   }
+
+	   .navbar {
+	     background-color: #212121;
+	     height: 5rem;
+	     display: flex;
+	     align-items: center;
+	   }
+
+	   .logo {
+	     margin: 0 20px;
+	     width: 200px;
+	   }
+
+	   .footer {
+	     background-color: #F44336;
+	     color: #FFF;
+	     padding-bottom: 10px;
+	     padding-top: 10px;
+	   }
+
+	   .footer a {
+	     color: #FFF;
+	     padding: 0 15px;
+	   }
+
+	   .footer a:hover {
+	     color: #212121;
+	     text-decoration: none;
+	   }
+
+	   .footer__nav {
+	     line-height: 2;
+	     text-align: center;
+	   }
+
+	   .footer__social {
+	     font-size: 20px;
+	     margin-top: 10px;
+	     text-align: center;
+	   }
+
+	   @media (min-width: 768px) {
+	     .footer__nav {
+	       text-align: left;
+	     }
+	     .footer__social {
+	       text-align: right;
+	       margin-top: 0;
+	     }
+	   }
+
+	   .youtube-player {
+	     position: relative;
+	     padding-bottom: 56.23%;
+	     /* Use 75% for 4:3 videos */
+	     height: 0;
+	     overflow: hidden;
+	     max-width: 100%;
+	     background: #000;
+	     margin: 2rem auto;
+	   }
+
+	   .youtube-player iframe {
+	     position: absolute;
+	     top: 0;
+	     left: 0;
+	     width: 100%;
+	     height: 100%;
+	     z-index: 100;
+	     background: transparent;
+	   }
+
+	   .youtube-player img {
+	     bottom: 0;
+	     display: block;
+	     left: 0;
+	     margin: auto;
+	     max-width: 100%;
+	     width: 100%;
+	     position: absolute;
+	     right: 0;
+	     top: 0;
+	     border: none;
+	     height: auto;
+	     cursor: pointer;
+	     -webkit-transition: .4s all;
+	     -moz-transition: .4s all;
+	     transition: .4s all;
+	   }
+
+	   .youtube-player img:hover {
+	     -webkit-filter: brightness(75%);
+	   }
+
+	   .youtube-player .play {
+	     height: 72px;
+	     width: 72px;
+	     left: 50%;
+	     top: 50%;
+	     margin-left: -36px;
+	     margin-top: -36px;
+	     position: absolute;
+	     background: url("https://cdn.gobackbone.com/assets/play-button.png") no-repeat;
+	     cursor: pointer;
+	   }
+
+	   .mui-divider {
+	     width: 50%;
+	   }
+	</style>
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MGTPLQM" style="display:none;visibility:hidden" width="0"></iframe></noscript> <!-- End Google Tag Manager (noscript) -->
+	<header>
+		<nav class="navbar">
+			<a href="/"><img class="logo" src="https://cdn.gobackbone.com/assets/backbone-logo-white.svg"></a>
+		</nav>
+	</header>
+	<main class="mui-container">
+		<div class="mui-row">
+			<div class="mui-col-lg-8 mui-col-lg-offset-2">
+				<section class="content-section">
+					<center>
+						<h2 class="mui--text-display1"><strong>"Perfect posture, effortlessly."</strong></h2>
+						<h4 class="mui--text-subhead">Backbone supports your posture, buzzes when you slouch, teaches you posture strengthening exercises and stretches, and more! Approved and recommended by health professionals.</h4>
+					</center>
+					<div>
+						<div class="youtube-player" data-id="iTplWYkig-o"></div>
+						<center>
+							<h2><strong>6,146</strong> customers and counting! Backbone has appeared on:</h2>
+						</center><img class="content-image__image" src="https://cdn.gobackbone.com/assets/seen_on.jpg">
+						<div class="mui--text-center">
+							<a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank"><button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone</b></button></a><br>
+							Limited time offer. While supplies last.
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div class="mui-row">
+			<center>
+				<div class="mui-divider"></div>
+			</center>
+		</div>
+		<div class="mui-row">
+			<div class="mui-col-lg-8 mui-col-lg-offset-2">
+				<section class="content-section">
+					<h2 class="mui--text-display1 content-header">Check your posture right now</h2>
+					<p>Chances are, you're slouching. <strong>Why should you care?</strong> Having bad posture causes spinal wear and tear, feelings of depression, and a higher chance of back injury. Your back suffers when you slouch:</p>
+					<div class="content-image">
+						<img class="content-image__image" src="https://cdn.gobackbone.com/assets/text-neck-1-optimized.png">
+						<div class="content-image__subtitle">
+							Having poor posture can result in your spine carrying an additional 20-60 pounds!<br>
+							- <a href="https://www.washingtonpost.com/news/morning-mix/wp/2014/11/20/text-neck-is-becoming-an-epidemic-and-could-wreck-your-spine/">The Washington Post</a> (Image via Dr. Erik Dalton, PhD)
+						</div>
+					</div>
+					<p><strong>Still don’t care?</strong> What if you could look more attractive (taller, thinner, more confident), feel happier, and boost your self-esteem? Well, you can, by having good posture:</p>
+					<div class="youtube-player" data-id="OyK0oE5rwFY"></div>
+					<p><a href="http://www.health.harvard.edu/pain/4-ways-to-turn-good-posture-into-less-back-pain">Harvard Medical School</a> and many other medical institutions praise the health benefits of good posture. And, with Backbone, you can enjoy all the health benefits with <i>much less</i> effort.</p>
+				</section>
+				<div class="mui-row">
+					<center>
+						<div class="mui-divider"></div>
+					</center>
+				</div>
+				<section class="content-section">
+					<h2 class="mui--text-display1 content-header">Happy Customers</h2>
+					<blockquote class="mui-panel">
+						“I received my backbone and am VERY pleased and happy with the product. The adjustable sensitivity allows me to improve my posture without a twitch setting off the sensor. The backbrace by itself has already helped me pull my shoulders back and improve my standing posture without being in a posture session! The bottom line is I believe this company really is making the right decision though a difficult one to protect their product quality and brand name from day one.” - <strong>Christoper M.</strong>
+					</blockquote>
+					<blockquote class="mui-panel">
+						“I’ve had no issues with it so far. I really like it, and I hope these guys stick with it, because it seems like a lot of additional useful functionality could be added to the app in the future.” - <strong>Billy H.</strong>
+					</blockquote>
+					<blockquote class="mui-panel">
+						“Got mine yesterday. After a quick update, the Backbone worked as advertised. If you truly have back issues, I highly recommend you keep your pledge.” - <strong>Tom M.</strong>
+					</blockquote>
+					<p><strong>Your Satisfaction Guaranteed</strong>: If for any reason you're not satisfied with Backbone, send it back undamaged within 90 days and we'll give you a <strong>full refund</strong>, no questions asked.</p>
+				</section>
+				<div class="mui-row">
+					<center>
+						<div class="mui-divider"></div>
+					</center>
+				</div>
+				<section class="content-section">
+					<h2 class="mui--text-display1 content-header">Look and feel your strongest with Backbone</h2>
+					<p>Backbone is the world's smartest posture support and is approved and recommended by health professionals. Here's why:</p>
+					<div class="content-image"><img class="content-image__image" src="https://cdn.gobackbone.com/assets/backbone.jpg"></div>
+					<p>Advanced technical fabrics and materials woven to form a posture support brace that's sleek enough to be worn under your clothes, and provide you with maximum comfort, breathability, and support.</p>
+					<div class="content-image"><img class="content-image__image" src="https://cdn.gobackbone.com/assets/backbone-three.jpg"></div>
+					<p>State-of-the-art six-axis motion sensors accurately monitor your posture and notify you through the use of vibration motors and smartphone notifications whenever you slouch or need to take a sitting break.</p>
+					<div class="content-image"><img class="content-image__image" src="https://cdn.gobackbone.com/assets/module-floating-angled.jpg"></div>
+					<p></p>
+					<p>Continuously updated Android/iOS smartphone app delivers premium training and educational content, visualizes your progress, alerts when you've been sitting for too long, and so much more.</p>
+					<div class="content-image">
+						<img class="content-image__image" src="https://cdn.gobackbone.com/assets/app-screens-3.jpg">
+						<div class="content-image__subtitle">
+							Compatible with Android and Apple devices supporting Bluetooth 4.0 and above.
+						</div>
+					</div>
+					<p></p>
+					<div class="mui--text-center">
+						<a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank"><button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone</b></button></a><br>
+						Limited time offer. While supplies last.
+					</div>
+				</section>
+				<div class="mui-row">
+					<center>
+						<div class="mui-divider"></div>
+					</center>
+				</div>
+				<section class="content-section">
+					<h2 class="mui--text-display1 content-header">Take your best posture beyond sitting</h2>
+					<p>Easily achieve and maintain your best posture with Backbone whether you're sitting, standing, or moving. Look and feel great wherever you go, whatever you do.</p>
+					<div class="content-image"><img class="content-image__image" src="https://cdn.gobackbone.com/assets/carmen-running.jpg"></div>
+				</section>
+				<div class="mui-row">
+					<center>
+						<div class="mui-divider"></div>
+					</center>
+				</div>
+				<section class="content-section">
+					<h2 class="mui--text-display1 content-header">Slim and lightweight</h2>
+					<p>Backbone was designed to be worn seamlessly underneath your clothes without being seen. Or, wear it over your clothes. The choice is yours.</p>
+					<div class="content-image"><img class="content-image__image" src="https://cdn.gobackbone.com/assets/carmen-under.jpg"></div>
+				</section>
+				<div class="mui-row">
+					<center>
+						<div class="mui-divider"></div>
+					</center>
+				</div>
+				<section class="content-section">
+					<h2 class="mui--text-display1 content-header">More features, no additional cost</h2>
+					<p>Backbone's smart posture support and smartphone app are regularly updated with new features and content.</p>
+					<div class="youtube-player" data-id="Kr8lVlbhndU"></div>
+					<div class="content-image__subtitle">
+						<center>
+							Backbone's in-app exercises and stretches adhere to physical training guidelines and don't require any equipment. Stay healthy wherever you go.
+						</center>
+					</div>
+				</section>
+				<div class="mui-row">
+					<center>
+						<div class="mui-divider"></div>
+					</center>
+				</div>
+				<section class="content-section">
+					<p><strong>Ready to enjoy the health benefits of good posture?</strong> Click the button below to pre-order your Backbone today at the limited discounted rate of 40% off.</p>
+					<div class="mui--text-center">
+						<a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support" target="_blank"><button class="cta-button mui-btn mui-btn--large mui-btn--raised mui-btn--danger" onclick="clickThrough(3)"><b>Get 40% OFF Backbone</b></button></a><br>
+						Limited time offer. While supplies last.
+					</div>
+				</section>
+				<section class="content-section">
+					<p><strong>Your Satisfaction Guaranteed</strong>: If for any reason you're not satisfied with Backbone, send it back undamaged within 90 days and we'll give you a <strong>full refund</strong>, no questions asked.</p>
+					<p>Have questions? Send us an email at <a href="mailto:support@gobackbone.com">support@gobackbone.com</a>.</p>
+				</section>
+			</div>
+		</div>
+	</main>
+	<footer class="footer mui-container-fluid">
+		<div class="mui-row">
+			<nav class="mui-col-md-6 mui-col-xs-12 footer__nav">
+				<a href="/legal/privacy">Privacy Policy</a> <a href="/legal/terms">Terms</a> <a href="https://support.gobackbone.com">Support</a> <a href="https://shop.gobackbone.com/pages/terms-conditions-for-online-offers-to-purchase">Terms & Conditions</a> <a href="https://shop.gobackbone.com/pages/returns-policy">Return Policy</a>
+			</nav>
+		</div>
+	</footer>
+	<script>
+
+	   document.addEventListener("DOMContentLoaded",
+	       function() {
+	           var div, n,
+	               v = document.getElementsByClassName("youtube-player");
+	           for (n = 0; n < v.length; n++) {
+	               div = document.createElement("div");
+	               div.setAttribute("data-id", v[n].dataset.id);
+	               div.innerHTML = labnolThumb(v[n].dataset.id);
+	               div.onclick = labnolIframe;
+	               v[n].appendChild(div);
+	           }
+	       });
+
+	   function labnolThumb(id) {
+	       var thumb = '<img src="https://i.ytimg.com/vi/ID/maxresdefault.jpg">',
+	           play = '<div class="play"><\/div>';
+	       return thumb.replace("ID", id) + play;
+	   }
+
+	   function labnolIframe() {
+	       var iframe = document.createElement("iframe");
+	       var embed = "https://www.youtube.com/embed/ID?autoplay=1&rel=0&modestbranding=1&showinfo=0&controls=0";
+	       iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+	       iframe.setAttribute("frameborder", "0");
+	       iframe.setAttribute("allowfullscreen", "1");
+	       this.parentNode.replaceChild(iframe, this);
+	   }
+
+	</script> <!-- Polyfill is needed to support Facebook Pixel -->
+	<!--<script src="/js/polyfill.min.js"></script>-->
+</body>
+</html>
