@@ -726,6 +726,14 @@ svg:not(:root) {
   text-align: center;
 }
 
+.pros-cons-row,
+.pros-cons-container {
+  @media (min-width: $screen-lg-min) {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
 .pros-cons {
   @media (min-width: $screen-sm-min) {
     padding-left: 24px;
