@@ -3,13 +3,16 @@ const webpack = require('webpack');
 const path = require('path');
 const preOrdersConfig = require('./webpack.config.pre-orders');
 
-const compiler = webpack([Object.assign({
-  entry: './server/public/backbone-smart-posture-brace/1/styles.scss',
-  output: {
-    path: path.join(__dirname, '/server/public/backbone-smart-posture-brace/1'),
-    filename: 'styles.min.css',
-  },
-}, preOrdersConfig)]);
+const compiler = webpack([
+  Object.assign({
+    entry: './server/public/backbone-smart-posture-brace/styles.scss',
+    output: {
+      path: path.join(__dirname, '/server/public/backbone-smart-posture-brace'),
+      filename: 'styles.min.css',
+    },
+  }, preOrdersConfig),
+  // add additional entry points here
+]);
 
 const handleWebpackStats = (err, stats) => {
   if (err) {
