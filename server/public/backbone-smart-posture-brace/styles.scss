@@ -396,11 +396,11 @@ svg:not(:root) {
 }
 
 .site-footer {
-  margin: 24px 0;
+  margin: 36px 0 12px;;
   text-align: center;
 
   @media (min-width: $screen-md-min) {
-    margin: 40px 0;
+    margin: 60px 0 20px;;
     text-align: left;
   }
 
