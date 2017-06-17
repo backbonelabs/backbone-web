@@ -726,6 +726,10 @@ svg:not(:root) {
   text-align: center;
 }
 
+.benefits > li {
+  margin-bottom: 19.44444px;
+}
+
 .pros-cons-row,
 .pros-cons-container {
   @media (min-width: $screen-lg-min) {
