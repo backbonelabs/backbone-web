@@ -290,6 +290,10 @@ li {
   }
 }
 
+a.btn {
+  text-decoration: none;
+}
+
 svg:not(:root) {
   overflow: hidden;
 }
@@ -528,8 +532,6 @@ svg:not(:root) {
   }
 
   &__btn {
-    background-color: #f44336;
-    color: #fff;
     margin-top: 20px;
   }
 }
