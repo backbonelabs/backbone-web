@@ -56,13 +56,15 @@ app.use(express.static(path.join(__dirname, '../build')));
 // Temporarily redirect requests for non-static resources to Shopify
 // WHEN THIS REDIRECT IS REMOVED LATER, MAKE SURE TO UPDATE THE WEBPACK CONFIGS
 // TO REMOVE THE filename OPTION FROM HtmlWebpackPlugin
-app.use((req, res) => {
+app.use((req, res, next) => {
   const baseUrl = 'https://shop.gobackbone.com';
   const reqPath = trimEnd(url.parse(req.url).pathname, '/').toLowerCase();
   if (reqPath === '/legal/terms') {
     res.redirect(`${baseUrl}/pages/terms-of-service`);
   } else if (reqPath === '/legal/privacy') {
     res.redirect(`${baseUrl}/pages/privacy-policy`);
+  } else if (reqPath === '/password-reset' || reqPath === '/auth/password-reset') {
+    next();
   } else {
     res.redirect(baseUrl);
   }
@@ -96,10 +98,10 @@ app.use('/user/', userRoutes);
 
 app.use('*', (req, res) => {
   if (isProduction) {
-    res.sendFile(path.join(__dirname, '../build/index.html'));
+    res.sendFile(path.join(__dirname, '../build/appindex.html'));
   } else {
     // This sends the index.html that the htmlWebpackPlugin creates in dev mode
-    const filename = path.join(compiler.outputPath, 'index.html');
+    const filename = path.join(compiler.outputPath, 'appindex.html');
     compiler.outputFileSystem.readFile(filename, (err, result) => {
       if (err) {
         return res.json({ error: err });
