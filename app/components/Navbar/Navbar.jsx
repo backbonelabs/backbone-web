@@ -11,12 +11,13 @@ const Navbar = ({ openSideNav }) => {
   const desktop = (
     <ul>
       <li>
-        <Link to="/"><img src={BackboneLogo} alt="Backbone logo" /></Link>
+        {/* UPDATE THIS TO <Link to="/"> AFTER WE REMOVE THE SHOPIFY REDIRECT */}
+        <a href="https://shop.gobackbone.com"><img src={BackboneLogo} alt="Backbone logo" /></a>
       </li>
       <li><Link to="/business" activeClassName="active">Business</Link></li>
       <li><a href="https://support.gobackbone.com">Support</a></li>
       <li>
-        <a href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support">
+        <a href="https://shop.gobackbone.com/products/backbone">
           <Button color="danger">Pre-order</Button>
         </a>
       </li>
@@ -25,7 +26,8 @@ const Navbar = ({ openSideNav }) => {
   const mobile = (
     <ul>
       <li>
-        <Link to="/"><img src={BackboneLogo} alt="Backbone logo" /></Link>
+        {/* UPDATE THIS TO <Link to="/"> AFTER WE REMOVE THE SHOPIFY REDIRECT */}
+        <a href="https://shop.gobackbone.com"><img src={BackboneLogo} alt="Backbone logo" /></a>
       </li>
       <li className="fill" />
       {/*eslint-disable*/}

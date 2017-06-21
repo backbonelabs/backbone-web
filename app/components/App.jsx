@@ -34,9 +34,10 @@ class App extends Component {
     const sidebarContent = (
       <ul>
         <li>
-          <Link to="/" onClick={this.onSetSidebarOpen}>
+          {/* UPDATE THIS TO <Link to="/"> AFTER WE REMOVE THE SHOPIFY REDIRECT */}
+          <a href="https://shop.gobackbone.com">
             <img src={BackboneLogo} alt="Backbone logo" />
-          </Link>
+          </a>
         </li>
         <li>
           <Link
@@ -58,7 +59,7 @@ class App extends Component {
         </li>
         <li>
           <a
-            href="https://shop.gobackbone.com/products/backbone-the-worlds-smartest-posture-support"
+            href="https://shop.gobackbone.com/products/backbone"
           >
             <Button color="danger">Pre-order</Button>
           </a>
