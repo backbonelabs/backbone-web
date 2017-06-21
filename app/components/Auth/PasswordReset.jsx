@@ -71,7 +71,7 @@ class PasswordReset extends Component {
       // if it includes the string token
       if (passwordResetError.includes('token')) {
         passwordResetError = (
-          <p>
+          <p className="mui--text-danger">
             Invalid reset token. Please contact <a href="mailto:support@gobackbone.com">
             support@gobackbone.com</a> for assistance.
           </p>
