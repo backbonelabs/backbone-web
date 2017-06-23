@@ -13,6 +13,7 @@ import NotFound from './components/NotFound/NotFound';
 import RequireAuth from './components/common/RequireAuth/RequireAuth';
 import PrivacyPolicy from './components/Legal/PrivacyPolicy';
 import TermsOfService from './components/Legal/TermsOfService';
+import TestimonialContest from './components/Legal/TestimonialContest';
 import Business from './components/Business/Business';
 // import Preorder from './components/Preorder/Preorder';
 
@@ -27,6 +28,11 @@ const appRoutes = (
     <Route path="/profile" component={RequireAuth(Profile)} />
     <Route path="/legal/privacy" component={PrivacyPolicy} title="Privacy Policy" />
     <Route path="/legal/terms" component={TermsOfService} title="Terms of Service" />
+    <Route
+      path="/legal/testimonial-contest"
+      component={TestimonialContest}
+      title="Testimonial Contest Official Rules"
+    />
     <Route path="*" component={NotFound} title="Page Not Found" />
   </Route>
 );

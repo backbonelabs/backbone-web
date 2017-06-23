@@ -2,4 +2,38 @@
   &__outer-container {
     padding: 16px;
   }
+
+  &-table {
+    border-collapse: collapse;
+  }
+}
+
+.testimonial-contest {
+  & table > thead {
+    background-color: rgba(0, 0, 0, 0.12);
+
+    & > tr > th {
+      border: 1px solid rgba(0, 0, 0, 0.24);
+    }
+  }
+
+  & table {
+    td {
+      border-left: 1px solid rgba(0, 0, 0, 0.12);
+      border-right: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    td:first-child {
+      border-left-color: rgba(0, 0, 0, 0.24);
+      min-width: 150px;
+    }
+
+    td:last-child {
+      border-right-color: rgba(0, 0, 0, 0.24);
+    }
+  }
+
+  #terms-details > li {
+    margin-bottom: 1rem;
+  }
 }

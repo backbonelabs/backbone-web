@@ -63,7 +63,11 @@ app.use((req, res, next) => {
     res.redirect(`${baseUrl}/pages/terms-of-service`);
   } else if (reqPath === '/legal/privacy') {
     res.redirect(`${baseUrl}/pages/privacy-policy`);
-  } else if (reqPath === '/password-reset' || reqPath === '/auth/password-reset') {
+  } else if (
+    reqPath === '/password-reset' ||
+    reqPath === '/auth/password-reset' ||
+    reqPath === '/legal/testimonial-contest'
+  ) {
     next();
   } else {
     res.redirect(baseUrl);
