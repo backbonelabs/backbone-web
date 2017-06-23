@@ -9,6 +9,7 @@
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "lint": "eslint --ext .js,.jsx --quiet .",
+    "prepush": "npm run lint && npm test",
     "start": "node start.js",
     "start:production": "npm run build && npm run build:statics && node start.js",
     "test": "echo \"Error: no test specified\" && exit 0"
@@ -79,7 +80,8 @@
     "eslint-config-airbnb": "13.0.0",
     "eslint-config-airbnb-base": "11.0.0",
     "eslint-plugin-jsx-a11y": "2.2.3",
-    "eslint-plugin-react": "6.8.0"
+    "eslint-plugin-react": "6.8.0",
+    "husky": "0.14.0"
   },
   "browserList": [
     "> 1%",
