@@ -5,7 +5,7 @@ Backbone website - gobackbone.com
 
 ## Requirements
 
-- Node.js 6.9.1 (Use the exact version as this is currently the Node.js version we use in AWS)
+- Node.js 6.11.1 (Use the exact version as this is currently the Node.js version we use in AWS)
 
 ## Setup
 
